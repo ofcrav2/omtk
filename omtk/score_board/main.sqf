@@ -49,6 +49,7 @@ if (isServer) then {
 	// SCHEDULE EVENTS
 	[omtk_sb_compute_scoreboard, [], _omtk_mission_duration] call KK_fnc_setTimeout;
 	[omtk_sb_start_mission_end, [], _omtk_mission_duration+2] call KK_fnc_setTimeout;
+	if (isClass(configFile >> "CfgPatches" >> "ocap")) then {[ocap_fnc_exportData, [], _omtk_mission_duration+10] call KK_fnc_setTimeout;};
 	
 	omtk_unlock_helis = {
 		{
