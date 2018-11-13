@@ -55,3 +55,6 @@ tf_no_auto_long_range_radio = true;
 
 //// OMTK EXECUTION
 execVM "omtk\load_modules.sqf";
+
+onPlayerConnected "[_id, , _uid, _name] execVM ""onPlayerConnected.sqf""";
+onPlayerConnected "[_id, , _uid, _name] execVM ""onPlayerConnected.sqf""";
