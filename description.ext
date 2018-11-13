@@ -1,7 +1,8 @@
 author = "OFCRA"; 	// TO BE DEFINED
 onLoadName = "MISSION NAME";	// TO BE DEFINED
-onLoadMission = "www.ofcra.org";	// TO BE DEFINED
+onLoadMission = "www.ofcrav2.org";	// TO BE DEFINED
 onLoadIntro = "Prepare for the fight !";	// TO BE DEFINED
+briefingName = "" // TO BE DEFINED (nom de la mission, affiché dans la liste des missions sur l'interface du serveur)
 loadScreen = "loadscreen.jpg";
 Debriefing = 0;
 respawnOnStart = -1;
@@ -10,7 +11,7 @@ Saving = 0;
 respawn = "BASE";
 respawnDelay = 999999;
 
-onebugConsole = 0;
+enableDebugConsole = 1;
 disableChannels[]={0,5,6};
 
 
