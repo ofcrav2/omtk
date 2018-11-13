@@ -6,6 +6,11 @@
 @ bug fix  
 !! security patch  
 
+### V2.5.0 - 2018-11-??
+\+ [view_distance] add maximum view distance selector
+\+ [omtk] add connection logging
+\+ [OCAP] add OCAP capture at the end of mission, if available
+
 
 ### V2.4.0 - 2016-12-14
 \+ [tactical_paradrop] add timeslot delay parameter in init.sqf
