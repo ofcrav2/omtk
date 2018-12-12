@@ -54,8 +54,9 @@ antitank_light:
   description: Fusilier AT léger
 
 antipersonnel_light:
-  class: O_Soldier_unarmed_F        # CSAT\Men\Rifleman (Unarmed)
+  class: O_soldierU_F                # CSAT\Men\Urban\Rifleman
   description: Fusilier AP léger
+
 
 marksman:
   class: O_soldier_M_F	            # CSAT\Men\Marksman
