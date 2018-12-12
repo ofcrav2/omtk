@@ -54,7 +54,7 @@ antitank_light:
   description: Fusilier AT léger
 
 antipersonnel_light:
-  class: B_soldier_unarmed_f        # NATO\Men\Rifleman (Unarmed)
+  class: B_G_Soldier_F              # FIA\Men\Rifleman
   description: Fusilier AP léger
 
 marksman:
