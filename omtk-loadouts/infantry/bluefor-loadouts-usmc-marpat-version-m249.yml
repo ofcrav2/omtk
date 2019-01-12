@@ -99,6 +99,7 @@ cde:
   weapons:
     primary:
       name: rhs_weap_m16a4_carryhandle_m203
+      optics: rhsusf_acc_ACOG
       underBarrel:
   vest:
     name: rhsusf_spc_teamleader

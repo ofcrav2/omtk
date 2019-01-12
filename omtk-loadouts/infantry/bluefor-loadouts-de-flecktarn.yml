@@ -1,0 +1,515 @@
+default:
+  weapons:
+    primary:
+      name: BWA3_G36A2
+      optics: BWA3_optic_RSAS
+      muzzle:
+      underBarrel:
+      magazine: 30#BWA3_30Rnd_556x45_G36
+    launcher:
+      name:
+      optics:
+    handgun:
+      name:
+      magazine:
+  uniform:
+    name: BWA3_Uniform_Fleck
+    magazines:
+      - BWA3_DM51A1
+      - BWA3_DM25
+    items:
+      - 6x ACE_fieldDressing
+      - 4x ACE_morphine
+      - ACE_EarPlugs
+      - ACE_CableTie
+  vest:
+    name: BWA3_Vest_Rifleman_Fleck
+  backpack:
+    name: BWA3_FieldPack_Fleck
+  binocular:
+  map: ItemMap
+  compass: ItemCompass
+  radio: ItemRadio
+  watch: tf_microdagr
+  headgear: BWA3_M92_Fleck
+
+
+cdc:
+  weapons:
+    primary:
+      name: BWA3_G38
+      optics: BWA3_optic_ZO4x30_MicroT2
+      magazine: 30#BWA3_30Rnd_556x45_G36
+    handgun:
+      name: BWA3_P8
+      magazine: 15#BWA3_15Rnd_9x19_P8
+  uniform:
+    items:
+      - ACE_MapTools
+      - ACE_microDAGR
+  vest:
+    name: BWA3_Vest_Leader_Fleck
+    magazines:
+      - 3x 15#BWA3_15Rnd_9x19_P8
+      - 8x BWA3_30Rnd_556x45_G36
+  backpack:
+    name: tf_rt1523g_bwmod
+    magazines:
+      - 2x BWA3_DM32_Blue
+      - 2x BWA3_DM32_Green
+      - 2x BWA3_DM32_Orange
+      - 2x BWA3_DM32_Purple
+      - 2x BWA3_DM32_Red
+      - 2x BWA3_DM32_Yellow
+  binocular: BWA3_Vector
+  headgear: BWA3_Beret_Wach_green
+
+
+cdg:
+  weapons:
+    primary:
+      name: BWA3_G38
+      optics: BWA3_optic_ZO4x30_MicroT2
+      magazine: 30#BWA3_30Rnd_556x45_G36
+    handgun:
+      name: BWA3_P8
+      magazine: 15#BWA3_15Rnd_9x19_P8
+  uniform:
+    items:
+      - ACE_MapTools
+      - ACE_microDAGR
+  vest:
+    name: BWA3_Vest_Leader_Fleck
+    magazines:
+      - 3x 15#BWA3_15Rnd_9x19_P8
+      - 8x BWA3_30Rnd_556x45_G36
+  backpack:
+    name: tf_rt1523g_bwmod
+    magazines:
+      - 2x BWA3_DM32_Blue
+      - 2x BWA3_DM32_Green
+      - 2x BWA3_DM32_Orange
+      - 2x BWA3_DM32_Purple
+      - 2x BWA3_DM32_Red
+      - 2x BWA3_DM32_Yellow
+  binocular: BWA3_Vector
+  binocular: BWA3_Vector
+
+
+cde:
+  weapons:
+    primary:
+      name: BWA3_G38_AG40
+      optics: BWA3_optic_ZO4x30_RSAS
+      magazine: 30#BWA3_30Rnd_556x45_G36
+  vest:
+    name: BWA3_Vest_Grenadier_Fleck
+    magazines:
+      - 8x BWA3_30Rnd_556x45_G36
+  backpack:
+    magazines:
+      - 6x 1Rnd_HE_Grenade_shell
+      - 4x 1Rnd_Smoke_Grenade_shell
+      - 3x 1Rnd_SmokeRed_Grenade_shell
+      - 3x 1Rnd_SmokeGreen_Grenade_shell
+      - 3x 1Rnd_SmokeYellow_Grenade_shell
+      - 2x 1Rnd_SmokePurple_Grenade_shell
+      - 2x 1Rnd_SmokeBlue_Grenade_shell
+      - 2x 1Rnd_SmokeOrange_Grenade_shell
+  binocular: Binocular
+
+medic:
+  vest:
+    name: BWA3_Vest_Medic_Fleck
+    magazines:
+      - 8x BWA3_30Rnd_556x45_G36
+  backpack:
+    magazines:
+      - 2x BWA3_DM25
+      - 1x BWA3_DM32_Yellow
+      - 1x BWA3_DM32_Green
+    items:
+      - 10x ACE_bloodIV
+      - 25x ACE_morphine
+      - 25x ACE_epinephrine
+      - 50x ACE_fieldDressing
+
+
+grenadier:
+  weapons:
+    primary:
+      name: BWA3_G38_AG40
+      optics: BWA3_optic_ZO4x30_RSAS
+      magazine: 30#BWA3_30Rnd_556x45_G36
+  vest:
+    name: BWA3_Vest_Grenadier_Fleck
+    magazines:
+      - 8x BWA3_30Rnd_556x45_G36
+  backpack:
+    magazines:
+      - 6x 1Rnd_HE_Grenade_shell
+      - 4x 1Rnd_Smoke_Grenade_shell
+      - 3x 1Rnd_SmokeRed_Grenade_shell
+      - 3x 1Rnd_SmokeGreen_Grenade_shell
+      - 3x 1Rnd_SmokeYellow_Grenade_shell
+      - 2x 1Rnd_SmokePurple_Grenade_shell
+      - 2x 1Rnd_SmokeBlue_Grenade_shell
+      - 2x 1Rnd_SmokeOrange_Grenade_shell
+  backpack:
+
+
+
+grenadier_assistant:
+  weapons:
+    launcher:
+      name: BWA3_RGW90
+      magazine: BWA3_RGW90_HH
+  backpack:
+    magazines:
+      - 6x 1Rnd_HE_Grenade_shell
+      - 4x 1Rnd_Smoke_Grenade_shell
+      - 3x 1Rnd_SmokeRed_Grenade_shell
+      - 3x 1Rnd_SmokeGreen_Grenade_shell
+      - 3x 1Rnd_SmokeYellow_Grenade_shell
+      - 2x 1Rnd_SmokePurple_Grenade_shell
+      - 2x 1Rnd_SmokeBlue_Grenade_shell
+      - 2x 1Rnd_SmokeOrange_Grenade_shell
+  vest:
+    magazines:
+      - 8x BWA3_30Rnd_556x45_G36
+
+
+autorifleman:
+  weapons:
+    primary:
+      name: BWA3_MG3
+      magazine: 120#BWA3_120Rnd_762x51
+      optics: BWA3_optic_EOTech552
+      underBarrel: BWA3_bipod_MG3
+  vest:
+    name: BWA3_Vest_MachineGunner_Fleck
+    items:
+      - ACE_EntrenchingTool
+    magazines:
+      - 3x BWA3_120Rnd_762x51
+  backpack:
+
+
+autorifleman_assistant:
+  backpack:
+    magazines:
+      - 2x BWA3_120Rnd_762x51
+      - 2x BWA3_120Rnd_762x51_soft
+  vest:
+    magazines:
+      - 8x BWA3_30Rnd_556x45_G36
+    items:
+      - ACE_EntrenchingTool
+
+gunner:
+  weapons:
+    primary:
+      name: BWA3_MG4
+      magazine: 200#BWA3_200Rnd_556x45
+      optics: BWA3_optic_PMII_ShortdotCC
+      underBarrel:
+  vest:
+    name: BWA3_Vest_MachineGunner_Fleck
+    items:
+      - ACE_EntrenchingTool
+    magazines:
+      - 2x BWA3_200Rnd_556x45
+  backpack:
+
+
+gunner_assistant:
+  backpack:
+    magazines:
+      - 5x BWA3_200Rnd_556x45
+  vest:
+    magazines:
+      - 8x BWA3_30Rnd_556x45_G36
+    items:
+      - ACE_EntrenchingTool
+
+
+antitank:
+  weapons:
+    launcher:
+      name: BWA3_CarlGustav
+      magazine: BWA3_CarlGustav_HEAT
+      optics: BWA3_optic_CarlGustav
+  backpack:
+    name: BWA3_PatrolPack_Fleck
+    magazines:
+      - BWA3_CarlGustav_HEAT
+      - BWA3_CarlGustav_HEDP
+      - BWA3_CarlGustav_HE
+  vest:
+    magazines:
+      - 6x BWA3_30Rnd_556x45_G36
+
+
+antitank_assistant:
+  weapons:
+    launcher:
+      name: BWA3_PzF3
+      magazine: BWA3_PzF3_Tandem
+  backpack:
+    name: BWA3_PatrolPack_Fleck
+    magazines:
+      - 2x BWA3_CarlGustav_HEAT
+      - BWA3_CarlGustav_HEDP
+      - BWA3_CarlGustav_HE
+      - BWA3_CarlGustav_Smoke
+  vest:
+    magazines:
+      - 6x BWA3_30Rnd_556x45_G36
+
+
+antitank_light:
+  weapons:
+    launcher:
+      name: BWA3_PzF3
+      magazine: BWA3_PzF3_Tandem
+  vest:
+    magazines:
+      - 8x BWA3_30Rnd_556x45_G36
+  backpack:
+
+
+antipersonnel_light:
+  weapons:
+    launcher:
+      name: BWA3_RGW90
+      magazine: BWA3_RGW90_HH
+  vest:
+    magazines:
+      - 8x BWA3_30Rnd_556x45_G36
+  backpack:
+
+
+marksman:
+  weapons:
+    primary:
+      name: BWA3_G28
+      magazine: 10#BWA3_10Rnd_762x51_G28
+      optics: BWA3_optic_PMII_DMR_MicroT1_front
+    handgun:
+      name: BWA3_P8
+      magazine: 15#BWA3_15Rnd_9x19_P8
+  uniform:
+    items:
+      - ACE_RangeCard
+      - ACE_MapTools
+      - ACE_microDAGR
+  vest:
+    name: BWA3_Vest_Marksman_Fleck
+    magazines:
+      - 2x BWA3_15Rnd_9x19_P8
+      - 8x BWA3_10Rnd_762x51_G28
+  binocular: BWA3_Vector
+  backpack:
+  headgear: BWA3_Booniehat_Fleck
+
+
+sniper:
+  weapons:
+    primary:
+      name: BWA3_G29
+      magazine: 10#BWA3_10Rnd_86x70_G29
+      underBarrel: BWA3_bipod_Atlas
+      optics: BWA3_optic_M5Xi_MSR
+    handgun:
+      name: BWA3_P8
+      magazine: 15#BWA3_15Rnd_9x19_P8
+  uniform:
+    name: BWA3_Uniform_Ghillie_Fleck
+    items:
+      - ACE_RangeCard
+      - ACE_Kestrel4500
+      - ACE_ATragMX
+      - ACE_microDAGR
+      - ACE_MapTools
+  vest:
+    name: BWA3_Vest_Marksman_Fleck
+    magazines:
+      - 2x BWA3_15Rnd_9x19_P8
+      - 5x BWA3_10Rnd_86x70_G29
+  backpack:
+  binocular: BWA3_Vector
+  headgear: BWA3_Booniehat_Fleck
+
+spotter:
+  weapons:
+    primary:
+      name: BWA3_G36KA2
+      optics: BWA3_optic_RSAS
+      muzzle: BWA3_muzzle_snds_Rotex_IIIC
+      magazine: 30#BWA3_30Rnd_556x45_G36
+  uniform:
+    name: BWA3_Uniform_Ghillie_Fleck
+  vest:
+    magazines:
+      - 8x BWA3_30Rnd_556x45_G36
+    items:
+      - ACE_RangeCard
+      - ACE_Kestrel4500
+      - ACE_ATragMX
+      - ACE_microDAGR
+      - ACE_MapTools
+  backpack:
+    name: tf_rt1523g_bwmod
+  binocular: BWA3_Vector
+  headgear: BWA3_Booniehat_Fleck
+
+
+explosive_specialist:
+  weapons:
+    launcher:
+      name: BWA3_PzF3
+  backpack:
+    magazines:
+      - 2x SatchelCharge_Remote_Mag
+  uniform:
+    items:
+      - ACE_DefusalKit
+      - ACE_Clacker
+  vest:
+    magazines:
+      - 8x BWA3_30Rnd_556x45_G36
+
+
+rifleman:
+  vest:
+    magazines:
+      - 12x BWA3_30Rnd_556x45_G36
+  backpack:
+
+
+driver:
+  weapons:
+    primary:
+      name: BWA3_G38C
+      magazine: 30#BWA3_30Rnd_556x45_G36
+      optics: BWA3_optic_CompM2
+  uniform:
+    name: BWA3_Uniform_Crew_Fleck
+    items:
+      - ACE_MapTools
+      - ACE_microDAGR
+  vest:
+    name: BWA3_Vest_Fleck
+    magazines:
+      - 5x BWA3_30Rnd_556x45_G36
+  binocular: Binocular
+  headgear: BWA3_CrewmanKSK_Fleck_Headset
+  backpack:
+
+
+ground_crew:
+  weapons:
+    primary:
+      name: BWA3_G38C
+      magazine: 30#BWA3_30Rnd_556x45_G36
+      optics: BWA3_optic_CompM2
+  uniform:
+    name: BWA3_Uniform_Crew_Fleck
+  vest:
+    name: BWA3_Vest_Fleck
+    magazines:
+      - 5x BWA3_30Rnd_556x45_G36
+  headgear: BWA3_CrewmanKSK_Fleck_Headset
+  backpack:
+
+
+pilot:
+  weapons:
+    primary:
+      name: SMG_01_F
+      magazine: 30#30Rnd_45ACP_Mag_SMG_01
+      optics: optic_ACO_grn
+  uniform:
+    name: BWA3_Uniform_Helipilot
+    items:
+      - ACE_MapTools
+      - ACE_microDAGR
+      - ItemGPS
+    magazines:
+      - 3x 30Rnd_45ACP_Mag_SMG_01
+  vest:
+    name: V_TacVestIR_blk
+  headgear: H_PilotHelmetHeli_B
+  backpack:
+
+
+
+air_crew:
+  weapons:
+    primary:
+      name: SMG_01_F
+      magazine: 30#30Rnd_45ACP_Mag_SMG_01
+      optics: optic_ACO_grn
+  uniform:
+    name: BWA3_Uniform_Helipilot
+    magazines:
+      - 3x 30Rnd_45ACP_Mag_SMG_01
+  vest:
+    name: V_TacVestIR_blk
+  headgear: H_PilotHelmetHeli_B
+  backpack:
+
+
+op_drone:
+  uniform:
+    items:
+      - ACE_MapTools
+      - ACE_microDAGR
+  vest:
+    magazines:
+      - 8x BWA3_30Rnd_556x45_G36
+  backpack:
+    name:
+  binocular: Binocular
+
+
+op_radio:
+  vest:
+    magazines:
+      - 8x BWA3_30Rnd_556x45_G36
+  backpack:
+    name: tf_rt1523g_bwmod
+
+
+recon:
+  weapons:
+    primary:
+      name: BWA3_G36KA2
+      optics: BWA3_optic_RSAS
+      muzzle: BWA3_muzzle_snds_Rotex_IIIC
+      magazine: 30#BWA3_30Rnd_556x45_G36
+  uniform:
+    items:
+      - ACE_MapTools
+      - ACE_microDAGR
+  vest:
+    magazines:
+      - 8x BWA3_30Rnd_556x45_G36
+  backpack:
+  binocular: Binocular
+  headgear: BWA3_Booniehat_Fleck
+
+turret_tripod_carrier:
+  vest:
+    magazines:
+      - 8x BWA3_30Rnd_556x45_G36
+  backpack:
+    name: RHS_M2_MiniTripod_Bag
+
+
+turret_gun_carrier:
+  vest:
+    magazines:
+      - 8x BWA3_30Rnd_556x45_G36
+  backpack:
+    name: RHS_M2_Gun_Bag

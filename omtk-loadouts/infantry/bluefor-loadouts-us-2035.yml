@@ -172,7 +172,7 @@ autorifleman:
       name: arifle_MX_SW_F
       optics: optic_Holosight
       magazine: 100#100Rnd_65x39_caseless_mag
-      underBarrel:
+      underBarrel: bipod_02_F_tan
   vest:
     name: V_PlateCarrier2_rgr
     items:
