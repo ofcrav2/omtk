@@ -18,7 +18,7 @@ OMTK_TP_REDFOR_DELAY = 0; // delay in seconds
 
 execVM "customScripts.sqf";
 
-OMTK_SB_LISTE_OBJECTIFS = [
+OMTK_SB_LIST_OBJECTIFS = [
 
 ];
 
@@ -56,4 +56,5 @@ tf_no_auto_long_range_radio = true;
 //// OMTK EXECUTION
 execVM "omtk\load_modules.sqf";
 
-onPlayerConnected "[_id, , _uid, _name] execVM ""onPlayerConnected.sqf""";
+// Logging des joueurs sur le serveur
+onPlayerConnected {[ _name + " - " + str(group player) + " - " + str(side player), "CONNECT", false] call omtk_log};

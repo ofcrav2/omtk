@@ -45,4 +45,3 @@ if (("OMTK_MODULE_DYNAMIC_STARTUP" call BIS_fnc_getParamValue) > 0) then {
 } else {
 	call omtk_load_warmup;
 };
-OMTK_MODULE_VIEW_DISTANCE
