@@ -1,0 +1,489 @@
+default:
+  weapons:
+    primary:
+      name: arifle_Mk20_F
+      optics: optic_ACO_grn
+      muzzle:
+      underBarrel:
+      magazine: 30#30Rnd_556x45_Stanag
+    launcher:
+      name:
+      optics:
+    handgun:
+      name:
+      magazine:
+  uniform:
+    name: U_I_CombatUniform_shortsleeve
+    magazines:
+      - HandGrenade
+      - SmokeShell
+    items:
+      - 6x ACE_fieldDressing
+      - 4x ACE_morphine
+      - ACE_EarPlugs
+      - ACE_CableTie
+  vest:
+    name: V_PlateCarrierIA2_dgtl
+  backpack:
+    name: B_FieldPack_oli
+  binocular:
+  map: ItemMap
+  compass: ItemCompass
+  radio: tf_anprc154
+  watch: tf_microdagr
+  headgear: H_HelmetIA
+
+
+cdc:
+  weapons:
+    primary:
+      name: arifle_Mk20_F
+      optics: optic_MRCO
+      underBarrel:
+      magazine: 30#30Rnd_556x45_Stanag
+    handgun:
+      name: hgun_ACPC2_F
+      magazine: 9#9Rnd_45ACP_Mag
+  uniform:
+    items:
+      - ACE_MapTools
+      - ACE_microDAGR
+  vest:
+    name: V_PlateCarrierIA2_dgtl
+    magazines:
+      - 3x 16#9Rnd_45ACP_Mag
+      - 8x 30#30Rnd_556x45_Stanag
+  backpack:
+    name: tf_anprc155
+    magazines:
+      - 1x SmokeShell
+      - 1x SmokeShellGreen
+      - 1x SmokeShellRed
+      - 1x ACE_M84
+      - 1x SmokeShellYellow
+  binocular: Rangefinder
+  headgear: H_Beret_02
+
+
+cdg:
+  weapons:
+    primary:
+      name: arifle_Mk20_F
+      optics: optic_MRCO
+      underBarrel:
+      magazine: 30#30Rnd_556x45_Stanag
+    handgun:
+      name: hgun_ACPC2_F
+      magazine: 9#9Rnd_45ACP_Mag
+  uniform:
+    items:
+      - ACE_MapTools
+      - ACE_microDAGR
+  vest:
+    name: V_PlateCarrierIA2_dgtl
+    magazines:
+      - 3x 16#9Rnd_45ACP_Mag
+      - 8x 30#30Rnd_556x45_Stanag
+  backpack:
+    name: tf_anprc155
+    magazines:
+      - 1x SmokeShell
+      - 1x SmokeShellGreen
+      - 1x SmokeShellRed
+      - 1x ACE_M84
+      - 1x SmokeShellYellow
+  binocular: Rangefinder
+  headgear: H_MilCap_dgtl
+
+
+cde:
+  weapons:
+    primary:
+      name: arifle_Mk20_GL_F
+  vest:
+    name: V_PlateCarrierIA2_dgtl
+    magazines:
+      - 8x 30#30Rnd_556x45_Stanag
+  backpack:
+    magazines:
+      - 6x 1Rnd_HE_Grenade_shell
+      - 4x 1Rnd_Smoke_Grenade_shell
+      - 2x 1Rnd_SmokeRed_Grenade_shell
+      - 2x 1Rnd_SmokeGreen_Grenade_shell
+      - 2x 1Rnd_SmokeYellow_Grenade_shell
+      - 2x 1Rnd_SmokePurple_Grenade_shell
+  headgear: H_HelmetIA
+  binocular: Binocular
+
+
+
+medic:
+  vest:
+    name: V_PlateCarrierIA2_dgtl
+    magazines:
+      - 8x 30#30Rnd_556x45_Stanag
+      - 1x SmokeShell
+      - 1x SmokeShellGreen
+  backpack:
+    items:
+      - 6x ACE_bloodIV
+      - 25x ACE_morphine
+      - 25x ACE_epinephrine
+      - 40x ACE_fieldDressing
+  headgear: H_MilCap_dgtl
+
+
+grenadier:
+  weapons:
+    primary:
+      name: arifle_Mk20_GL_F
+  vest:
+    name: V_PlateCarrierIA2_dgtl
+    magazines:
+      - 8x 30#30Rnd_556x45_Stanag
+  backpack:
+    magazines:
+      - 6x 1Rnd_HE_Grenade_shell
+      - 4x 1Rnd_Smoke_Grenade_shell
+      - 2x 1Rnd_SmokeRed_Grenade_shell
+      - 2x 1Rnd_SmokeGreen_Grenade_shell
+      - 2x 1Rnd_SmokeYellow_Grenade_shell
+      - 2x 1Rnd_SmokePurple_Grenade_shell
+
+
+
+grenadier_assistant:
+  backpack:
+    magazines:
+      - 6x 1Rnd_HE_Grenade_shell
+      - 4x 1Rnd_Smoke_Grenade_shell
+      - 2x 1Rnd_SmokeRed_Grenade_shell
+      - 2x 1Rnd_SmokeGreen_Grenade_shell
+      - 2x 1Rnd_SmokeYellow_Grenade_shell
+      - 2x 1Rnd_SmokePurple_Grenade_shell
+  vest:
+    magazines:
+      - 8x 30#30Rnd_556x45_Stanag
+
+
+autorifleman:
+  weapons:
+    primary:
+      name: LMG_Mk200_F
+      optics: optic_ACO_grn
+      magazine: 200#200Rnd_65x39_cased_Box
+  vest:
+    name: V_PlateCarrierIA2_dgtl
+    items:
+      - ACE_EntrenchingTool
+    magazines:
+      - 1x 200Rnd_65x39_cased_Box
+  backpack:
+    magazines:
+      - 2x 200Rnd_65x39_cased_Box
+
+
+autorifleman_assistant:
+  backpack:
+    magazines:
+      - 4x 200Rnd_65x39_cased_Box
+  vest:
+    items:
+      - ACE_EntrenchingTool
+    magazines:
+      - 8x 30#30Rnd_556x45_Stanag
+
+
+gunner:
+  weapons:
+    primary:
+      name: MMG_02_camo_F
+      magazine: 130#130Rnd_338_Mag
+      optics: optic_MRCO
+      underBarrel: bipod_01_F_snd
+  vest:
+    name: V_PlateCarrierIA2_dgtl
+    items:
+      - ACE_EntrenchingTool
+    magazines:
+      - 3x 130Rnd_338_Mag
+
+
+gunner_assistant:
+  backpack:
+    magazines:
+      - 4x 130Rnd_338_Mag
+  vest:
+    magazines:
+      - 8x 30#30Rnd_556x45_Stanag
+
+
+antitank:
+  weapons:
+    launcher:
+      name: launch_O_Vorona_green_F
+      magazine: Vorona_HEAT
+  backpack:
+    name: B_FieldPack_oli
+    magazines:
+      - Vorona_HEAT
+      - Vorona_HE
+  vest:
+    magazines:
+      - 8x 30#30Rnd_556x45_Stanag
+
+
+antitank_assistant:
+  backpack:
+    name: B_FieldPack_oli
+    magazines:
+      - 2x Vorona_HEAT
+      - Vorona_HE
+  vest:
+    magazines:
+      - 8x 30#30Rnd_556x45_Stanag
+
+
+antitank_light:
+  weapons:
+    launcher:
+      name: launch_MRAWS_olive_rail_F
+      magazine: MRAWS_HEAT_F
+  backpack:
+    name: B_FieldPack_oli
+    magazines:
+      - 2x MRAWS_HEAT_F
+      - MRAWS_HE_F
+  vest:
+    magazines:
+      - 8x 30#30Rnd_556x45_Stanag
+
+
+antipersonnel_light:
+  weapons:
+    launcher:
+      name: launch_MRAWS_olive_rail_F
+      magazine: MRAWS_HE_F
+  backpack:
+    name: B_FieldPack_oli
+    magazines:
+      - 2x MRAWS_HE_F
+  vest:
+    magazines:
+      - 8x 30#30Rnd_556x45_Stanag
+
+
+marksman:
+  weapons:
+    primary:
+      name: srifle_EBR_F
+      magazine: 20#20Rnd_762x51_Mag
+      underBarrel: bipod_02_F_hex
+      optics: optic_DMS
+    handgun:
+      name: hgun_ACPC2_F
+      magazine: 9#9Rnd_45ACP_Mag
+  uniform:
+    items:
+      - ACE_RangeCard
+      - ACE_microDAGR
+      - ACE_MapTools
+  vest:
+    name: V_PlateCarrierIA2_dgtl
+    magazines:
+      - 3x 9Rnd_45ACP_Mag
+      - 8x 20Rnd_762x51_Mag
+  binocular: Rangefinder
+  backpack:
+  headgear: H_Cap_blk_Raven
+
+
+sniper:
+  weapons:
+    primary:
+      name: srifle_GM6_camo_F
+      magazine: 5#5Rnd_127x108_Mag
+      optics: optic_LRPS
+    handgun:
+      name: hgun_ACPC2_F
+      magazine: 16#9Rnd_45ACP_Mag
+  uniform:
+    items:
+      - ACE_RangeCard
+      - ACE_Kestrel4500
+      - ACE_ATragMX
+      - ACE_microDAGR
+      - ACE_MapTools
+  vest:
+    name: V_PlateCarrierIA2_dgtl
+    magazines:
+      - 2x 9Rnd_45ACP_Mag
+      - 6x 5Rnd_127x108_Mag
+  backpack:
+    headgear: H_Cap_blk_Raven
+  binocular: Rangefinder
+
+spotter:
+  weapons:
+    primary:
+      name: arifle_Mk20C_F
+      optics: optic_ACO_grn
+      muzzle: muzzle_snds_M
+      magazine: 30#30Rnd_556x45_Stanag
+  vest:
+    magazines:
+      - 8x 30#30Rnd_556x45_Stanag
+    items:
+      - ACE_RangeCard
+      - ACE_Kestrel4500
+      - ACE_ATragMX
+      - ACE_microDAGR
+      - ACE_MapTools
+  backpack:
+    name: tf_anprc155
+  binocular: Rangefinder
+  headgear: H_Cap_blk_Raven
+
+
+explosive_specialist:
+  backpack:
+    magazines:
+      - 2x SatchelCharge_Remote_Mag
+  uniform:
+    items:
+      - ACE_DefusalKit
+      - ACE_Clacker
+  vest:
+    magazines:
+      - 8x 30#30Rnd_556x45_Stanag
+
+
+rifleman:
+  vest:
+    magazines:
+      - 12x 30#30Rnd_556x45_Stanag
+  backpack:
+
+
+driver:
+  weapons:
+    primary:
+      name: arifle_Mk20C_F
+      magazine: 30#30Rnd_556x45_Stanag
+      optics: optic_ACO_grn
+  uniform:
+    items:
+      - ACE_MapTools
+      - ACE_microDAGR
+  vest:
+    name: V_TacVest_oli
+    magazines:
+      - 5x 30#30Rnd_556x45_Stanag
+  binocular: Binocular
+  headgear: H_HelmetCrew_O
+  backpack:
+
+
+ground_crew:
+  weapons:
+    primary:
+      name: arifle_Mk20C_F
+      magazine: 30#30Rnd_556x45_Stanag
+      optics: optic_ACO_grn
+  vest:
+    name: V_TacVest_oli
+    magazines:
+      - 5x 30#30Rnd_556x45_Stanag
+  backpack:
+  headgear: H_HelmetCrew_O
+
+
+pilot:
+  weapons:
+    primary:
+      name: hgun_PDW2000_F
+      magazine: 30#30Rnd_9x21_Mag
+      optics: optic_ACO_grn
+  uniform:
+    name: U_I_HeliPilotCoveralls
+    items:
+      - ACE_MapTools
+      - ACE_microDAGR
+      - ItemGPS
+    magazines:
+      - 5x 30Rnd_9x21_Mag
+  vest:
+    name: V_TacVest_oli
+  headgear: H_PilotHelmetHeli_I
+  backpack:
+
+
+air_crew:
+  weapons:
+    primary:
+      name: hgun_PDW2000_F
+      magazine: 30#30Rnd_9x21_Mag
+      optics: optic_ACO_grn
+  uniform:
+    name: U_I_HeliPilotCoveralls
+    magazines:
+      - 5x 30Rnd_9x21_Mag
+  vest:
+    name: V_TacVest_oli
+  headgear: H_PilotHelmetHeli_I
+  backpack:
+
+
+op_drone:
+  uniform:
+    items:
+      - ACE_MapTools
+      - ACE_microDAGR
+  vest:
+    magazines:
+      - 8x 30#30Rnd_556x45_Stanag
+  backpack:
+    name:
+  binocular: Binocular
+
+
+op_radio:
+  vest:
+    magazines:
+      - 8x 30#30Rnd_556x45_Stanag
+  backpack:
+    name: tf_anprc155
+
+
+recon:
+  weapons:
+    primary:
+      name: arifle_Mk20C_F
+      optics: optic_ACO_grn
+      muzzle: muzzle_snds_M
+      magazine: 30#30Rnd_556x45_Stanag
+  uniform:
+    items:
+      - ACE_MapTools
+      - ACE_microDAGR
+  vest:
+    magazines:
+      - 8x 30#30Rnd_556x45_Stanag
+  backpack:
+  binocular: Binocular
+  headgear: H_Booniehat_dgtl
+
+turret_tripod_carrier:
+  vest:
+    magazines:
+      - 8x 30#30Rnd_556x45_Stanag
+  backpack:
+    name: I_HMG_01_support_F
+
+
+turret_gun_carrier:
+  vest:
+    magazines:
+      - 8x 30#30Rnd_556x45_Stanag
+  backpack:
+    name: I_HMG_01_weapon_F
