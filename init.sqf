@@ -55,6 +55,8 @@ tf_no_auto_long_range_radio = true;
 
 //// OMTK EXECUTION
 execVM "omtk\load_modules.sqf";
+// Création briefing
+execVM "omtk\briefing.sqf";
 
 // Logging des joueurs sur le serveur
 onPlayerConnected {[ _name + " - " + str(group player) + " - " + str(side player), "CONNECT", false] call omtk_log};
