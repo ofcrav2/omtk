@@ -1,0 +1,22 @@
+init.sqf
+
+
+
+//// Marqueur sur map spécifiques par camps
+
+if (!isDedicated) then
+{
+{_x setMarkerAlphaLocal 0} forEach ["spawnru","spawnus","mkus","mkru","mkru1","mkus1","mkus2","mkru2"];
+waitUntil {!isNull player};
+switch (side player) do
+{
+	case WEST:
+	{
+		{_x setMarkerAlphaLocal 1} forEach ["spawnus","mkus","mkus1","mkus2"];
+	};
+	case EAST:
+	{
+		{_x setMarkerAlphaLocal 1} forEach ["spawnru","mkru","mkru1","mkru2"];
+	};
+};
+};

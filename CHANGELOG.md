@@ -6,7 +6,11 @@
 @ bug fix  
 !! security patch  
 
-### V2.5.0 - 2018-11-??
+### V2.5.1 - 2019-02-18
+\+ [Spectator] Add spectator selector (side / all)
+\+ [omtk] add disconnection logging
+
+### V2.5.0 - 2019-01-30
 \+ [view_distance] add maximum view distance selector
 \+ [omtk] add connection logging
 \+ [OCAP] add OCAP capture at the end of mission, if available

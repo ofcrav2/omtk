@@ -23,11 +23,9 @@ OMTK_SB_LIST_OBJECTIFS = [
 ];
 
 OMTK_LM_BLUEFOR_OB = [
-
 ];
 
 OMTK_LM_REDFOR_OB = [
-
 ];
 
 ////// SPECIAL CONFIGURATION
@@ -59,4 +57,5 @@ execVM "omtk\load_modules.sqf";
 execVM "omtk\briefing.sqf";
 
 // Logging des joueurs sur le serveur
-onPlayerConnected {[ _name + " - " + str(group player) + " - " + str(side player), "CONNECT", false] call omtk_log};
+onPlayerConnected {[ _name + " - " + _uid, "CONNECT", false] call omtk_log};
+onPlayerDisconnected {[ _name + " - " + _uid, "DISCONNECT", false] call omtk_log};

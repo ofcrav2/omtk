@@ -2,7 +2,7 @@ author = "OFCRA"; 	// TO BE DEFINED
 onLoadName = "MISSION NAME";	// TO BE DEFINED
 onLoadMission = "www.ofcrav2.org";	// TO BE DEFINED
 onLoadIntro = "Prepare for the fight !";	// TO BE DEFINED
-briefingName = "" // TO BE DEFINED (nom de la mission, affiché dans la liste des missions sur l'interface du serveur)
+briefingName = "Nom de la mission" // TO BE DEFINED (nom de la mission, affiché dans la liste des missions sur l'interface du serveur)
 loadScreen = "loadscreen.jpg";
 Debriefing = 0;
 respawnOnStart = -1;
@@ -94,6 +94,14 @@ class Params
 		values[] = {0};
 		default = 0;
 	};
+	class OMTK_MODULE_SPECTATOR
+	{
+		title = "Spectator";
+		texts[] = {"all","team"};
+		values[] = {"","playerSide"};
+		default = "playerSide";
+	};
+
 	class OMTK_MODULE_DIFFICULTY_CHECK
 	{
 		title = "Difficulty check";
