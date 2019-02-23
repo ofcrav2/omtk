@@ -178,7 +178,7 @@ autorifleman:
     magazines:
       - 3x hlc_75Rnd_762x39_m_rpk
   uniform:
-    name: V_TacVest_blk
+    name: U_BG_leader
   vest:
     magazines:
       - 5x hlc_45Rnd_762x39_m_rpk
