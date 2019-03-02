@@ -4,7 +4,7 @@ default:
       name: rhs_weap_ak74mr
       optics: rhs_acc_1p87
       muzzle: rhs_acc_dtk3
-      magazine: 30#rhs_30Rnd_545x39_AK
+      magazine: 30#rhs_30Rnd_545x39_7N10_AK
     launcher:
       name:
       optics:
@@ -41,7 +41,7 @@ cdc:
       name: rhs_weap_ak74m_zenitco01
       optics: rhs_acc_1p29
       muzzle: rhs_acc_dtk3
-      magazine: 30#rhs_30Rnd_545x39_AK
+      magazine: 30#rhs_30Rnd_545x39_7N10_AK
     handgun:
       name: rhs_weap_pya
       magazine: 17#rhs_mag_9x19_17
@@ -52,7 +52,7 @@ cdc:
   vest:
     name: rhs_6b23_digi_6sh92_headset_mapcase
     magazines:
-      - 8x 30#rhs_30Rnd_545x39_AK
+      - 8x 30#rhs_30Rnd_545x39_7N10_AK
       - 2x 17#rhs_mag_9x19_17
   backpack:
     name: tf_mr3000_rhs
@@ -72,7 +72,7 @@ cdg:
       name: rhs_weap_ak74m_zenitco01
       optics: rhs_acc_1p29
       muzzle: rhs_acc_dtk3
-      magazine: 30#rhs_30Rnd_545x39_AK
+      magazine: 30#rhs_30Rnd_545x39_7N10_AK
     handgun:
       name: rhs_weap_pya
       magazine: 17#rhs_mag_9x19_17
@@ -83,7 +83,7 @@ cdg:
   vest:
     name: rhs_6b23_digi_6sh92_headset_mapcase
     magazines:
-      - 8x 30#rhs_30Rnd_545x39_AK
+      - 8x 30#rhs_30Rnd_545x39_7N10_AK
       - 2x 17#rhs_mag_9x19_17
   backpack:
     name: tf_mr3000_rhs
@@ -111,7 +111,7 @@ cde:
   vest:
     name: rhs_6b23_digi_6sh92_vog
     magazines:
-      - 8x 30#rhs_30Rnd_545x39_AK
+      - 8x 30#rhs_30Rnd_545x39_7N10_AK
   headgear: rhs_6b27m_digi_ess
   binocular: Binocular
 
@@ -121,7 +121,7 @@ medic:
   vest:
     name: rhs_6b23_digi_medic
     magazines:
-      - 8x 30#rhs_30Rnd_545x39_AK
+      - 8x 30#rhs_30Rnd_545x39_7N10_AK
       - 1x SmokeShell
       - 1x SmokeShellPurple
   backpack:
@@ -139,7 +139,7 @@ grenadier:
       name: rhs_weap_rshg2
       magazine: rhs_rshg2_mag
     primary:
-      name: rhs_weap_ak74m_gp25
+      name: rhs_weap_ak74mr_gp25
   backpack:
     magazines:
       - 3x rhs_VOG25
@@ -151,7 +151,7 @@ grenadier:
   vest:
     name: rhs_6b23_digi_6sh92_vog
     magazines:
-      - 8x 30#rhs_30Rnd_545x39_AK
+      - 8x 30#rhs_30Rnd_545x39_7N10_AK
 
 
 grenadier_assistant:
@@ -168,7 +168,7 @@ grenadier_assistant:
       - 3x rhs_VG40MD_Red
   vest:
     magazines:
-      - 8x 30#rhs_30Rnd_545x39_AK
+      - 8x 30#rhs_30Rnd_545x39_7N10_AK
 
 
 autorifleman:
@@ -194,7 +194,7 @@ autorifleman_assistant:
       - ACE_EntrenchingTool
   vest:
     magazines:
-      - 8x 30#rhs_30Rnd_545x39_AK
+      - 8x 30#rhs_30Rnd_545x39_7N10_AK
 
 
 gunner:
@@ -221,7 +221,7 @@ gunner_assistant:
       - ACE_EntrenchingTool
   vest:
     magazines:
-      - 8x 30#rhs_30Rnd_545x39_AK
+      - 8x 30#rhs_30Rnd_545x39_7N10_AK
 
 
 antitank:
@@ -238,7 +238,7 @@ antitank:
       - rhs_rpg7_OG7V_mag
   vest:
     magazines:
-      - 8x 30#rhs_30Rnd_545x39_AK
+      - 8x 30#rhs_30Rnd_545x39_7N10_AK
 
 
 antitank_assistant:
@@ -254,7 +254,7 @@ antitank_assistant:
       - rhs_rpg7_OG7V_mag
   vest:
     magazines:
-      - 8x 30#rhs_30Rnd_545x39_AK
+      - 8x 30#rhs_30Rnd_545x39_7N10_AK
 
 
 antitank_light:
@@ -264,7 +264,7 @@ antitank_light:
       magazine: rhs_rpg26_mag
   vest:
     magazines:
-      - 8x 30#rhs_30Rnd_545x39_AK
+      - 8x 30#rhs_30Rnd_545x39_7N10_AK
   backpack:
 
 
@@ -275,7 +275,7 @@ antipersonnel_light:
       magazine: rhs_rshg2_mag
   vest:
     magazines:
-      - 8x 30#rhs_30Rnd_545x39_AK
+      - 8x 30#rhs_30Rnd_545x39_7N10_AK
   backpack:
 
 
@@ -334,11 +334,11 @@ spotter:
       name: rhs_weap_ak74m_zenitco01
       optics: rhs_acc_1p29
       muzzle: rhs_acc_dtk3
-      magazine: 30#rhs_30Rnd_545x39_AK
+      magazine: 30#rhs_30Rnd_545x39_7N10_AK
   vest:
     name: rhs_6b23_digi_sniper
     magazines:
-      - 8x 30#rhs_30Rnd_545x39_AK
+      - 8x 30#rhs_30Rnd_545x39_7N10_AK
     items:
       - ACE_RangeCard
       - ACE_Kestrel4500
@@ -364,23 +364,23 @@ explosive_specialist:
       - ACE_Clacker
   vest:
     magazines:
-      - 8x 30#rhs_30Rnd_545x39_AK
+      - 8x 30#rhs_30Rnd_545x39_7N10_AK
 
 rifleman:
   vest:
     magazines:
-      - 8x 30#rhs_30Rnd_545x39_AK
+      - 8x 30#rhs_30Rnd_545x39_7N10_AK
   backpack:
 
 driver:
   weapons:
     primary:
       name: rhs_weap_aks74un
-      magazine: 30#rhs_30Rnd_545x39_AK
+      magazine: 30#rhs_30Rnd_545x39_7N10_AK
   vest:
     name: rhs_6b23_digi_crew
     magazines:
-      - 3x 30#rhs_30Rnd_545x39_AK
+      - 3x 30#rhs_30Rnd_545x39_7N10_AK
     items:
       - ACE_MapTools
       - ACE_microDAGR
@@ -393,11 +393,11 @@ ground_crew:
   weapons:
     primary:
       name: rhs_weap_aks74un
-      magazine: 30#rhs_30Rnd_545x39_AK
+      magazine: 30#rhs_30Rnd_545x39_7N10_AK
   vest:
     name: rhs_6b23_digi_crew
     magazines:
-      - 3x 30#rhs_30Rnd_545x39_AK
+      - 3x 30#rhs_30Rnd_545x39_7N10_AK
   backpack:
   headgear: rhs_tsh4
 
@@ -447,7 +447,7 @@ air_crew:
 op_drone:
   vest:
     magazines:
-      - 8x 30#rhs_30Rnd_545x39_AK
+      - 8x 30#rhs_30Rnd_545x39_7N10_AK
     items:
       - ACE_MapTools
       - ACE_microDAGR
@@ -458,7 +458,7 @@ op_drone:
 op_radio:
   vest:
     magazines:
-      - 8x 30#rhs_30Rnd_545x39_AK
+      - 8x 30#rhs_30Rnd_545x39_7N10_AK
   backpack:
     name: tf_mr3000_rhs
 
@@ -486,7 +486,7 @@ recon:
 turret_tripod_carrier:
   vest:
     magazines:
-      - 8x 30#rhs_30Rnd_545x39_AK
+      - 8x 30#rhs_30Rnd_545x39_7N10_AK
   backpack:
     name: RHS_Kord_Tripod_Bag
 
@@ -494,6 +494,6 @@ turret_tripod_carrier:
 turret_gun_carrier:
   vest:
     magazines:
-      - 8x 30#rhs_30Rnd_545x39_AK
+      - 8x 30#rhs_30Rnd_545x39_7N10_AK
   backpack:
     name: RHS_Kord_Gun_Bag
