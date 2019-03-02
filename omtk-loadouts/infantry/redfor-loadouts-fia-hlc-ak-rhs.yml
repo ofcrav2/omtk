@@ -177,8 +177,6 @@ autorifleman:
   backpack:
     magazines:
       - 3x hlc_75Rnd_762x39_m_rpk
-  uniform:
-    name: U_BG_leader
   vest:
     magazines:
       - 5x hlc_45Rnd_762x39_m_rpk

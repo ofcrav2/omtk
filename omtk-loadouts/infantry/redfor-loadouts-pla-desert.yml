@@ -1,0 +1,481 @@
+default:
+  weapons:
+    primary:
+      name: vme_pla_qbz95_1
+      optics:
+      muzzle:
+      underBarrel:
+      magazine: 30#VME_QBZ95_1_30Rnd_DBP10
+    launcher:
+      name:
+      optics:
+    handgun:
+      name:
+      magazine:
+  uniform:
+    name: PLA_CombatUniform_HM_SB
+    magazines:
+      - HandGrenade
+      - SmokeShell
+    items:
+      - 6x ACE_fieldDressing
+      - 4x ACE_morphine
+      - ACE_EarPlugs
+      - ACE_CableTie
+      - vme_camonet_FOR
+  vest:
+   name: PLA_T15Vest_RD_D_D
+  backpack:
+    name: PLADES_FieldPack_Medic
+    magazines:
+    items:
+  binocular:
+  map: ItemMap
+  compass: ItemCompass
+  radio: tf_anprc154
+  watch: tf_microdagr
+  headgear: VME_PLA_Helmet_D_G
+
+
+cdc:
+  weapons:
+    primary:
+      name: vme_pla_qbz03
+      optics: VME_95_1_PST
+      magazine: 30#VME_QBZ95_1_30Rnd_DBP10
+    handgun:
+      name: vme_pla_qsw06
+      magazine: 20#VME_QSZ92_20Rnd_DAP92
+  uniform:
+    items:
+      - ACE_MapTools
+      - ACE_microDAGR
+  vest:
+    name: PLA_T15Vest_RD_D_D
+    magazines:
+      - 8x 30#VME_QBZ95_1_30Rnd_DBP10
+      - 2x 20#VME_QSZ92_20Rnd_DAP92
+  backpack:
+    name: tf_anprc155_coyote
+    magazines:
+      - 4x SmokeShell
+      - 2x SmokeShellBlue
+      - 2x SmokeShellOrange
+      - 2x SmokeShellPurple
+      - 2x SmokeShellYellow
+  binocular: ACE_VectorDay
+  headgear: VME_PLA_Hat_D
+
+
+cdg:
+  weapons:
+    primary:
+      name: vme_pla_qbz03
+      optics: VME_95_1_PST
+      magazine: 30#VME_QBZ95_1_30Rnd_DBP10
+    handgun:
+      name: vme_pla_qsw06
+      magazine: 20#VME_QSZ92_20Rnd_DAP92
+  uniform:
+    items:
+      - ACE_MapTools
+      - ACE_microDAGR
+  vest:
+    name: PLA_T15Vest_RD_D_D
+    magazines:
+      - 8x 30#VME_QBZ95_1_30Rnd_DBP10
+      - 2x 20#VME_QSZ92_20Rnd_DAP92
+  backpack:
+    name: tf_anprc155_coyote
+    magazines:
+      - 4x SmokeShell
+      - 2x SmokeShellBlue
+      - 2x SmokeShellOrange
+      - 2x SmokeShellPurple
+      - 2x SmokeShellYellow
+  binocular: ACE_VectorDay
+  headgear: VME_PLA_Helmet_D_R
+
+
+cde:
+  weapons:
+    primary:
+      name: vme_pla_qbz95_1GL
+  backpack:
+    magazines:
+      - 6x VME_1Rnd_HE_GL
+      - 4x VME_1Rnd_Smoke_GL
+      - 2x 1Rnd_SmokeRed_Grenade_shell
+      - 2x 1Rnd_SmokeGreen_Grenade_shell
+      - 2x 1Rnd_SmokeYellow_Grenade_shell
+      - 2x 1Rnd_SmokePurple_Grenade_shell
+  vest:
+    name: PLA_T15Vest_RD_D
+    magazines:
+      - 8x 30#VME_QBZ95_1_30Rnd_DBP10
+  binocular: Binocular
+
+
+
+medic:
+  vest:
+    magazines:
+      - 8x 30#VME_QBZ95_1_30Rnd_DBP10
+      - SmokeShellBlue
+      - SmokeShellYellow
+  backpack:
+    magazines:
+      - 4x SmokeShell
+    items:
+      - 8x ACE_bloodIV
+      - 25x ACE_morphine
+      - 25x ACE_epinephrine
+      - 40x ACE_fieldDressing
+
+
+grenadier:
+  weapons:
+    primary:
+      name: vme_pla_qbz95_1GL
+    launcher:
+      name: vme_pla_WPF89_2
+  backpack:
+    magazines:
+      - 6x VME_1Rnd_HE_GL
+      - 4x VME_1Rnd_Smoke_GL
+      - 2x 1Rnd_SmokeRed_Grenade_shell
+      - 2x 1Rnd_SmokeGreen_Grenade_shell
+      - 2x 1Rnd_SmokeYellow_Grenade_shell
+      - 2x 1Rnd_SmokePurple_Grenade_shell
+  vest:
+    magazines:
+      - 8x 30#VME_QBZ95_1_30Rnd_DBP10
+
+
+grenadier_assistant:
+  backpack:
+    magazines:
+      - 6x VME_1Rnd_HE_GL
+      - 4x VME_1Rnd_Smoke_GL
+      - 2x 1Rnd_SmokeRed_Grenade_shell
+      - 2x 1Rnd_SmokeGreen_Grenade_shell
+      - 2x 1Rnd_SmokeYellow_Grenade_shell
+      - 2x 1Rnd_SmokePurple_Grenade_shell
+  vest:
+    magazines:
+      - 8x 30#VME_QBZ95_1_30Rnd_DBP10
+
+
+autorifleman:
+  weapons:
+    primary:
+      name: vme_pla_qjb95_1
+      magazine: 100#VME_QJB95_1_75Rnd_DBP10
+      underBarrel: vme_pla_qjb95_1
+  vest:
+    name: PLA_B04_MG_D
+    magazines:
+      - 4x VME_QJB95_1_75Rnd_DBP10
+  backpack:
+
+
+autorifleman_assistant:
+  backpack:
+    magazines:
+      - 6x VME_QJB95_1_75Rnd_DBP10
+  vest:
+    magazines:
+      - 8x 30#VME_QBZ95_1_30Rnd_DBP10
+
+
+gunner:
+  weapons:
+    primary:
+      name: VME_PLA_QJY88
+      magazine: 100#VME_QJY88_200Rnd_DBP10
+      optics: VME_QJY88_Scope
+  backpack:
+    magazines:
+      - 1x VME_QJY88_200Rnd_DBP10
+      - 1x VME_QJY88_200Rnd_DBP10_Tracer_Green
+    items:
+      - ACE_EntrenchingTool
+  vest:
+    name: PLA_B04_MG_D
+    magazines:
+      - 1x VME_QJY88_200Rnd_DBP10
+
+
+gunner_assistant:
+  backpack:
+    magazines:
+      - 2x VME_QJY88_200Rnd_DBP10
+      - 2x VME_QJY88_200Rnd_DBP10_Tracer_Green
+    items:
+      - ACE_EntrenchingTool
+  vest:
+    magazines:
+      - 8x 30#VME_QBZ95_1_30Rnd_DBP10
+
+
+antitank:
+  weapons:
+    launcher:
+      name: vme_pla_PF98
+      magazine: vme_pla_PF98_AT_Rocket
+  backpack:
+    magazines:
+      - vme_pla_PF98_AT_Rocket
+      - vme_pla_PF98_MP_Rocket
+  vest:
+    magazines:
+      - 8x 30#VME_QBZ95_1_30Rnd_DBP10
+
+
+antitank_assistant:
+  weapons:
+    launcher:
+      name: vme_pla_PF89
+  backpack:
+    magazines:
+      - vme_pla_PF98_AT_Rocket
+      - vme_pla_PF98_MP_Rocket
+  vest:
+    magazines:
+      - 8x 30#VME_QBZ95_1_30Rnd_DBP10
+
+
+antitank_light:
+  weapons:
+    launcher:
+      name: vme_pla_PF89
+  vest:
+    magazines:
+      - 8x 30#VME_QBZ95_1_30Rnd_DBP10
+  backpack:
+
+
+antipersonnel_light:
+  weapons:
+    launcher:
+      name: vme_pla_WPF89_2
+  vest:
+    magazines:
+      - 8x 30#VME_QBZ95_1_30Rnd_DBP10
+  backpack:
+
+
+marksman:
+  weapons:
+    primary:
+      name: vme_pla_qbu88
+      magazine: 10#VME_QBU88_10Rnd_DVP88_Sniper
+      optics: VME_QBU88_Scope
+      underBarrel: VME_qbu88_bipod
+    handgun:
+      name: vme_pla_qsw06
+      magazine: 20#VME_QSZ92_20Rnd_DAP92
+  vest:
+    name: PLA_T15Vest
+    items:
+      - ACE_RangeCard
+      - ACE_microDAGR
+    magazines:
+      - 2x VME_QSZ92_20Rnd_DAP92
+      - 10x 10#VME_QBU88_10Rnd_DVP88_Sniper
+  binocular: ACE_VectorDay
+  headgear: VME_PLA_Hat_D
+  backpack:
+
+sniper:
+  uniform:
+    name: PLA_CombatUniform_HM_SG
+  weapons:
+    primary:
+      name: vme_pla_LR4
+      magazine: 5#VME_LR4_5Rnd_M118_Special
+      optics: VME_LR4_Scope
+    handgun:
+      name: vme_pla_qsw06
+      magazine: 20#VME_QSZ92_20Rnd_DAP92
+  vest:
+    name: PLA_B04_RF_D
+    magazines:
+      - 2x VME_QSZ92_20Rnd_DAP92
+      - 10x 5#VME_LR4_5Rnd_M118_Special
+    items:
+      - ACE_RangeCard
+      - ACE_Kestrel4500
+      - ACE_ATragMX
+      - ACE_microDAGR
+  binocular: ACE_VectorDay
+  headgear: H_Booniehat_khk
+  backpack:
+
+spotter:
+  uniform:
+    name: PLA_CombatUniform_HM_SG
+  weapons:
+    primary:
+      name: vme_pla_qbz95B_1
+      muzzle: VME_QBZ95_1_Silencer
+      magazine: 30#VME_QBZ95_1_30Rnd_DBP10
+  vest:
+    name: PLA_B04_RF_D
+    magazines:
+      - 8x 30#VME_QBZ95_1_30Rnd_DBP10
+    items:
+      - ACE_RangeCard
+      - ACE_Kestrel4500
+      - ACE_ATragMX
+      - ACE_microDAGR
+      - ACE_MapTools
+  backpack:
+    name: tf_anprc155_coyote
+  binocular: ACE_VectorDay
+  headgear: H_Booniehat_khk
+
+
+explosive_specialist:
+  weapons:
+    launcher:
+      name: vme_pla_PF89
+  backpack:
+    magazines:
+      - 2x SatchelCharge_Remote_Mag
+  uniform:
+    items:
+      - ACE_DefusalKit
+      - ACE_Clacker
+  vest:
+    magazines:
+      - 8x 30#VME_QBZ95_1_30Rnd_DBP10
+
+rifleman:
+  vest:
+    magazines:
+      - 10x 30#VME_QBZ95_1_30Rnd_DBP10
+  backpack:
+
+driver:
+  uniform:
+    name: PLA_CombatUniform_HM_SG
+  weapons:
+    primary:
+      name: vme_pla_qcw05
+      magazine: 50#VME_QCW05_50Rnd_DCV05
+  vest:
+    name: V_TacVest_brn
+    magazines:
+      - 3x 50#VME_QCW05_50Rnd_DCV05
+    items:
+      - ACE_MapTools
+      - ACE_microDAGR
+  binocular: Binocular
+  headgear: VME_CREW_Cap
+  backpack:
+
+
+ground_crew:
+  uniform:
+    name: PLA_CombatUniform_HM_SG
+  weapons:
+    primary:
+      name: V_TacVest_brn
+      magazine: 50#VME_QCW05_50Rnd_DCV05
+  vest:
+    name: PLA_T15Vest
+    magazines:
+      - 3x 50#VME_QCW05_50Rnd_DCV05
+  binocular:
+  headgear: VME_CREW_Cap
+  backpack:
+
+
+pilot:
+  weapons:
+    primary:
+      name: vme_pla_qcw05
+      magazine: 50#VME_QCW05_50Rnd_DCV05
+  uniform:
+    name: PLA_Pilot_DES_Coveralls
+  vest:
+    name: V_TacVest_khk
+    magazines:
+      - 5x 50#VME_QCW05_50Rnd_DCV05
+    items:
+      - ACE_MapTools
+      - ACE_microDAGR
+      - ItemGPS
+  headgear: VME_Pilot_Heli_Helmet
+  backpack:
+
+
+air_crew:
+  weapons:
+    primary:
+      name: vme_pla_qcw05
+      magazine: 50#VME_QCW05_50Rnd_DCV05
+  uniform:
+    name: PLA_Pilot_DES_Coveralls
+  vest:
+    name: V_TacVest_khk
+    magazines:
+      - 5x 50#VME_QCW05_50Rnd_DCV05
+  headgear: VME_Pilot_Heli_Helmet
+  backpack:
+
+
+op_drone:
+  vest:
+    magazines:
+      - 8x 30#VME_QBZ95_1_30Rnd_DBP10
+    items:
+      - ACE_MapTools
+      - ACE_microDAGR
+  backpack:
+    name: PLA_UAV_backpack
+  binocular: Binocular
+
+op_radio:
+  vest:
+    magazines:
+      - 8x 30#VME_QBZ95_1_30Rnd_DBP10
+  backpack:
+    name: tf_anprc155_coyote
+
+
+recon:
+  uniform:
+    name: PLA_CombatUniform_HM_SG
+  weapons:
+    primary:
+      name: vme_pla_qbz95_1
+      magazine: 30#VME_QBZ95_1_30Rnd_DBP10
+      muzzle: VME_QBZ95_1_Silencer
+  vest:
+    name: PLA_B04_RF_D
+    magazines:
+      - 8x VME_QBZ95_1_30Rnd_DBP10
+    items:
+      - ACE_MapTools
+      - ACE_microDAGR
+  binocular: binocular
+  backpack:
+  headgear: H_Booniehat_khk
+
+
+turret_tripod_carrier:
+  vest:
+    magazines:
+      - 8x 30#VME_QBZ95_1_30Rnd_DBP10
+  backpack:
+    name: VME_PLA_Static_tripod
+
+
+turret_gun_carrier:
+  vest:
+    magazines:
+      - 8x 30#VME_QBZ95_1_30Rnd_DBP10
+  backpack:
+    name: VME_PLA_QJZ89_bag
