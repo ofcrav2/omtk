@@ -1,0 +1,448 @@
+default:
+  weapons:
+    primary:
+      name: hlc_rifle_g3a3v
+      optics:
+      muzzle:
+      underBarrel:
+      magazine: 20#hlc_20rnd_762x51_b_G3
+    launcher:
+      name:
+      optics:
+    handgun:
+      name:
+      magazine:
+  uniform:
+    name: UK3CB_UN_B_U_CombatUniform_TTSKO
+    magazines:
+      - rhs_mag_rgd5
+      - SmokeShell
+    items:
+      - 6x ACE_fieldDressing
+      - 4x ACE_morphine
+      - ACE_EarPlugs
+      - ACE_CableTie
+  vest:
+   name: UK3CB_UN_B_V_6b23_ml_02
+  backpack:
+    name: UK3CB_UN_B_B_ASS
+    magazines:
+    items:
+  binocular:
+  map: ItemMap
+  compass: ItemCompass
+  radio: tf_anprc154
+  watch: tf_microdagr
+  headgear: UK3CB_UN_B_H_6b27m_ESS
+
+
+cdc:
+  weapons:
+    primary:
+      optics: hlc_optic_STANAGZF_G3
+      magazine: 20#hlc_20rnd_762x51_b_G3
+    handgun:
+      name: rhsusf_weap_m1911a1
+      magazine: 7#rhsusf_mag_7x45acp_MHP
+  uniform:
+    name: UK3CB_UN_B_U_Officer_TTSKO
+    items:
+      - ACE_MapTools
+  vest:
+    name: UK3CB_UN_B_V_6b23_ML_6sh92_radio
+    magazines:
+      - 8x 20#hlc_20rnd_762x51_b_G3
+      - 2x 7#rhsusf_mag_7x45acp_MHP
+  backpack:
+    name: tf_anprc155_coyote
+    magazines:
+      - 4x SmokeShell
+      - 2x SmokeShellBlue
+      - 2x SmokeShellOrange
+      - 2x SmokeShellPurple
+      - 2x SmokeShellYellow
+  binocular: Binocular
+  headgear: UK3CB_UN_B_H_Beret
+
+
+cdg:
+  weapons:
+    primary:
+      optics: hlc_optic_STANAGZF_G3
+      magazine: 20#hlc_20rnd_762x51_b_G3
+    handgun:
+      name: rhsusf_weap_m1911a1
+      magazine: 7#rhsusf_mag_7x45acp_MHP
+  uniform:
+    name: UK3CB_UN_B_U_Officer_TTSKO
+    items:
+      - ACE_MapTools
+  vest:
+    name: UK3CB_UN_B_V_6b23_ML_6sh92_radio
+    magazines:
+      - 8x 20#hlc_20rnd_762x51_b_G3
+      - 2x 7#rhsusf_mag_7x45acp_MHP
+  backpack:
+    name: tf_anprc155_coyote
+    magazines:
+      - 4x SmokeShell
+      - 2x SmokeShellBlue
+      - 2x SmokeShellOrange
+      - 2x SmokeShellPurple
+      - 2x SmokeShellYellow
+  binocular: Binocular
+  headgear: UK3CB_UN_B_H_6b27m
+
+
+cde:
+  weapons:
+    primary:
+      name: rhs_weap_aks74n_gp25
+      magazine: 30#rhs_30Rnd_545x39_7N6M_AK
+      muzzle: rhs_acc_dtk1983
+  backpack:
+    magazines:
+      - 3x rhs_VOG25
+      - 3x rhs_VOG25P
+      - 4x rhs_GRD40_White
+      - 2x rhs_GRD40_Green
+      - 2x rhs_GRD40_Red
+  vest:
+    name: UK3CB_UN_B_V_6b23_ml_6sh92_vog
+    magazines:
+      - 8x rhs_30Rnd_545x39_7N6M_AK
+  binocular: Binocular
+
+
+
+medic:
+  vest:
+    magazines:
+      - 8x 20#hlc_20rnd_762x51_b_G3
+  backpack:
+    magazines:
+      - 4x SmokeShell
+      - SmokeShellBlue
+      - SmokeShellYellow
+    items:
+      - 8x ACE_bloodIV
+      - 25x ACE_morphine
+      - 25x ACE_epinephrine
+      - 40x ACE_fieldDressing
+
+
+grenadier:
+  weapons:
+    primary:
+      name: rhs_weap_aks74n_gp25
+      magazine: 30#rhs_30Rnd_545x39_7N6M_AK
+      muzzle: rhs_acc_dtk1983
+  backpack:
+    magazines:
+      - 3x rhs_VOG25
+      - 3x rhs_VOG25P
+      - 4x rhs_GRD40_White
+      - 2x rhs_GRD40_Green
+      - 2x rhs_GRD40_Red
+  vest:
+    name: UK3CB_UN_B_V_6b23_ml_6sh92_vog
+    magazines:
+      - 8x rhs_30Rnd_545x39_7N6M_AK
+
+
+grenadier_assistant:
+  backpack:
+    magazines:
+      - 3x rhs_VOG25
+      - 3x rhs_VOG25P
+      - 4x rhs_GRD40_White
+      - 2x rhs_GRD40_Green
+      - 2x rhs_GRD40_Red
+  vest:
+    magazines:
+      - 8x 20#hlc_20rnd_762x51_b_G3
+
+
+autorifleman:
+  weapons:
+    primary:
+      name: hlc_rifle_rpk74n
+      magazine: 45#hlc_45Rnd_545x39_m_rpk
+  vest:
+    magazines:
+      - 4x hlc_45Rnd_545x39_m_rpk
+  backpack:
+    magazines:
+      - 4x hlc_60Rnd_545x39_t_rpk
+
+
+autorifleman_assistant:
+  backpack:
+    magazines:
+      - 4x hlc_60Rnd_545x39_t_rpk
+      - 4x hlc_45Rnd_545x39_m_rpk
+  vest:
+    magazines:
+      - 8x 20#hlc_20rnd_762x51_b_G3
+
+
+gunner:
+  weapons:
+    primary:
+      name: rhs_weap_pkm
+      magazine: 100#rhs_100Rnd_762x54mmR_7N26
+  backpack:
+    magazines:
+      - 2x rhs_100Rnd_762x54mmR_7N26
+    items:
+      - ACE_EntrenchingTool
+  vest:
+    magazines:
+      - 1x rhs_100Rnd_762x54mmR_7N26
+
+
+gunner_assistant:
+  backpack:
+    magazines:
+      - 4x rhs_100Rnd_762x54mmR_7N26
+    items:
+      - ACE_EntrenchingTool
+  vest:
+    magazines:
+      - 8x 20#hlc_20rnd_762x51_b_G3
+
+
+antitank:
+  weapons:
+    launcher:
+      name: rhs_weap_rpg7
+      magazine: rhs_rpg7_PG7VL_mag
+      optics: rhs_acc_pgo7v
+  backpack:
+    name: rhs_rpg_empty
+    magazines:
+      - rhs_rpg7_PG7VL_mag
+      - rhs_rpg7_PG7VR_mag
+      - rhs_rpg7_OG7V_mag
+  vest:
+    magazines:
+      - 8x 20#hlc_20rnd_762x51_b_G3
+
+
+antitank_assistant:
+  backpack:
+    name: rhs_rpg_empty
+    magazines:
+      - rhs_rpg7_PG7VL_mag
+      - rhs_rpg7_PG7VR_mag
+      - rhs_rpg7_OG7V_mag
+  vest:
+    magazines:
+      - 8x 20#hlc_20rnd_762x51_b_G3
+
+
+antitank_light:
+  weapons:
+    launcher:
+      name: rhs_weap_rpg75
+  vest:
+    magazines:
+      - 8x 20#hlc_20rnd_762x51_b_G3
+  backpack:
+
+
+antipersonnel_light:
+  weapons:
+    launcher:
+      name: rhs_weap_rshg2
+  vest:
+    magazines:
+      - 8x 20#hlc_20rnd_762x51_b_G3
+  backpack:
+
+
+marksman:
+  weapons:
+    primary:
+      name: hlc_rifle_psg1
+      magazine: 20#hlc_20rnd_762x51_b_G3
+    handgun:
+      name: rhsusf_weap_m1911a1
+      magazine: 7#rhsusf_mag_7x45acp_MHP
+  vest:
+    items:
+      - ACE_RangeCard
+    magazines:
+      - 2x rhsusf_mag_7x45acp_MHP
+      - 10x hlc_20rnd_762x51_b_G3
+  binocular: Binocular
+  headgear: UK3CB_UN_B_H_Cap
+  backpack:
+
+sniper:
+  weapons:
+    primary:
+      name: rhs_weap_m24sws_wd
+      magazine: 5#rhsusf_5Rnd_762x51_m118_special_Mag
+      optics: rhsusf_acc_M8541_low_wd
+      underBarrel: rhsusf_acc_harris_swivel
+    handgun:
+      name: rhsusf_weap_m1911a1
+      magazine: 7#rhsusf_mag_7x45acp_MHP
+  vest:
+    magazines:
+      - 2x rhsusf_mag_7x45acp_MHP
+      - 10x rhsusf_5Rnd_762x51_m118_special_Mag
+    items:
+      - ACE_RangeCard
+  binocular: Binocular
+  headgear: UK3CB_UN_B_H_Cap
+  backpack:
+
+spotter:
+  weapons:
+    primary:
+      name: hlc_rifle_hk51
+      muzzle: muzzle_snds_B
+      magazine: 20#hlc_20rnd_762x51_b_G3
+  vest:
+    magazines:
+      - 8x 20#hlc_20rnd_762x51_b_G3
+    items:
+      - ACE_RangeCard
+      - ACE_MapTools
+  backpack:
+    name: tf_anprc155_coyote
+  binocular: Binocular
+  headgear: UK3CB_UN_B_H_Cap
+
+
+explosive_specialist:
+  backpack:
+    magazines:
+      - 2x SatchelCharge_Remote_Mag
+  uniform:
+    items:
+      - ACE_DefusalKit
+      - ACE_Clacker
+  vest:
+    magazines:
+      - 8x 20#hlc_20rnd_762x51_b_G3
+
+rifleman:
+  vest:
+    magazines:
+      - 12x 20#hlc_20rnd_762x51_b_G3
+  backpack:
+
+driver:
+  weapons:
+    primary:
+      name: rhs_weap_aks74un
+      magazine: 30#rhs_30Rnd_545x39_7N6M_AK
+  vest:
+    name: UK3CB_UN_B_V_6b23_ml_crew
+    magazines:
+      - 3x 50#VME_QCW05_50Rnd_DCV05
+    items:
+      - ACE_MapTools
+  binocular: Binocular
+  headgear: rhs_tsh4
+  backpack:
+
+
+ground_crew:
+  weapons:
+    primary:
+      name: rhs_weap_aks74un
+      magazine: 30#rhs_30Rnd_545x39_7N6M_AK
+  vest:
+    name: UK3CB_UN_B_V_6b23_ml_crew
+    magazines:
+      - 3x 50#VME_QCW05_50Rnd_DCV05
+  binocular: Binocular
+  headgear: rhs_tsh4
+  backpack:
+
+
+pilot:
+  weapons:
+    primary:
+      name: rhs_weap_aks74un
+      magazine: 30#rhs_30Rnd_545x39_7N6M_AK
+  uniform:
+    name: UK3CB_UN_B_U_H_Pilot_TTSKO
+  vest:
+    name: UK3CB_V_Pilot_Vest
+    magazines:
+      - 3x rhs_30Rnd_545x39_7N6M_AK
+    items:
+      - ACE_MapTools
+  headgear: UK3CB_TKA_O_H_zsh7a_mike_Des
+  backpack:
+
+
+air_crew:
+  weapons:
+    primary:
+      name: rhs_weap_aks74un
+      magazine: 30#rhs_30Rnd_545x39_7N6M_AK
+  uniform:
+    name: UK3CB_UN_B_U_H_Pilot_TTSKO
+  vest:
+    name: UK3CB_V_Pilot_Vest
+    magazines:
+      - 3x rhs_30Rnd_545x39_7N6M_AK
+  headgear: UK3CB_TKA_O_H_zsh7a_mike_Des
+  backpack:
+
+
+op_drone:
+  vest:
+    magazines:
+      - 8x 20#hlc_20rnd_762x51_b_G3
+    items:
+      - ACE_MapTools
+      - ACE_microDAGR
+  backpack:
+  binocular: Binocular
+
+op_radio:
+  vest:
+    magazines:
+      - 8x 20#hlc_20rnd_762x51_b_G3
+  backpack:
+    name: tf_anprc155_coyote
+
+
+recon:
+  weapons:
+    primary:
+      name: hlc_rifle_hk51
+      muzzle: muzzle_snds_B
+      magazine: 20#hlc_20rnd_762x51_b_G3
+  vest:
+    name: UK3CB_UN_B_V_6b23_ML_6sh92_radio
+    magazines:
+      - 8x hlc_20rnd_762x51_b_G3
+    items:
+      - ACE_MapTools
+  binocular: binocular
+  backpack:
+  headgear: UK3CB_UN_B_H_Cap
+
+
+turret_tripod_carrier:
+  vest:
+    magazines:
+      - 8x 20#hlc_20rnd_762x51_b_G3
+  backpack:
+    name: RHS_DShkM_TripodLow_Bag
+
+
+turret_gun_carrier:
+  vest:
+    magazines:
+      - 8x 20#hlc_20rnd_762x51_b_G3
+  backpack:
+    name: RHS_DShkM_Gun_Bag

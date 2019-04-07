@@ -381,7 +381,7 @@ ground_crew:
     name: PLA_CombatUniform_HM_SG
   weapons:
     primary:
-      name: V_TacVest_brn
+      name: vme_pla_qcw05
       magazine: 50#VME_QCW05_50Rnd_DCV05
   vest:
     name: PLA_T15Vest
