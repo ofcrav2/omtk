@@ -343,7 +343,7 @@ driver:
   vest:
     name: UK3CB_UN_B_V_6b23_ml_crew
     magazines:
-      - 3x 50#VME_QCW05_50Rnd_DCV05
+      - 3x rhs_30Rnd_545x39_7N6M_AK
     items:
       - ACE_MapTools
   binocular: Binocular
@@ -359,7 +359,7 @@ ground_crew:
   vest:
     name: UK3CB_UN_B_V_6b23_ml_crew
     magazines:
-      - 3x 50#VME_QCW05_50Rnd_DCV05
+      - 3x rhs_30Rnd_545x39_7N6M_AK
   binocular: Binocular
   headgear: rhs_tsh4
   backpack:

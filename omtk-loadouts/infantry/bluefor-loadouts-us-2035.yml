@@ -325,7 +325,7 @@ sniper:
       - 2x 16Rnd_9x21_Mag
       - 10x 7Rnd_408_Mag
   backpack:
-    headgear: H_Booniehat_mcamo
+  headgear: H_Booniehat_mcamo
   binocular: Rangefinder
 
 spotter:
