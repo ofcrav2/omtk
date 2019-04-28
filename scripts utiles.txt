@@ -20,3 +20,22 @@ switch (side player) do
 	};
 };
 };
+
+
+///////////// Pour empêcher une IA de bouger:
+this disableAI "MOVE";
+
+///////////// Pour afficher les ID objets dans l'éditeur:
+do3DENAction "ToggleMapIDs";
+>> A mettre dans la console de débug.
+
+///////////// Afficher le score board à la fin de la mission:
+[] call omtk_sb_compute_scoreboard;
+[] call omtk_sb_start_mission_end;
+[] call ocap_fnc_exportData; 
+
+///////////// Afficher le nom d'un joueur lorqu'il rentre dans une zone:
+hint parseText format["<t size='1.30' font='PuristaMedium' color='#0000ff'>texte<br />ici</t>"];
+hint parseText (format["Texte en titre:<br/><img size='10' image='Votre image.paa'/><br/> %1", playerName]); 
+
+>> A mettre dans le champ "init" d'un trigger.
