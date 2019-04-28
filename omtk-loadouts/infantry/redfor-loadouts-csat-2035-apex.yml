@@ -37,7 +37,6 @@ default:
 cdc:
   weapons:
     primary:
-      name: arifle_Katiba_F
       optics: optic_Arco_ghex_F
       underBarrel:
       magazine: 30#30Rnd_580x42_Mag_F
@@ -68,7 +67,6 @@ cdc:
 cdg:
   weapons:
     primary:
-      name: arifle_Katiba_F
       optics: optic_Arco_ghex_F
       underBarrel:
       magazine: 30#30Rnd_580x42_Mag_F
@@ -93,7 +91,7 @@ cdg:
       - 1x ACE_M84
       - 1x SmokeShellPurple
   binocular: Rangefinder
-  headgear: H_Beret_02
+  headgear: H_MilCap_ghex_F
 
 
 cde:
