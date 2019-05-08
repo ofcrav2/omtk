@@ -1,0 +1,480 @@
+default:
+  weapons:
+    primary:
+      name: UK3CB_BAF_L85A2
+      optics:
+      muzzle:
+      underBarrel:
+      magazine: 30#UK3CB_BAF_556_30Rnd
+    launcher:
+      name:
+      optics:
+    handgun:
+      name:
+      magazine:
+  uniform:
+    name: UK3CB_BAF_U_CombatUniform_DPMT
+    magazines:
+      - HandGrenade
+      - UK3CB_BAF_SmokeShell
+    items:
+      - 6x ACE_fieldDressing
+      - 4x ACE_morphine
+      - ACE_EarPlugs
+      - ACE_CableTie
+  vest:
+    name: UK3CB_BAF_V_Osprey_DPMT8
+  backpack:
+    name: UK3CB_BAF_B_Bergen_DPMT_Rifleman_A
+  binocular:
+  map: ItemMap
+  compass: ItemCompass
+  radio: ItemRadio
+  watch: tf_microdagr
+  headgear: UK3CB_BAF_H_Mk6_DPMT_A
+
+
+cdc:
+  weapons:
+    primary:
+      optics: UK3CB_BAF_SUSAT
+      magazine: 30#UK3CB_BAF_556_30Rnd
+    handgun:
+      name: UK3CB_BAF_L105A1
+      magazine: 15#UK3CB_BAF_9_15Rnd
+  uniform:
+    items:
+      - ACE_MapTools
+      - ACE_microDAGR
+  vest:
+    name: UK3CB_BAF_V_Osprey_DPMT8
+    magazines:
+      - 3x 15#UK3CB_BAF_9_15Rnd
+      - 8x 30#UK3CB_BAF_556_30Rnd
+  backpack:
+    name: UK3CB_BAF_B_Bergen_DPMT_SL_A
+    magazines:
+      - 4x UK3CB_BAF_SmokeShell
+      - 2x UK3CB_BAF_SmokeShellGreen
+      - 2x UK3CB_BAF_SmokeShellOrange
+      - 2x UK3CB_BAF_SmokeShellRed
+      - 2x UK3CB_BAF_SmokeShellBlue
+  binocular: Rangefinder
+  headgear: UK3CB_BAF_H_Beret_RM_Recruit_PRR
+
+
+cdg:
+  weapons:
+    primary:
+      optics: UK3CB_BAF_SUSAT
+      magazine: 30#UK3CB_BAF_556_30Rnd
+    handgun:
+      name: UK3CB_BAF_L105A1
+      magazine: 15#UK3CB_BAF_9_15Rnd
+  uniform:
+    items:
+      - ACE_MapTools
+      - ACE_microDAGR
+  vest:
+    name: UK3CB_BAF_V_Osprey_DPMT8
+    magazines:
+      - 3x 15#UK3CB_BAF_9_15Rnd
+      - 8x 30#UK3CB_BAF_556_30Rnd
+  backpack:
+    name: UK3CB_BAF_B_Bergen_DPMT_SL_A
+    magazines:
+      - 4x UK3CB_BAF_SmokeShell
+      - 2x UK3CB_BAF_SmokeShellGreen
+      - 2x UK3CB_BAF_SmokeShellOrange
+      - 2x UK3CB_BAF_SmokeShellRed
+      - 2x UK3CB_BAF_SmokeShellBlue
+  binocular: Rangefinder
+  headgear: UK3CB_BAF_H_Boonie_DPMT
+
+
+cde:
+  weapons:
+    primary:
+      name: UK3CB_BAF_L85A2_UGL
+      optics: UK3CB_BAF_SUSAT
+      underBarrel:
+  vest:
+    name: UK3CB_BAF_V_Osprey_DPMT3
+    magazines:
+      - 8x 30#UK3CB_BAF_556_30Rnd
+  backpack:
+    magazines:
+      - 3x UK3CB_BAF_1Rnd_HE_Grenade_Shell
+      - 3x UK3CB_BAF_1Rnd_HEDP_Grenade_Shell
+      - 4x UK3CB_BAF_1Rnd_Smoke_Grenade_shell
+      - 2x UK3CB_BAF_1Rnd_SmokeGreen_Grenade_shell
+      - 2x UK3CB_BAF_1Rnd_SmokeRed_Grenade_shell
+      - 2x UK3CB_BAF_1Rnd_SmokeBlue_Grenade_shell
+  headgear: UK3CB_BAF_H_Mk6_DPMT_A
+  binocular: Binocular
+
+
+
+medic:
+  vest:
+    name: UK3CB_BAF_V_Osprey_DPMT8
+    magazines:
+      - 8x 30#UK3CB_BAF_556_30Rnd
+      - 1x UK3CB_BAF_SmokeShell
+      - 1x UK3CB_BAF_SmokeShellGreen
+  backpack:
+    items:
+      - 6x ACE_bloodIV
+      - 25x ACE_morphine
+      - 25x ACE_epinephrine
+      - 40x ACE_fieldDressing
+  headgear: UK3CB_BAF_H_Boonie_DPMT
+
+
+grenadier:
+  weapons:
+    primary:
+      name: UK3CB_BAF_L85A2_UGL
+      underBarrel:
+    launcher:
+      name: UK3CB_BAF_AT4_CS_AP_Launcher
+  vest:
+    name: UK3CB_BAF_V_Osprey_DPMT3
+    magazines:
+      - 8x 30#UK3CB_BAF_556_30Rnd
+  backpack:
+    magazines:
+      - 3x UK3CB_BAF_1Rnd_HE_Grenade_Shell
+      - 3x UK3CB_BAF_1Rnd_HEDP_Grenade_Shell
+      - 4x UK3CB_BAF_1Rnd_Smoke_Grenade_shell
+      - 2x UK3CB_BAF_1Rnd_SmokeGreen_Grenade_shell
+      - 2x UK3CB_BAF_1Rnd_SmokeRed_Grenade_shell
+      - 2x UK3CB_BAF_1Rnd_SmokeBlue_Grenade_shell
+
+
+
+grenadier_assistant:
+  weapons:
+    launcher:
+      name: UK3CB_BAF_AT4_CS_AP_Launcher
+  backpack:
+    magazines:
+      - 3x UK3CB_BAF_1Rnd_HE_Grenade_Shell
+      - 3x UK3CB_BAF_1Rnd_HEDP_Grenade_Shell
+      - 4x UK3CB_BAF_1Rnd_Smoke_Grenade_shell
+      - 2x UK3CB_BAF_1Rnd_SmokeGreen_Grenade_shell
+      - 2x UK3CB_BAF_1Rnd_SmokeRed_Grenade_shell
+      - 2x UK3CB_BAF_1Rnd_SmokeBlue_Grenade_shell
+  vest:
+    magazines:
+      - 8x 30#UK3CB_BAF_556_30Rnd
+
+
+autorifleman:
+  weapons:
+    primary:
+      name: UK3CB_BAF_L110A2
+      magazine: 200#UK3CB_BAF_556_200Rnd
+      underBarrel:
+  vest:
+    name: UK3CB_BAF_V_Osprey_DPMT8
+    items:
+      - ACE_EntrenchingTool
+    magazines:
+      - 2x UK3CB_BAF_556_200Rnd
+  backpack:
+    magazines:
+      - 2x UK3CB_BAF_556_200Rnd
+
+
+autorifleman_assistant:
+  backpack:
+    magazines:
+      - 4x UK3CB_BAF_556_200Rnd
+  vest:
+    items:
+      - ACE_EntrenchingTool
+    magazines:
+      - 8x 30#UK3CB_BAF_556_30Rnd
+
+
+gunner:
+  weapons:
+    primary:
+      name: UK3CB_BAF_L7A2
+      magazine: 100#UK3CB_BAF_762_100Rnd
+      underBarrel:
+  vest:
+    name: UK3CB_BAF_V_Osprey_DPMT8
+    items:
+      - ACE_EntrenchingTool
+    magazines:
+      - 3x 100#UK3CB_BAF_762_100Rnd
+
+
+gunner_assistant:
+  backpack:
+    magazines:
+      - 5x 100#UK3CB_BAF_762_100Rnd
+  vest:
+    magazines:
+      - 8x 30#UK3CB_BAF_556_30Rnd
+
+
+antitank:
+  weapons:
+    launcher:
+      name: UK3CB_BAF_NLAW_Launcher
+  vest:
+    magazines:
+      - 8x 30#UK3CB_BAF_556_30Rnd
+
+
+antitank_assistant:
+  weapons:
+    launcher:
+      name: UK3CB_BAF_AT4_CS_AT_Launcher
+  vest:
+    magazines:
+      - 8x 30#UK3CB_BAF_556_30Rnd
+
+
+antitank_light:
+  weapons:
+    launcher:
+      name: UK3CB_BAF_AT4_CS_AT_Launcher
+  vest:
+    magazines:
+      - 8x 30#UK3CB_BAF_556_30Rnd
+  backpack:
+
+
+antipersonnel_light:
+  weapons:
+    launcher:
+      name: UK3CB_BAF_AT4_CS_AP_Launcher
+  vest:
+    magazines:
+      - 8x 30#UK3CB_BAF_556_30Rnd
+  backpack:
+
+
+marksman:
+  weapons:
+    primary:
+      name: UK3CB_BAF_L129A1
+      magazine: 20#UK3CB_BAF_762_L42A1_20Rnd
+      underBarrel: UK3CB_underbarrel_acc_fgrip_bipod
+      optics: UK3CB_BAF_TA648_308
+    handgun:
+      name: UK3CB_BAF_L105A1
+      magazine: 15#UK3CB_BAF_9_15Rnd
+  uniform:
+    items:
+      - ACE_RangeCard
+      - ACE_microDAGR
+      - ACE_MapTools
+  vest:
+    name: UK3CB_BAF_V_Osprey_DPMT8
+    magazines:
+      - 3x 15#UK3CB_BAF_9_15Rnd
+      - 4x 20#UK3CB_BAF_762_L42A1_20Rnd
+  binocular: Rangefinder
+  backpack:
+    magazines:
+      - 6x 20#UK3CB_BAF_762_L42A1_20Rnd
+  headgear: UK3CB_BAF_H_Boonie_DPMT
+
+
+sniper:
+  weapons:
+    primary:
+      name: UK3CB_BAF_L115A3
+      magazine: 5#UK3CB_BAF_338_5Rnd
+      optics: optic_LRPS
+    handgun:
+      name: UK3CB_BAF_L105A1
+      magazine: 15#UK3CB_BAF_9_15Rnd
+  uniform:
+    items:
+      - ACE_RangeCard
+      - ACE_Kestrel4500
+      - ACE_ATragMX
+      - ACE_microDAGR
+      - ACE_MapTools
+  vest:
+    name: UK3CB_BAF_V_Osprey_DPMT8
+    magazines:
+      - 2x 15#UK3CB_BAF_9_15Rnd
+      - 10x 5#UK3CB_BAF_338_5Rnd
+  backpack:
+  headgear: UK3CB_BAF_H_Boonie_DPMT
+  binocular: Rangefinder
+
+spotter:
+  weapons:
+    primary:
+      name: UK3CB_BAF_L119A1
+      optics: UK3CB_BAF_TA31F
+      muzzle: UK3CB_BAF_Silencer_L85
+      magazine: 30#UK3CB_BAF_556_30Rnd
+  vest:
+    magazines:
+      - 8x 30#UK3CB_BAF_556_30Rnd
+    items:
+      - ACE_RangeCard
+      - ACE_Kestrel4500
+      - ACE_ATragMX
+      - ACE_microDAGR
+      - ACE_MapTools
+  backpack:
+    name: UK3CB_BAF_B_Bergen_DPMT_SL_A
+  binocular: Rangefinder
+  headgear: UK3CB_BAF_H_Boonie_DPMT
+
+
+explosive_specialist:
+  weapons:
+    launcher:
+      name: UK3CB_BAF_AT4_CS_AT_Launcher
+  backpack:
+    magazines:
+      - 2x SatchelCharge_Remote_Mag
+  uniform:
+    items:
+      - ACE_DefusalKit
+      - ACE_Clacker
+  vest:
+    magazines:
+      - 8x 30#UK3CB_BAF_556_30Rnd
+
+
+rifleman:
+  vest:
+    magazines:
+      - 12x 30#UK3CB_BAF_556_30Rnd
+  backpack:
+
+
+driver:
+  weapons:
+    primary:
+      name: UK3CB_BAF_L22
+      magazine: 30#UK3CB_BAF_556_30Rnd
+  uniform:
+    items:
+      - ACE_MapTools
+      - ACE_microDAGR
+  vest:
+    name: UK3CB_BAF_V_Osprey_DPMT1
+    magazines:
+      - 5x 30#UK3CB_BAF_556_30Rnd
+  binocular: Binocular
+  headgear: UK3CB_BAF_H_CrewHelmet_DPMT_A
+  backpack:
+
+
+ground_crew:
+  weapons:
+    primary:
+      name: UK3CB_BAF_L22
+      magazine: 30#UK3CB_BAF_556_30Rnd
+  vest:
+    name: UK3CB_BAF_V_Osprey_DPMT1
+    magazines:
+      - 5x 30#UK3CB_BAF_556_30Rnd
+  backpack:
+  headgear: UK3CB_BAF_H_CrewHelmet_DPMT_A
+
+
+pilot:
+  weapons:
+    primary:
+      name: UK3CB_BAF_L91A1
+      magazine: 30#UK3CB_BAF_9_30Rnd
+  uniform:
+    name: UK3CB_BAF_U_HeliPilotCoveralls_Army
+    items:
+      - ACE_MapTools
+      - ACE_microDAGR
+      - ItemGPS
+    magazines:
+      - 5x 30#UK3CB_BAF_9_30Rnd
+  vest:
+    name: UK3CB_BAF_V_Pilot_DPMT
+  headgear: UK3CB_BAF_H_PilotHelmetHeli_A
+  backpack:
+
+
+air_crew:
+  weapons:
+    primary:
+      name: UK3CB_BAF_L91A1
+      magazine: 30#UK3CB_BAF_9_30Rnd
+  uniform:
+    name: UK3CB_BAF_U_HeliPilotCoveralls_Army
+    magazines:
+      - 5x 40#UK3CB_BAF_9_30Rnd
+  vest:
+    name: UK3CB_BAF_V_Pilot_DPMT
+  headgear: UK3CB_BAF_H_PilotHelmetHeli_A
+  backpack:
+
+
+op_drone:
+  uniform:
+    items:
+      - ACE_MapTools
+      - ACE_microDAGR
+  vest:
+    magazines:
+      - 8x 30#UK3CB_BAF_556_30Rnd
+  backpack:
+    name:
+  binocular: Binocular
+
+
+op_radio:
+  vest:
+    magazines:
+      - 8x 30#UK3CB_BAF_556_30Rnd
+  backpack:
+    name: UK3CB_BAF_B_Bergen_DPMT_SL_A
+
+
+recon:
+  weapons:
+    primary:
+      name: UK3CB_BAF_L119A1
+      optics: UK3CB_BAF_TA31F
+      muzzle: UK3CB_BAF_Silencer_L85
+      magazine: 30#UK3CB_BAF_556_30Rnd
+  uniform:
+    items:
+      - ACE_MapTools
+      - ACE_microDAGR
+  vest:
+    magazines:
+      - 8x 30#UK3CB_BAF_556_30Rnd
+  backpack:
+  binocular: Binocular
+  headgear: UK3CB_BAF_H_Boonie_DPMT
+
+turret_tripod_carrier:
+  weapons:
+    launcher:
+      name: UK3CB_BAF_Tripod
+  vest:
+    magazines:
+      - 8x 30#UK3CB_BAF_556_30Rnd
+  backpack:
+
+
+turret_gun_carrier:
+  weapons:
+    launcher:
+      name: UK3CB_BAF_L111A1
+  vest:
+    magazines:
+      - 8x 30#UK3CB_BAF_556_30Rnd
+  backpack:

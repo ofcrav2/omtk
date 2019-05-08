@@ -1,0 +1,465 @@
+default:
+  weapons:
+    primary:
+      name: rhs_weap_vhsd2_grip2
+      optics: rhsusf_acc_RX01_NoFilter
+      muzzle:
+      underBarrel: rhsusf_acc_grip2
+      magazine: 30#rhsgref_30rnd_556x45_vhs2
+    launcher:
+      name:
+      optics:
+    handgun:
+      name:
+      magazine:
+  uniform:
+    name: m93_dm
+    magazines:
+      - rhs_mag_m67
+      - rhs_mag_an_m8hc
+    items:
+      - 6x ACE_fieldDressing
+      - 4x ACE_morphine
+      - ACE_EarPlugs
+      - ACE_CableTie
+  vest:
+   name: mbavr_r
+  backpack:
+    name: B_Kitbag_rgr
+    magazines:
+    items:
+  binocular:
+  map: ItemMap
+  compass: ItemCompass
+  radio: ItemRadio
+  watch: tf_microdagr
+  headgear: pasgt_dmg
+
+
+cdc:
+  weapons:
+    primary:
+      optics: rhsusf_acc_su230_mrds
+      magazine: 30#rhsgref_30rnd_556x45_vhs2
+    handgun:
+      name: rhsusf_weap_glock17g4
+      magazine: 17#rhsusf_mag_17Rnd_9x19_JHP
+  uniform:
+    items:
+      - ACE_MapTools
+      - ACE_microDAGR
+  vest:
+    magazines:
+      - 8x 30#rhsgref_30rnd_556x45_vhs2
+      - 2x 17#rhsusf_mag_17Rnd_9x19_JHP
+  backpack:
+    name: tf_rt1523g_bwmod
+    magazines:
+      - 2x SmokeShell
+      - 1x SmokeShellRed
+      - 1x rhs_mag_mk84
+      - 2x SmokeShellPurple
+      - 2x SmokeShellOrange
+      - 2x SmokeShellYellow
+      - 2x SmokeShellGreen
+  binocular: lerca_1200_black
+  headgear: H_Beret_02
+
+
+cdg:
+  weapons:
+    primary:
+      optics: rhsusf_acc_su230_mrds
+      magazine: 30#rhsgref_30rnd_556x45_vhs2
+    handgun:
+      name: rhsusf_weap_glock17g4
+      magazine: 17#rhsusf_mag_17Rnd_9x19_JHP
+  uniform:
+    items:
+      - ACE_MapTools
+      - ACE_microDAGR
+  vest:
+    magazines:
+      - 8x 30#rhsgref_30rnd_556x45_vhs2
+      - 2x 17#rhsusf_mag_17Rnd_9x19_JHP
+  backpack:
+    name: tf_rt1523g_bwmod
+    magazines:
+      - 2x SmokeShell
+      - 1x SmokeShellRed
+      - 1x rhs_mag_mk84
+      - 2x SmokeShellPurple
+      - 2x SmokeShellOrange
+      - 2x SmokeShellYellow
+      - 2x SmokeShellGreen
+  binocular: lerca_1200_black
+  headgear: pasgt_dmg
+
+
+cde:
+  weapons:
+    primary:
+      name: rhs_weap_vhsd2_bg
+      magazine: 30#rhsgref_30rnd_556x45_vhs2
+  vest:
+    name: mbavr_gl
+    magazines:
+      - 8x rhsgref_30rnd_556x45_vhs2
+      - 3x rhs_mag_M441_HE
+      - 3x rhs_mag_M433_HEDP
+      - 4x rhs_mag_m714_White
+      - 2x rhs_mag_m715_Green
+      - 2x rhs_mag_m713_Red
+      - 2x rhs_mag_m4009
+  binocular: Binocular
+  backpack:
+  headgear: H_Watchcap_khk
+
+
+
+medic:
+  vest:
+    name: mbavr_m
+    magazines:
+      - 8x 30#rhsgref_30rnd_556x45_vhs2
+  backpack:
+    magazines:
+      - 4x SmokeShell
+      - SmokeShellPurple
+      - SmokeShellYellow
+    items:
+      - 8x ACE_bloodIV
+      - 25x ACE_morphine
+      - 25x ACE_epinephrine
+      - 40x ACE_fieldDressing
+
+
+grenadier:
+  weapons:
+    primary:
+      name: rhs_weap_vhsd2_bg
+      magazine: 30#rhsgref_30rnd_556x45_vhs2
+    launcher:
+      name: rhs_weap_M136_hedp
+      magazine: rhs_m136_hedp_mag
+  vest:
+    name: mbavr_gl
+    magazines:
+      - 8x rhsgref_30rnd_556x45_vhs2
+      - 3x rhs_mag_M441_HE
+      - 3x rhs_mag_M433_HEDP
+      - 4x rhs_mag_m714_White
+      - 2x rhs_mag_m715_Green
+      - 2x rhs_mag_m713_Red
+      - 2x rhs_mag_m4009
+  backpack:
+
+grenadier_assistant:
+  backpack:
+    magazines:
+      - 3x rhs_mag_M441_HE
+      - 3x rhs_mag_M433_HEDP
+      - 4x rhs_mag_m714_White
+      - 2x rhs_mag_m715_Green
+      - 2x rhs_mag_m713_Red
+      - 2x rhs_mag_m4009
+  vest:
+    magazines:
+      - 8x 30#rhsgref_30rnd_556x45_vhs2
+
+
+autorifleman:
+  weapons:
+    primary:
+      name: hlc_lmg_M60E4
+      optics: rhsusf_acc_eotech_xps3
+      magazine: 100#hlc_100Rnd_762x51_M_M60E4
+      underBarrel:
+  vest:
+    name: mbavr_mg
+    magazines:
+      - 3x hlc_100Rnd_762x51_M_M60E4
+  backpack:
+
+
+autorifleman_assistant:
+  backpack:
+    magazines:
+      - 4x hlc_100Rnd_762x51_M_M60E4
+  vest:
+    magazines:
+      - 8x 30#rhsgref_30rnd_556x45_vhs2
+
+
+gunner:
+  weapons:
+    primary:
+      name: rhs_weap_m240B
+      optics: rhsusf_acc_ELCAN
+      magazine: 100#rhsusf_100Rnd_762x51
+  vest:
+    name: mbavr_mg
+    magazines:
+      - 3x rhsusf_100Rnd_762x51
+    items:
+      - ACE_EntrenchingTool
+  backpack:
+
+gunner_assistant:
+  backpack:
+    magazines:
+      - 4x rhsusf_100Rnd_762x51
+    items:
+      - ACE_EntrenchingTool
+  vest:
+    magazines:
+      - 8x 30#rhsgref_30rnd_556x45_vhs2
+
+
+antitank:
+  weapons:
+    launcher:
+      name: rhs_weap_maaws
+      magazine: rhs_mag_maaws_HEAT
+      optics: rhs_optic_maaws
+  backpack:
+    name: B_Carryall_oli
+    magazines:
+      - rhs_mag_maaws_HEAT
+      - rhs_mag_maaws_HEDP
+      - rhs_mag_maaws_HE
+  vest:
+    magazines:
+      - 8x 30#rhsgref_30rnd_556x45_vhs2
+
+
+antitank_assistant:
+  weapons:
+    launcher:
+      name: rhs_weap_M136
+      magazine: rhs_m136_mag
+  backpack:
+    name: B_Carryall_oli
+    magazines:
+      - 2x rhs_mag_maaws_HEAT
+      - rhs_mag_maaws_HEDP
+      - rhs_mag_maaws_HE
+  vest:
+    magazines:
+      - 8x 30#rhsgref_30rnd_556x45_vhs2
+
+
+antitank_light:
+  weapons:
+    launcher:
+      name: rhs_weap_M136
+      magazine: rhs_m136_mag
+  vest:
+    magazines:
+      - 8x 30#rhsgref_30rnd_556x45_vhs2
+  backpack:
+
+
+antipersonnel_light:
+  weapons:
+    launcher:
+      name: rhs_weap_M136_hedp
+      magazine: rhs_m136_hedp_mag
+  vest:
+    magazines:
+      - 8x 30#rhsgref_30rnd_556x45_vhs2
+  backpack:
+
+
+marksman:
+  weapons:
+    primary:
+      name: rhs_weap_sr25_ec_wd
+      magazine: 20#rhsusf_20Rnd_762x51_SR25_m118_special_Mag
+      optics: rhsusf_acc_LEUPOLDMK4_wd
+      underBarrel: rhsusf_acc_harris_bipod
+    handgun:
+      name: rhsusf_weap_glock17g4
+      magazine: 17#rhsusf_mag_17Rnd_9x19_JHP
+  vest:
+    items:
+      - ACE_RangeCard
+      - ACE_MapTools
+      - ACE_microDAGR
+    magazines:
+      - 3x rhsusf_mag_7x45acp_MHP
+      - 10x rhsusf_20Rnd_762x51_SR25_m118_special_Mag
+  binocular: lerca_1200_black
+  headgear: H_Watchcap_camo
+  backpack:
+
+sniper:
+  weapons:
+    primary:
+      name: rhs_weap_M107_w
+      magazine: 5#rhsusf_mag_17Rnd_9x19_JHP
+      optics: rhsusf_acc_M8541_low_wd
+    handgun:
+      name: rhsusf_weap_glock17g4
+      magazine: 17#rhsusf_mag_17Rnd_9x19_JHP
+  vest:
+    magazines:
+      - 2x rhsusf_mag_7x45acp_MHP
+      - 10x rhsusf_mag_17Rnd_9x19_JHP
+    items:
+      - ACE_RangeCard
+      - ACE_Kestrel4500
+      - ACE_ATragMX
+      - ACE_microDAGR
+      - ACE_MapTools
+  binocular: lerca_1200_black
+  headgear: H_Watchcap_camo
+  backpack:
+
+spotter:
+  weapons:
+    primary:
+      name: rhs_weap_vhsk2_grip2
+      muzzle: rhsusf_acc_nt4_black
+      magazine: 30#rhsgref_30rnd_556x45_vhs2
+  vest:
+    magazines:
+      - 8x 30#rhsgref_30rnd_556x45_vhs2
+    items:
+      - ACE_RangeCard
+      - ACE_MapTools
+  backpack:
+    name: tf_rt1523g_bwmod
+  binocular: Binocular
+  headgear: H_Watchcap_camo
+
+
+explosive_specialist:
+  backpack:
+    magazines:
+      - 2x SatchelCharge_Remote_Mag
+  uniform:
+    items:
+      - ACE_DefusalKit
+      - ACE_Clacker
+  vest:
+    magazines:
+      - 8x 30#rhsgref_30rnd_556x45_vhs2
+
+rifleman:
+  vest:
+    magazines:
+      - 12x 30#rhsgref_30rnd_556x45_vhs2
+  backpack:
+
+driver:
+  weapons:
+    primary:
+      name: rhs_weap_vhsk2_grip2
+      magazine: 30#rhsgref_30rnd_556x45_vhs2
+  vest:
+    name: V_TacVest_oli
+    magazines:
+      - 5x rhsgref_30rnd_556x45_vhs2
+    items:
+      - ACE_MapTools
+      - ACE_microDAGR
+  binocular: Binocular
+  headgear: rhsusf_cvc_green_ess
+  backpack:
+
+
+ground_crew:
+  weapons:
+    primary:
+      name: rhs_weap_vhsk2_grip2
+      magazine: 30#rhsgref_30rnd_556x45_vhs2
+  vest:
+    name: V_TacVest_oli
+    magazines:
+      - 5x rhsgref_30rnd_556x45_vhs2
+  headgear: rhsusf_cvc_green_ess
+  backpack:
+
+
+pilot:
+  weapons:
+    primary:
+      name: rhsusf_weap_MP7A2_grip2
+      optics: rhsusf_acc_eotech_xps3
+      magazine: 40#rhsusf_mag_40Rnd_46x30_FMJ
+  vest:
+    name: V_TacVest_oli
+    magazines:
+      - 4x rhsusf_mag_40Rnd_46x30_FMJ
+    items:
+      - ACE_MapTools
+      - ACE_microDAGR
+  headgear: rhsusf_hgu56p_visor_green
+  backpack:
+
+
+air_crew:
+  weapons:
+    primary:
+      name: rhsusf_weap_MP7A2_grip2
+      optics: rhsusf_acc_eotech_xps3
+      magazine: 40#rhsusf_mag_40Rnd_46x30_FMJ
+  vest:
+    name: V_TacVest_oli
+    magazines:
+      - 4x rhsusf_mag_40Rnd_46x30_FMJ
+  headgear: rhsusf_hgu56p_visor_green
+  backpack:
+
+
+op_drone:
+  vest:
+    magazines:
+      - 8x 30#rhsgref_30rnd_556x45_vhs2
+    items:
+      - ACE_MapTools
+      - ACE_microDAGR
+  backpack:
+  binocular: Binocular
+
+op_radio:
+  vest:
+    magazines:
+      - 8x 30#rhsgref_30rnd_556x45_vhs2
+  backpack:
+    name: tf_rt1523g_bwmod
+
+
+recon:
+  weapons:
+    primary:
+      name: rhs_weap_vhsk2_grip2
+      muzzle: rhsusf_acc_nt4_black
+      magazine: 30#rhsgref_30rnd_556x45_vhs2
+  vest:
+    name: mbavr_r
+    magazines:
+      - 8x rhsgref_30rnd_556x45_vhs2
+    items:
+      - ACE_MapTools
+      - ACE_microDAGR
+  binocular: binocular
+  backpack:
+  headgear: H_Watchcap_camo
+
+
+turret_tripod_carrier:
+  vest:
+    magazines:
+      - 8x 30#rhsgref_30rnd_556x45_vhs2
+  backpack:
+    name: RHS_M2_MiniTripod_Bag
+
+
+turret_gun_carrier:
+  vest:
+    magazines:
+      - 8x 30#rhsgref_30rnd_556x45_vhs2
+  backpack:
+    name: RHS_M2_Gun_Bag

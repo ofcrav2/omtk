@@ -1,0 +1,477 @@
+default:
+  weapons:
+    primary:
+      name: hlc_rifle_FAL5061
+      optics:
+      muzzle:
+      magazine: 20#hlc_20Rnd_762x51_B_fal
+    launcher:
+      name:
+      optics:
+    handgun:
+      name:
+      magazine:
+  uniform:
+    name: UK3CB_TKA_O_U_CombatUniform_01_ADPM
+    magazines:
+      - rhs_mag_rgd5
+      - rhs_mag_rdg2_white
+    items:
+      - 6x ACE_fieldDressing
+      - 4x ACE_morphine
+      - ACE_EarPlugs
+      - ACE_CableTie
+  vest:
+   name: UK3CB_TKA_O_V_6b23_ml_Oli_ADPM
+  backpack:
+    name: UK3CB_UN_B_B_ASS
+    magazines:
+    items:
+  binocular:
+  map: ItemMap
+  compass: ItemCompass
+  radio: ItemRadio
+  watch: tf_microdagr
+  headgear: UK3CB_TKA_I_H_SSh68_Oli
+
+
+cdc:
+  weapons:
+    primary:
+      name: rhs_weap_aks74n
+      optics: rhs_acc_pso1m2_ak
+      muzzle: rhs_acc_dtk1983
+      magazine: 30#rhs_30Rnd_545x39_7N6M_AK
+    handgun:
+      name: rhs_weap_makarov_pm
+      magazine: 8#rhs_mag_9x18_8_57N181S
+  uniform:
+    name: UK3CB_TKA_I_U_Officer_OLI
+    items:
+      - ACE_MapTools
+  vest:
+    name: UK3CB_TKA_O_V_6b23_ML_6sh92_radio_Oli
+    magazines:
+      - 8x rhs_30Rnd_545x39_7N10_AK
+      - 3x rhs_mag_9x18_8_57N181S
+  backpack:
+    name: tf_mr3000_rhs
+    magazines:
+      - 3x rhs_mag_rdg2_white
+      - 3x rhs_mag_rdg2_black
+      - 1x SmokeShellBlue
+  binocular: Binocular
+  headgear: UK3CB_TKA_B_H_Beret
+
+
+cdg:
+  weapons:
+    primary:
+      name: rhs_weap_aks74n
+      optics: rhs_acc_pso1m2_ak
+      muzzle: rhs_acc_dtk1983
+      magazine: 30#rhs_30Rnd_545x39_7N6M_AK
+    handgun:
+      name: rhs_weap_makarov_pm
+      magazine: 8#rhs_mag_9x18_8_57N181S
+  uniform:
+    items:
+      - ACE_MapTools
+  vest:
+    name: UK3CB_TKA_O_V_6b23_ML_6sh92_radio_Oli
+    magazines:
+      - 8x rhs_30Rnd_545x39_7N10_AK
+      - 3x rhs_mag_9x18_8_57N181S
+  backpack:
+    name: tf_mr3000_rhs
+    magazines:
+      - 3x rhs_mag_rdg2_white
+      - 3x rhs_mag_rdg2_black
+      - 1x SmokeShellBlue
+  binocular: Binocular
+  headgear: UK3CB_TKA_O_H_Patrolcap_OFF_ADPM
+
+
+cde:
+  weapons:
+    primary:
+      name: UK3CB_M16A2_UGL
+      magazine: 30#rhs_mag_30Rnd_556x45_M855A1_Stanag
+  backpack:
+    magazines:
+      - 6x rhs_mag_M441_HE
+      - 2x rhs_mag_m714_White
+      - 2x rhs_mag_m715_Green
+      - 2x rhs_mag_m713_Red
+  vest:
+    name: UK3CB_TKA_O_V_6b23_ml_6sh92_vog_Oli_ADPM
+    magazines:
+      - 6x rhs_mag_30Rnd_556x45_M855A1_Stanag
+  headgear: UK3CB_TKA_O_H_Patrolcap_OFF_ADPM
+  binocular: Binocular
+
+
+
+medic:
+  vest:
+    magazines:
+      - 8x hlc_20Rnd_762x51_B_fal
+      - 1x rhs_mag_rdg2_white
+      - 1x SmokeShellBlue
+  backpack:
+    name: UK3CB_B_Alice_K
+    items:
+      - 6x ACE_bloodIV
+      - 25x ACE_morphine
+      - 25x ACE_epinephrine
+      - 40x ACE_fieldDressing
+  headgear: UK3CB_TKA_O_H_Patrolcap_ADPM
+
+
+grenadier:
+  weapons:
+    launcher:
+      name: rhs_weap_rshg2
+      magazine: rhs_rshg2_mag
+    primary:
+      name: UK3CB_M16A2_UGL
+      magazine: 30#rhs_mag_30Rnd_556x45_M855A1_Stanag
+  backpack:
+    magazines:
+      - 6x rhs_mag_M441_HE
+      - 2x rhs_mag_m714_White
+      - 2x rhs_mag_m715_Green
+      - 2x rhs_mag_m713_Red
+  vest:
+    magazines:
+      - 6x rhs_mag_30Rnd_556x45_M855A1_Stanag
+
+
+
+grenadier_assistant:
+  backpack:
+    name: UK3CB_B_Alice_K
+    magazines:
+      - 10x rhs_mag_M441_HE
+      - 4x rhs_mag_m714_White
+      - 4x rhs_mag_m715_Green
+      - 4x rhs_mag_m713_Red
+  vest:
+    magazines:
+      - 8x hlc_20Rnd_762x51_B_fal
+
+
+autorifleman:
+  weapons:
+    primary:
+      name: hlc_rifle_rpk_75rnd
+      magazine: 75#hlc_75Rnd_762x39_m_rpk
+      muzzle:
+  backpack:
+    magazines:
+      - 4x hlc_75Rnd_762x39_m_rpk
+  vest:
+    magazines:
+      - 2x hlc_75Rnd_762x39_m_rpk
+
+autorifleman_assistant:
+  backpack:
+    name: UK3CB_B_Alice_K
+    magazines:
+      - 6x hlc_75Rnd_762x39_m_rpk
+  vest:
+    magazines:
+      - 8x hlc_20Rnd_762x51_B_fal
+
+
+gunner:
+  weapons:
+    primary:
+      name: rhs_weap_pkm
+      magazine: 100#rhs_100Rnd_762x54mmR
+  backpack:
+    magazines:
+      - 2x rhs_100Rnd_762x54mmR
+    items:
+      - ACE_EntrenchingTool
+  vest:
+    magazines:
+      - 1x rhs_100Rnd_762x54mmR
+
+
+gunner_assistant:
+  backpack:
+    name: UK3CB_B_Alice_K
+    magazines:
+      - 3x rhs_100Rnd_762x54mmR
+    items:
+      - ACE_EntrenchingTool
+  vest:
+    magazines:
+      - 8x hlc_20Rnd_762x51_B_fal
+
+
+antitank:
+  weapons:
+    launcher:
+      name: rhs_weap_rpg7
+      magazine: rhs_rpg7_PG7VL_mag
+      optics: rhs_acc_pgo7v
+  backpack:
+    name: rhs_rpg_empty
+    magazines:
+      - rhs_rpg7_PG7VL_mag
+      - rhs_rpg7_PG7VR_mag
+      - rhs_rpg7_OG7V_mag
+  vest:
+    magazines:
+      - 8x hlc_20Rnd_762x51_B_fal
+
+
+antitank_assistant:
+  weapons:
+    launcher:
+      name: rhs_weap_rpg26
+      magazine: rhs_rpg26_mag
+  backpack:
+    name: rhs_rpg_empty
+    magazines:
+      - rhs_rpg7_PG7VL_mag
+      - rhs_rpg7_PG7VR_mag
+      - rhs_rpg7_OG7V_mag
+  vest:
+    magazines:
+      - 8x hlc_20Rnd_762x51_B_fal
+
+
+antitank_light:
+  weapons:
+    launcher:
+      name: rhs_weap_rpg26
+      magazine: rhs_rpg26_mag
+  vest:
+    magazines:
+      - 8x hlc_20Rnd_762x51_B_fal
+  backpack:
+
+
+antipersonnel_light:
+  weapons:
+    launcher:
+      name: rhs_weap_rshg2
+      magazine: rhs_rshg2_mag
+  vest:
+    magazines:
+      - 8x hlc_20Rnd_762x51_B_fal
+  backpack:
+
+
+marksman:
+  weapons:
+    primary:
+      name: rhs_weap_svdp_wd
+      magazine: 10#rhs_10Rnd_762x54mmR_7N1
+      optics: rhs_acc_pso1m2
+      muzzle:
+    handgun:
+      name: rhs_weap_makarov_pm
+      magazine: 8#rhs_mag_9x18_8_57N181S
+  vest:
+    name: UK3CB_TKA_O_V_6b23_ml_sniper_Oli
+    items:
+      - ACE_RangeCard
+    magazines:
+      - 2x rhs_mag_9x18_8_57N181S
+      - 10x 10#rhs_10Rnd_762x54mmR_7N1
+  binocular: Binocular
+  backpack:
+  headgear: UK3CB_TKA_O_H_Patrolcap_ADPM
+
+
+sniper:
+  weapons:
+    primary:
+      name: rhs_weap_t5000
+      magazine: 5#rhs_5Rnd_338lapua_t5000
+      underBarrel: rhs_acc_harris_swivel
+      optics: rhs_acc_dh520x56
+      muzzle:
+    handgun:
+      name: rhs_weap_makarov_pm
+      magazine: 8#rhs_mag_9x18_8_57N181S
+  uniform:
+    name: UK3CB_TKA_I_U_CombatUniform_Ghillie_TKA_Brush
+  vest:
+    name: UK3CB_TKA_O_V_6b23_ml_Oli_TKA_Brush
+    magazines:
+      - 2x rhs_mag_9x18_8_57N181S
+      - 10x rhs_5Rnd_338lapua_t5000
+    items:
+      - ACE_RangeCard
+      - ACE_Kestrel4500
+  binocular: Binocular
+  backpack:
+  headgear:
+
+
+spotter:
+  weapons:
+    primary:
+      name: hlc_rifle_FAL5061
+      muzzle: muzzle_snds_B
+      magazine: 20#hlc_20Rnd_762x51_B_fal
+  uniform:
+    name: UK3CB_TKA_I_U_CombatUniform_Ghillie_TKA_Brush
+  vest:
+    name: UK3CB_TKA_O_V_6b23_ml_Oli_TKA_Brush
+    magazines:
+      - 8x hlc_20Rnd_762x51_B_fal
+    items:
+      - ACE_RangeCard
+      - ACE_Kestrel4500
+      - ACE_MapTools
+  backpack:
+    name: tf_mr3000_rhs
+  headgear:
+  binocular: Binocular
+
+explosive_specialist:
+  weapons:
+    launcher:
+      name: rhs_weap_rpg26
+      magazine: rhs_rpg26_mag
+  backpack:
+    name: UK3CB_B_Alice_K
+    magazines:
+      - 2x SatchelCharge_Remote_Mag
+  uniform:
+    items:
+      - ACE_DefusalKit
+      - ACE_Clacker
+  vest:
+    magazines:
+      - 8x hlc_20Rnd_762x51_B_fal
+
+rifleman:
+  vest:
+    magazines:
+      - 8x hlc_20Rnd_762x51_B_fal
+  backpack:
+
+driver:
+  weapons:
+    primary:
+      name: rhs_weap_aks74un
+      magazine: 30#rhs_30Rnd_545x39_7N10_AK
+  uniform:
+    name: UK3CB_TKA_O_U_CrewUniform_01_ADPM
+  vest:
+    name: UK3CB_TKA_O_V_6b23_ml_crew_Oli
+    magazines:
+      - 3x 30#rhs_30Rnd_545x39_7N10_AK
+    items:
+      - ACE_MapTools
+  binocular: Binocular
+  headgear: rhs_tsh4
+  backpack:
+
+
+ground_crew:
+  weapons:
+    primary:
+      name: rhs_weap_aks74un
+      magazine: 30#rhs_30Rnd_545x39_7N10_AK
+  uniform:
+    name: UK3CB_TKA_O_U_CrewUniform_01_ADPM
+  vest:
+    name: UK3CB_TKA_O_V_6b23_ml_crew_Oli
+    magazines:
+      - 3x 30#rhs_30Rnd_545x39_7N10_AK
+  headgear: rhs_tsh4
+  backpack:
+
+
+pilot:
+  weapons:
+    primary:
+      name: rhs_weap_aks74un
+      magazine: 30#rhs_30Rnd_545x39_7N10_AK
+  uniform:
+    name: UK3CB_TKA_B_U_H_Pilot_DES
+  vest:
+    name: V_TacVest_khk
+    magazines:
+      - 3x rhs_30Rnd_545x39_7N10_AK
+    items:
+      - ACE_MapTools
+  headgear: UK3CB_TKA_O_H_zsh7a_mike_Des
+  backpack:
+
+
+air_crew:
+  weapons:
+    primary:
+      name: rhs_weap_aks74un
+      magazine: 30#rhs_30Rnd_545x39_7N10_AK
+  uniform:
+    name: UK3CB_TKA_B_U_H_Pilot_DES
+  vest:
+    name: V_TacVest_khk
+    magazines:
+      - 3x rhs_30Rnd_545x39_7N10_AK
+    items:
+      - ACE_MapTools
+  headgear: UK3CB_TKA_O_H_zsh7a_mike_Des
+  backpack:
+
+
+op_drone:
+  vest:
+    magazines:
+      - 8x hlc_20Rnd_762x51_B_fal
+    items:
+      - ACE_MapTools
+      - ACE_microDAGR
+  backpack:
+    name: B_MAV_B_BACKPACK
+  binocular: Binocular
+
+op_radio:
+  vest:
+    magazines:
+      - 8x hlc_20Rnd_762x51_B_fal
+  backpack:
+    name: tf_mr3000_rhs
+
+
+recon:
+  weapons:
+    primary:
+      name: hlc_rifle_FAL5061
+      optics:
+      muzzle: muzzle_snds_B
+      magazine: 20#hlc_20Rnd_762x51_B_fal
+  vest:
+    magazines:
+      - 8x hlc_20Rnd_762x51_B_fal
+    items:
+      - ACE_MapTools
+  binocular: binocular
+  backpack:
+  headgear: UK3CB_TKA_O_H_Patrolcap_ADPM
+
+
+turret_tripod_carrier:
+  vest:
+    magazines:
+      - 8x hlc_20Rnd_762x51_B_fal
+  backpack:
+    name: RHS_DShkM_TripodLow_Bag
+
+
+turret_gun_carrier:
+  vest:
+    magazines:
+      - 8x hlc_20Rnd_762x51_B_fal
+  backpack:
+    name: RHS_DShkM_Gun_Bag

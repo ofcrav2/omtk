@@ -1,8 +1,8 @@
 default:
   weapons:
     primary:
-      name: hlc_rifle_SG551LB_TAC
-      optics: rhsusf_acc_eotech_552
+      name: hlc_rifle_SG550_RIS
+      optics: rhsusf_acc_RX01_NoFilter
       muzzle:
       underBarrel:
       magazine: 30#hlc_30Rnd_556x45_EPR_sg550
@@ -37,7 +37,7 @@ default:
 cdc:
   weapons:
     primary:
-      optics: rhsusf_acc_ACOG3_USMC
+      optics: rhsusf_acc_su230
       magazine: 30#hlc_30Rnd_556x45_EPR_sg550
     handgun:
       name: rhsusf_weap_glock17g4
@@ -46,9 +46,8 @@ cdc:
     items:
       - ACE_MapTools
       - ACE_microDAGR
-      - rhsusf_acc_eotech_552
   vest:
-    name: rhsusf_spc_squadleader
+    name: rhsusf_mbav_rifleman
     magazines:
       - 3x 17#rhsusf_mag_17Rnd_9x19_JHP
       - 8x 30#hlc_30Rnd_556x45_EPR_sg550
@@ -68,7 +67,7 @@ cdc:
 cdg:
   weapons:
     primary:
-      optics: rhsusf_acc_ACOG3_USMC
+      optics: rhsusf_acc_su230
       magazine: 30#hlc_30Rnd_556x45_EPR_sg550
     handgun:
       name: rhsusf_weap_glock17g4
@@ -78,11 +77,10 @@ cdg:
       - ACE_MapTools
       - ACE_microDAGR
   vest:
-    name: rhsusf_spc_squadleader
+    name: rhsusf_mbav_rifleman
     magazines:
       - 3x 17#rhsusf_mag_17Rnd_9x19_JHP
       - 8x 30#hlc_30Rnd_556x45_EPR_sg550
-      - rhsusf_acc_eotech_552
   backpack:
     name: tf_rt1523g
     magazines:
@@ -98,7 +96,7 @@ cdg:
 cde:
   weapons:
     primary:
-      name: hlc_rifle_SG551LB_TAC_GL
+      name: hlc_rifle_SG550_TAC_GL
   vest:
     name: rhsusf_mbav_grenadier
     magazines:
@@ -134,7 +132,7 @@ medic:
 grenadier:
   weapons:
     primary:
-      name: hlc_rifle_SG551LB_TAC_GL
+      name: hlc_rifle_SG550_TAC_GL
       underBarrel:
     launcher:
       name: rhs_weap_M136_hedp
@@ -385,7 +383,6 @@ driver:
     primary:
       name: hlc_rifle_SG553SB_TAC
       magazine: 30#hlc_30Rnd_556x45_EPR_sg550
-      optics: rhsusf_acc_eotech_552
   uniform:
     items:
       - ACE_MapTools
@@ -404,7 +401,6 @@ ground_crew:
     primary:
       name: hlc_rifle_SG553SB_TAC
       magazine: 30#hlc_30Rnd_556x45_EPR_sg550
-      optics: rhsusf_acc_eotech_552
   vest:
     name: rhsusf_mbav_light
     magazines:
