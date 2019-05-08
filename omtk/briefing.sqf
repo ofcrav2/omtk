@@ -36,4 +36,4 @@ waitUntil {isNull _handle};
 	} foreach OMTK_SB_LIST_OBJECTIFS;
 
 
-player createDiaryRecord ["Diary", ["Crédits", "Mission réalisée avec l'OMTK par Manchot"]];
+player createDiaryRecord ["Diary", ["Crédits", "Mission réalisée avec l'OMTK"]];
