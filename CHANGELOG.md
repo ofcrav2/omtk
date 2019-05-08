@@ -6,6 +6,14 @@
 @ bug fix  
 !! security patch  
 
+### V2.6.0 - 2019-05-08
+\@ [omtk] debug spectator selector (side / all)
+\+ [omtk] add disconnection logging
+\~ [omtk] vehicle are no more completly locked. Only driver is (so you can take stuff and board)
+\+ [omtk] add group composition on briefing (with gear)
+\+ [omtk] add side squad list on briefing
+\+ [omtk] add logging to force end warm-up
+
 ### V2.5.1 - 2019-02-18
 \+ [Spectator] Add spectator selector (side / all)
 \+ [omtk] add disconnection logging

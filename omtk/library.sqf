@@ -133,7 +133,8 @@ omtk_unlock_vehicles = {
 	{
 		_locked_by_omtk = _x getVariable ["omtk_lock", 0];
 		if (_locked_by_omtk > 0) then {
-			_x lock 0;
+			//_x lock 0;
+			_x lockDriver false;
 		};
 	} foreach vehicles;
 };
@@ -142,7 +143,8 @@ omtk_unlock_vehicles = {
 omtk_lock_vehicles = {
 	{
 		if ( (locked _x) < 2) then {
-			_x lock 2;
+			//_x lock 2;
+			_x lockDriver true;
 			_x setVariable ['omtk_lock', 1];
 		};
 	} foreach vehicles;
