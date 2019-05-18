@@ -286,7 +286,7 @@ marksman:
     name: V_TacVest_camo
     magazines:
       - 3x 16Rnd_9x21_Mag
-      - 8x 10Rnd_762x54_Mag
+      - 8x 20Rnd_650x39_Cased_Mag_F
   binocular: Rangefinder
   backpack:
   headgear: H_MilCap_ghex_F
