@@ -87,6 +87,13 @@ class Params
 		values[] = {500,1000,1500,2000,2500,3000,4000,5000,6000,7000,8000,9000,10000};
 		default = 4000;
 	};
+	class OMTK_MODULE_DISABLE_PLAYABLE_AI
+	{
+		title = "Disable playable AI";
+		texts[] = {"no","yes"};
+		values[] = {0,1};
+		default = "0";
+	};
 	class OMTK_MODULE_SEPARATOR_1
 	{
 		title = "----------------------------------------------------------------------------------";

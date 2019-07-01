@@ -149,3 +149,11 @@ omtk_lock_vehicles = {
 		};
 	} foreach vehicles;
 };
+
+omtk_delete_playableAiUnits = { 
+	{
+		if (!isPlayer _x) then { 
+			deleteVehicle _x; 
+		}; 
+	} forEach playableUnits;
+};

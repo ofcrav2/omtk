@@ -6,6 +6,10 @@
 @ bug fix  
 !! security patch  
 
+### V2.7.0 - 2019-07-01
+\+ [omtk] add removing playable AI after warm-up end
+
+
 ### V2.6.0 - 2019-05-08
 \@ [omtk] debug spectator selector (side / all)
 \+ [omtk] add disconnection logging

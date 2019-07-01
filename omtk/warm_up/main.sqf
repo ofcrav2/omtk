@@ -4,6 +4,8 @@ OMTK_WU_CHIEF_CLASSES = ["B_officer_F", "B_Soldier_SL_F", "O_officer_F", "O_Sold
 
 omtk_wu_time = ("OMTK_MODULE_WARM_UP" call BIS_fnc_getParamValue);
 omtk_wu_radius = ("OMTK_MODULE_WARM_UP_DISTANCE" call BIS_fnc_getParamValue);
+omtk_disable_playable_ai = ("OMTK_MODULE_DISABLE_PLAYABLE_AI" call BIS_fnc_getParamValue);
+
 omtk_wu_restrict_area_trigger = nil;
 omtk_wu_com_menu_item_id = 0;
 
@@ -58,6 +60,10 @@ omtk_wu_end_warmup = {
 		missionNamespace setVariable ["omtk_wu_is_completed", true];
 		publicVariable "omtk_wu_is_completed";
 		call omtk_unlock_vehicles;
+		if (omtk_disable_playable_ai == 1) then {
+			call omtk_delete_playableAiUnits;
+		}
+		
 	};
 	
 	// Continue to load modules...
