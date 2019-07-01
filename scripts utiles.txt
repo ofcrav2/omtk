@@ -34,6 +34,10 @@ do3DENAction "ToggleMapIDs";
 [] call omtk_sb_start_mission_end;
 [] call ocap_fnc_exportData; 
 
+///////////// Forcer la fin du warmup
+[] call omtk_wu_fn_launch_game;
+
+
 ///////////// Afficher le nom d'un joueur lorqu'il rentre dans une zone:
 hint parseText format["<t size='1.30' font='PuristaMedium' color='#0000ff'>texte<br />ici</t>"];
 hint parseText (format["Texte en titre:<br/><img size='10' image='Votre image.paa'/><br/> %1", playerName]); 
