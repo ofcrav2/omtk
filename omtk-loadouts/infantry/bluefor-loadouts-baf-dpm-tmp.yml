@@ -362,15 +362,16 @@ driver:
       name: UK3CB_BAF_L22
       magazine: 30#UK3CB_BAF_556_30Rnd
   uniform:
+    name: UK3CB_BAF_U_CrewmanCoveralls_RTR
     items:
       - ACE_MapTools
       - ACE_microDAGR
   vest:
-    name: UK3CB_BAF_V_Osprey_DPMT1
+    name: UK3CB_BAF_V_Pilot_DPMT
     magazines:
       - 5x 30#UK3CB_BAF_556_30Rnd
   binocular: Binocular
-  headgear: UK3CB_BAF_H_CrewHelmet_DPMT_A
+  headgear: UK3CB_BAF_H_CrewHelmet_DPMT_ESS_A
   backpack:
 
 
@@ -379,12 +380,14 @@ ground_crew:
     primary:
       name: UK3CB_BAF_L22
       magazine: 30#UK3CB_BAF_556_30Rnd
+  uniform:
+    name: UK3CB_BAF_U_CrewmanCoveralls_RTR
   vest:
-    name: UK3CB_BAF_V_Osprey_DPMT1
+    name: UK3CB_BAF_V_Pilot_DPMT
     magazines:
       - 5x 30#UK3CB_BAF_556_30Rnd
   backpack:
-  headgear: UK3CB_BAF_H_CrewHelmet_DPMT_A
+  headgear: UK3CB_BAF_H_CrewHelmet_DPMT_ESS_A
 
 
 pilot:
