@@ -6,6 +6,9 @@
 @ bug fix  
 !! security patch  
 
+### V2.7.1 - 2019-08-21
+~ [omtk] Update radio-lock with TFAR beta
+
 ### V2.7.0 - 2019-07-01
 \+ [omtk] add removing playable AI after warm-up end
 
