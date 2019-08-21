@@ -45,10 +45,6 @@ OMTK_MARKERS_MENU = [
 RscSpectator_allowFreeCam = true;
 //cutrsc ['RscSpectator','plain'];
 
-// TASK FORCE ARROWHEAD RADIO
-#include "\task_force_radio\functions\common.sqf";
-tf_no_auto_long_range_radio = true;
-
 [player, [missionNamespace, "OMTK_LOADOUT"]] call BIS_fnc_saveInventory;
 
 //// OMTK EXECUTION
