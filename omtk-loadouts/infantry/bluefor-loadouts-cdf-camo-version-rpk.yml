@@ -32,7 +32,7 @@ default:
   map: ItemMap
   compass: ItemCompass
   radio: ItemRadio
-  watch: tf_microdagr
+  watch: TFAR_microdagr
   headgear: rhsgref_ssh68_ttsko_mountain
 
 
@@ -55,7 +55,7 @@ cdc:
     magazines:
       - 8x 30#rhs_30Rnd_545x39_AK
   backpack:
-    name: tf_rt1523g_big_bwmod
+    name: TFAR_rt1523g_big_bwmod
     magazines:
       - 2x SmokeShell
       - 2x SmokeShellBlue
@@ -87,7 +87,7 @@ cdg:
     magazines:
       - 8x 30#rhs_30Rnd_545x39_AK
   backpack:
-    name: tf_rt1523g_big_bwmod
+    name: TFAR_rt1523g_big_bwmod
     magazines:
       - 2x SmokeShell
       - 2x SmokeShellBlue
@@ -452,7 +452,7 @@ op_radio:
     magazines:
       - 8x 30#rhs_30Rnd_545x39_AK
   backpack:
-    name: tf_rt1523g_big_bwmod
+    name: TFAR_rt1523g_big_bwmod
 
 
 recon:

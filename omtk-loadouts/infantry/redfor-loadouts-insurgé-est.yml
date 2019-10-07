@@ -31,7 +31,7 @@ default:
   map: ItemMap
   compass: ItemCompass
   radio: ItemRadio
-  watch: tf_microdagr
+  watch: TFAR_microdagr
   headgear: rhs_beanie_green
   goggles:
 
@@ -53,7 +53,7 @@ cdc:
       - 7x 30#rhs_30Rnd_762x39mm
       - rhs_mag_f1
   backpack:
-    name: tf_mr3000_bwmod
+    name: TFAR_mr3000_bwmod
     magazines:
       - 2x SmokeShellPurple
       - 3x SmokeShellOrange
@@ -80,7 +80,7 @@ cdg:
       - 7x 30#rhs_30Rnd_762x39mm
       - rhs_mag_f1
   backpack:
-    name: tf_mr3000_bwmod
+    name: TFAR_mr3000_bwmod
     magazines:
       - 2x SmokeShellPurple
       - 3x SmokeShellOrange
@@ -490,7 +490,7 @@ op_radio:
     magazines:
       - 7x 30#rhs_30Rnd_762x39mm
   backpack:
-    name: tf_mr3000_bwmod
+    name: TFAR_mr3000_bwmod
 
 
 recon:

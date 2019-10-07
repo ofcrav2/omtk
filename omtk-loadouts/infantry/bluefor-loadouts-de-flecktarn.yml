@@ -30,7 +30,7 @@ default:
   map: ItemMap
   compass: ItemCompass
   radio: ItemRadio
-  watch: tf_microdagr
+  watch: TFAR_microdagr
   headgear: BWA3_M92_Fleck
 
 
@@ -53,7 +53,7 @@ cdc:
       - 3x 15#BWA3_15Rnd_9x19_P8
       - 8x BWA3_30Rnd_556x45_G36
   backpack:
-    name: tf_rt1523g_bwmod
+    name: TFAR_rt1523g_bwmod
     magazines:
       - 2x BWA3_DM32_Blue
       - 2x BWA3_DM32_Green
@@ -84,7 +84,7 @@ cdg:
       - 3x 15#BWA3_15Rnd_9x19_P8
       - 8x BWA3_30Rnd_556x45_G36
   backpack:
-    name: tf_rt1523g_bwmod
+    name: TFAR_rt1523g_bwmod
     magazines:
       - 2x BWA3_DM32_Blue
       - 2x BWA3_DM32_Green
@@ -359,7 +359,7 @@ spotter:
       - ACE_microDAGR
       - ACE_MapTools
   backpack:
-    name: tf_rt1523g_bwmod
+    name: TFAR_rt1523g_bwmod
   binocular: BWA3_Vector
   headgear: BWA3_Booniehat_Fleck
 
@@ -478,7 +478,7 @@ op_radio:
     magazines:
       - 8x BWA3_30Rnd_556x45_G36
   backpack:
-    name: tf_rt1523g_bwmod
+    name: TFAR_rt1523g_bwmod
 
 
 recon:

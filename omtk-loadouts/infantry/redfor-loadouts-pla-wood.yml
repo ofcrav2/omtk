@@ -32,8 +32,8 @@ default:
   binocular:
   map: ItemMap
   compass: ItemCompass
-  radio: tf_anprc154
-  watch: tf_microdagr
+  radio: TFAR_anprc154
+  watch: TFAR_microdagr
   headgear: VME_PLA_Helmet_G
 
 
@@ -56,7 +56,7 @@ cdc:
       - 8x 30#VME_QBZ95_1_30Rnd_DBP10
       - 2x 20#VME_QSZ92_20Rnd_DAP92
   backpack:
-    name: tf_anprc155
+    name: TFAR_anprc155
     magazines:
       - 4x SmokeShell
       - 2x SmokeShellBlue
@@ -86,7 +86,7 @@ cdg:
       - 8x 30#VME_QBZ95_1_30Rnd_DBP10
       - 2x 20#VME_QSZ92_20Rnd_DAP92
   backpack:
-    name: tf_anprc155
+    name: TFAR_anprc155
     magazines:
       - 4x SmokeShell
       - 2x SmokeShellBlue
@@ -329,7 +329,7 @@ spotter:
       - ACE_microDAGR
       - ACE_MapTools
   backpack:
-    name: tf_anprc155
+    name: TFAR_anprc155
   binocular: ACE_VectorDay
   headgear: VME_Booniehat_PLARF
 
@@ -440,7 +440,7 @@ op_radio:
     magazines:
       - 8x 30#VME_QBZ95_1_30Rnd_DBP10
   backpack:
-    name: tf_anprc155
+    name: TFAR_anprc155
 
 
 recon:

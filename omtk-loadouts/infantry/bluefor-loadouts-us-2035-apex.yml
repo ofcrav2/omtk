@@ -30,7 +30,7 @@ default:
   map: ItemMap
   compass: ItemCompass
   radio: ItemRadio
-  watch: tf_microdagr
+  watch: TFAR_microdagr
   headgear: H_HelmetB_tna_F
 
 
@@ -51,7 +51,7 @@ cdc:
       - 3x 16#16Rnd_9x21_Mag
       - 8x 30#30Rnd_556x45_Stanag
   backpack:
-    name: tf_rt1523g_bwmod
+    name: TFAR_rt1523g_bwmod
     magazines:
       - 1x SmokeShell
       - 1x SmokeShellGreen
@@ -79,7 +79,7 @@ cdg:
       - 3x 16#16Rnd_9x21_Mag
       - 8x 30#30Rnd_556x45_Stanag
   backpack:
-    name: tf_rt1523g_bwmod
+    name: TFAR_rt1523g_bwmod
     magazines:
       - 1x SmokeShell
       - 1x SmokeShellGreen
@@ -336,7 +336,7 @@ spotter:
       - ACE_microDAGR
       - ACE_MapTools
   backpack:
-    name: tf_rt1523g_bwmod
+    name: TFAR_rt1523g_bwmod
   binocular: Rangefinder
   headgear: H_Booniehat_tna_F
 
@@ -449,7 +449,7 @@ op_radio:
     magazines:
       - 8x 30#30Rnd_556x45_Stanag
   backpack:
-    name: tf_rt1523g_bwmod
+    name: TFAR_rt1523g_bwmod
 
 
 recon:

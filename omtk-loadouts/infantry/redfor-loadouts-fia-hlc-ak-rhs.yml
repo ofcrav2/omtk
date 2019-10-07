@@ -32,7 +32,7 @@ default:
   map: ItemMap
   compass: ItemCompass
   radio: ItemRadio
-  watch: tf_microdagr
+  watch: TFAR_microdagr
   headgear: H_Bandanna_camo
   goggles:
 
@@ -52,7 +52,7 @@ cdc:
     magazines:
       - 6x hlc_30Rnd_545x39_B_AK
   backpack:
-    name: tf_mr3000_rhs
+    name: TFAR_mr3000_rhs
     magazines:
       - 2x SmokeShell
       - 1x SmokeShellGreen
@@ -77,7 +77,7 @@ cdg:
     magazines:
       - 6x hlc_30Rnd_545x39_B_AK
   backpack:
-    name: tf_mr3000_rhs
+    name: TFAR_mr3000_rhs
     magazines:
       - 2x SmokeShell
       - 1x SmokeShellGreen
@@ -434,7 +434,7 @@ op_radio:
     magazines:
       - 6x hlc_30Rnd_545x39_B_AK
   backpack:
-    name: tf_mr3000_rhs
+    name: TFAR_mr3000_rhs
 
 
 recon:

@@ -30,7 +30,7 @@ default:
   map: ItemMap
   compass: ItemCompass
   radio: ItemRadio
-  watch: tf_microdagr
+  watch: TFAR_microdagr
   headgear: UK3CB_H_Mil_Turban_Wrap
   goggles:
 
@@ -52,7 +52,7 @@ cdc:
       - 7x 30#rhs_30Rnd_762x39mm
       - rhs_mag_f1
   backpack:
-    name: tf_mr3000_bwmod_tropen
+    name: TFAR_mr3000_bwmod_tropen
     magazines:
       - 4x rhs_mag_rdg2_white
       - 2x rhs_mag_rdg2_black
@@ -77,7 +77,7 @@ cdg:
       - 7x 30#rhs_30Rnd_762x39mm
       - rhs_mag_f1
   backpack:
-    name: tf_mr3000_bwmod_tropen
+    name: TFAR_mr3000_bwmod_tropen
     magazines:
       - 4x rhs_mag_rdg2_white
       - 2x rhs_mag_rdg2_black
@@ -452,7 +452,7 @@ op_radio:
     magazines:
       - 7x 30#rhs_30Rnd_762x39mm
   backpack:
-    name: tf_mr3000_bwmod_tropen
+    name: TFAR_mr3000_bwmod_tropen
 
 
 recon:
@@ -462,12 +462,12 @@ recon:
       - ACE_MapTools
   weapons:
     primary:
-      name: rhs_weap_m38
-      magazine: 5#rhsgref_5Rnd_762x54_m38
+      name: UK3CB_Enfield
+      magazine: 10#UK3CB_Enfield_Mag
   vest:
     name: UK3CB_TKA_B_V_GA_LITE_TAN
     magazines:
-      - 20x rhsgref_5Rnd_792x57_kar98k
+      - 20x UK3CB_Enfield_Mag
   binocular: Binocular
   backpack:
   headgear: UK3CB_H_Shemag_tan

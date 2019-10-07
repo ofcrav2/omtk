@@ -30,7 +30,7 @@ default:
   map: ItemMap
   compass: ItemCompass
   radio: ItemRadio
-  watch: tf_microdagr
+  watch: TFAR_microdagr
   headgear: UK3CB_BAF_H_Mk6_DPMT_A
 
 

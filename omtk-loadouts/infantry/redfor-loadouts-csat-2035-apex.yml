@@ -30,7 +30,7 @@ default:
   map: ItemMap
   compass: ItemCompass
   radio: ItemRadio
-  watch: tf_microdagr
+  watch: TFAR_microdagr
   headgear: H_HelmetO_ghex_F
 
 
@@ -53,7 +53,7 @@ cdc:
       - 3x 16#16Rnd_9x21_Mag
       - 8x 30#30Rnd_580x42_Mag_F
   backpack:
-    name: tf_mr3000_bwmod
+    name: TFAR_mr3000_bwmod
     magazines:
       - 1x SmokeShell
       - 1x SmokeShellOrange
@@ -83,7 +83,7 @@ cdg:
       - 3x 16#16Rnd_9x21_Mag
       - 8x 30#30Rnd_580x42_Mag_F
   backpack:
-    name: tf_mr3000_bwmod
+    name: TFAR_mr3000_bwmod
     magazines:
       - 1x SmokeShell
       - 1x SmokeShellOrange
@@ -333,7 +333,7 @@ spotter:
       - ACE_microDAGR
       - ACE_MapTools
   backpack:
-    name: tf_mr3000_bwmod
+    name: TFAR_mr3000_bwmod
   binocular: Rangefinder
   headgear: H_MilCap_ghex_F
 
@@ -443,7 +443,7 @@ op_radio:
     magazines:
       - 8x 30#30Rnd_580x42_Mag_F
   backpack:
-    name: tf_mr3000_bwmod
+    name: TFAR_mr3000_bwmod
 
 
 recon:
