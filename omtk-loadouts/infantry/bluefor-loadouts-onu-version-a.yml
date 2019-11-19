@@ -31,8 +31,8 @@ default:
   binocular:
   map: ItemMap
   compass: ItemCompass
-  radio: tf_anprc154
-  watch: tf_microdagr
+  radio: TFAR_anprc154
+  watch: TFAR_microdagr
   headgear: UK3CB_UN_B_H_6b27m_ESS
 
 
@@ -54,7 +54,7 @@ cdc:
       - 8x 20#hlc_20rnd_762x51_b_G3
       - 2x 7#rhsusf_mag_7x45acp_MHP
   backpack:
-    name: tf_anprc155_coyote
+    name: TFAR_anprc155_coyote
     magazines:
       - 4x SmokeShell
       - 2x SmokeShellBlue
@@ -83,7 +83,7 @@ cdg:
       - 8x 20#hlc_20rnd_762x51_b_G3
       - 2x 7#rhsusf_mag_7x45acp_MHP
   backpack:
-    name: tf_anprc155_coyote
+    name: TFAR_anprc155_coyote
     magazines:
       - 4x SmokeShell
       - 2x SmokeShellBlue
@@ -312,7 +312,7 @@ spotter:
       - ACE_RangeCard
       - ACE_MapTools
   backpack:
-    name: tf_anprc155_coyote
+    name: TFAR_anprc155_coyote
   binocular: Binocular
   headgear: UK3CB_UN_B_H_Cap
 
@@ -412,7 +412,7 @@ op_radio:
     magazines:
       - 8x 20#hlc_20rnd_762x51_b_G3
   backpack:
-    name: tf_anprc155_coyote
+    name: TFAR_anprc155_coyote
 
 
 recon:

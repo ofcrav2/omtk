@@ -30,7 +30,7 @@ default:
   map: ItemMap
   compass: ItemCompass
   radio: ItemRadio
-  watch: tf_microdagr
+  watch: TFAR_microdagr
   headgear: rhssaf_helmet_m97_oakleaf_black_ess_bare
 
 
@@ -54,7 +54,7 @@ cdc:
       - 3x 15#rhsusf_mag_15Rnd_9x19_JHP
       - 8x 20#hlc_20rnd_762x51_b_G3
   backpack:
-    name: tf_rt1523g_bwmod
+    name: TFAR_rt1523g_bwmod
     magazines:
       - 2x SmokeShellBlue
       - 2x SmokeShellYellow
@@ -86,7 +86,7 @@ cdg:
       - 3x 15#rhsusf_mag_15Rnd_9x19_JHP
       - 8x 20#hlc_20rnd_762x51_b_G3
   backpack:
-    name: tf_rt1523g_bwmod
+    name: TFAR_rt1523g_bwmod
     magazines:
       - 2x SmokeShellBlue
       - 2x SmokeShellYellow
@@ -356,7 +356,7 @@ spotter:
       - ACE_microDAGR
       - ACE_MapTools
   backpack:
-    name: tf_rt1523g_bwmod
+    name: TFAR_rt1523g_bwmod
   binocular: lerca_1200_black
   headgear: H_Watchcap_khk
 
@@ -469,7 +469,7 @@ op_radio:
     magazines:
       - 8x 20#hlc_20rnd_762x51_b_G3
   backpack:
-    name: tf_rt1523g_bwmod
+    name: TFAR_rt1523g_bwmod
 
 
 recon:

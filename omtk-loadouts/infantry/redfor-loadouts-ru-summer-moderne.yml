@@ -31,7 +31,7 @@ default:
   map: ItemMap
   compass: ItemCompass
   radio: ItemRadio
-  watch: tf_microdagr
+  watch: TFAR_microdagr
   headgear: rhs_6b28_ess
 
 
@@ -55,7 +55,7 @@ cdc:
       - 8x 30#rhs_30Rnd_545x39_7N10_AK
       - 2x 17#rhs_mag_9x19_17
   backpack:
-    name: tf_mr3000_rhs
+    name: TFAR_mr3000_rhs
     magazines:
       - 1x SmokeShell
       - 1x SmokeShellBlue
@@ -86,7 +86,7 @@ cdg:
       - 8x 30#rhs_30Rnd_545x39_7N10_AK
       - 2x 17#rhs_mag_9x19_17
   backpack:
-    name: tf_mr3000_rhs
+    name: TFAR_mr3000_rhs
     magazines:
       - 1x SmokeShell
       - 1x SmokeShellBlue
@@ -346,7 +346,7 @@ spotter:
       - ACE_microDAGR
       - ACE_MapTools
   backpack:
-    name: tf_mr3000_rhs
+    name: TFAR_mr3000_rhs
   headgear: rhs_Booniehat_digi
   binocular: rhs_pdu4
 
@@ -460,7 +460,7 @@ op_radio:
     magazines:
       - 8x 30#rhs_30Rnd_545x39_7N10_AK
   backpack:
-    name: tf_mr3000_rhs
+    name: TFAR_mr3000_rhs
 
 
 recon:

@@ -29,8 +29,8 @@ default:
   binocular:
   map: ItemMap
   compass: ItemCompass
-  radio: tf_anprc154
-  watch: tf_microdagr
+  radio: TFAR_anprc154
+  watch: TFAR_microdagr
   headgear: H_HelmetIA
 
 
@@ -54,7 +54,7 @@ cdc:
       - 3x 16#9Rnd_45ACP_Mag
       - 8x 30#30Rnd_556x45_Stanag
   backpack:
-    name: tf_anprc155
+    name: TFAR_anprc155
     magazines:
       - 1x SmokeShell
       - 1x SmokeShellGreen
@@ -85,7 +85,7 @@ cdg:
       - 3x 16#9Rnd_45ACP_Mag
       - 8x 30#30Rnd_556x45_Stanag
   backpack:
-    name: tf_anprc155
+    name: TFAR_anprc155
     magazines:
       - 1x SmokeShell
       - 1x SmokeShellGreen
@@ -340,7 +340,7 @@ spotter:
       - ACE_microDAGR
       - ACE_MapTools
   backpack:
-    name: tf_anprc155
+    name: TFAR_anprc155
   binocular: Rangefinder
   headgear: H_Cap_blk_Raven
 
@@ -452,7 +452,7 @@ op_radio:
     magazines:
       - 8x 30#30Rnd_556x45_Stanag
   backpack:
-    name: tf_anprc155
+    name: TFAR_anprc155
 
 
 recon:

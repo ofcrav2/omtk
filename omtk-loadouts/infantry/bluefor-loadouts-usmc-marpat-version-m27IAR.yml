@@ -1,10 +1,10 @@
 default:
   weapons:
     primary:
-      name: rhs_weap_m16a4_carryhandle
+      name: rhs_weap_m16a4_carryhandle_pmag
       optics: rhsusf_acc_compm4
       muzzle:
-      underBarrel: rhsusf_acc_grip1
+      underBarrel: rhsusf_acc_grip3
       magazine: 30#rhs_mag_30Rnd_556x45_Mk318_Stanag
     launcher:
       name:
@@ -19,9 +19,10 @@ default:
       - rhs_mag_an_m8hc
     items:
       - 6x ACE_fieldDressing
-      - 2x ACE_morphine
+      - 4x ACE_morphine
       - ACE_EarPlugs
       - ACE_CableTie
+      - rhsusf_acc_anpeq15side_bk
   vest:
     name: rhsusf_spc_rifleman
   backpack:
@@ -30,7 +31,7 @@ default:
   map: ItemMap
   compass: ItemCompass
   radio: ItemRadio
-  watch: tf_microdagr
+  watch: TFAR_microdagr
   headgear: rhsusf_lwh_helmet_marpatwd_ess
 
 
@@ -39,7 +40,7 @@ cdc:
     primary:
       name: rhs_weap_m4a1_carryhandle_mstock
       optics: rhsusf_acc_ACOG
-      underBarrel: rhsusf_acc_grip1
+      underBarrel: rhsusf_acc_grip3
       magazine: 30#rhs_mag_30Rnd_556x45_Mk318_Stanag
     handgun:
       name: rhsusf_weap_m9
@@ -54,7 +55,7 @@ cdc:
       - 3x 15#rhsusf_mag_15Rnd_9x19_JHP
       - 8x 30#rhs_mag_30Rnd_556x45_Mk318_Stanag
   backpack:
-    name: tf_rt1523g_rhs
+    name: TFAR_rt1523g
     magazines:
       - 1x rhs_mag_an_m8hc
       - 1x rhs_mag_m18_green
@@ -70,7 +71,7 @@ cdg:
     primary:
       name: rhs_weap_m4a1_carryhandle_mstock
       optics: rhsusf_acc_ACOG
-      underBarrel: rhsusf_acc_grip1
+      underBarrel: rhsusf_acc_grip3
       magazine: 30#rhs_mag_30Rnd_556x45_Mk318_Stanag
     handgun:
       name: rhsusf_weap_m9
@@ -85,7 +86,7 @@ cdg:
       - 3x 15#rhsusf_mag_15Rnd_9x19_JHP
       - 8x 30#rhs_mag_30Rnd_556x45_Mk318_Stanag
   backpack:
-    name: tf_rt1523g_rhs
+    name: TFAR_rt1523g
     magazines:
       - 1x rhs_mag_an_m8hc
       - 1x rhs_mag_m18_green
@@ -100,6 +101,7 @@ cde:
     primary:
       name: rhs_weap_m16a4_carryhandle_m203
       optics: rhsusf_acc_ACOG
+      underBarrel:
   vest:
     name: rhsusf_spc_teamleader
     magazines:
@@ -197,7 +199,6 @@ autorifleman_assistant:
     magazines:
       - 10x rhs_mag_30Rnd_556x45_M855_Stanag_Tracer_Red
       - 15x rhs_mag_30Rnd_556x45_M855_Stanag
-
   vest:
     items:
       - ACE_EntrenchingTool
@@ -211,6 +212,7 @@ gunner:
       name: rhs_weap_m240B
       magazine: 100#rhsusf_100Rnd_762x51_m80a1epr
       optics: rhsusf_acc_ELCAN
+      underBarrel:
   vest:
     name: rhsusf_spc_mg
     items:
@@ -263,6 +265,9 @@ antitank_assistant:
 
 antitank_light:
   weapons:
+    primary:
+      optics: rhsusf_acc_ACOG
+      magazine: 30#rhs_mag_30Rnd_556x45_Mk318_Stanag
     launcher:
       name: rhs_weap_M136
       magazine: rhs_m136_mag
@@ -274,6 +279,9 @@ antitank_light:
 
 antipersonnel_light:
   weapons:
+    primary:
+      optics: rhsusf_acc_ACOG
+      magazine: 30#rhs_mag_30Rnd_556x45_Mk318_Stanag
     launcher:
       name: rhs_weap_M136_hedp
       magazine: rhs_m136_hedp_mag
@@ -296,8 +304,8 @@ marksman:
   uniform:
     items:
       - ACE_RangeCard
-      - ACE_microDAGR
       - ACE_MapTools
+      - ACE_microDAGR
   vest:
     magazines:
       - 3x 15#rhsusf_mag_15Rnd_9x19_JHP
@@ -338,9 +346,9 @@ spotter:
   weapons:
     primary:
       name: rhs_weap_mk18_bk
-      optics: rhsusf_acc_eotech_552
+      optics: rhsusf_acc_compm4
       muzzle: rhsusf_acc_nt4_black
-      underBarrel: rhsusf_acc_grip1
+      underBarrel: rhsusf_acc_grip3
       magazine: 30#rhs_mag_30Rnd_556x45_Mk318_Stanag
   vest:
     magazines:
@@ -352,7 +360,7 @@ spotter:
       - ACE_microDAGR
       - ACE_MapTools
   backpack:
-    name: tf_rt1523g_rhs
+    name: TFAR_rt1523g
   binocular: lerca_1200_black
   headgear: rhs_booniehat2_marpatwd
 
@@ -375,6 +383,10 @@ explosive_specialist:
 
 
 rifleman:
+  weapons:
+    primary:
+      optics: rhsusf_acc_ACOG
+      magazine: 30#rhs_mag_30Rnd_556x45_Mk318_Stanag
   vest:
     magazines:
       - 12x 30#rhs_mag_30Rnd_556x45_Mk318_Stanag
@@ -384,10 +396,10 @@ rifleman:
 driver:
   weapons:
     primary:
-      name: rhs_weap_hk416d10_grip
+      name: rhs_weap_m4_carryhandle
       magazine: 30#rhs_mag_30Rnd_556x45_Mk318_Stanag
-      optics: rhsusf_acc_eotech_552
-      underBarrel: rhsusf_acc_grip1
+      optics:
+      underBarrel:
   uniform:
     items:
       - ACE_MapTools
@@ -404,10 +416,10 @@ driver:
 ground_crew:
   weapons:
     primary:
-      name: rhs_weap_hk416d10_grip
+      name: rhs_weap_m4_carryhandle
       magazine: 30#rhs_mag_30Rnd_556x45_Mk318_Stanag
-      optics: rhsusf_acc_eotech_552
-      underBarrel: rhsusf_acc_grip1
+      optics:
+      underBarrel:
   vest:
     name: rhsusf_spc_crewman
     magazines:
@@ -470,16 +482,16 @@ op_radio:
     magazines:
       - 8x 30#rhs_mag_30Rnd_556x45_Mk318_Stanag
   backpack:
-    name: tf_rt1523g_rhs
+    name: TFAR_rt1523g
 
 
 recon:
   weapons:
     primary:
       name: rhs_weap_mk18_bk
-      optics: rhsusf_acc_eotech_552
+      optics: rhsusf_acc_compm4
       muzzle: rhsusf_acc_nt4_black
-      underBarrel: rhsusf_acc_grip1
+      underBarrel: rhsusf_acc_grip3
       magazine: 30#rhs_mag_30Rnd_556x45_Mk318_Stanag
   uniform:
     items:
