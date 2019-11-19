@@ -5,6 +5,8 @@
 ~ feature modified  
 @ bug fix  
 !! security patch  
+### V2.7.2 - 2019-11-19
+@ [omtk] correction on picking gear / weapons bug
 
 ### V2.7.1 - 2019-08-21
 ~ [omtk] Update radio-lock with TFAR beta
