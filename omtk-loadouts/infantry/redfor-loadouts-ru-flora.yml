@@ -170,20 +170,20 @@ autorifleman:
   weapons:
     primary:
       name: rhs_weap_pkm
-      magazine: 100#rhs_100Rnd_762x54mmR_7N26
+      magazine: 100#rhs_100Rnd_762x54mmR
   backpack:
     magazines:
-      - 2x 100#rhs_100Rnd_762x54mmR_7N26
+      - 2x 100#rhs_100Rnd_762x54mmR
     items:
       - ACE_EntrenchingTool
   vest:
     magazines:
-      - 1x 100#rhs_100Rnd_762x54mmR_7N26
+      - 1x 100#rhs_100Rnd_762x54mmR
 
-gunner_assistant:
+autorifleman_assistant:
   backpack:
     magazines:
-      - 3x 100#rhs_100Rnd_762x54mmR_7N26
+      - 3x 100#rhs_100Rnd_762x54mmR
     items:
       - ACE_EntrenchingTool
   vest:
@@ -195,22 +195,22 @@ gunner:
   weapons:
     primary:
       name: rhs_weap_pkp
-      magazine: 100#rhs_100Rnd_762x54mmR_7N26
+      magazine: 100#rhs_100Rnd_762x54mmR
       optics: rhs_acc_1p78
   backpack:
     magazines:
-      - 2x 100#rhs_100Rnd_762x54mmR_7N26
+      - 2x 100#rhs_100Rnd_762x54mmR
     items:
       - ACE_EntrenchingTool
   vest:
     magazines:
-      - 1x 100#rhs_100Rnd_762x54mmR_7N26
+      - 1x 100#rhs_100Rnd_762x54mmR
 
 
 gunner_assistant:
   backpack:
     magazines:
-      - 3x 100#rhs_100Rnd_762x54mmR_7N26
+      - 3x 100#rhs_100Rnd_762x54mmR
     items:
       - ACE_EntrenchingTool
   vest:

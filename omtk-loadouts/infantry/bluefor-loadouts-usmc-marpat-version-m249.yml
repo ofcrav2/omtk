@@ -179,23 +179,24 @@ autorifleman:
   weapons:
     primary:
       name: rhs_weap_m249_pip_ris
-      magazine: 200#rhs_200rnd_556x45_M_SAW
-      underBarrel: rhsusf_acc_grip4_bipod
+      magazine: 200#rhsusf_200rnd_556x45_mixed_box
+      underBarrel: rhsusf_acc_saw_bipod
+      optics: rhsusf_acc_ELCAN
   vest:
     name: rhsusf_spc_mg
     items:
       - ACE_EntrenchingTool
     magazines:
-      - 2x rhs_200rnd_556x45_M_SAW
+      - 2x rhsusf_200rnd_556x45_mixed_box
   backpack:
     magazines:
-      - 1x rhs_200rnd_556x45_M_SAW
+      - 1x rhsusf_200rnd_556x45_mixed_box
 
 
 autorifleman_assistant:
   backpack:
     magazines:
-      - 2x rhs_200rnd_556x45_M_SAW
+      - 2x rhsusf_200rnd_556x45_mixed_box
       - 3x rhsusf_100Rnd_556x45_M855_soft_pouch
   vest:
     items:

@@ -172,14 +172,14 @@ grenadier_assistant:
 autorifleman:
   weapons:
     primary:
-      name: hlc_rifle_rpk_45rnd
+      name: hlc_rifle_rpk
       magazine: 45#hlc_45Rnd_762x39_m_rpk
   backpack:
     magazines:
-      - 3x hlc_75Rnd_762x39_m_rpk
+      - 2x hlc_75Rnd_762x39_m_rpk
   vest:
     magazines:
-      - 5x hlc_45Rnd_762x39_m_rpk
+      - 3x hlc_45Rnd_762x39_m_rpk
   headgear: H_Cap_grn_BI
 
 
@@ -198,21 +198,23 @@ autorifleman_assistant:
 gunner:
   weapons:
     primary:
-      name: hlc_lmg_MG42
-      magazine: 100#hlc_100Rnd_792x57_B_MG42
+      name: rhs_weap_mg42
+      magazine: 50#rhsgref_50Rnd_792x57_SmE_drum
+      optics: rhsgref_mg42_acc_AAsight
   backpack:
     magazines:
-      - 2x hlc_100Rnd_792x57_B_MG42
+      - 2x rhsgref_50Rnd_792x57_SmE_drum
   vest:
     magazines:
-      - 1x hlc_100Rnd_792x57_B_MG42
+      - 1x rhsgref_296Rnd_792x57_SmE_belt
   headgear:
   goggles: G_Bandanna_beast
 
 gunner_assistant:
   backpack:
     magazines:
-      - 5x hlc_100Rnd_792x57_B_MG42
+      - 2x rhsgref_50Rnd_792x57_SmE_drum
+      - 3x rhsgref_296Rnd_792x57_SmE_belt
   vest:
     items:
       - ACE_EntrenchingTool
@@ -279,16 +281,16 @@ antipersonnel_light:
 marksman:
   weapons:
     primary:
-      name: hlc_rifle_g3a3
-      magazine: 20#hlc_20rnd_762x51_b_G3
-      optics: HLC_Optic_ZFSG1
+      name: rhs_weap_svdp
+      magazine: 10#rhs_10Rnd_762x54mmR_7N1
+      optics: rhs_acc_pso1m2
   vest:
     name: V_TacVest_oli
     items:
       - ACE_RangeCard
       - ACE_MapTools
     magazines:
-      - 6x hlc_20rnd_762x51_b_G3
+      - 5x rhs_10Rnd_762x54mmR_7N1
   binocular: Binocular
   headgear: H_Cap_tan
   backpack:
@@ -296,19 +298,18 @@ marksman:
 sniper:
   weapons:
     primary:
-      name: hlc_rifle_g3a3
-      magazine: 20#hlc_20rnd_762x51_b_G3
-      optics: HLC_Optic_ZFSG1
+      name: rhs_weap_m24sws_wd
+      magazine: 5#rhsusf_5Rnd_762x51_m118_special_Mag
+      optics: rhsusf_acc_M8541_low_wd
+      underBarrel: rhsusf_acc_harris_swivel
   vest:
     name: V_TacVest_camo
     magazines:
-      - 5x hlc_20rnd_762x51_b_G3
+      - 10x rhsusf_5Rnd_762x51_m118_special_Mag
     items:
       - ACE_RangeCard
-      - ACE_Kestrel4500
-      - ACE_ATragMX
       - ACE_MapTools
-  binocular: Rangefinder
+  binocular: Binocular
   headgear: H_Cap_tan
   backpack:
 
