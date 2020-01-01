@@ -23,7 +23,7 @@ default:
       - ACE_EarPlugs
       - ACE_CableTie
   vest:
-    name: V_PlateCarrierIA2_dgtl
+    name: V_PlateCarrierIA1_dgtl
   backpack:
     name: B_FieldPack_oli
   binocular:

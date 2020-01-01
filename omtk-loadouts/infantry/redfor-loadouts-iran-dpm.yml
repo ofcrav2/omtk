@@ -39,7 +39,7 @@ default:
 cdc:
   weapons:
     primary:
-      optics: rhs_acc_1p87
+      optics: optic_Arco_blk_F
     handgun:
       name: rhs_weap_pya
       magazine: 17#rhs_mag_9x19_17
@@ -66,7 +66,7 @@ cdc:
 cdg:
   weapons:
     primary:
-      optics: rhs_acc_1p87
+      optics: optic_Arco_blk_F
     handgun:
       name: rhs_weap_pya
       magazine: 17#rhs_mag_9x19_17
