@@ -1,0 +1,461 @@
+default:
+  weapons:
+    primary:
+      name: arifle_TRG21_F
+      optics: rhsusf_acc_RX01_NoFilter
+      muzzle:
+      underBarrel:
+      magazine: 30#30Rnd_556x45_Stanag
+    launcher:
+      name:
+      optics:
+    handgun:
+      name:
+      magazine:
+  uniform:
+    name: rhsgref_uniform_olive
+    magazines:
+      - rhs_grenade_mkii_mag
+      - rhs_mag_an_m8hc
+    items:
+      - 6x ACE_fieldDressing
+      - 4x ACE_morphine
+      - ACE_EarPlugs
+      - ACE_CableTie
+  vest:
+    name: rhsgref_otv_khaki
+  backpack:
+    name: B_Kitbag_sgg
+  binocular:
+  map: ItemMap
+  compass: ItemCompass
+  radio: ItemRadio
+  watch: TFAR_microdagr
+  headgear: rhsgref_helmet_pasgt_olive
+
+
+cdc:
+  weapons:
+    handgun:
+      name: rhsusf_weap_m1911a1
+      magazine: 7#rhsusf_mag_7x45acp_MHP
+  uniform:
+    items:
+      - ACE_MapTools
+      - ACE_microDAGR
+  vest:
+    magazines:
+      - 3x 7#rhsusf_mag_7x45acp_MHP
+      - 7x 30#30Rnd_556x45_Stanag
+  backpack:
+    name: TFAR_mr3000_bwmod
+    magazines:
+      - 2x rhs_mag_an_m8hc
+      - 1x rhs_mag_m18_green
+      - 1x rhs_mag_m18_red
+      - 1x rhs_mag_mk84
+      - 1x rhs_mag_m18_yellow
+  binocular: ACE_Vector
+  headgear: H_Beret_Colonel
+
+
+cdg:
+  weapons:
+    handgun:
+      name: rhsusf_weap_m1911a1
+      magazine: 7#rhsusf_mag_7x45acp_MHP
+  uniform:
+    items:
+      - ACE_MapTools
+      - ACE_microDAGR
+  vest:
+    magazines:
+      - 3x 7#rhsusf_mag_7x45acp_MHP
+      - 7x 30#30Rnd_556x45_Stanag
+  backpack:
+    name: TFAR_mr3000_bwmod
+    magazines:
+      - 2x rhs_mag_an_m8hc
+      - 1x rhs_mag_m18_green
+      - 1x rhs_mag_m18_red
+      - 1x rhs_mag_mk84
+      - 1x rhs_mag_m18_yellow
+  binocular: ACE_Vector
+
+
+cde:
+  weapons:
+    primary:
+      name: arifle_TRG21_GL_F
+  vest:
+    magazines:
+      - 7x 30#30Rnd_556x45_Stanag
+  backpack:
+    magazines:
+      - 6x 1Rnd_HE_Grenade_shell
+      - 4x 1Rnd_Smoke_Grenade_shell
+      - 2x 1Rnd_SmokeRed_Grenade_shell
+      - 2x 1Rnd_SmokeGreen_Grenade_shell
+      - 2x 1Rnd_SmokeYellow_Grenade_shell
+  binocular: Binocular
+  headgear: H_Booniehat_oli
+
+
+medic:
+  vest:
+    magazines:
+      - 7x 30#30Rnd_556x45_Stanag
+      - 2x rhs_mag_an_m8hc
+      - 1x rhs_mag_m18_green
+  backpack:
+    items:
+      - 6x ACE_bloodIV
+      - 25x ACE_morphine
+      - 25x ACE_epinephrine
+      - 40x ACE_fieldDressing
+  headgear: H_Booniehat_oli
+
+
+grenadier:
+  weapons:
+    primary:
+      name: arifle_TRG21_GL_F
+    launcher:
+      name: rhs_weap_m72a7
+  vest:
+    magazines:
+      - 7x 30#30Rnd_556x45_Stanag
+  backpack:
+    magazines:
+      - 6x 1Rnd_HE_Grenade_shell
+      - 4x 1Rnd_Smoke_Grenade_shell
+      - 2x 1Rnd_SmokeRed_Grenade_shell
+      - 2x 1Rnd_SmokeGreen_Grenade_shell
+      - 2x 1Rnd_SmokeYellow_Grenade_shell
+
+
+
+
+grenadier_assistant:
+  backpack:
+    magazines:
+      - 6x 1Rnd_HE_Grenade_shell
+      - 4x 1Rnd_Smoke_Grenade_shell
+      - 2x 1Rnd_SmokeRed_Grenade_shell
+      - 2x 1Rnd_SmokeGreen_Grenade_shell
+      - 2x 1Rnd_SmokeYellow_Grenade_shell
+  vest:
+    magazines:
+      - 7x 30#30Rnd_556x45_Stanag
+
+
+autorifleman:
+  weapons:
+    primary:
+      name: hlc_rifle_RPK12
+      optics: rhs_acc_1p87
+      magazine: 60#hlc_60Rnd_545x39_m_rpk
+  vest:
+    items:
+      - ACE_EntrenchingTool
+    magazines:
+      - 3x hlc_60Rnd_545x39_m_rpk
+      - 2x hlc_45Rnd_545x39_m_rpkm
+  backpack:
+
+
+autorifleman_assistant:
+  backpack:
+    magazines:
+      - 4x hlc_45Rnd_545x39_m_rpkm
+      - 3x hlc_60Rnd_545x39_m_rpk
+  vest:
+    items:
+      - ACE_EntrenchingTool
+    magazines:
+      - 7x 30#30Rnd_556x45_Stanag
+
+
+gunner:
+  weapons:
+    primary:
+      name: rhs_weap_pkp
+      magazine: 100#rhs_100Rnd_762x54mmR
+      optics: rhs_acc_pkas
+  vest:
+    items:
+      - ACE_EntrenchingTool
+    magazines:
+      - 1x rhs_100Rnd_762x54mmR
+  backpack:
+    magazines:
+      - 2x rhs_100Rnd_762x54mmR
+
+gunner_assistant:
+  backpack:
+    magazines:
+      - 4x rhs_100Rnd_762x54mmR
+  vest:
+    magazines:
+      - 7x 30#30Rnd_556x45_Stanag
+
+
+antitank:
+  weapons:
+    launcher:
+      name: rhs_weap_maaws
+      optics: rhs_optic_maaws
+      magazine: rhs_mag_maaws_HEAT
+  backpack:
+    magazines:
+      - rhs_mag_maaws_HEAT
+      - rhs_mag_maaws_HEDP
+      - rhs_mag_maaws_HE
+  vest:
+    magazines:
+      - 7x 30#30Rnd_556x45_Stanag
+
+
+antitank_assistant:
+  weapons:
+    launcher:
+      name: rhs_weap_rpg26
+      magazine: rhs_rpg26_mag
+  backpack:
+    magazines:
+      - 2x rhs_mag_maaws_HEAT
+      - rhs_mag_maaws_HEDP
+      - rhs_mag_maaws_HE
+  vest:
+    magazines:
+      - 7x 30#30Rnd_556x45_Stanag
+
+
+antitank_light:
+  weapons:
+    launcher:
+      name: rhs_weap_rpg26
+      magazine: rhs_rpg26_mag
+  vest:
+    magazines:
+      - 7x 30#30Rnd_556x45_Stanag
+  backpack:
+
+
+antipersonnel_light:
+  weapons:
+    launcher:
+      name: rhs_weap_m72a7
+  vest:
+    magazines:
+      - 7x 30#30Rnd_556x45_Stanag
+  backpack:
+
+
+marksman:
+  weapons:
+    primary:
+      name: rhs_weap_svdp_wd
+      magazine: 10#rhs_10Rnd_762x54mmR_7N1
+      optics: rhs_acc_pso1m2
+    handgun:
+      name: rhsusf_weap_m1911a1
+      magazine: 7#rhsusf_mag_7x45acp_MHP
+  uniform:
+    items:
+      - ACE_RangeCard
+      - ACE_MapTools
+  vest:
+    magazines:
+      - 3x rhsusf_mag_7x45acp_MHP
+      - 10x rhs_10Rnd_762x54mmR_7N1
+  binocular: ACE_Vector
+  backpack:
+  headgear: H_Booniehat_oli
+
+
+sniper:
+  weapons:
+    primary:
+      name: rhs_weap_t5000
+      magazine: 5#rhs_5Rnd_338lapua_t5000
+      optics: rhs_acc_dh520x56
+      underBarrel: rhs_acc_harris_swivel
+    handgun:
+      name: rhsusf_weap_m1911a1
+      magazine: 7#rhsusf_mag_7x45acp_MHP
+  uniform:
+    items:
+      - ACE_RangeCard
+      - ACE_Kestrel4500
+      - ACE_ATragMX
+      - ACE_microDAGR
+      - ACE_MapTools
+  vest:
+    magazines:
+      - 3x rhsusf_mag_7x45acp_MHP
+      - 15x rhs_5Rnd_338lapua_t5000
+  binocular: ACE_Vector
+  backpack:
+  headgear: H_Booniehat_oli
+
+spotter:
+  weapons:
+    primary:
+      name: arifle_TRG20_F
+      muzzle: muzzle_snds_M
+      magazine: 30#30Rnd_556x45_Stanag
+  vest:
+    magazines:
+      - 7x 30#30Rnd_556x45_Stanag
+    items:
+      - ACE_RangeCard
+      - ACE_Kestrel4500
+      - ACE_ATragMX
+      - ACE_microDAGR
+      - ACE_MapTools
+  backpack:
+    name: TFAR_mr3000_bwmod
+  binocular: ACE_Vector
+  headgear: H_Booniehat_oli
+
+
+explosive_specialist:
+  backpack:
+    magazines:
+      - 2x SatchelCharge_Remote_Mag
+  uniform:
+    items:
+      - ACE_DefusalKit
+      - ACE_Clacker
+  vest:
+    magazines:
+      - 7x 30#30Rnd_556x45_Stanag
+
+
+rifleman:
+  vest:
+    magazines:
+      - 12x 30#30Rnd_556x45_Stanag
+  backpack:
+
+
+driver:
+  weapons:
+    primary:
+      name: arifle_TRG20_F
+      magazine: 30#30Rnd_556x45_Stanag
+      optics:
+      underBarrel:
+  uniform:
+    items:
+      - ACE_MapTools
+      - ACE_microDAGR
+  vest:
+    name: V_TacVest_oli
+    magazines:
+      - 3x 30Rnd_556x45_Stanag
+  binocular: Binocular
+  headgear: rhsusf_cvc_green_ess
+  backpack:
+
+
+ground_crew:
+  weapons:
+    primary:
+      name: arifle_TRG20_F
+      magazine: 30#30Rnd_556x45_Stanag
+      optics:
+      underBarrel:
+  vest:
+    name: V_TacVest_oli
+    magazines:
+      - 3x 30Rnd_556x45_Stanag
+  headgear: rhsusf_cvc_green_ess
+  backpack:
+
+pilot:
+  weapons:
+    primary:
+      name: rhs_weap_pp2000
+      optics: optic_Aco_smg
+      magazine: 20#rhs_mag_9x19mm_7n21_20
+  uniform:
+    items:
+      - ACE_MapTools
+      - ACE_microDAGR
+      - ItemGPS
+  vest:
+    name: V_TacVest_oli
+    magazines:
+      - 3x rhs_mag_9x19mm_7n21_20
+  headgear: rhs_zsh7a_mike_green
+  backpack:
+
+
+air_crew:
+  weapons:
+    primary:
+      name: rhs_weap_pp2000
+      optics: optic_Aco_smg
+      magazine: 20#rhs_mag_9x19mm_7n21_20
+  vest:
+    name: V_TacVest_oli
+    magazines:
+      - 3x rhs_mag_9x19mm_7n21_20
+  headgear: rhs_zsh7a_mike_green
+  backpack:
+
+
+op_drone:
+  uniform:
+    items:
+      - ACE_MapTools
+      - ACE_microDAGR
+  vest:
+    magazines:
+      - 7x 30#30Rnd_556x45_Stanag
+  backpack:
+    name:
+  binocular: Binocular
+
+
+op_radio:
+  vest:
+    magazines:
+      - 7x 30#30Rnd_556x45_Stanag
+  backpack:
+    name: TFAR_mr3000_bwmod
+
+
+recon:
+  weapons:
+    primary:
+      name: arifle_TRG20_F
+      muzzle: muzzle_snds_M
+      magazine: 30#30Rnd_556x45_Stanag
+  uniform:
+    items:
+      - ACE_MapTools
+      - ACE_microDAGR
+  vest:
+    magazines:
+      - 8x 30Rnd_556x45_Stanag
+  backpack:
+  binocular: Binocular
+  headgear: H_Booniehat_oli
+
+turret_tripod_carrier:
+  vest:
+    magazines:
+      - 7x 30#30Rnd_556x45_Stanag
+  backpack:
+    name: RHS_M2_MiniTripod_Bag
+
+
+turret_gun_carrier:
+  vest:
+    magazines:
+      - 7x 30#30Rnd_556x45_Stanag
+  backpack:
+    name: RHS_M2_Gun_Bag
