@@ -20,6 +20,7 @@ default:
       - 2x ACE_morphine
       - ACE_EarPlugs
       - ACE_CableTie
+      - ACE_splint
   vest:
    name: UK3CB_TKA_B_V_GA_LITE_TAN
   backpack:
@@ -129,6 +130,7 @@ medic:
       - 25x ACE_morphine
       - 25x ACE_epinephrine
       - 50x ACE_fieldDressing
+      - 10x ACE_splint
   headgear: UK3CB_H_Shemag_tan
 
 
@@ -296,7 +298,7 @@ marksman:
     name: UK3CB_TKM_I_U_03
   weapons:
     primary:
-      name: rhs_weap_svdp
+      name: UK3CB_SVD_OLD
       magazine: 10#rhs_10Rnd_762x54mmR_7N1
       optics: rhs_acc_pso1m2
   vest:
@@ -315,7 +317,7 @@ sniper:
     name: UK3CB_TKM_I_U_03
   weapons:
     primary:
-      name: rhs_weap_svdp
+      name: UK3CB_SVD_OLD
       magazine: 10#rhs_10Rnd_762x54mmR_7N1
       optics: rhs_acc_pso1m2
   vest:

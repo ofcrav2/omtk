@@ -23,6 +23,7 @@ default:
       - ACE_EarPlugs
       - ACE_CableTie
       - vme_camonet_FOR
+      - ACE_splint
   vest:
    name: PLA_T15Vest_RD_D_D
   backpack:
@@ -131,6 +132,7 @@ medic:
       - 25x ACE_morphine
       - 25x ACE_epinephrine
       - 40x ACE_fieldDressing
+      - 10x ACE_splint
 
 
 grenadier:

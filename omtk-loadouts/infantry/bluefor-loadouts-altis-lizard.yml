@@ -22,6 +22,7 @@ default:
       - 4x ACE_morphine
       - ACE_EarPlugs
       - ACE_CableTie
+      - ACE_splint
   vest:
     name: rhsusf_mbav_rifleman
   backpack:
@@ -127,6 +128,7 @@ medic:
       - 25x ACE_morphine
       - 25x ACE_epinephrine
       - 50x ACE_fieldDressing
+      - 10x ACE_splint
 
 
 grenadier:

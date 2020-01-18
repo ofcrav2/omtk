@@ -22,6 +22,7 @@ default:
       - 4x ACE_morphine
       - ACE_EarPlugs
       - ACE_CableTie
+      - ACE_splint
   vest:
    name: UK3CB_UN_B_V_6b23_ml_02
   backpack:
@@ -129,6 +130,7 @@ medic:
       - 25x ACE_morphine
       - 25x ACE_epinephrine
       - 40x ACE_fieldDressing
+      - 10x ACE_splint
 
 
 grenadier:

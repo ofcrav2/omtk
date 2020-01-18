@@ -21,6 +21,7 @@ default:
       - 4x ACE_morphine
       - ACE_EarPlugs
       - ACE_CableTie
+      - ACE_splint
   vest:
    name: UK3CB_TKA_O_V_6b23_ml_Oli_ADPM
   backpack:
@@ -125,6 +126,7 @@ medic:
       - 25x ACE_morphine
       - 25x ACE_epinephrine
       - 40x ACE_fieldDressing
+      - 10x ACE_splint
   headgear: UK3CB_TKA_O_H_Patrolcap_ADPM
 
 

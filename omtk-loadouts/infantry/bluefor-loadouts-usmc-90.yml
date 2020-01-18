@@ -21,6 +21,7 @@ default:
       - 4x ACE_morphine
       - ACE_EarPlugs
       - ACE_CableTie
+      - ACE_splint
   vest:
     name: UK3CB_CW_US_B_LATE_V_PASGT_Rif_Vest
   backpack:
@@ -123,10 +124,11 @@ medic:
   backpack:
     name: UK3CB_B_US_Medic_Backpack
     items:
-      - 6x ACE_bloodIV
+      - 8x ACE_bloodIV
       - 25x ACE_morphine
       - 25x ACE_epinephrine
       - 40x ACE_fieldDressing
+      - 10x ACE_splint
   headgear: UK3CB_CW_US_B_LATE_H_PASGT_02_WDL
 
 

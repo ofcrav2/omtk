@@ -22,6 +22,7 @@ default:
       - 4x ACE_morphine
       - ACE_EarPlugs
       - ACE_CableTie
+      - ACE_splint
   vest:
    name: rhsgref_6b23_ttsko_mountain
   backpack:
@@ -141,6 +142,7 @@ medic:
       - 25x ACE_morphine
       - 25x ACE_epinephrine
       - 40x ACE_fieldDressing
+      - 10x ACE_splint
 headgear: hsgref_6b27m_ttsko_forest
 
 
@@ -191,16 +193,17 @@ autorifleman:
       magazine: 45#hlc_45Rnd_545x39_m_rpk
   backpack:
     magazines:
-      - 4x hlc_45Rnd_545x39_m_rpk
+      - 3x hlc_60Rnd_545x39_m_rpk
   vest:
     magazines:
-      - 4x hlc_45Rnd_545x39_t_rpk
+      - 5x hlc_45Rnd_545x39_m_rpk
 
 
 autorifleman_assistant:
   backpack:
     magazines:
-      - 6x hlc_45Rnd_545x39_t_rpk
+      - 5x hlc_45Rnd_545x39_m_rpk
+      - 5x hlc_60Rnd_545x39_m_rpk
   vest:
     items:
       - ACE_EntrenchingTool

@@ -23,6 +23,7 @@ default:
       - ACE_EarPlugs
       - ACE_CableTie
       - rhsusf_acc_anpeq15side_bk
+      - ACE_splint
   vest:
     name: rhsusf_spc_rifleman
   backpack:
@@ -127,10 +128,11 @@ medic:
       - 2x SmokeShellGreen
   backpack:
     items:
-      - 6x ACE_bloodIV
+      - 8x ACE_bloodIV
       - 25x ACE_morphine
       - 25x ACE_epinephrine
       - 40x ACE_fieldDressing
+      - 10x ACE_splint
   headgear: rhsusf_lwh_helmet_marpatd
 
 

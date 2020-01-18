@@ -22,6 +22,7 @@ default:
       - 4x ACE_morphine
       - ACE_EarPlugs
       - ACE_CableTie
+      - ACE_splint
   vest:
    name: rhs_6b23_rifleman
   backpack:
@@ -125,6 +126,7 @@ medic:
       - 25x ACE_morphine
       - 25x ACE_epinephrine
       - 40x ACE_fieldDressing
+      - 10x ACE_splint
   headgear: rhs_6b26_green
 
 
@@ -170,7 +172,7 @@ autorifleman:
   weapons:
     primary:
       name: hlc_rifle_rpk74n
-      magazine: 45#rhs_100Rnd_762x54mmR_7N26
+      magazine: 45#hlc_45Rnd_545x39_m_rpk
       optics:
       muzzle:
   backpack:
