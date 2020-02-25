@@ -47,9 +47,6 @@ RscSpectator_allowFreeCam = true;
 
 [player, [missionNamespace, "OMTK_LOADOUT"]] call BIS_fnc_saveInventory;
 
-//// Pickup gear & weapons
-waitUntil {time != 0} ;
-{_x setUnitLoadout getUnitLoadout _x} forEach allUnits ;
 
 //// OMTK EXECUTION
 execVM "omtk\load_modules.sqf";
