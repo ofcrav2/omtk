@@ -11,12 +11,12 @@ if (hasInterface) then {
 		
 		if (_side == east) then {
 			_forbiddenSRRadios = ["TFAR_anprc152", "TFAR_rf7800str"];
-			_forbiddenLRRadios = ["TFAR_rt1523g", "TFAR_rt1523g_big", "TFAR_rt1523g_black", "TFAR_rt1523g_fabric", "TFAR_rt1523g_green", "TFAR_rt1523g_rhs", "TFAR_rt1523g_sage","TFAR_rt1523g_big_bwmod"];
+			_forbiddenLRRadios = ["TFAR_rt1523g", "TFAR_rt1523g_big", "TFAR_rt1523g_black", "TFAR_rt1523g_fabric", "TFAR_rt1523g_green", "TFAR_rt1523g_rhs", "TFAR_rt1523g_sage","TFAR_rt1523g_big_bwmod","TFAR_mr3000_bwmod"];
 		};
 		
 		if (_side == west) then {
 			_forbiddenSRRadios = ["TFAR_fadak", "TFAR_pnr1000a"];
-			_forbiddenLRRadios = ["TFAR_mr3000", "TFAR_mr3000_multicam", "TFAR_mr3000_rhs","TFAR_mr3000_bwmod"];
+			_forbiddenLRRadios = ["TFAR_mr3000", "TFAR_mr3000_multicam", "TFAR_mr3000_rhs"];
 		};
 		
 		if (_item in _forbiddenSRRadios) then {
