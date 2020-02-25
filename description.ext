@@ -10,6 +10,8 @@ Saving = 0;
 
 respawn = "BASE";
 respawnDelay = 999999;
+corpseLimit = 999;
+wreckLimit = 999;
 
 enableDebugConsole = 1;
 disableChannels[]={0,5,6};
