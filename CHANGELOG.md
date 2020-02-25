@@ -5,6 +5,11 @@
 ~ feature modified  
 @ bug fix  
 !! security patch  
+### V2.7.3 - 2020-02-25
+@ [omtk] correction on picking gear / weapons bug
+@ [omtk] correction on MR3000_radio pickup restriction
+\+ [omtk] description.ext: increase of corpse and wreck limit
+
 ### V2.7.2 - 2019-11-19
 @ [omtk] correction on picking gear / weapons bug
 
@@ -13,7 +18,6 @@
 
 ### V2.7.0 - 2019-07-01
 \+ [omtk] add removing playable AI after warm-up end
-
 
 ### V2.6.0 - 2019-05-08
 \@ [omtk] debug spectator selector (side / all)
