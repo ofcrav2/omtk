@@ -17,11 +17,12 @@ default:
     magazines:
       - rhs_mag_m67
     items:
-      - 6x ACE_fieldDressing
+      - 8x ACE_fieldDressing
       - 4x ACE_morphine
       - ACE_EarPlugs
       - ACE_CableTie
-      - ACE_splint
+      - 4x ACE_splint
+      - 2x ACE_epinephrine
   vest:
     name: UK3CB_CW_US_B_LATE_V_PASGT_Rif_Vest
   backpack:

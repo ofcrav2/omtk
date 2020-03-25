@@ -18,14 +18,15 @@ default:
       - rhs_mag_rgd5
       - rhs_mag_rdg2_white
     items:
-      - 6x ACE_fieldDressing
+      - 8x ACE_fieldDressing
       - 4x ACE_morphine
       - ACE_EarPlugs
       - ACE_CableTie
+      - 4x ACE_splint
+      - 2x ACE_epinephrine
       - rhsusf_acc_anpeq15side_bk
-      - ACE_splint
   vest:
-    name: rhs_6b23_6sh116_flora
+    name: rhs_6b23_6sh116_od
   backpack:
     name: B_FieldPack_oli
   binocular:
@@ -93,7 +94,7 @@ cde:
     primary:
       name: hlc_rifle_osw_GL
   vest:
-    name: rhs_6b23_6sh116_vog_flora
+    name: rhs_6b23_6sh116_vog_od
     magazines:
       - 7x 20#hlc_20Rnd_762x51_B_fal
   backpack:
@@ -130,7 +131,7 @@ grenadier:
       name: rhs_weap_rshg2
       magazine: rhs_rshg2_mag
   vest:
-    name: rhs_6b23_6sh116_vog_flora
+    name: rhs_6b23_6sh116_vog_od
     magazines:
       - 7x 20#hlc_20Rnd_762x51_B_fal
   backpack:

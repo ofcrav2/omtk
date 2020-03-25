@@ -15,13 +15,15 @@ default:
   uniform:
     name: rhsgref_uniform_ttsko_mountain
     magazines:
-      - 2x rhs_mag_rdg2_white
+      - 1x SmokeShell
+      - rhs_mag_f1
     items:
-      - 10x ACE_fieldDressing
+      - 8x ACE_fieldDressing
       - 4x ACE_morphine
       - ACE_EarPlugs
       - ACE_CableTie
-      - ACE_splint
+      - 4x ACE_splint
+      - 2x ACE_epinephrine
   vest:
    name: rhsgref_6b23_ttsko_mountain
   backpack:

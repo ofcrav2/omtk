@@ -18,11 +18,12 @@ default:
       - rhs_grenade_mkii_mag
       - rhs_mag_an_m8hc
     items:
-      - 6x ACE_fieldDressing
+      - 8x ACE_fieldDressing
       - 4x ACE_morphine
       - ACE_EarPlugs
       - ACE_CableTie
-      - ACE_splint
+      - 4x ACE_splint
+      - 2x ACE_epinephrine
   vest:
     name: rhsgref_otv_khaki
   backpack:
