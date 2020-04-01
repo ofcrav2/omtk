@@ -11,7 +11,6 @@ omtk_wu_com_menu_item_id = 0;
 
 
 omtk_wu_start_warmup = {
-	[player, [missionNamespace, "OMTK_LOADOUT"]] call BIS_fnc_loadInventory;
 	player allowDamage false;
 	omtk_wu_restrict_area_trigger = createTrigger ["EmptyDetector", omtk_wu_spawn_location, false];
 	omtk_wu_restrict_area_trigger setTriggerArea [omtk_wu_radius, omtk_wu_radius, 0, false];
