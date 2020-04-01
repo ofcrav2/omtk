@@ -1,5 +1,11 @@
 _specMode = ("OMTK_MODULE_SPECTATOR" call BIS_fnc_getParamValue);
 
+// Re-enable input if player is dead (acebug workaround)
+if (userInputDisabled) then
+{
+   disableUserInput false;
+};
+
 if (_specMode == 0) then {
 	["Initialize", [player, [], true, true, true, true, true, true, true, true]] call BIS_fnc_EGSpectator;
 } else {
