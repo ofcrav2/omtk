@@ -18,12 +18,13 @@ default:
       - rhs_mag_m67
       - rhs_mag_an_m8hc
     items:
-      - 6x ACE_fieldDressing
+      - 8x ACE_fieldDressing
       - 4x ACE_morphine
       - ACE_EarPlugs
       - ACE_CableTie
+      - 4x ACE_splint
+      - 2x ACE_epinephrine
       - rhsusf_acc_anpeq15side_bk
-      - ACE_splint
   vest:
     name: rhsusf_spc_rifleman
   backpack:

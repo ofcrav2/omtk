@@ -17,11 +17,12 @@ default:
       - rhssaf_mag_br_m84
       - rhssaf_mag_brd_m83_white
     items:
-      - 6x ACE_fieldDressing
-      - 2x ACE_morphine
+      - 8x ACE_fieldDressing
+      - 4x ACE_morphine
       - ACE_EarPlugs
       - ACE_CableTie
-      - ACE_splint
+      - 4x ACE_splint
+      - 2x ACE_epinephrine
   vest:
    name: rhssaf_vest_md99_digital_rifleman
   backpack:
