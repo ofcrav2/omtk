@@ -1,0 +1,481 @@
+default:
+  weapons:
+    primary:
+      name: TMT_HK33EA3
+      optics: TMT_EOTech552_b
+      muzzle:
+      underBarrel:
+      magazine: 30#30Rnd_556x45_Stanag
+    launcher:
+      name:
+      optics:
+    handgun:
+      name:
+      magazine:
+  uniform:
+    name: TMT_TAF_Uniform_clothing
+    magazines:
+      - HandGrenade
+      - SmokeShell
+    items:
+      - 8x ACE_fieldDressing
+      - 4x ACE_morphine
+      - ACE_EarPlugs
+      - ACE_CableTie
+      - 4x ACE_splint
+      - 2x ACE_epinephrine
+  vest:
+    name: tmt_kkk_fullvest_medium
+  backpack:
+    name: tmt_alicepack
+  binocular:
+  map: ItemMap
+  compass: ItemCompass
+  radio: ItemRadio
+  watch: TFAR_microdagr
+  headgear: tmt_m88helmet_camo_googles
+
+
+cdc:
+  weapons:
+    primary:
+      optics: TMT_ACOG_TA31_RMR_Combo
+    handgun:
+      name: TMT_Glock17
+      magazine: 16#16Rnd_9x21_Mag
+  uniform:
+    items:
+      - ACE_MapTools
+      - ACE_microDAGR
+  vest:
+    name: tmt_kkk_fullvest_full
+    magazines:
+      - 3x 16#16Rnd_9x21_Mag
+      - 8x 30#30Rnd_556x45_Stanag
+  backpack:
+    name: TFAR_rt1523g_black
+    magazines:
+      - 4x SmokeShell
+      - 2x SmokeShellGreen
+      - 2x SmokeShellRed
+      - 1x ACE_M84
+      - 2x SmokeShellYellow
+  binocular: ACE_VectorDay
+  headgear: H_Beret_02
+
+
+cdg:
+  weapons:
+    primary:
+      optics: TMT_ACOG_TA31_RMR_Combo
+    handgun:
+      name: TMT_Glock17
+      magazine: 16#16Rnd_9x21_Mag
+  uniform:
+    items:
+      - ACE_MapTools
+      - ACE_microDAGR
+  vest:
+    name: tmt_kkk_fullvest_full
+    magazines:
+      - 3x 16#16Rnd_9x21_Mag
+      - 8x 30#30Rnd_556x45_Stanag
+  backpack:
+    name: TFAR_rt1523g_black
+    magazines:
+      - 4x SmokeShell
+      - 2x SmokeShellGreen
+      - 2x SmokeShellRed
+      - 1x ACE_M84
+      - 2x SmokeShellYellow
+  binocular: ACE_VectorDay
+
+
+cde:
+  weapons:
+    primary:
+      name: TMT_HK33EA3_T40
+  vest:
+    name: tmt_kkk_fullvest_medium
+    magazines:
+      - 8x 30#30Rnd_556x45_Stanag
+  backpack:
+    magazines:
+      - 6x 1Rnd_HE_Grenade_shell
+      - 4x 1Rnd_Smoke_Grenade_shell
+      - 2x 1Rnd_SmokeRed_Grenade_shell
+      - 2x 1Rnd_SmokeGreen_Grenade_shell
+      - 2x 1Rnd_SmokeYellow_Grenade_shell
+      - 2x 1Rnd_SmokePurple_Grenade_shell
+  headgear: tmt_m88helmet_camo_googles
+  binocular: Binocular
+
+
+
+medic:
+  vest:
+    name: tmt_kkk_fullvest_medium
+    magazines:
+      - 8x 30#30Rnd_556x45_Stanag
+      - 1x SmokeShell
+      - 1x SmokeShellGreen
+  backpack:
+    items:
+      - 6x ACE_bloodIV
+      - 25x ACE_morphine
+      - 25x ACE_epinephrine
+      - 40x ACE_fieldDressing
+      - 10x ACE_splint
+  headgear: tmt_m88helmet_camo_googles
+
+
+grenadier:
+  weapons:
+    primary:
+      name: TMT_HK33EA3_T40
+  vest:
+    name: tmt_kkk_fullvest_medium
+    magazines:
+      - 8x 30#30Rnd_556x45_Stanag
+  backpack:
+    magazines:
+      - 6x 1Rnd_HE_Grenade_shell
+      - 4x 1Rnd_Smoke_Grenade_shell
+      - 2x 1Rnd_SmokeRed_Grenade_shell
+      - 2x 1Rnd_SmokeGreen_Grenade_shell
+      - 2x 1Rnd_SmokeYellow_Grenade_shell
+      - 2x 1Rnd_SmokePurple_Grenade_shell
+
+
+
+grenadier_assistant:
+  backpack:
+    magazines:
+      - 6x 1Rnd_HE_Grenade_shell
+      - 4x 1Rnd_Smoke_Grenade_shell
+      - 2x 1Rnd_SmokeRed_Grenade_shell
+      - 2x 1Rnd_SmokeGreen_Grenade_shell
+      - 2x 1Rnd_SmokeYellow_Grenade_shell
+      - 2x 1Rnd_SmokePurple_Grenade_shell
+  vest:
+    magazines:
+      - 8x 30#30Rnd_556x45_Stanag
+
+
+autorifleman:
+  weapons:
+    primary:
+      name: TMT_M249_MK1
+      optics: TMT_EOTech552_b
+      magazine: 200#200Rnd_556x45_Box_F
+  vest:
+    name: tmt_kkk_fullvest_medium
+    items:
+      - ACE_EntrenchingTool
+    magazines:
+      - 2x 200Rnd_556x45_Box_F
+  backpack:
+    magazines:
+      - 1x 200Rnd_556x45_Box_F
+
+
+autorifleman_assistant:
+  backpack:
+    magazines:
+      - 3x 200Rnd_556x45_Box_F
+  vest:
+    items:
+      - ACE_EntrenchingTool
+    magazines:
+      - 8x 30#30Rnd_556x45_Stanag
+
+
+gunner:
+  weapons:
+    primary:
+      name: TMT_PKM
+      magazine: 150#150Rnd_762x54_Box
+  vest:
+    name: tmt_kkk_fullvest_medium
+    items:
+      - ACE_EntrenchingTool
+    magazines:
+      - 3x 150Rnd_762x54_Box
+
+
+gunner_assistant:
+  backpack:
+    magazines:
+      - 5x 150Rnd_762x54_Box
+  vest:
+    items:
+      - ACE_EntrenchingTool
+    magazines:
+      - 8x 30#30Rnd_556x45_Stanag
+
+
+antitank:
+  weapons:
+    launcher:
+      name: launch_RPG7V
+      magazine: RPG7_PG7V
+  backpack:
+    name: tmt_alicepack
+    magazines:
+      - RPG7_PG7V
+      - RPG7_PG7VR
+      - RPG7_OG7V
+  vest:
+    magazines:
+      - 8x 30#30Rnd_556x45_Stanag
+
+
+antitank_assistant:
+  backpack:
+    name: tmt_alicepack
+    magazines:
+      - 2x RPG7_PG7V
+      - RPG7_PG7VR
+      - RPG7_OG7V
+  vest:
+    magazines:
+      - 8x 30#30Rnd_556x45_Stanag
+
+
+antitank_light:
+  weapons:
+    launcher:
+      name: TMT_M72_launcher
+      magazine: TMT_M72_AT_M
+  backpack:
+  vest:
+    magazines:
+      - 8x 30#30Rnd_556x45_Stanag
+
+
+antipersonnel_light:
+  weapons:
+    launcher:
+      name: TMT_M72_launcher
+      magazine: TMT_M72_AT_M
+  backpack:
+  vest:
+    magazines:
+      - 8x 30#30Rnd_556x45_Stanag
+
+
+marksman:
+  weapons:
+    primary:
+      name: TMT_JNG90_B
+      magazine: 10#10Rnd_762x54_Mag
+      underBarrel: bipod_03_F_blk
+      optics: TMT_3EOS_KESKIN_B
+    handgun:
+      name: TMT_Glock17
+      magazine: 16#16Rnd_9x21_Mag
+  uniform:
+    items:
+      - ACE_RangeCard
+      - ACE_microDAGR
+      - ACE_MapTools
+  vest:
+    name: tmt_filelivest_marksman
+    magazines:
+      - 3x 16Rnd_9x21_Mag
+      - 8x 10Rnd_762x54_Mag
+  binocular: ACE_VectorDay
+  backpack:
+  headgear: TMT_Booniehat_TSK
+
+
+sniper:
+  weapons:
+    primary:
+      name: TMT_M107
+      magazine: 5#5Rnd_127x108_Mag
+      optics: TMT_SchmidtBender_scope
+    handgun:
+      name: TMT_Glock17
+      magazine: 16#16Rnd_9x21_Mag
+  uniform:
+    items:
+      - ACE_RangeCard
+      - ACE_Kestrel4500
+      - ACE_ATragMX
+      - ACE_microDAGR
+      - ACE_MapTools
+  vest:
+    name: tmt_filelivest_marksman
+    magazines:
+      - 2x 16Rnd_9x21_Mag
+      - 10x 5Rnd_127x108_Mag
+  backpack:
+  headgear: TMT_Booniehat_TSK
+  binocular: ACE_VectorDay
+
+spotter:
+  weapons:
+    primary:
+      name: TMT_HK33EA3_Grippod
+      optics: TMT_EOTech552_b
+      muzzle: muzzle_snds_H
+      magazine: 30#30Rnd_556x45_Stanag
+  vest:
+    magazines:
+      - 8x 30#30Rnd_556x45_Stanag
+    items:
+      - ACE_RangeCard
+      - ACE_Kestrel4500
+      - ACE_ATragMX
+      - ACE_microDAGR
+      - ACE_MapTools
+  backpack:
+    name: TFAR_rt1523g_black
+  binocular: ACE_VectorDay
+  headgear: TMT_Booniehat_TSK
+
+
+explosive_specialist:
+  backpack:
+    magazines:
+      - 2x SatchelCharge_Remote_Mag
+  uniform:
+    items:
+      - ACE_DefusalKit
+      - ACE_Clacker
+  vest:
+    magazines:
+      - 8x 30#30Rnd_556x45_Stanag
+
+
+rifleman:
+  vest:
+    magazines:
+      - 12x 30#30Rnd_556x45_Stanag
+  backpack:
+
+
+driver:
+  weapons:
+    primary:
+      name: TMT_M4A1
+      magazine: 30#30Rnd_556x45_Stanag
+      optics:
+  uniform:
+    items:
+      - ACE_MapTools
+      - ACE_microDAGR
+  vest:
+    name: tmt_newkkkfilevest_medium
+    magazines:
+      - 5x 30#30Rnd_556x45_Stanag
+  binocular: Binocular
+  headgear: H_HelmetCrew_I
+  backpack:
+
+
+ground_crew:
+  weapons:
+    primary:
+      name: TMT_M4A1
+      magazine: 30#30Rnd_556x45_Stanag
+      optics:
+  vest:
+    name: tmt_newkkkfilevest_medium
+    magazines:
+      - 5x 30#30Rnd_556x45_Stanag
+  binocular: Binocular
+  headgear: H_HelmetCrew_I
+  backpack:
+
+
+pilot:
+  weapons:
+    primary:
+      name: hgun_PDW2000_F
+      magazine: 30#30Rnd_9x21_Mag
+      optics: optic_Aco_smg
+  uniform:
+    name: TMT_HeliPilotCoveralls_TR
+    items:
+      - ACE_MapTools
+      - ACE_microDAGR
+      - ItemGPS
+    magazines:
+      - 5x 30Rnd_9x21_Mag
+  vest:
+    name: V_TacVest_oli
+  headgear: H_PilotHelmetHeli_B
+  backpack:
+
+
+air_crew:
+  weapons:
+    primary:
+      name: hgun_PDW2000_F
+      magazine: 30#30Rnd_9x21_Mag
+      optics: optic_Aco_smg
+  uniform:
+    name: TMT_HeliPilotCoveralls_TR
+    magazines:
+      - 5x 30Rnd_9x21_Mag
+  vest:
+    name: V_TacVest_oli
+  headgear: H_PilotHelmetHeli_B
+  backpack:
+
+
+op_drone:
+  uniform:
+    items:
+      - ACE_MapTools
+      - ACE_microDAGR
+  vest:
+    magazines:
+      - 8x 30#30Rnd_556x45_Stanag
+  backpack:
+    name:
+  binocular: Binocular
+
+
+op_radio:
+  vest:
+    magazines:
+      - 8x 30#30Rnd_556x45_Stanag
+  backpack:
+    name: TFAR_rt1523g_black
+
+
+recon:
+  weapons:
+    primary:
+      name: TMT_HK33EA3_Grippod
+      optics: TMT_EOTech552_b
+      muzzle: muzzle_snds_H
+      magazine: 30#30Rnd_556x45_Stanag
+  uniform:
+    items:
+      - ACE_MapTools
+      - ACE_microDAGR
+  vest:
+    magazines:
+      - 8x 30#30Rnd_556x45_Stanag
+  backpack:
+  binocular: Binocular
+  headgear: TMT_Booniehat_TSK
+
+turret_tripod_carrier:
+  vest:
+    magazines:
+      - 8x 30#30Rnd_556x45_Stanag
+  backpack:
+    name: I_HMG_02_support_F
+
+
+turret_gun_carrier:
+  vest:
+    magazines:
+      - 8x 30#30Rnd_556x45_Stanag
+  backpack:
+    name: I_HMG_02_weapon_F

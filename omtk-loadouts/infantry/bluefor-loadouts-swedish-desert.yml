@@ -1,0 +1,494 @@
+default:
+  weapons:
+    primary:
+      name: sfp_ak5c
+      optics: sfp_optic_aimpoint
+      muzzle:
+      underBarrel:
+      magazine: 30#sfp_30Rnd_556x45_Stanag_plastic
+    launcher:
+      name:
+      optics:
+    handgun:
+      name:
+      magazine:
+  uniform:
+    name: sfp_m90d_uniform_long_m08
+    magazines:
+      - sfp_handgrenade_shgr2000
+      - SmokeShell
+    items:
+      - 8x ACE_fieldDressing
+      - 4x ACE_morphine
+      - ACE_EarPlugs
+      - ACE_CableTie
+      - 4x ACE_splint
+      - 2x ACE_epinephrine
+  vest:
+    name: sfp_kroppsskydd12
+  backpack:
+    name: sfp_stridssele_backpack
+  binocular:
+  map: ItemMap
+  compass: ItemCompass
+  radio: ItemRadio
+  watch: TFAR_microdagr
+  headgear: sfp_m90d_helmet
+
+
+cdc:
+  weapons:
+    primary:
+      optics: sfp_optic_3x_aimpoint
+      magazine: 30#sfp_30Rnd_556x45_Stanag_plastic
+    handgun:
+      name: sfp_p226
+      magazine: 15#sfp_15Rnd_9x19_Mag
+  uniform:
+    items:
+      - ACE_MapTools
+      - ACE_microDAGR
+  vest:
+    name: sfp_kroppsskydd12_tl
+    magazines:
+      - 3x 15#sfp_15Rnd_9x19_Mag
+      - 8x 30#sfp_30Rnd_556x45_Stanag_plastic
+  backpack:
+    name: sfp_stridssack2000_ra_ksk12
+    magazines:
+      - 4x SmokeShell
+      - 2x SmokeShellGreen
+      - 2x SmokeShellRed
+      - 1x ACE_M84
+      - 2x SmokeShellYellow
+  binocular: ACE_VectorDay
+  headgear: H_Beret_02
+
+
+cdg:
+  weapons:
+    primary:
+      optics: sfp_optic_3x_aimpoint
+      magazine: 30#sfp_30Rnd_556x45_Stanag_plastic
+    handgun:
+      name: sfp_p226
+      magazine: 15#sfp_15Rnd_9x19_Mag
+  uniform:
+    items:
+      - ACE_MapTools
+      - ACE_microDAGR
+  vest:
+    name: sfp_kroppsskydd12_tl
+    magazines:
+      - 3x 15#sfp_15Rnd_9x19_Mag
+      - 8x 30#sfp_30Rnd_556x45_Stanag_plastic
+  backpack:
+    name: sfp_stridssack2000_ra_ksk12
+    magazines:
+      - 4x SmokeShell
+      - 2x SmokeShellGreen
+      - 2x SmokeShellRed
+      - 1x ACE_M84
+      - 2x SmokeShellYellow
+  binocular: ACE_VectorDay
+
+
+cde:
+  weapons:
+    primary:
+      name: sfp_ak5c_m203
+  vest:
+    name: sfp_kroppsskydd12_gl
+    magazines:
+      - 8x 30#sfp_30Rnd_556x45_Stanag_plastic
+  backpack:
+    magazines:
+      - 6x 1Rnd_HE_Grenade_shell
+      - 4x 1Rnd_Smoke_Grenade_shell
+      - 2x 1Rnd_SmokeRed_Grenade_shell
+      - 2x 1Rnd_SmokeGreen_Grenade_shell
+      - 2x 1Rnd_SmokeYellow_Grenade_shell
+      - 2x 1Rnd_SmokePurple_Grenade_shell
+  headgear: sfp_m90d_helmet_peltor
+  binocular: Binocular
+
+
+
+medic:
+  vest:
+    name: sfp_kroppsskydd12_medic
+    magazines:
+      - 8x 30#sfp_30Rnd_556x45_Stanag_plastic
+      - 2x SmokeShell
+      - 2x SmokeShellGreen
+  backpack:
+    name: sfp_backpack_sjvv9
+    items:
+      - 10x ACE_bloodIV
+      - 25x ACE_morphine
+      - 25x ACE_epinephrine
+      - 40x ACE_fieldDressing
+      - 10x ACE_splint
+  headgear: sfp_m90d_helmet_peltor
+
+
+grenadier:
+  weapons:
+    launcher:
+      name: sfp_pskott86_loaded
+      magazine: sfp_pskott86_mag
+    primary:
+      name: sfp_ak5c_m203
+  vest:
+    name: sfp_kroppsskydd12_gl
+    magazines:
+      - 8x 30#sfp_30Rnd_556x45_Stanag_plastic
+  backpack:
+    magazines:
+      - 6x 1Rnd_HE_Grenade_shell
+      - 4x 1Rnd_Smoke_Grenade_shell
+      - 2x 1Rnd_SmokeRed_Grenade_shell
+      - 2x 1Rnd_SmokeGreen_Grenade_shell
+      - 2x 1Rnd_SmokeYellow_Grenade_shell
+      - 2x 1Rnd_SmokePurple_Grenade_shell
+
+
+
+grenadier_assistant:
+  backpack:
+    magazines:
+      - 6x 1Rnd_HE_Grenade_shell
+      - 4x 1Rnd_Smoke_Grenade_shell
+      - 2x 1Rnd_SmokeRed_Grenade_shell
+      - 2x 1Rnd_SmokeGreen_Grenade_shell
+      - 2x 1Rnd_SmokeYellow_Grenade_shell
+      - 2x 1Rnd_SmokePurple_Grenade_shell
+  vest:
+    magazines:
+      - 8x 30#sfp_30Rnd_556x45_Stanag_plastic
+
+
+autorifleman:
+  weapons:
+    primary:
+      name: sfp_ksp90c
+      optics: sfp_optic_aimpoint
+      magazine: 200#sfp_200Rnd_556x45_ksp90
+  vest:
+    name: sfp_kroppsskydd12_mg
+    items:
+      - ACE_EntrenchingTool
+    magazines:
+      - 2x sfp_200Rnd_556x45_ksp90
+  backpack:
+    magazines:
+      - 1x sfp_200Rnd_556x45_ksp90
+
+
+autorifleman_assistant:
+  backpack:
+    magazines:
+      - 4x sfp_200Rnd_556x45_ksp90
+  vest:
+    items:
+      - ACE_EntrenchingTool
+    magazines:
+      - 8x 30#sfp_30Rnd_556x45_Stanag_plastic
+
+
+gunner:
+  weapons:
+    primary:
+      name: sfp_ksp58B2
+      magazine: 100#sfp_100Rnd_762x51_ksp58
+      optics: sfp_optic_3x_aimpoint
+  vest:
+    name: sfp_kroppsskydd12_mg
+    items:
+      - ACE_EntrenchingTool
+      - sfp_optic_aimpoint
+    magazines:
+      - 3x sfp_100Rnd_762x51_ksp58
+
+
+gunner_assistant:
+  backpack:
+    magazines:
+      - 5x sfp_100Rnd_762x51_ksp58
+  vest:
+    items:
+      - ACE_EntrenchingTool
+    magazines:
+      - 8x 30#sfp_30Rnd_556x45_Stanag_plastic
+
+
+antitank:
+  weapons:
+    launcher:
+      name: sfp_grg86
+      magazine: sfp_grg_heat_mag
+  backpack:
+    name: sfp_backpack_grg_loader
+    magazines:
+      - 2x sfp_grg_heat_mag
+      - sfp_grg_he_mag
+  vest:
+    magazines:
+      - 8x 30#sfp_30Rnd_556x45_Stanag_plastic
+
+
+antitank_assistant:
+  backpack:
+    name: sfp_backpack_grg_loader
+    magazines:
+      - 2x sfp_grg_heat_mag
+      - 2x sfp_grg_he_mag
+      - sfp_grg_smoke_mag
+  vest:
+    magazines:
+      - 8x 30#sfp_30Rnd_556x45_Stanag_plastic
+
+
+antitank_light:
+  weapons:
+    launcher:
+      name: sfp_rb57_loaded
+      magazine: sfp_rb57_mag
+  backpack:
+  vest:
+    magazines:
+      - 8x 30#sfp_30Rnd_556x45_Stanag_plastic
+
+
+antipersonnel_light:
+  weapons:
+    launcher:
+      name: sfp_pskott86_loaded
+      magazine: sfp_pskott86_mag
+  backpack:
+  vest:
+    magazines:
+      - 8x 30#sfp_30Rnd_556x45_Stanag_plastic
+
+
+marksman:
+  weapons:
+    primary:
+      name: sfp_psg90_base
+      magazine: 9#sfp_9Rnd_762x51_psg90_prick
+      underBarrel: bipod_02_F_tan
+      optics: sfp_optic_kikarsikte90b_10x
+    handgun:
+      name: sfp_p226
+      magazine: 15#sfp_15Rnd_9x19_Mag
+  uniform:
+    items:
+      - ACE_RangeCard
+      - ACE_microDAGR
+      - ACE_MapTools
+  vest:
+    name: sfp_kroppsskydd12_holster
+    magazines:
+      - 3x sfp_15Rnd_9x19_Mag
+      - 8x sfp_9Rnd_762x51_psg90_prick
+  binocular: ACE_VectorDay
+  backpack:
+  headgear: sfp_m90d_cap
+
+
+sniper:
+  weapons:
+    primary:
+      name: sfp_ag90_base
+      magazine: 10#sfp_10Rnd_127x99_ag90
+      optics: sfp_optic_kikarsikte90b_10x
+    handgun:
+      name: sfp_p226
+      magazine: 15#sfp_15Rnd_9x19_Mag
+  uniform:
+    name: sfp_ghillie_uniform
+    items:
+      - ACE_RangeCard
+      - ACE_Kestrel4500
+      - ACE_ATragMX
+      - ACE_microDAGR
+      - ACE_MapTools
+  vest:
+    name: sfp_kroppsskydd12_holster
+    magazines:
+      - 2x sfp_15Rnd_9x19_Mag
+      - 10x sfp_10Rnd_127x99_ag90
+  backpack:
+  headgear: sfp_m90d_cap
+  binocular: ACE_VectorDay
+
+spotter:
+  uniform:
+    name: sfp_ghillie_uniform
+  weapons:
+    primary:
+      name: sfp_ak5dmk2
+      optics: sfp_optic_aimpoint
+      muzzle: muzzle_snds_M
+      magazine: 30#sfp_30Rnd_556x45_Stanag_plastic
+  vest:
+    magazines:
+      - 8x 30#sfp_30Rnd_556x45_Stanag_plastic
+    items:
+      - ACE_RangeCard
+      - ACE_Kestrel4500
+      - ACE_ATragMX
+      - ACE_microDAGR
+      - ACE_MapTools
+  backpack:
+    name: sfp_stridssack2000_ra_ksk12
+  binocular: ACE_VectorDay
+  headgear: sfp_m90d_cap
+
+
+explosive_specialist:
+  weapons:
+    launcher:
+      name: sfp_pskott86_loaded
+      magazine: sfp_pskott86_mag
+  backpack:
+    magazines:
+      - 2x SatchelCharge_Remote_Mag
+  uniform:
+    items:
+      - ACE_DefusalKit
+      - ACE_Clacker
+  vest:
+    magazines:
+      - 8x 30#sfp_30Rnd_556x45_Stanag_plastic
+
+
+rifleman:
+  vest:
+    magazines:
+      - 12x 30#sfp_30Rnd_556x45_Stanag_plastic
+  backpack:
+
+
+driver:
+  weapons:
+    primary:
+      name: sfp_ak5dmk2
+      magazine: 30#sfp_30Rnd_556x45_Stanag_plastic
+      optics:
+  uniform:
+    items:
+      - ACE_MapTools
+      - ACE_microDAGR
+  vest:
+    name: sfp_kroppskydd94_crew
+    magazines:
+      - 5x 30#sfp_30Rnd_556x45_Stanag_plastic
+  binocular: Binocular
+  headgear: sfp_telehelmet_2
+  backpack:
+
+
+ground_crew:
+  weapons:
+    primary:
+      name: sfp_ak5dmk2
+      magazine: 30#sfp_30Rnd_556x45_Stanag_plastic
+      optics:
+  vest:
+    name: sfp_kroppskydd94_crew
+    magazines:
+      - 5x 30#sfp_30Rnd_556x45_Stanag_plastic
+  headgear: sfp_telehelmet_2
+  backpack:
+
+
+pilot:
+  weapons:
+    primary:
+      name: sfp_mp5
+      magazine: 30#sfp_30Rnd_9mm_mp5
+      optics:
+  uniform:
+    name: sfp_m87_flying_suit
+    items:
+      - ACE_MapTools
+      - ACE_microDAGR
+      - ItemGPS
+    magazines:
+      - 5x sfp_30Rnd_9mm_mp5
+  vest:
+    name: sfp_kroppskydd94_sv2k_rifle1
+  headgear: H_PilotHelmetHeli_O
+  backpack:
+
+
+air_crew:
+  weapons:
+    primary:
+      name: sfp_mp5
+      magazine: 30#sfp_30Rnd_9mm_mp5
+      optics:
+  uniform:
+    name: sfp_m87_flying_suit
+    magazines:
+      - 5x sfp_30Rnd_9mm_mp5
+  vest:
+    name: sfp_kroppskydd94_sv2k_rifle1
+  headgear: H_PilotHelmetHeli_O
+  backpack:
+
+
+op_drone:
+  uniform:
+    items:
+      - ACE_MapTools
+      - ACE_microDAGR
+  vest:
+    magazines:
+      - 8x 30#sfp_30Rnd_556x45_Stanag_plastic
+  backpack:
+    name:
+  binocular: Binocular
+
+
+op_radio:
+  vest:
+    magazines:
+      - 8x 30#sfp_30Rnd_556x45_Stanag_plastic
+  backpack:
+    name: sfp_stridssack2000_ra_ksk12
+
+
+recon:
+  weapons:
+    primary:
+      name: sfp_ak5dmk2
+      optics: sfp_optic_aimpoint
+      muzzle: muzzle_snds_M
+      magazine: 30#sfp_30Rnd_556x45_Stanag_plastic
+  uniform:
+    items:
+      - ACE_MapTools
+      - ACE_microDAGR
+  vest:
+    magazines:
+      - 8x 30#sfp_30Rnd_556x45_Stanag_plastic
+  backpack:
+  binocular: Binocular
+  headgear: sfp_m90d_cap
+
+turret_tripod_carrier:
+  vest:
+    magazines:
+      - 8x 30#sfp_30Rnd_556x45_Stanag_plastic
+  backpack:
+    name: I_HMG_02_support_F
+
+
+turret_gun_carrier:
+  vest:
+    magazines:
+      - 8x 30#sfp_30Rnd_556x45_Stanag_plastic
+  backpack:
+    name: I_HMG_02_weapon_F
