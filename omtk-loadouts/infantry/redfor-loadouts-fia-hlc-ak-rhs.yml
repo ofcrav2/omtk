@@ -24,6 +24,7 @@ default:
       - ACE_CableTie
       - 4x ACE_splint
       - 2x ACE_epinephrine
+      - 2x ACE_tourniquet
   vest:
    name: V_TacVest_camo
   backpack:
@@ -284,16 +285,16 @@ antipersonnel_light:
 marksman:
   weapons:
     primary:
-      name: rhs_weap_svdp
-      magazine: 10#rhs_10Rnd_762x54mmR_7N1
-      optics: rhs_acc_pso1m2
+      name: rhs_weap_m14_rail_wd
+      magazine: 20#rhsusf_20Rnd_762x51_m80_Mag
+      optics: rhsusf_acc_M8541_low_wd
   vest:
     name: V_TacVest_oli
     items:
       - ACE_RangeCard
       - ACE_MapTools
     magazines:
-      - 5x rhs_10Rnd_762x54mmR_7N1
+      - 5x rhsusf_20Rnd_762x51_m80_Mag
   binocular: Binocular
   headgear: H_Cap_tan
   backpack:

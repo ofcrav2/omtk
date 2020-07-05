@@ -23,6 +23,7 @@ default:
       - ACE_CableTie
       - 4x ACE_splint
       - 2x ACE_epinephrine
+      - 2x ACE_tourniquet
   vest:
     name: UK3CB_CW_US_B_LATE_V_PASGT_Rif_Vest
   backpack:

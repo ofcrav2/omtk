@@ -24,6 +24,7 @@ default:
       - ACE_CableTie
       - 4x ACE_splint
       - 2x ACE_epinephrine
+      - 2x ACE_tourniquet
   vest:
     name: tmt_kkk_fullvest_medium
   backpack:

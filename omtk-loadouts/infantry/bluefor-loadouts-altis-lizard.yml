@@ -24,6 +24,7 @@ default:
       - ACE_CableTie
       - 4x ACE_splint
       - 2x ACE_epinephrine
+      - 2x ACE_tourniquet
   vest:
     name: rhsusf_mbav_rifleman
   backpack:
@@ -289,7 +290,7 @@ marksman:
   weapons:
     primary:
       name: rhs_weap_sr25_ec
-      magazine: 20#rhsusf_20Rnd_762x51_m118_special_Mag
+      magazine: 20#rhsusf_20Rnd_762x51_SR25_m118_special_Mag
       underBarrel: rhsusf_acc_harris_bipod
       optics: rhsusf_acc_M8541_low
     handgun:
@@ -303,7 +304,7 @@ marksman:
   vest:
     magazines:
       - 2x 17#rhsusf_mag_17Rnd_9x19_JHP
-      - 7x 20#rhsusf_20Rnd_762x51_m118_special_Mag
+      - 7x 20#rhsusf_20Rnd_762x51_SR25_m118_special_Mag
   binocular: lerca_1200_black
   backpack:
   headgear: rhsusf_bowman_cap

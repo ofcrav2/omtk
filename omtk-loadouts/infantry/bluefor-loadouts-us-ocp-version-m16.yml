@@ -24,6 +24,7 @@ default:
       - ACE_CableTie
       - 4x ACE_splint
       - 2x ACE_epinephrine
+      - 2x ACE_tourniquet
       - rhsusf_acc_anpeq15side_bk
   vest:
     name: rhsusf_spcs_ocp_rifleman

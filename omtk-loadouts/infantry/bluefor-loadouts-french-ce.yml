@@ -1,0 +1,497 @@
+default:
+  weapons:
+    primary:
+      name: R3F_Famas_G2_HG
+      optics: R3F_AIMPOINT
+      muzzle:
+      underBarrel:
+      magazine: 30#R3F_30Rnd_556x45_FAMAS
+    launcher:
+      name:
+      optics:
+    handgun:
+      name:
+      magazine:
+  uniform:
+    name: U_FR2035_CombatUniform_ce
+    magazines:
+      - HandGrenade
+      - SmokeShell
+    items:
+      - 8x ACE_fieldDressing
+      - 4x ACE_morphine
+      - ACE_EarPlugs
+      - ACE_CableTie
+      - 4x ACE_splint
+      - 2x ACE_epinephrine
+      - 2x ACE_tourniquet
+      - R3F_PIRAT
+  vest:
+   name: V_FR2035_PlateCarrier1_ce
+  backpack:
+    name: B_FR2035_Kitbag_ce
+    magazines:
+    items:
+  binocular:
+  map: ItemMap
+  compass: ItemCompass
+  radio: ItemRadio
+  watch: TFAR_microdagr
+  headgear: H_FR2035_Helmet_ce
+
+
+cdc:
+  weapons:
+    primary:
+      optics: R3F_J4
+      magazine: 30#R3F_30Rnd_556x45_FAMAS
+    handgun:
+      name: R3F_HKUSP
+      magazine: 15#R3F_15Rnd_9x19_HKUSP
+  uniform:
+    items:
+      - ACE_MapTools
+      - ACE_microDAGR
+  vest:
+    magazines:
+      - 8x 30#R3F_30Rnd_556x45_FAMAS
+      - 2x 15#R3F_15Rnd_9x19_HKUSP
+  backpack:
+    name: TFAR_rt1523g_black
+    magazines:
+      - 4x SmokeShell
+      - 2x SmokeShellGreen
+      - 2x SmokeShellRed
+      - 1x ACE_M84
+      - 2x SmokeShellYellow
+  binocular: ACE_VectorDay
+  headgear: H_Beret_blk
+
+
+cdg:
+  weapons:
+    primary:
+      optics: R3F_J4
+      magazine: 30#R3F_30Rnd_556x45_FAMAS
+    handgun:
+      name: R3F_HKUSP
+      magazine: 15#R3F_15Rnd_9x19_HKUSP
+  uniform:
+    items:
+      - ACE_MapTools
+      - ACE_microDAGR
+  vest:
+    magazines:
+      - 8x 30#R3F_30Rnd_556x45_FAMAS
+      - 2x 15#R3F_15Rnd_9x19_HKUSP
+  backpack:
+    name: TFAR_rt1523g_black
+    magazines:
+      - 4x SmokeShell
+      - 2x SmokeShellGreen
+      - 2x SmokeShellRed
+      - 1x ACE_M84
+      - 2x SmokeShellYellow
+  binocular: ACE_VectorDay
+  headgear: H_FR2035_Helmet_ce_camo
+
+
+
+cde:
+  weapons:
+    primary:
+      optics: R3F_J4
+  vest:
+    magazines:
+      - 8x R3F_25Rnd_556x45_FAMAS
+      - 4x R3F_APAV40
+      - 2x R3F_AC58
+      - 2x R3F_FUM40
+      - 2x R3F_ECL40
+  binocular: Binocular
+  backpack:
+  headgear: H_FR2035_Helmet_ce
+
+
+
+medic:
+  vest:
+    magazines:
+      - 8x 30#R3F_30Rnd_556x45_FAMAS
+  backpack:
+    magazines:
+      - 4x SmokeShell
+      - 2x SmokeShellGreen
+      - 2x SmokeShellYellow
+    items:
+      - 10x ACE_bloodIV
+      - 25x ACE_morphine
+      - 25x ACE_epinephrine
+      - 50x ACE_fieldDressing
+      - 10x ACE_splint
+  headgear: H_FR2035_Helmet_ce
+
+grenadier:
+  weapons:
+    primary:
+      name: R3F_Famas_G2_HG
+      underBarrel:
+      magazine: 30#R3F_30Rnd_556x45_FAMAS
+      optics: R3F_AIMPOINT
+    launcher:
+      name: R3F_AT4CS
+      magazine: R3F_AT4CS_mag
+  vest:
+    name: V_FR2035_PlateCarrier1_ce
+    magazines:
+      - 8x 30#R3F_30Rnd_556x45_FAMAS
+      - 4x R3F_APAV40
+      - 4x R3F_AC58
+      - 4x R3F_FUM40
+      - 2x R3F_ECL40
+  backpack:
+  headgear: H_FR2035_Helmet_ce
+
+
+grenadier_assistant:
+  weapons:
+    launcher:
+      name: R3F_AT4CS
+      magazine: R3F_AT4CS_mag
+  backpack:
+    magazines:
+      - 8x OFrP_1Rnd_Grenade_M203_HE
+      - 10x R3F_APAV40
+      - 10x R3F_AC58
+      - 10x R3F_FUM40
+      - 10x R3F_ECL40
+  vest:
+    magazines:
+      - 8x 30#R3F_30Rnd_556x45_FAMAS
+
+
+autorifleman:
+  weapons:
+    primary:
+      name: R3F_Minimi
+      optics: R3F_AIMPOINT
+      magazine: 200#R3F_200Rnd_556x45_MINIMI
+  vest:
+    items:
+      - ACE_EntrenchingTool
+    magazines:
+      - 4x R3F_200Rnd_556x45_MINIMI
+  backpack:
+  headgear: H_FR2035_Helmet_ce
+
+autorifleman_assistant:
+  backpack:
+    magazines:
+      - 4x R3F_200Rnd_556x45_MINIMI
+  vest:
+    items:
+      - ACE_EntrenchingTool
+    magazines:
+      - 8x 30#R3F_30Rnd_556x45_FAMAS
+
+
+gunner:
+  weapons:
+    primary:
+      name: R3F_Minimi_762
+      optics: R3F_AIMPOINT
+      magazine: 100#R3F_100Rnd_762x51_MINIMI
+  vest:
+    magazines:
+      - 4x R3F_100Rnd_762x51_MINIMI
+    items:
+      - ACE_EntrenchingTool
+  backpack:
+
+gunner_assistant:
+  backpack:
+    magazines:
+      - 5x R3F_100Rnd_762x51_MINIMI
+    items:
+      - ACE_EntrenchingTool
+  vest:
+    magazines:
+      - 8x 30#R3F_30Rnd_556x45_FAMAS
+
+
+antitank:
+  weapons:
+    launcher:
+      name: R3F_ERYX
+      magazine: R3F_ERYX_mag
+  backpack:
+    magazines:
+      - 3x R3F_ERYX_mag
+  vest:
+    magazines:
+      - 8x 30#R3F_30Rnd_556x45_FAMAS
+  headgear: H_FR2035_Helmet_ce
+
+antitank_assistant:
+  weapons:
+    launcher:
+      name: R3F_AT4CS
+      magazine: R3F_AT4CS_mag
+  backpack:
+    magazines:
+      - 4x R3F_ERYX_mag
+  vest:
+    magazines:
+      - 8x 30#R3F_30Rnd_556x45_FAMAS
+
+
+antitank_light:
+  weapons:
+    launcher:
+      name: R3F_AT4CS
+      magazine: R3F_AT4CS_mag
+  vest:
+    magazines:
+      - 8x 30#R3F_30Rnd_556x45_FAMAS
+      - 4x R3F_AC58
+  backpack:
+
+antipersonnel_light:
+  weapons:
+    launcher:
+      name: R3F_LGI_DEM
+      magazine: R3F_1Rnd_EXP_LGI
+  vest:
+    magazines:
+      - 8x 30#R3F_30Rnd_556x45_FAMAS
+  backpack:
+    magazines:
+      - 10x R3F_1Rnd_EXP_LGI
+
+marksman:
+  weapons:
+    primary:
+      name: R3F_FRF2
+      magazine: 10#R3F_10Rnd_762x51_FRF2
+      optics: R3F_J8
+    handgun:
+      name: R3F_HKUSP
+      magazine: 15#R3F_15Rnd_9x19_HKUSP
+  vest:
+    items:
+      - ACE_RangeCard
+      - ACE_MapTools
+      - ACE_microDAGR
+    magazines:
+      - 3x R3F_15Rnd_9x19_HKUSP
+      - 10x R3F_10Rnd_762x51_FRF2
+  binocular: ACE_VectorDay
+  headgear: H_FR2035_Booniehat_ce
+  backpack:
+
+sniper:
+  weapons:
+    primary:
+      name: R3F_PGM_Hecate_II
+      magazine: 7#R3F_7Rnd_127x99_PGM
+      optics: R3F_NF42
+    handgun:
+      name: R3F_HKUSP
+      magazine: 15#R3F_15Rnd_9x19_HKUSP
+  vest:
+    magazines:
+      - 3x R3F_15Rnd_9x19_HKUSP
+      - 10x R3F_7Rnd_127x99_PGM
+    items:
+      - ACE_RangeCard
+      - ACE_Kestrel4500
+      - ACE_ATragMX
+      - ACE_microDAGR
+      - ACE_MapTools
+  binocular: ACE_VectorDay
+  headgear: H_FR2035_Booniehat_ce
+  backpack:
+
+spotter:
+  weapons:
+    primary:
+      name: R3F_HK417M_HG
+      magazine: 20#R3F_20Rnd_762x51_HK417
+      optics: optic_ld3k_shordot_cqb
+      muzzle: R3F_SILENCIEUX_HK417
+      underBarrel: R3F_BIPIED_HK417
+    handgun:
+      name: R3F_HKUSP
+      magazine: 15#R3F_15Rnd_9x19_HKUSP
+  vest:
+    magazines:
+      - 8x R3F_20Rnd_762x51_HK417
+    items:
+      - ACE_RangeCard
+      - ACE_Kestrel4500
+      - ACE_ATragMX
+      - ACE_microDAGR
+      - ACE_MapTools
+  backpack:
+    name: TFAR_rt1523g_black
+  binocular: ACE_VectorDay
+  headgear: H_FR2035_Booniehat_ce
+
+explosive_specialist:
+  weapons:
+    launcher:
+      name: R3F_AT4CS
+      magazine: R3F_AT4CS_mag
+  backpack:
+    magazines:
+      - SatchelCharge_Remote_Mag
+      - 2x DemoCharge_Remote_Mag
+  uniform:
+    items:
+      - ACE_DefusalKit
+      - ACE_Clacker
+  vest:
+    magazines:
+      - 8x 30#R3F_30Rnd_556x45_FAMAS
+  headgear: H_FR2035_Helmet_ce
+
+
+rifleman:
+  vest:
+    magazines:
+      - 12x 30#R3F_30Rnd_556x45_FAMAS
+      - 1x R3F_APAV40
+      - 1x R3F_AC58
+  backpack:
+
+driver:
+  weapons:
+    primary:
+      name: R3F_Famas_F1_HG
+      magazine: 25#R3F_25Rnd_556x45_FAMAS
+      optics:
+      underBarrel:
+  vest:
+    name: V_FR2035_TacVest_ce
+    magazines:
+      - 2x R3F_25Rnd_556x45_FAMAS
+    items:
+      - ACE_MapTools
+      - ACE_microDAGR
+  binocular: Binocular
+  headgear: H_FR2035_HelmetCrew
+  backpack:
+
+
+ground_crew:
+  weapons:
+    primary:
+      name: R3F_Famas_F1_HG
+      magazine: 25#R3F_25Rnd_556x45_FAMAS
+      optics:
+      underBarrel:
+  vest:
+    name: V_FR2035_TacVest_ce
+    magazines:
+      - 2x R3F_25Rnd_556x45_FAMAS
+  headgear: H_FR2035_HelmetCrew
+  backpack:
+
+
+pilot:
+  uniform:
+    name: U_FR2035_HeliPilotCoveralls
+  weapons:
+    primary:
+      name: R3F_MP5A5
+      magazine: 30#R3F_30Rnd_9x19_MP5
+      optics:
+      underBarrel:
+  vest:
+    name: V_FR2035_TacVest_ce
+    magazines:
+      - 2x R3F_30Rnd_9x19_MP5
+    items:
+      - ACE_MapTools
+      - ACE_microDAGR
+  binocular: Binocular
+  headgear: H_FR2035_PilotHelmetHeli
+  backpack:
+
+
+air_crew:
+  uniform:
+    name: U_FR2035_HeliPilotCoveralls
+  weapons:
+    primary:
+      name: R3F_MP5A5
+      magazine: 30#R3F_30Rnd_9x19_MP5
+      optics:
+      underBarrel:
+  vest:
+    name: V_FR2035_TacVest_ce
+    magazines:
+      - 2x R3F_30Rnd_9x19_MP5
+  binocular: Binocular
+  headgear: H_FR2035_PilotHelmetHeli
+  backpack:
+
+
+op_drone:
+  vest:
+    magazines:
+      - 8x 30#R3F_30Rnd_556x45_FAMAS
+    items:
+      - ACE_MapTools
+      - ACE_microDAGR
+  backpack:
+  binocular: Binocular
+
+op_radio:
+  vest:
+    magazines:
+      - 8x 30#R3F_30Rnd_556x45_FAMAS
+  backpack:
+    name: TFAR_rt1523g_black
+
+
+recon:
+  weapons:
+    primary:
+      name: R3F_HK417M_HG
+      magazine: 20#R3F_20Rnd_762x51_HK417
+      optics: optic_ld3k_shordot_cqb
+      muzzle: R3F_SILENCIEUX_HK417
+      underBarrel: R3F_BIPIED_HK417
+    handgun:
+      name: R3F_HKUSP
+      magazine: 15#R3F_15Rnd_9x19_HKUSP
+  vest:
+    magazines:
+      - 8x R3F_20Rnd_762x51_HK417
+    items:
+      - ACE_RangeCard
+      - ACE_Kestrel4500
+      - ACE_ATragMX
+      - ACE_microDAGR
+      - ACE_MapTools
+  backpack:
+    name: TFAR_rt1523g_black
+  binocular: Binocular
+  headgear: H_FR2035_Booniehat_ce
+
+
+turret_tripod_carrier:
+  vest:
+    magazines:
+      - 8x 30#R3F_30Rnd_556x45_FAMAS
+  backpack:
+    name: O_HMG_01_support_F
+
+
+turret_gun_carrier:
+  vest:
+    magazines:
+      - 8x 30#R3F_30Rnd_556x45_FAMAS
+  backpack:
+    name: O_HMG_01_weapon_F
