@@ -19,7 +19,10 @@ OMTK_TP_REDFOR_DELAY = 0; // delay in seconds
 // score_board: objectives, mission duration and helilock
 // OMTK_SB_MISSION_DURATION_OVERRIDE = [0, 0, 0]; // [hours, minutes, seconds]
 
-OMTK_SB_UNLOCK_HELI_VARS = ["blackhawk01","blackhawk02","mi801","mi802"];
+// unlock_helis: to unlock the helicopters after a certain amount of time AFTER warmup ends.
+// for it to work, lock the helicopters from editor and make sure their variable name is in the list below.
+// the time is the # of seconds AFTER warmup ends
+OMTK_SB_UNLOCK_HELI_VARS = ["heli01","heli02","heli03","heli04"];
 OMTK_SB_UNLOCK_HELI_TIME = 600;
 
 execVM "customScripts.sqf";
