@@ -1,6 +1,6 @@
-["ia_skills start", "INFO", false] call omtk_log;
+["ia_skills start", "DEBUG", false] call omtk_log;
 
-if (isServer) then {
+if (isServer && ("OMTK_MODULE_LIGHT_VERSION" call BIS_fnc_getParamValue) < 1) then {
 	{
 		_x setskill ["aimingAccuracy",0.1];
 		_x setskill ["aimingShake",0.1];
@@ -19,4 +19,4 @@ if (hasInterface) then {
 	player addRating 1000000;
 };
 
-["ia_skills end.", "INFO", false] call omtk_log;
+["ia_skills end.", "DEBUG", false] call omtk_log;

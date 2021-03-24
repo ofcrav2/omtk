@@ -5,7 +5,7 @@
 | FIELD                   | VALUE
 |-------------------------|-------------
 | folder name             | ia_skills
-| last modification date  | 2015-01-01
+| last modification date  | 2021-03-22
 | Ojective                | make IA look like humans
 | Default                 | enabled
 | Extra Parameters        | yes
@@ -16,6 +16,8 @@ Even if we try to avoid, we -sometimes- have to use IA units to balance teams.
 This module aims at making IA more human-like units, by lowering their skills for detection and others capabilities.
 
 Another feature is to protect human from IA return fire: in case of team-kill, IA units automatically engage the author. It is artificially disabled by adding a huge Rating to each human player. 
+
+Added Light OMTK mode to not cycle through all the players
 
 ## Mission Parameters
 

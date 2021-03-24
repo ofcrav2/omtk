@@ -1,5 +1,11 @@
-_addExtPAA = 
-{
+/* 
+ * Newly added logs will likely clog up the client's logs.
+ * Remove the logs in _addExtPAA and _addToArray functions to lighten the load.
+*/
+["inventoryBriefing start" , "DEBUG", false] call omtk_log;
+
+_addExtPAA = {
+	["addExtPAA fnc called in inventoryBriefing" , "DEBUG", false] call omtk_log;
 	private["_path", "_array", "_len", "_last4"];
 	_path = toLower _this;
 	_array = toArray(_path);
@@ -8,8 +14,8 @@ _addExtPAA =
 	if(_last4 == ".paa")then {_this} else {_this + ".paa"};
 };
 
-_addToArray =
-{
+_addToArray = {
+	["addToArray fnc called in inventoryBriefing" , "DEBUG", false] call omtk_log;
 	private["_value", "_array", "_count", "_found", "_x", "_forEachIndex"];
 	_value = _this select 0;
 	_array = _this select 1;
@@ -30,12 +36,13 @@ _addToArray =
 };
 
 _text = "";
-_addGroupUnitToDiary = 
-{
+_addGroupUnitToDiary = {
+	["addGroupUnitToDiary fnc called in inventoryBriefing" , "DEBUG", false] call omtk_log;
+	
 	_unit = _this select 0;
 	_number = _this select 1;
-	_text = _text + "<font color='#FFFFBB'>" + (str _number) + ". " + (name _unit) + "</font>" + (if(leader _unit == _unit)then{" (Squad Leader)"}else{""});
-        _text = _text + "<br/>";
+	_text = _text + "<font color='#FFFFBB'>" + (str _number) + ". " + (name _unit) + "</font>" + ( if(leader _unit == _unit) then {" (Squad Leader)"} else {""} );
+    _text = _text + "<br/>";
 	if(primaryWeapon _unit != "")then
 	{
 		_name = getText(configFile >> "CfgWeapons" >> (primaryWeapon _unit) >> "displayName");
@@ -44,7 +51,7 @@ _addGroupUnitToDiary =
 	};
 	
 	_weaponsPrimary = [primaryWeapon _unit] - [""];
-        _weaponsSec = [secondaryWeapon _unit] - [""];
+    _weaponsSec = [secondaryWeapon _unit] - [""];
 	_weapons = weapons _unit - _weaponsPrimary - _weaponsSec - [""];
 	_items = assignedItems _unit - [""];
         _uniform = [uniform _unit, vest _unit, headgear _unit] - [""];
@@ -77,11 +84,10 @@ _addGroupUnitToDiary =
 	_magasinesList = [];
 	_uniformList = [];
 
-        {
+    {
 		_cfg = configFile >> "CfgWeapons" >> _x;
 		_pic = getText(_cfg >> "picture") call _addExtPAA;
-		if(!(_x in items _unit))then
-		{
+		if(!(_x in items _unit)) then {
 			[_pic, _weaponsList, 1] call _addToArray;
 		};
 	} forEach (_weapons)+(handgunItems _unit - [""]);
@@ -157,3 +163,5 @@ for "_i" from 2 to ((count _name) - 1) do
 };
 _name = toString(_shorten);
 player createDiaryRecord ["diary", ["Squad loadout (" + _name + ")", _text]];
+
+["inventoryBriefing end" , "DEBUG", false] call omtk_log;

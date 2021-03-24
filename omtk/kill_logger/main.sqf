@@ -1,5 +1,5 @@
 if (isServer) then {
-	["kill_logger start", "INFO", false] call omtk_log;
+	["kill_logger start", "DEBUG", false] call omtk_log;
 	_index = 1;
 	{
 		_name = "bot_" + (str _index);
@@ -17,5 +17,5 @@ if (isServer) then {
 		_index = _index + 1;
 	} forEach allUnits;
 
-	["kill_logger end", "INFO", false] call omtk_log;
+	["kill_logger end", "DEBUG", false] call omtk_log;
  };

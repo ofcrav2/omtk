@@ -1,5 +1,8 @@
 ////// OMTK CONFIGURATION
 
+// Debug logs introduce to highlight execution order
+["Init start" , "DEBUG", false] call omtk_log;
+
 // tactical_paradrop: area restriction (optional)
 OMTK_TP_BLUEFOR_RESTRICTIONS = [
   //[x_coordinate, y_coordinate, radius_in_m],
@@ -13,10 +16,15 @@ OMTK_TP_REDFOR_RESTRICTIONS = [
 OMTK_TP_BLUEFOR_DELAY = 0; // delay in seconds
 OMTK_TP_REDFOR_DELAY = 0; // delay in seconds
 
-// score_board: objectives and mission duration
+// score_board: objectives, mission duration and helilock
 // OMTK_SB_MISSION_DURATION_OVERRIDE = [0, 0, 0]; // [hours, minutes, seconds]
 
+OMTK_SB_UNLOCK_HELI_VARS = ["blackhawk01","blackhawk02","mi801","mi802"];
+OMTK_SB_UNLOCK_HELI_TIME = 600;
+
 execVM "customScripts.sqf";
+
+["Init before list objectifs" , "DEBUG", false] call omtk_log;
 
 OMTK_SB_LIST_OBJECTIFS = [
 
@@ -27,6 +35,8 @@ OMTK_LM_BLUEFOR_OB = [
 
 OMTK_LM_REDFOR_OB = [
 ];
+
+["Init before special configuration" , "DEBUG", false] call omtk_log;
 
 ////// SPECIAL CONFIGURATION
 setTerrainGrid 3.125;
@@ -44,17 +54,26 @@ OMTK_MARKERS_MENU = [
 // EXTERNAL ADDONS
 RscSpectator_allowFreeCam = true;
 //cutrsc ['RscSpectator','plain'];
-
-[player, [missionNamespace, "OMTK_LOADOUT"]] call BIS_fnc_saveInventory;
-
+if (("OMTK_MODULE_LIGHT_VERSION" call BIS_fnc_getParamValue) < 1) then {
+	[player, [missionNamespace, "OMTK_LOADOUT"]] call BIS_fnc_saveInventory;
+};
+["Init before omtk execution" , "DEBUG", false] call omtk_log;
 
 //// OMTK EXECUTION
 execVM "omtk\load_modules.sqf";
 // Création briefing
-execVM "omtk\briefing.sqf";
-execVM "omtk\fn_inventoryBriefing.sqf";
-execVM "omtk\fn_rosterBriefing.sqf";
+if (hasInterface) then {
+
+	execVM "omtk\briefing.sqf";
+	
+	if (("OMTK_MODULE_LIGHT_VERSION" call BIS_fnc_getParamValue) < 1) then {
+		execVM "omtk\fn_inventoryBriefing.sqf";
+		execVM "omtk\fn_rosterBriefing.sqf";
+	};
+};
 
 // Logging des joueurs sur le serveur
 onPlayerConnected {[ _name + " - " + _uid, "CONNECT", false] call omtk_log};
 onPlayerDisconnected {[ _name + " - " + _uid, "DISCONNECT", false] call omtk_log};
+
+["Init end" , "DEBUG", false] call omtk_log;

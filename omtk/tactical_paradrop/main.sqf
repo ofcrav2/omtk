@@ -1,4 +1,4 @@
-["tactical_paradrop start", "INFO", false] call omtk_log;
+["tactical_paradrop start", "DEBUG", false] call omtk_log;
 
 
 omtk_tp_add_action = {
@@ -110,4 +110,4 @@ if (isServer) then {
 };
 
 
-["tactical_paradrop end", "INFO", false] call omtk_log;
+["tactical_paradrop end", "DEBUG", false] call omtk_log;

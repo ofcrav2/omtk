@@ -11,6 +11,8 @@
 	nothing
 */
 
+["rosterBriefing start" , "DEBUG", false] call omtk_log;
+
 params [["_includeAI",false],["_rank",true],["_role",true]];
 private["_strRank","_strRole","_strGrp","_strColorGrp","_strFinal","_oldGrp","_newGrp","_unitsArr","_nbr"];
 
@@ -34,6 +36,7 @@ if (_includeAI) then {
 };
 
 {//forEach
+	["New entry in rosterBriefing" , "DEBUG", false] call omtk_log;
 	_newGrp = group _x;
 	_strGrp = "";
 	
@@ -107,3 +110,5 @@ if (_includeAI) then {
 
 //player createDiarySubject ["roster","Team Roster"];
 player createDiaryRecord ["diary",["Team Roster",_strFinal]];
+
+["rosterBriefing end" , "DEBUG", false] call omtk_log;

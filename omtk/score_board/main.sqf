@@ -1,7 +1,4 @@
-["score_boards start", "INFO", false] call omtk_log;
-
-_handle = execVM "omtk\score_board\library.sqf";
-waitUntil {isNull _handle};
+["score_boards start", "DEBUG", false] call omtk_log;
 
 call omtk_rollback_to_start_time;
 
@@ -51,15 +48,18 @@ if (isServer) then {
 	[omtk_sb_start_mission_end, [], _omtk_mission_duration+2] call KK_fnc_setTimeout;
 	if (isClass(configFile >> "CfgPatches" >> "ocap")) then {[ocap_fnc_exportData, [], _omtk_mission_duration+10] call KK_fnc_setTimeout;};
 	
-	omtk_unlock_helis = {
-		{
-			_heli = missionNamespace getVariable [_x, objNull];
-			if (!isnil("_heli")) then { _heli lock 0; };
-		} forEach ["blackhawk01","blackhawk02","mi801","mi802"];
-	};
+	_unlock_heli_var = missionNamespace getVariable ["OMTK_SB_UNLOCK_HELI_VARS", nil];
+	_unlock_heli_time = missionNamespace getVariable ["OMTK_SB_UNLOCK_HELI_TIME", nil];
+	if (!isNil "_unlock_heli_var" && !isNil "_unlock_heli_time") then {
+		omtk_unlock_helis = {
+			{
+				_heli = missionNamespace getVariable [_x, objNull];
+				if (!isnil("_heli")) then { _heli lock 0; };
+			} forEach _unlock_heli_var;
+		};
 		
-	[omtk_unlock_helis, [], 600] call KK_fnc_setTimeout; // unlock helis 10 min. later
-	
+		[omtk_unlock_helis, [], _unlock_heli_time] call KK_fnc_setTimeout; // unlock helis later as defined in init variable
+	};
 	// OBJ
 	_omtk_sb_objectives = [];
 	_omtk_sb_scores = [0,0];
@@ -159,4 +159,4 @@ if (hasInterface) then {
 
 };
 
-["score_boards end", "INFO", false] call omtk_log;
+["score_boards end", "DEBUG", false] call omtk_log;

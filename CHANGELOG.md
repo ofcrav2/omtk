@@ -5,6 +5,22 @@
 ~ feature modified  
 @ bug fix  
 !! security patch  
+### V2.8.0 - 2021-03-22
+\+ [omtk] add Light OMTK parameter for use in big missions
+~ [omtk] roster and inventory briefing are not executed in light OMTK
+~ [omtk] kill_logger module not executed in light OMTK
+~ [omtk] radio_lock module not executed in light OMTK
+~ [omtk] ia_skill module partly executed in light OMTK
+~ [omtk] warmup notifications are not scheduled in light OMTK
+~ [omtk] added two variables for using the redefined unlock_helis from init
+~ [omtk] briefings will now execute only on clients
+~ [omtk] dynamic startup markers doc will no longer execute out of order
+~ [omtk] moved thermalimaging module execution to post warmup 
+~ [omtk] added loads of log entries
+@ [omtk] moved score_board library to description.ext
+@ [omtk] changed version.sqf execution to a preprocessFile call, resolving warmup bug
+@ [omtk] removed duplicate execution of difficulty check
+
 ### V2.7.3 - 2020-02-25
 @ [omtk] correction on picking gear / weapons bug
 @ [omtk] correction on MR3000_radio pickup restriction

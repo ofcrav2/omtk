@@ -1,5 +1,5 @@
 if (hasInterface) then {
-	["radio_lock start", "INFO", false] call omtk_log;
+	["radio_lock start", "DEBUG", false] call omtk_log;
 
 	omtk_rl_disable_radio_pickup_EH = {
 		_unitName = name (_this select 0);
@@ -32,5 +32,5 @@ if (hasInterface) then {
 	
 	player addEventHandler ["Take",{[_this select 0,_this select 2] call omtk_rl_disable_radio_pickup_EH;}];
 
-	["radio_lock end", "INFO", false] call omtk_log;
+	["radio_lock end", "DEBUG", false] call omtk_log;
 };

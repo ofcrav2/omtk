@@ -1,5 +1,5 @@
 if (hasInterface) then {
-  ["map_exploration start", "INFO", false] call omtk_log;
+  ["map_exploration start", "DEBUG", false] call omtk_log;
 
   omtk_me_create_vehicle = {
     (_this select 0) createVehicle position player;
@@ -51,5 +51,5 @@ if (hasInterface) then {
 	};
 
 
-  ["map_exploration end", "INFO", false] call omtk_log;
+  ["map_exploration end", "DEBUG", false] call omtk_log;
 };

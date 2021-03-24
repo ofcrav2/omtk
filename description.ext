@@ -96,6 +96,13 @@ class Params
 		values[] = {0,1};
 		default = "0";
 	};
+	class OMTK_MODULE_LIGHT_VERSION
+	{
+		title = "Light OMTK";
+		texts[] = {"off","on"};
+		values[] = {0,1};
+		default = "0";
+	};
 	class OMTK_MODULE_SEPARATOR_1
 	{
 		title = "----------------------------------------------------------------------------------";
@@ -196,6 +203,10 @@ class CfgFunctions {
 			class myFunction {
 				preInit = 1;
 				file = "omtk\library.sqf";
+			};
+			class myFunction2 {
+				preInit = 1;
+				file = "omtk\score_board\library.sqf";
 			};
 		};
 	};
