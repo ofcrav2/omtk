@@ -161,7 +161,7 @@ if (isServer) then {
 			};
 		} forEach [0, 10, 30, 60, 120, 180, 300, 600, 900, 1200, 1800, 2700];
 	} else {
-		_trg = [omtk_wu_display_notification, [-1], (omtk_wu_time - (omtk_wu_time-15))] call KK_fnc_setTimeout;
+		_trg = [omtk_wu_display_notification, [-1], (omtk_wu_time - (omtk_wu_time-30))] call KK_fnc_setTimeout;
 	};
 	
 	_trg = [omtk_wu_end_warmup_remote, [], omtk_wu_time] call KK_fnc_setTimeout;
