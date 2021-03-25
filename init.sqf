@@ -68,11 +68,8 @@ execVM "omtk\load_modules.sqf";
 if (hasInterface) then {
 
 	execVM "omtk\briefing.sqf";
-	
-	if (("OMTK_MODULE_LIGHT_VERSION" call BIS_fnc_getParamValue) < 1) then {
-		execVM "omtk\fn_inventoryBriefing.sqf";
-		execVM "omtk\fn_rosterBriefing.sqf";
-	};
+	execVM "omtk\fn_inventoryBriefing.sqf";
+	execVM "omtk\fn_rosterBriefing.sqf";
 };
 
 // Logging des joueurs sur le serveur
