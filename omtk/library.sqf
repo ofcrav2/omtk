@@ -128,23 +128,26 @@ omtk_is_using_ACEmod = {
 	isClass(configFile >> "CfgPatches" >> "ace_main");
 };
 
-
+// Unlocks vehicles server side and enables damage
 omtk_unlock_vehicles = {
 	{
 		_locked_by_omtk = _x getVariable ["omtk_lock", 0];
 		if (_locked_by_omtk > 0) then {
-			//_x lock 0;
-			_x lockDriver false;
+			_x lock 0;
+			_x lockCargo false;
+			_x allowDamage true;
 		};
 	} foreach vehicles;
 };
 
-
+// Locks vehicles server side and disables damage. 
+// Variable is used to later unlock only the vehicles locked by this function.
 omtk_lock_vehicles = {
 	{
 		if ( (locked _x) < 2) then {
-			//_x lock 2;
-			_x lockDriver true;
+			_x lock 2;
+			_x lockCargo true;
+			_x allowDamage false;
 			_x setVariable ['omtk_lock', 1];
 		};
 	} foreach vehicles;
@@ -156,4 +159,90 @@ omtk_delete_playableAiUnits = {
 			deleteVehicle _x; 
 		}; 
 	} forEach playableUnits;
+};
+
+// OMTK simulation control functions
+
+// Disables simulation and inventory access to all vehicles with simulation enabled (client side).
+// Variable is used to later reenable only the vehicles disabled by this function.
+omtk_sim_disableVehicleSim = {
+	{
+		if (simulationEnabled _x) then {
+			_x enableSimulation false;
+			_x lockInventory true;
+			_x setVariable ['omtk_disabled_sim', 1];
+		};
+
+	} forEach vehicles;
+	systemChat "[OMTK] Vehicle simulation DISABLED";
+	if (vehicle player != player) then {
+		systemChat " ** You'll be stuck until the vehicle simulation is reenabled **";
+	};
+};
+
+// Enables vehicles' sim and inventory client side
+omtk_sim_enableVehicleSim = {
+	{
+		_sim_dis_by_omtk = _x getVariable ["omtk_disabled_sim", 0];
+		
+		if (_sim_dis_by_omtk > 0) then {
+			_x enableSimulation true;
+			_x lockInventory false;
+		};
+
+	} forEach vehicles;
+	systemChat "[OMTK] Vehicles simulation and inventory REENABLED";
+};
+
+// Disables simulation to all players except for the server admin (logged in)
+omtk_sim_disablePlayerSim = {
+	if (call BIS_fnc_admin != 2) then {
+		player enableSimulation false;
+	};
+	systemChat "[OMTK] Player simulation DISABLED";
+};
+
+// Enables simulation to players depending on the parameters
+// Parameters:
+//  _sideMode  : "all" will enable simulation to all players and vehicles, otherwise it will check
+//  _actualSide: enabling simulation for all players of that particular side.  
+omtk_sim_enablePlayerSim = {
+	_sideMode = _this select 0;
+	_actualSide = _this select 1;
+	private _randRelease = (random 15) + 1;
+    
+	// parameter being "all" will reenable simulation to all the players at once
+	if (_sideMode == "all") then {
+		systemChat format ["[OMTK] Your simulation will return in %1 seconds",_randRelease];
+		sleep _randRelease;
+		player enableSimulation true;
+		systemChat "[OMTK] Player simulation REENABLED";
+	} else {
+		// otherwise it will reenable simulation only to the players belonging to the passed side ( "blufor", "opfor", "independent" )
+		if ( side player == _actualSide ) then {
+			systemChat format ["[OMTK] Your simulation will return in %1 seconds",_randRelease];
+			sleep _randRelease;
+			player enableSimulation true;
+			systemChat "[OMTK] Player simulation REENABLED (for your side)";
+		};
+	};
+	
+};
+
+
+// Has to be remotely called on clients from server
+// Parameters:
+//  _viewDistMode: "reset" will set the view dist back to the parameter value. Otherwise
+//  _newViewDist : a value between 200 and 10000 -> changes the view distance to said value
+omtk_viewdistance_change = {
+	_viewDistMode = _this select 0;
+	_newViewDist = _this select 1;
+	if (_viewDistMode == "reset") then {
+		_newViewDist = ("OMTK_MODULE_VIEW_DISTANCE" call BIS_fnc_getParamValue);
+	};
+
+	if (_newViewDist >= 200 && _newViewDist <= 10000) then {
+		setViewDistance _newViewDist;
+		systemChat format ["[OMTK] View Distance changed to %1",_newViewDist];
+	};
 };

@@ -1,5 +1,36 @@
 ["ia_skills start", "DEBUG", false] call omtk_log;
 
+if (isServer && ("OMTK_MODULE_DISABLE_PLAYABLE_AI" call BIS_fnc_getParamValue) > 0) then {
+	// Disable the AI behaviours here
+	{
+		_x disableAI "AUTOTARGET";
+		_x disableAI "TARGET";
+		_x disableAI "FSM";
+		_x disableAI "MOVE";
+		_x stop true;
+		_x setBehaviour "CARELESS";
+		_x allowFleeing 0;
+		_x disableConversation true;
+		_x setVariable ["BIS_noCoreConversations", false];
+		_x setSpeaker "NoVoice";
+		_x allowDamage false;
+	} forEach allUnits;
+	
+	addMissionEventHandler ["HandleDisconnect", {
+        params ["_unit"];
+        _unit disableAI "AUTOTARGET";
+        _unit disableAI "TARGET";
+        _unit disableAI "FSM";
+        _unit disableAI "MOVE";
+        _unit stop true;
+        _unit setBehaviour "CARELESS";
+        _unit allowFleeing 0;
+        _unit disableConversation true;
+        _unit setVariable ["BIS_noCoreConversations", false];
+        _unit setSpeaker "NoVoice";
+    }];
+};
+
 if (isServer && ("OMTK_MODULE_LIGHT_VERSION" call BIS_fnc_getParamValue) < 1) then {
 	{
 		_x setskill ["aimingAccuracy",0.1];
