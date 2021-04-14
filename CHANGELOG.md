@@ -4,7 +4,15 @@
 \- feature deleted  
 ~ feature modified  
 @ bug fix  
-!! security patch  
+!! security patch
+### V2.8.1 - 2021-04-14
+\+ [omtk] Simulation (and view distance) control, with both a script and ace actions for the admin
+\+ [library] Added functions for simulation and view distance control
+~ [library] lock & unlock vehicles now locks them entirely, and disables damage
+~ [warm_up] players now spawn with disabled simulation, reenabling it on a random timer btween 0 and 30s
+~ [warm_up] vehicles have their simulation and inv. access disabled, reenabling it 1min (or 10s) before wup end
+~ [ia_skills] AI behaviours now get removed and their damage disabled when "disable playable AI" is enabled
+
 ### V2.8.0 - 2021-03-22
 \+ [omtk] add Light OMTK parameter for use in big missions
 ~ [omtk] roster and inventory briefing are not executed in light OMTK
