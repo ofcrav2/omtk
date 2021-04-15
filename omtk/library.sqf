@@ -167,7 +167,8 @@ omtk_delete_playableAiUnits = {
 // Variable is used to later reenable only the vehicles disabled by this function.
 omtk_sim_disableVehicleSim = {
 	{
-		if (simulationEnabled _x) then {
+		_crewNum = count fullCrew[_x,"",true];	// Number of crew of vehicle (including empty seats)
+		if (simulationEnabled _x && _crewNum > 0) then {
 			_x enableSimulation false;
 			_x lockInventory true;
 			_x setVariable ['omtk_disabled_sim', 1];
