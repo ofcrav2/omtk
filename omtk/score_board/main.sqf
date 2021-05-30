@@ -62,7 +62,7 @@ if (isServer) then {
 	};
 	// OBJ
 	_omtk_sb_objectives = [];
-	_omtk_sb_scores = [0,0];
+	_omtk_sb_scores = [0,0,0];
 	_omtk_sb_flags = [];
 
 	{
@@ -81,6 +81,11 @@ if (isServer) then {
 				[_omtk_sb_objectives, _x] call BIS_fnc_arrayPush;
 				[_omtk_sb_scores, false]  call BIS_fnc_arrayPush;
 			};
+			case "GREENFOR":	{
+				_x set [1, Resistance];
+				[_omtk_sb_objectives, _x] call BIS_fnc_arrayPush;
+				[_omtk_sb_scores, false]  call BIS_fnc_arrayPush;
+			};
 			case "BLUEFOR+REDFOR":	{
 				_x set [1, West];
 				[_omtk_sb_objectives, _x] call BIS_fnc_arrayPush;
@@ -88,6 +93,37 @@ if (isServer) then {
 				_x2 = + _x;
 				_x2 set [1, East];
 				[_omtk_sb_objectives, _x2] call BIS_fnc_arrayPush;
+				[_omtk_sb_scores, false]  call BIS_fnc_arrayPush;
+			};
+			case "BLUEFOR+GREENFOR":	{
+				_x set [1, West];
+				[_omtk_sb_objectives, _x] call BIS_fnc_arrayPush;
+				[_omtk_sb_scores, false]  call BIS_fnc_arrayPush;
+				_x2 = + _x;
+				_x2 set [1, Resistance];
+				[_omtk_sb_objectives, _x2] call BIS_fnc_arrayPush;
+				[_omtk_sb_scores, false]  call BIS_fnc_arrayPush;
+			};
+			case "REDFOR+GREENFOR":	{
+				_x set [1, East];
+				[_omtk_sb_objectives, _x] call BIS_fnc_arrayPush;
+				[_omtk_sb_scores, false]  call BIS_fnc_arrayPush;
+				_x2 = + _x;
+				_x2 set [1, Resistance];
+				[_omtk_sb_objectives, _x2] call BIS_fnc_arrayPush;
+				[_omtk_sb_scores, false]  call BIS_fnc_arrayPush;
+			};
+			case "BLUEFOR+REDFOR+GREENFOR":	{
+				_x set [1, West];
+				[_omtk_sb_objectives, _x] call BIS_fnc_arrayPush;
+				[_omtk_sb_scores, false]  call BIS_fnc_arrayPush;
+				_x2 = + _x;
+				_x2 set [1, East];
+				[_omtk_sb_objectives, _x2] call BIS_fnc_arrayPush;
+				[_omtk_sb_scores, false]  call BIS_fnc_arrayPush;
+				_x3 = + _x;
+				_x3 set [1, Resistance];
+				[_omtk_sb_objectives, _x3] call BIS_fnc_arrayPush;
 				[_omtk_sb_scores, false]  call BIS_fnc_arrayPush;
 			};
 			default	{

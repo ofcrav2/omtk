@@ -14,7 +14,7 @@ if (isServer && ("OMTK_MODULE_DISABLE_PLAYABLE_AI" call BIS_fnc_getParamValue) >
 		_x setVariable ["BIS_noCoreConversations", false];
 		_x setSpeaker "NoVoice";
 		_x allowDamage false;
-	} forEach allUnits;
+	} forEach playableUnits;
 	
 	addMissionEventHandler ["HandleDisconnect", {
         params ["_unit"];

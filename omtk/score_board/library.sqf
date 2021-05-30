@@ -1,7 +1,13 @@
 omtk_sb_mission_end = {
 	if (hasInterface) then {
 		waitUntil { (missionNamespace getVariable "omtk_sb_ready4result") == 1};
-		createDialog "ScoreBoard";
+		if (("OMTK_MODULE_MEXICAN_STANDOFF" call BIS_fnc_getParamValue) < 1) then {
+			// Mexican Standoff DISABLED
+			createDialog "ScoreBoard";
+		} else {
+			// Mexican Standoff ENABLED
+			createDialog "ScoreBoard_MS";
+		};
 	};
 };
 
@@ -23,9 +29,11 @@ omtk_sb_computing_display = {
 
 omtk_sb_compute_scoreboard = {
 	remoteExec ["omtk_sb_computing_display"];
+	
+	// Calculates survivors for each team
 	omtk_sb_bluefor_survivors = [];
 	omtk_sb_redfor_survivors = [];
-	
+	omtk_sb_greenfor_survivors = [];
 	{
 		_name = name _x; // test if name is OK TODO
 		_side = side _x;
@@ -34,25 +42,33 @@ omtk_sb_compute_scoreboard = {
 
 		if(_side==east) then {
 			if ((damage player) < 0.975) then { [omtk_sb_redfor_survivors, _name] call BIS_fnc_arrayPush; };
-		}
-		else {
+		} else {
 			if(_side==west) then { 
 				if ((damage player) < 0.975) then { [omtk_sb_bluefor_survivors, _name] call BIS_fnc_arrayPush; };
+			} else {
+				if(_side==resistance) then { 
+					if ((damage player) < 0.975) then { [omtk_sb_greenfor_survivors, _name] call BIS_fnc_arrayPush; };
+				};
 			};
 		};
 	} forEach allPlayers;
 	
 	missionNamespace setVariable ["omtk_sb_bluefor_survivors", omtk_sb_bluefor_survivors];
 	missionNamespace setVariable ["omtk_sb_redfor_survivors", omtk_sb_redfor_survivors];
-	
+	missionNamespace setVariable ["omtk_sb_greenfor_survivors", omtk_sb_greenfor_survivors];
 	publicVariable "omtk_sb_redfor_survivors";
 	publicVariable "omtk_sb_bluefor_survivors";
+	publicVariable "omtk_sb_greenfor_survivors";
 	
+	// Calculates scores for each team (getObjectiveResult on each objective to get result (boolean)) 
+	// _x select 0 -> how many points to assign 
+	// _x select 1 -> what faction to assign the points to. 
+	//_idx is the index position of "sb_scores" of each faction (0=west, 1=east, 2=resistance)
 	omtk_sb_scores = missionNamespace getVariable "omtk_sb_scores";
 	omtk_sb_objectives = missionNamespace getVariable "omtk_sb_objectives";
 	omtk_sb_flags = missionNamespace getVariable "omtk_sb_flags";
 
-	_index = 1;
+	_index = 2;
 	{
 		_index = _index + 1;
 		_res = [_x, _index] call omtk_sb_getObjectiveResult;
@@ -60,6 +76,7 @@ omtk_sb_compute_scoreboard = {
 		if (_res) then {
 			_idx = 0;
 			if ((_x select 1) == east) then { _idx = 1;};
+			if ((_x select 1) == resistance) then { _idx = 2;};
 			_val = (_x select 0) + (omtk_sb_scores select _idx);
 			omtk_sb_scores set [_idx, _val];
 		};
@@ -132,9 +149,10 @@ omtk_sb_getObjectiveResult = {
 
 
 omtk_side_in_area = {
-	private["_blue","_red","_r"];
+	private["_blue","_red","_r","_green"];
 	_blue = 0;
 	_red = 0;
+	_green = 0;
 	_areaName = _this select 0;
 	_areaType = typeName _areaName;	
 	_areaI = nil;
@@ -158,13 +176,14 @@ omtk_side_in_area = {
 				switch(_side) do {
 					case West:	{ _blue = _blue + 1; };
 					case East:	{ _red = _red + 1; };
+					case Resistance: { _green = _green + 1; };
 					default { ["Unit: non comptabilisee pour camp inconnu: " + (str _side),"ERROR",false] call omtk_log; };
 				};
 			};
 		} foreach allUnits;
 	};
-	["Zone: " +  _areaName + " BLUE=" + (str _blue) + " - RED=" + (str _red), "OBJECTIVE", false] call omtk_log;
-	[_blue, _red];
+	["Zone: " +  _areaName + " BLUE=" + (str _blue) + " - RED=" + (str _red) + " - GREEN=" + (str _green), "OBJECTIVE", false] call omtk_log;
+	[_blue, _red, _green];
 };
 
 
@@ -185,13 +204,29 @@ omtk_isInArea = {
 		};
 		case "REDFOR":	{ 
 			_eff = [_area] call omtk_side_in_area;
-			_res = ((_eff select 0) >= _value);
+			_res = ((_eff select 1) >= _value);
+		};
+		case "GREENFOR":	{ 
+			_eff = [_area] call omtk_side_in_area;
+			_res = ((_eff select 2) >= _value);
 		};
 		
 		case "DIFF": { 
 			_eff = [_area] call omtk_side_in_area;
-			if (_Sside == West) then { _res = ((_eff select 0) - (_eff select 1)) >= _value; }
-			else {_res = ((_eff select 1) - (_eff select 0)) >= _value; };
+			
+			// _eff select 0 -> bluefor in area, _eff select 1 -> redfor in area, _eff select 2 -> greenfor in area
+			// to "win" the capzone, the faction MUST have more people in the zone than BOTH of the other factions
+			
+			
+			if (_Sside == West) then { 
+				_res = (((_eff select 0) - (_eff select 1)) >= _value) && (((_eff select 0) - (_eff select 2)) >= _value);
+			} else {
+				if (_Sside == East) then {
+					_res = (((_eff select 1) - (_eff select 0)) >= _value) && (((_eff select 1) - (_eff select 2)) >= _value);
+				} else {
+					_res = (((_eff select 2) - (_eff select 0)) >= _value) && (((_eff select 2) - (_eff select 1)) >= _value);
+				};
+			};
 			
 			if (_mode < 1) then { _res = !_res; };
 		};
@@ -245,6 +280,7 @@ omtk_isAlive = {
 	_res = false;
 	
 	switch(_subject) do {
+		// For supremacy: counts side survivors
 		case "BLUEFOR":	{ 
 			_count = 0;
 			_bEff = count omtk_sb_bluefor_survivors;
@@ -257,14 +293,18 @@ omtk_isAlive = {
 			_res = (_rEff >= _value);
 			if (_mode < 1) then { _res = !_res; };
 		};
-		
+		case "GREENFOR":	{ 
+			_count = 0;
+			_gEff = count omtk_sb_greenfor_survivors;
+			_res = (_gEff >= _value);
+			if (_mode < 1) then { _res = !_res; };
+		};
 		case "DIFF": { 
 			_bEff = count omtk_sb_bluefor_survivors;
 			_rEff = count omtk_sb_redfor_survivors;
 			if (_side == West) then { _res = (_bEff - _rEff) >= _value; }
 			else {_res = (_rEff - _bEff) >= _value; };
 		};
-		
 		case "LIST": {
 			_res = true;
 			{

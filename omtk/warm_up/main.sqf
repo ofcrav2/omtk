@@ -19,6 +19,9 @@ omtk_wu_start_warmup = {
 	player enableSimulation false;			// PLAYER SIM
 	player allowDamage false;				// DAMAGE
 	setViewDistance 200;					// VIEW DISTANCE
+	if (omtk_wu_time < 61) then {
+		setViewDistance	omtk_view_distance;	// VIEW DISTANCE
+	};
 	
 	// Creation of the "restrict_area_trigger" that'll call "move_player_at_spawn_if_required" fnc.
 	omtk_wu_restrict_area_trigger = createTrigger ["EmptyDetector", omtk_wu_spawn_location, false];
@@ -45,9 +48,15 @@ omtk_wu_start_warmup = {
 	[_omtk_notification_txt,0,0,25,2] spawn BIS_fnc_dynamicText;
 	
 	// PLAYER SIM RE-ENABLE TIMER
-	private _randRelease = (random 30) + 1;
+	private _randRelease = (random 29) + 1;
+	if (omtk_wu_time < 61) then {
+		_randRelease = (random 5) + 1;
+	};
+		
 	systemChat format ["[OMTK] Your simulation will be disabled for %1 seconds after launch",_randRelease];
-    sleep _randRelease;
+	sleep 1;
+	systemChat format ["[OMTK] Your simulation will be disabled for %1 seconds after launch",_randRelease];
+    sleep (_randRelease - 1);
 
     player enableSimulation true;
 };
@@ -114,18 +123,15 @@ omtk_wu_scheduled_calls = {
 		if (_by == 0) then { _res = "GO GO GO !!!"; };
 		("START: " + _res) remoteExecCall ["hint"];
 		
-		// SET TO QUARTER VIEW DISTANCE 1 MIN BEFORE WARMUP END
+		// SET TO HALF VIEW DISTANCE 1 MIN BEFORE WARMUP END
 		if (_by == 60) then { 
-			[omtk_view_distance/4] remoteExecCall ["setViewDistance"];
+			[omtk_view_distance/2] remoteExecCall ["setViewDistance"];
 			("[OMTK] View distance raised to a quarter of full view distance") remoteExecCall ["systemChat"];
 			
 			[] remoteExecCall ["omtk_sim_enableVehicleSim"];
 		};
-		// SET TO HALF VIEW DISTANCE 10 SECS BEFORE WARMUP END
-		if (_by == 10) then { 
-			[omtk_view_distance/2] remoteExecCall ["setViewDistance"];
-			("[OMTK] View distance raised to a half of full view distance") remoteExecCall ["systemChat"];
-			
+		// ENABLE VEHICLE SIM
+		if (_by == 30) then { 
 			// When wu_time is 60 or less, this fnc is not called with _by==60 
 			if (omtk_wu_time < 61) then {
 				[] remoteExecCall ["omtk_sim_enableVehicleSim"];

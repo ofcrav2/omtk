@@ -5,6 +5,13 @@
 ~ feature modified  
 @ bug fix  
 !! security patch
+### V2.9.0 - 2021-05-30
+\+ [admin_ui] Added an admin menu that includes simulation and view distance control, plus other useful things
+\+ [score_board] Mexican Standoff sub-module added (new UI, all functions adapted and separated files to load info into the ui)
+\- [omtk] moved all functions from simulation control into the admin ui
+~ [warm_up] slight tweak with the simulation random timer for short-warmup missions, and with view distance changes.
+~ [ia_skills] Changes now apply only to playable AIs.
+
 ### V2.8.1 - 2021-04-14
 \+ [omtk] Simulation (and view distance) control, with both a script and ace actions for the admin
 \+ [library] Added functions for simulation and view distance control

@@ -161,6 +161,29 @@ omtk_delete_playableAiUnits = {
 	} forEach playableUnits;
 };
 
+omtk_disable_aiBehaviour = {
+	if (isServer) then {
+		{
+			_x disableAI "AUTOTARGET";
+			_x disableAI "TARGET";
+			_x disableAI "FSM";
+			_x disableAI "MOVE";
+			_x stop true;
+			_x setBehaviour "CARELESS";
+			_x allowFleeing 0;
+			_x disableConversation true;
+			_x setVariable ["BIS_noCoreConversations", false];
+			_x setSpeaker "NoVoice";
+		} forEach playableUnits;
+	};
+};
+
+omtk_enable_playerDamage = {
+	if (hasInterface) then {
+		player allowDamage false;
+	};
+};
+
 // OMTK simulation control functions
 
 // Disables simulation and inventory access to all vehicles with simulation enabled (client side).

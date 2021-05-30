@@ -29,6 +29,7 @@ execVM "customScripts.sqf";
 
 ["Init before list objectifs" , "DEBUG", false] call omtk_log;
 
+
 OMTK_SB_LIST_OBJECTIFS = [
 
 ];
