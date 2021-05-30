@@ -180,7 +180,7 @@ omtk_disable_aiBehaviour = {
 
 omtk_enable_playerDamage = {
 	if (hasInterface) then {
-		player allowDamage false;
+		player allowDamage true;
 	};
 };
 
