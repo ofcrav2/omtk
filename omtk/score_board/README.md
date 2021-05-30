@@ -92,7 +92,7 @@ Full example:
 		[2, "BLUEFOR", "DESTRUCTION", "Bluefor kill civ1", ["LIST", ["civ1"]]  ],
 		[2, "GREENFOR", "SURVIVAL", "Greenfor save civ1", ["LIST", ["civ1"]] ],
 		[2, "REDFOR", "DESTRUCTION", "Supremacy against blue", ["BLUEFOR", 5] ],
-		[2, "GREENFOR", "DESTRUCTION", "Supremacy against red", ["BLUEFOR", 5] ],
+		[2, "GREENFOR", "DESTRUCTION", "Supremacy against blue", ["BLUEFOR", 5] ],
 		[2, "BLUEFOR",  "DESTRUCTION",  "Supremacy against red", ["REDFOR", 5] ],
 		[2, "BLUEFOR",  "DESTRUCTION",  "Supremacy against green", ["GREENFOR", 5] ],
 		[2, "GREENFOR", "SURVIVAL", "Supremacy of itself", ["GREENFOR", 5] ]
@@ -147,6 +147,10 @@ The coalitions flags in the upper corners can be customized: files *omtk\\score_
 #### radio_lock module:
 * enabled (default)
 * disabled
+
+#### three way fight:
+* no (default)
+* yes
 
 ### Extra Parameters
 
