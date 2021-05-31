@@ -60,7 +60,7 @@ One specific parameter define the subject. It is an array again:
 MODE can be one of {"BLUEFOR"|"REDFOR"|"GREENFOR"|"DIFF"|"LIST"|"OMTK_ID"} :
 
 * BLUEFOR/REDFOR/GREENFOR: specify the lower number of survivors for the side.  
-VALUES is a simple number corresponding to the minimum amount of units that should survive  
+VALUES is a simple number corresponding to the minimum amount of units that should survive
 ex: ["BLUEFOR", 4] => objective is completed if -at least- 4 units are alived in the end.
 * DIFF: specify the difference of units in-between both sides. In case of 3 factions, you need to have more players than BOTH other factions at the same time.
 ex: ["DIFF", 2] => objective is completed if there are -at least- 2 more alived units in the given side than in the ennemy side(s).
@@ -76,59 +76,69 @@ Example:
 
 
 Full example: 
-	// 2 Factions only
-    OMTK_SB_LIST_OBJECTIFS = [  
-	    [4, "BLUEFOR+REDFOR", "IN", "Capture the church ", "church_area", ["DIFF", 1]],  
-	    [1, "BLUEFOR", "DESTRUCTION", "Kill the priest", ["LIST", ["priest"]] ],  
-	    [1, "BLUEFOR", "OUT", "Deliver Cpt. Clark", ["LIST", ["clark"]] ],  
-	    [1, "REDFOR", "SURVIVAL", "Protect the bridge", ["LIST", ["bridge"]] ],  
-	    [5, "BLUEFOR", "DESTRUCTION", "Domination bonus", ["REDFOR",5] ],  
-	    [5, "REDFOR", "DESTRUCTION", "Domination bonus", ["BLUEFOR",5] ]  
-    ];  
-	// 3 Factions
-	OMTK_SB_LIST_OBJECTIFS = [
-		[3, "REDFOR+GREENFOR", "INSIDE", "2 way capzone red/green", "zone", ["DIFF", 1] ],
-		[3, "BLUEFOR+REDFOR+GREENFOR", "INSIDE", "3 way capzone", "zone", ["DIFF", 1] ],
-		[2, "BLUEFOR", "DESTRUCTION", "Bluefor kill civ1", ["LIST", ["civ1"]]  ],
-		[2, "GREENFOR", "SURVIVAL", "Greenfor save civ1", ["LIST", ["civ1"]] ],
-		[2, "REDFOR", "DESTRUCTION", "Supremacy against blue", ["BLUEFOR", 5] ],
-		[2, "GREENFOR", "DESTRUCTION", "Supremacy against blue", ["BLUEFOR", 5] ],
-		[2, "BLUEFOR",  "DESTRUCTION",  "Supremacy against red", ["REDFOR", 5] ],
-		[2, "BLUEFOR",  "DESTRUCTION",  "Supremacy against green", ["GREENFOR", 5] ],
-		[2, "GREENFOR", "SURVIVAL", "Supremacy of itself", ["GREENFOR", 5] ]
-	];
-	
+```
+// 2 Factions only
+OMTK_SB_LIST_OBJECTIFS = [  
+    [4, "BLUEFOR+REDFOR", "IN", "Capture the church ", "church_area", ["DIFF", 1]],  
+    [1, "BLUEFOR", "DESTRUCTION", "Kill the priest", ["LIST", ["priest"]] ],  
+    [1, "BLUEFOR", "OUT", "Deliver Cpt. Clark", ["LIST", ["clark"]] ],  
+    [1, "REDFOR", "SURVIVAL", "Protect the bridge", ["LIST", ["bridge"]] ],  
+    [5, "BLUEFOR", "DESTRUCTION", "Domination bonus", ["REDFOR",5] ],  
+    [5, "REDFOR", "DESTRUCTION", "Domination bonus", ["BLUEFOR",5] ]  
+];  
+// 3 Factions
+OMTK_SB_LIST_OBJECTIFS = [
+    [3, "REDFOR+GREENFOR", "INSIDE", "2 way capzone red/green", "zone", ["DIFF", 1] ],
+    [3, "BLUEFOR+REDFOR+GREENFOR", "INSIDE", "3 way capzone", "zone", ["DIFF", 1] ],
+    [2, "BLUEFOR", "DESTRUCTION", "Bluefor kill civ1", ["LIST", ["civ1"]]  ],
+    [2, "GREENFOR", "SURVIVAL", "Greenfor save civ1", ["LIST", ["civ1"]] ],
+    [2, "REDFOR", "DESTRUCTION", "Supremacy against blue", ["BLUEFOR", 5] ],
+    [2, "GREENFOR", "DESTRUCTION", "Supremacy against blue", ["BLUEFOR", 5] ],
+    [2, "BLUEFOR",  "DESTRUCTION",  "Supremacy against red", ["REDFOR", 5] ],
+    [2, "BLUEFOR",  "DESTRUCTION",  "Supremacy against green", ["GREENFOR", 5] ],
+    [2, "GREENFOR", "SURVIVAL", "Supremacy of itself", ["GREENFOR", 5] ]
+];
+```
+
 THREE FACTIONS OBJECTIVES:
-• CapZones:
+
+* CapZones:
 	- The capzone can now be a two-way capzone by using one of the three combination "BLUEFOR+REDFOR" | "BLUEFOR+GREENFOR" | "REDFOR+GREENFOR". The order MUST be the one shown here. Inverting green with red would break it.
-	- The result (completed or not) will be calculated against BOTH factions, no matter if its a two way or three way. To "win" the capzone, you MUST have the player advantage (["DIFF", 1] means at least 1 player more) on BOTH factions (so for BLUEFOR to win it, they must have 1 player more than REDFOR and 1 player more than GREENFOR.
-	Example code and results:
-		[3, "BLUEFOR+REDFOR+GREENFOR", "INSIDE", "3 way capzone", "zone", ["DIFF", 1] ]
-			3 Blue, 2 Red, 2 Green in area: BLUE WINS
-			3 Blue, 1 Red, 3 Green in area: NOBODY WINS
-			0 Blue, 5 Red, 3 Green in area: RED WINS
-			
-		[3, "BLUEFOR+REDFOR", "INSIDE", "2 way capzone blue/red", "zone", ["DIFF", 1] ]
-			3 Blue, 2 Red, 2 Green in area: BLUE WINS
-			3 Blue, 1 Red, 3 Green in area: NOBODY WINS
-			0 Blue, 5 Red, 3 Green in area: RED WINS
-			
-		[3, "REDFOR+GREENFOR", "INSIDE", "2 way capzone red/green", "zone", ["DIFF", 1] ]
-			3 Blue, 2 Red, 2 Green in area: NOBODY WINS
-			3 Blue, 1 Red, 3 Green in area: NOBODY WINS (even though technically green should win)
-			0 Blue, 5 Red, 3 Green in area: RED WINS
-				
-• Survival/Destruction of a "target":
-	- It works exactly the same as with the two-way fights, you just need to assign the objective to GREENFOR.
-		ex 	[2, "GREENFOR", "SURVIVAL", "Greenfor save civ1", ["LIST", ["civ1"]] ]
 	
-• Supremacy:
-	- Regular supremacy (blue faction gets points if LESS than 5 reds survive) could be used if split up.
-	- I suggest using "reverse supremacy":
-		- positive reverse supremacy means assigning points to green if MORE than 4 greens survive 
-			ex [2, "GREENFOR", "SURVIVAL", "Supremacy of itself", ["GREENFOR", 5] ]
-		- negative reverse supremacy means deducting points to green if LESS than 5 greens survive
-			ex [-2, "GREENFOR", "DESTRUCTION", "Supremacy of itself", ["GREENFOR", 5] ]
+	- The result (completed or not) will be calculated against BOTH factions, no matter if its a two way or three way. To "win" the capzone, you MUST have the player advantage (["DIFF", 1] means at least 1 player more) on BOTH factions (so for BLUEFOR to win it, they must have 1 player more than REDFOR and 1 player more than GREENFOR.
+	
+	Example code and results:
+```
+[3, "BLUEFOR+REDFOR+GREENFOR", "INSIDE", "3 way capzone", "zone", ["DIFF", 1] ]
+	3 Blue, 2 Red, 2 Green in area: BLUE WINS
+	3 Blue, 1 Red, 3 Green in area: NOBODY WINS
+	0 Blue, 5 Red, 3 Green in area: RED WINS
+		
+[3, "BLUEFOR+REDFOR", "INSIDE", "2 way capzone blue/red", "zone", ["DIFF", 1] ]
+	3 Blue, 2 Red, 2 Green in area: BLUE WINS
+	3 Blue, 1 Red, 3 Green in area: NOBODY WINS
+	0 Blue, 5 Red, 3 Green in area: RED WINS
+		
+[3, "REDFOR+GREENFOR", "INSIDE", "2 way capzone red/green", "zone", ["DIFF", 1] ]
+	3 Blue, 2 Red, 2 Green in area: NOBODY WINS
+	3 Blue, 1 Red, 3 Green in area: NOBODY WINS (even though technically green should win)
+	0 Blue, 5 Red, 3 Green in area: RED WINS
+```
+* Survival/Destruction of a "target":
+  - It works exactly the same as with the two-way fights, you just need to assign the objective to GREENFOR.
+	
+ex: [2, "GREENFOR", "SURVIVAL", "Greenfor save civ1", ["LIST", ["civ1"]] ]
+	
+* Supremacy:
+ Regular supremacy (blue faction gets points if LESS than 5 reds survive) could be used if split up. I suggest using "reverse supremacy":
+
+   positive reverse supremacy means assigning points to green if MORE than 4 greens survive 
+
+   ex: [2, "GREENFOR", "SURVIVAL", "Supremacy of itself", ["GREENFOR", 5] ]
+	
+   negative reverse supremacy means deducting points to green if LESS than 5 greens survive
+
+   ex: [-2, "GREENFOR", "DESTRUCTION", "Supremacy of itself", ["GREENFOR", 5] ]
 
 #### Scoreboard
 
