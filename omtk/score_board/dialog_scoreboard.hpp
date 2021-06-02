@@ -131,9 +131,9 @@ class ScoreBoard_MS {
 		
 		class MainContainer: omtk_BOX {
 			idc = 1800;
-			x = 0.276563 * safezoneW + safezoneX;
+			x = 0.196563 * safezoneW + safezoneX;
 			y = 0.236103 * safezoneH + safezoneY;
-			w = 0.446875 * safezoneW;
+			w = 0.606875 * safezoneW;
 			h = 0.527794 * safezoneH;
 		};		
 		
@@ -142,7 +142,7 @@ class ScoreBoard_MS {
 		{
 			idc = 1200;
 			text = "omtk\score_board\img\bluefor.jpg";
-			x = 0.276563 * safezoneW + safezoneX;
+			x = 0.196563 * safezoneW + safezoneX;
 			y = 0.236103 * safezoneH + safezoneY;
 			w = 0.0802083 * safezoneW;
 			h = 0.0989614 * safezoneH;
@@ -151,7 +151,7 @@ class ScoreBoard_MS {
 		{
 			idc = 1201;
 			text = "omtk\score_board\img\redfor.jpg";
-			x = 0.643229 * safezoneW + safezoneX;
+			x = 0.723229 * safezoneW + safezoneX;
 			y = 0.236103 * safezoneH + safezoneY;
 			w = 0.0802083 * safezoneW;
 			h = 0.0989614 * safezoneH;
@@ -186,23 +186,23 @@ class ScoreBoard_MS {
 		
 		class BlueForObjectifs: omtk_RscListbox {
 			idc = 1511;
-			x = 0.276563 * safezoneW + safezoneX;
+			x = 0.196563 * safezoneW + safezoneX;
 			y = 0.37 * safezoneH + safezoneY;
-			w = 0.13 * safezoneW;
+			w = 0.19 * safezoneW;
 			h = 0.09 * safezoneH;
 		};
 		class RedForObjectifs: omtk_RscListbox {
 			idc = 1512;
-			x = 0.593458 * safezoneW + safezoneX;
+			x = 0.613458 * safezoneW + safezoneX;
 			y = 0.37 * safezoneH + safezoneY;
-			w = 0.13 * safezoneW;
+			w = 0.19 * safezoneW;
 			h = 0.09 * safezoneH;
 		};
 		class GreenForObjectifs: omtk_RscListbox {
 			idc = 1513;
-			x = 0.435 * safezoneW + safezoneX;
+			x = 0.405 * safezoneW + safezoneX;
 			y = 0.37 * safezoneH + safezoneY;
-			w = 0.13 * safezoneW;
+			w = 0.19 * safezoneW;
 			h = 0.09 * safezoneH;
 		};
 		
@@ -218,23 +218,23 @@ class ScoreBoard_MS {
 
 		class BlueforListSurvivors: omtk_RscListbox {
 			idc = 1521;
-			x = 0.276563 * safezoneW + safezoneX;
+			x = 0.196563 * safezoneW + safezoneX;
 			y = 0.5 * safezoneH + safezoneY;
-			w = 0.13 * safezoneW;
+			w = 0.19 * safezoneW;
 			h = 0.23 * safezoneH;
 		};
 		class RedForSurvivors: omtk_RscListbox {
 			idc = 1522;
-			x = 0.593458 * safezoneW + safezoneX;
+			x = 0.613458 * safezoneW + safezoneX;
 			y = 0.5 * safezoneH + safezoneY;
-			w = 0.13 * safezoneW;
+			w = 0.19 * safezoneW;
 			h = 0.23 * safezoneH;
 		};
 		class GreenForSurvivors: omtk_RscListbox {
 			idc = 1523;
-			x = 0.435 * safezoneW + safezoneX;
+			x = 0.405 * safezoneW + safezoneX;
 			y = 0.5 * safezoneH + safezoneY;
-			w = 0.13 * safezoneW;
+			w = 0.19 * safezoneW;
 			h = 0.23 * safezoneH;
 		};
 		

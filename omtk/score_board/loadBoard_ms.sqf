@@ -3,7 +3,7 @@ omtk_sb_scores = missionNamespace getVariable "omtk_sb_scores";
 omtk_sb_objectives = missionNamespace getVariable "omtk_sb_objectives";
 
 
-_text = format["%1 pts                                                                      %3 pts        OBJECTIVES                                        %2 pts                                          ", omtk_sb_scores select 0, omtk_sb_scores select 1, omtk_sb_scores select 2];
+_text = format["          %1 pts                                                                                %3 pts        OBJECTIVES                                                            %2 pts                                          ", omtk_sb_scores select 0, omtk_sb_scores select 1, omtk_sb_scores select 2];
 ctrlSetText [1510, _text];
 
 _index = 2;
@@ -28,7 +28,7 @@ _bluefor_survivors = missionNamespace getVariable "omtk_sb_bluefor_survivors";
 _redfor_survivors  = missionNamespace getVariable "omtk_sb_redfor_survivors";
 _greenfor_survivors  = missionNamespace getVariable "omtk_sb_greenfor_survivors";
 
-_text = format["%1                                                                                %3        SURVIVORS                                                  %2                                          ", count _bluefor_survivors, count _redfor_survivors, count _greenfor_survivors];
+_text = format["          %1                                                                                          %3        SURVIVORS                                                                      %2                                          ", count _bluefor_survivors, count _redfor_survivors, count _greenfor_survivors];
 ctrlSetText [1520, _text];
 
 { lbAdd [1521, _x]; } foreach (_bluefor_survivors call BIS_fnc_sortAlphabetically);
