@@ -1,5 +1,5 @@
 class AdminMenuTest {
-	idd = 3223
+	idd = 3223 ;
 	enableDisplay = 1;
 	duration = 9999;
 	fadein=1;
