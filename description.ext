@@ -32,6 +32,8 @@ class Header {
 #include "omtk\score_board\dialog_scoreboard.hpp"
 #include "omtk\dynamic_startup\dialog_interactive_startup.hpp"
 
+// Add drawing of admin menu
+onPauseScript = "omtk\admin_ui\adminMenuPauseScreen.sqf";
 
 class Params
 {
