@@ -27,7 +27,7 @@ buttonSimulation_Disable ctrlSetPosition [
 ];
 buttonSimulation_Disable ctrlCommit 0;
 buttonSimulation_Disable ctrlSetText "DISABLE ALL Sim";
-buttonSimulation_EnableBlue ctrlSetBackgroundColor [0.8, 0.2, 0.8, 1];
+buttonSimulation_Disable ctrlSetBackgroundColor [0.8, 0.2, 0.8, 1];
 buttonSimulation_Disable ctrlAddEventHandler ["ButtonDown", {
 	[] remoteExec['omtk_sim_disablePlayerSim', 0];
 	[] remoteExec['omtk_sim_disableVehicleSim', 0];
