@@ -51,9 +51,9 @@ if (isServer) then {
 	_unlock_heli_var = missionNamespace getVariable ["OMTK_SB_UNLOCK_HELI_VARS", nil];
 	_unlock_heli_time = missionNamespace getVariable ["OMTK_SB_UNLOCK_HELI_TIME", nil];
 	if (!isNil "_unlock_heli_var" && !isNil "_unlock_heli_time") then {
-		("Helicopters Unlocked") remoteExecCall ["systemChat"];
 		omtk_unlock_helis = {
 			{
+				("Locked Vehicles have been Unlocked") remoteExecCall ["systemChat"];
 				_heli = missionNamespace getVariable [_x, objNull];
 				if (!isnil("_heli")) then { _heli lock 0; };
 			} forEach OMTK_SB_UNLOCK_HELI_VARS;

@@ -5,7 +5,7 @@
 | FIELD                   | VALUE
 |-------------------------|-------------
 | folder name             | score_board
-| last modification date  | 2015-01-10
+| last modification date  | 2021-09-13
 | Ojective                | compute scores & display scoreboard at the end of the time-boxed game
 | Default                 | enabled
 | Extra Parameters        | yes
@@ -83,6 +83,8 @@ OMTK_SB_LIST_OBJECTIFS = [
     [1, "BLUEFOR", "DESTRUCTION", "Kill the priest", ["LIST", ["priest"]] ],  
     [1, "BLUEFOR", "OUT", "Deliver Cpt. Clark", ["LIST", ["clark"]] ],  
     [1, "REDFOR", "SURVIVAL", "Protect the bridge", ["LIST", ["bridge"]] ],  
+    [1, "REDFOR", "FLAG", "Objective starts uncompleted and needs to be completed (similar to DESTRUCTION)", [[1,false]] ],  
+    [1, "BLUEFOR", "FLAG", "Objective starts completed and needs to be prevented from being UNcompleted (similar to SURVIVAL)", [[2,true]] ],  
     [5, "BLUEFOR", "DESTRUCTION", "Domination bonus", ["REDFOR",5] ],  
     [5, "REDFOR", "DESTRUCTION", "Domination bonus", ["BLUEFOR",5] ]  
 ];  
@@ -99,6 +101,14 @@ OMTK_SB_LIST_OBJECTIFS = [
     [2, "GREENFOR", "SURVIVAL", "Supremacy of itself", ["GREENFOR", 5] ]
 ];
 ```
+
+NOTE REGARDING "FLAG" OBJECTIVE: 
+To set a FLAG objective to completed (or to failed, as per the second line shown below), you just have to run this single line of code in a script or a trigger:
+```
+[1, true] call omtk_setFlagResult; // set flag 1 to true
+[2, false] call omtk_setFlagResult; // set flag 2 to false
+```
+The opposite can also be done, to set an objective to failed. They can be switched however many times you want.
 
 THREE FACTIONS OBJECTIVES:
 
