@@ -160,7 +160,7 @@ class AdminMenuTest {
 			y = 0.45 * safezoneH + safezoneY;
 			w = 0.06 * safezoneW;
 			h = 0.03 * safezoneH;
-			action="[] remoteExec ['omtk_wu_fn_launch_game', 0];"; 
+			action="[] remoteExec ['omtk_wu_fn_launch_game', 2];"; 
 		};
 		class ButtonShowScore: omtk_RscButton {
 			text = "Show Scoreboard"; //--- ToDo: Localize;
@@ -168,7 +168,7 @@ class AdminMenuTest {
 			y = 0.45 * safezoneH + safezoneY;
 			w = 0.06 * safezoneW;
 			h = 0.03 * safezoneH;
-			action="[] remoteExec ['omtk_sb_compute_scoreboard', 0];[] remoteExec ['omtk_sb_start_mission_end', 0];"; 
+			action="[] remoteExec ['omtk_sb_compute_scoreboard', 2];[] remoteExec ['omtk_sb_start_mission_end', 2];"; 
 		};
 		class ButtonExportOcap: omtk_RscButton {
 			text = "Export Ocap"; //--- ToDo: Localize;
@@ -176,7 +176,7 @@ class AdminMenuTest {
 			y = 0.45 * safezoneH + safezoneY;
 			w = 0.06 * safezoneW;
 			h = 0.03 * safezoneH;
-			action="[] remoteExec ['ocap_fnc_exportData', 0];"; 
+			action="[] remoteExec ['ocap_fnc_exportData', 2];"; 
 		};
 		class ButtonDeleteAi: omtk_RscButton {
 			text = "Remove AIs"; //--- ToDo: Localize;
@@ -192,7 +192,7 @@ class AdminMenuTest {
 			y = 0.45 * safezoneH + safezoneY;
 			w = 0.06 * safezoneW;
 			h = 0.03 * safezoneH;
-			action="[] remoteExec ['omtk_disable_aiBehaviour', 0];"; 
+			action="[] remoteExec ['omtk_disable_aiBehaviour', 2];"; 
 		};
 		class ButtonAllowDamage: omtk_RscButton {
 			text = "Enable Dmg Players"; //--- ToDo: Localize;

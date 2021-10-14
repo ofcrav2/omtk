@@ -44,6 +44,10 @@ if (isServer) then {
 	publicVariable "omtk_mission_end_time_txt";
 	
 	// SCHEDULE EVENTS
+	[{
+		//("[OMTK] 20 Minutes Left") remoteExecCall ["systemChat"];
+		("20 Minutes Left") remoteExecCall ["hint"];
+	}, [], _omtk_mission_duration - 1200] call KK_fnc_setTimeout;		// 20 minutes warning (1200 secs = 2 mins)
 	[omtk_sb_compute_scoreboard, [], _omtk_mission_duration] call KK_fnc_setTimeout;
 	[omtk_sb_start_mission_end, [], _omtk_mission_duration+2] call KK_fnc_setTimeout;
 	if (isClass(configFile >> "CfgPatches" >> "ocap")) then {[ocap_fnc_exportData, [], _omtk_mission_duration+10] call KK_fnc_setTimeout;};
