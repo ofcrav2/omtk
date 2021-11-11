@@ -244,7 +244,7 @@ button_endWarmup ctrlSetPosition [
 button_endWarmup ctrlCommit 0;
 button_endWarmup ctrlSetText "End wamrup";
 button_endWarmup ctrlAddEventHandler ["ButtonDown", {
-	[] remoteExec ['omtk_wu_fn_launch_game', 0];
+	[] remoteExec ['omtk_wu_fn_launch_game', 2];
 }];
 
 // Show Scoreboard
@@ -258,8 +258,8 @@ button_showScoreboard ctrlSetPosition [
 button_showScoreboard ctrlCommit 0;
 button_showScoreboard ctrlSetText "Show Scoreboard";
 button_showScoreboard ctrlAddEventHandler ["ButtonDown", {
-	[] remoteExec ['omtk_sb_compute_scoreboard', 0];
-	[] remoteExec ['omtk_sb_start_mission_end', 0];
+	[] remoteExec ['omtk_sb_compute_scoreboard', 2];
+	[] remoteExec ['omtk_sb_start_mission_end', 2];
 }];
 
 // Export Ocap
@@ -273,7 +273,7 @@ button_exportOcap ctrlSetPosition [
 button_exportOcap ctrlCommit 0;
 button_exportOcap ctrlSetText "Export Ocap";
 button_exportOcap ctrlAddEventHandler ["ButtonDown", {
-	[] remoteExec ['ocap_fnc_exportData', 0];
+	[] remoteExec ['ocap_fnc_exportData', 2];
 }];
 
 // Remove AIs
@@ -301,7 +301,7 @@ button_freezeAI ctrlSetPosition [
 button_freezeAI ctrlCommit 0;
 button_freezeAI ctrlSetText "Freeze AIs";
 button_freezeAI ctrlAddEventHandler ["ButtonDown", {
-	[] remoteExec ['omtk_disable_aiBehaviour', 0];
+	[] remoteExec ['omtk_disable_aiBehaviour', 2];
 }];
 
 // Enable Dmg Playres
