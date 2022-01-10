@@ -33,7 +33,7 @@ class Header {
 #include "omtk\dynamic_startup\dialog_interactive_startup.hpp"
 
 // Add drawing of admin menu
-onPauseScript = "omtk\admin_ui\adminMenuPauseScreen.sqf";
+onPauseScript = "omtk\ui\pauseScreenMenu.sqf";
 
 class Params
 {

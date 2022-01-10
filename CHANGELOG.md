@@ -1,10 +1,15 @@
 ## Changelog
 
+
 \+ feature added  
 \- feature deleted  
 ~ feature modified  
 @ bug fix  
 !! security patch
+
+### V2.9.4 - 2022-01-10
+~ [ui] Admin Menu Screen reworked and features added
+
 ### V2.9.0 - 2021-05-30
 \+ [admin_ui] Added an admin menu that includes simulation and view distance control, plus other useful things
 \+ [score_board] Mexican Standoff sub-module added (new UI, all functions adapted and separated files to load info into the ui)
