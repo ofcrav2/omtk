@@ -1,7 +1,141 @@
 params ["_display"];
 
+// Show uniform fix
+buttonUniform_Bug = _display ctrlCreate ["omtk_RscButton", 1201];
+buttonUniform_Bug ctrlSetPosition [
+	0.9 * safezoneW + safezoneX,
+	0.8 * safezoneH + safezoneY,
+	0.07 * safezoneW,
+	0.03 * safezoneH
+];
+buttonUniform_Bug ctrlCommit 0;
+buttonUniform_Bug ctrlSetText "Fix Uniform Bug";
+buttonUniform_Bug ctrlSetBackgroundColor [1.0, 0.2, 0.2, 1];
+buttonUniform_Bug ctrlAddEventHandler ["ButtonDown", {
+	if not (isNull (vestContainer player)) then
+	{
+		private ["_vest", "_vestitems", "_vestmagaiznes"];
+		_vest = vest player;
+		_vestitems = vestItems player;
+		_vestmagaiznes = magazinesAmmoCargo (vestContainer player);
+		removeVest player;
+
+		player addVest _vest;
+		{
+			if not (isClass (configFile >> "cfgMagazines" >> _x)) then
+			{
+				player addItemToVest _x;
+			};
+		} foreach _vestitems;
+		{
+			(vestContainer player) addMagazineAmmoCargo [_x select 0, 1, _x select 1];
+		} foreach _vestmagaiznes;
+	};
+
+	//===========================
+
+	if not (isNull (uniformContainer player)) then
+	{
+		private ["_uniform", "_uniformitems", "_uniformmagaiznes"];
+		_uniform = uniform player;
+		_uniformitems = uniformItems player;
+		_uniformmagaiznes = magazinesAmmoCargo (uniformContainer player);
+		removeUniform player;
+
+		player forceAddUniform _uniform;
+		{
+			if not (isClass (configFile >> "cfgMagazines" >> _x)) then
+			{
+				player addItemToUniform _x;
+			};
+		} foreach _uniformitems;
+
+		{
+			(uniformContainer player) addMagazineAmmoCargo [_x select 0, 1, _x select 1];
+		} foreach _uniformmagaiznes;
+	};
+}];
+
 // If not admin, exit
 if !(serverCommandAvailable "#kick") exitWith {};
+
+_playerList = _display ctrlCreate[ "ctrlListbox", 10000 ];
+_playerList ctrlSetPosition [
+	0.495 * safezoneW + safezoneX,
+	0.05 * safezoneH + safezoneY,
+	0.16 * safezoneW,
+	0.15 * safezoneH
+];
+_playerList ctrlCommit 0;
+
+_playerList lbAdd "===WHO===";
+_playerList lbAdd "===BLUFOR===";
+{
+	_playerList lbAdd name _x;
+} forEach (allPlayers select {side (group _x) == west});
+
+_playerList lbAdd "===OPFOR===";
+{
+	_playerList lbAdd name _x;
+} forEach (allPlayers select {side (group _x) == east});
+
+_playerList lbAdd "===INDEPENDENT===";
+{
+	_playerList lbAdd name _x;
+} forEach (allPlayers select {side (group _x) == independent});
+
+_playerList lbSetCurSel 0;
+
+_playerList2 = _display ctrlCreate[ "ctrlListbox", 10001 ];
+_playerList2 ctrlSetPosition [
+	0.65 * safezoneW + safezoneX,
+	0.05 * safezoneH + safezoneY,
+	0.16 * safezoneW,
+	0.15 * safezoneH
+];
+_playerList2 ctrlCommit 0;
+
+_playerList2 lbAdd "===WHERE===";
+_playerList2 lbAdd "===BLUFOR===";
+{
+	_playerList2 lbAdd name _x;
+} forEach (allPlayers select {side (group _x) == west});
+
+_playerList2 lbAdd "===OPFOR===";
+{
+	_playerList2 lbAdd name _x;
+} forEach (allPlayers select {side (group _x) == east});
+
+_playerList2 lbAdd "===INDEPENDENT===";
+{
+	_playerList2 lbAdd name _x;
+} forEach (allPlayers select {side (group _x) == independent});
+
+_playerList2 lbSetCurSel 0;
+
+_kickButton = _display ctrlCreate ["omtk_RscButton", 1201];
+_kickButton ctrlSetPosition [
+	0.495 * safezoneW + safezoneX,
+	0.20 * safezoneH + safezoneY,
+	0.06 * safezoneW,
+	0.03 * safezoneH
+];
+_kickButton ctrlCommit 0;
+_kickButton ctrlSetText "Teleport player";
+_kickButton ctrlSetBackgroundColor [0.2, 0.2, 0.8, 1];
+_kickButton ctrlAddEventHandler ["ButtonDown", {
+	params[ "_kickButton" ];
+
+	_playerList = ctrlParent _kickButton displayCtrl 10000;
+	_selectedIndex = lbCurSel _playerList;
+	_selected = _playerList lbText _selectedIndex;
+
+	_playerList2 = ctrlParent _kickButton displayCtrl 10001;
+	_selectedIndex = lbCurSel _playerList2;
+	_selected2 = _playerList2 lbText _selectedIndex;
+
+	[_selected, _selected2] remoteExec ['omtk_teleport_unit', 0];
+}];
 
 /////////////////////////////////////////////////////////////////////
 /* SIMULATION CONTROL */
@@ -15,7 +149,7 @@ simControlPic ctrlSetPosition [
 	0.03 * safezoneH
 ];
 simControlPic ctrlCommit 0;
-simControlPic ctrlSetText "omtk\admin_ui\img\sim_control.jpg";
+simControlPic ctrlSetText "omtk\ui\img\sim_control.jpg";
 
 // Disable all sim
 buttonSimulation_Disable = _display ctrlCreate ["omtk_RscButton", 1201];
@@ -118,7 +252,7 @@ vdControlPic ctrlSetPosition [
 	0.03 * safezoneH
 ];
 vdControlPic ctrlCommit 0;
-vdControlPic ctrlSetText "omtk\admin_ui\img\view_distance.jpg";
+vdControlPic ctrlSetText "omtk\ui\img\view_distance.jpg";
 
 // Set VD 200
 buttonVD_200 = _display ctrlCreate ["omtk_RscButton", 1201];
@@ -231,7 +365,7 @@ simControlPic ctrlSetPosition [
 	0.03 * safezoneH
 ];
 simControlPic ctrlCommit 0;
-simControlPic ctrlSetText "omtk\admin_ui\img\omtk_btns.jpg";
+simControlPic ctrlSetText "omtk\ui\img\omtk_btns.jpg";
 
 // End warmup
 button_endWarmup = _display ctrlCreate ["omtk_RscButton", 1201];

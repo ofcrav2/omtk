@@ -270,3 +270,13 @@ omtk_viewdistance_change = {
 		systemChat format ["[OMTK] View Distance changed to %1",_newViewDist];
 	};
 };
+
+omtk_teleport_unit = {
+	_name = _this select 0;
+	_name2 = _this select 1;
+
+	if (_name == name player) then {
+		_playerObject = allPlayers select ( allPlayers findIf {(name _x) isEqualTo _name2;} );
+		player setPos (_playerObject modelToWorld [0,0,1]);
+	};
+};
