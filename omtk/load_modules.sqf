@@ -37,8 +37,6 @@ omtk_load_warmup = {
 
 ["load_modules before loading modules" , "DEBUG", false] call omtk_log;
 
-execVM "omtk\admin_ui\main.sqf";
-
 if (("OMTK_MODULE_DIFFICULTY_CHECK"         call BIS_fnc_getParamValue) > 0) then { execVM "omtk\difficulty_check\main.sqf"; };
 if (("OMTK_MODULE_IA_SKILLS"                call BIS_fnc_getParamValue) > 0) then { execVM "omtk\ia_skills\main.sqf"; };
 if (("OMTK_MODULE_VIEW_DISTANCE"            call BIS_fnc_getParamValue) > 0) then { execVM "omtk\view_distance\main.sqf"; };	
