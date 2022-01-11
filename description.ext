@@ -27,7 +27,6 @@ class Header {
 // Include UI panels
 #include "omtk\ui\defines.hpp"
 
-#include "omtk\admin_ui\adminMenu.hpp"
 #include "omtk\score_board\dialog_action_progress.hpp"
 #include "omtk\score_board\dialog_scoreboard.hpp"
 #include "omtk\dynamic_startup\dialog_interactive_startup.hpp"
