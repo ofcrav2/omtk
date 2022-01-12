@@ -5,7 +5,7 @@
 | FIELD                   | VALUE
 |-------------------------|-------------
 | folder name             | ia_skills
-| last modification date  | 2021-03-22
+| last modification date  | 2022-01-12
 | Ojective                | make IA look like humans
 | Default                 | enabled
 | Extra Parameters        | yes
@@ -18,6 +18,7 @@ This module aims at making IA more human-like units, by lowering their skills fo
 Another feature is to protect human from IA return fire: in case of team-kill, IA units automatically engage the author. It is artificially disabled by adding a huge Rating to each human player. 
 
 Added Light OMTK mode to not cycle through all the players
+When Disable Playable AI is enabled, AIs are frozen and made immortal during warmup. Upon disconnection, the unit should similarily freeze.
 
 ## Mission Parameters
 
@@ -25,6 +26,11 @@ Added Light OMTK mode to not cycle through all the players
 
 * enabled (default)
 * disabled
+
+#### Disable Playable AI module:
+
+* enabled 
+* disabled (default)
 
 ### Extra Parameters
 

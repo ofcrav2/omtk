@@ -29,7 +29,7 @@ execVM "customScripts.sqf";
 
 ["Init before list objectifs" , "DEBUG", false] call omtk_log;
 
-
+// Complete example list can be found here: https://github.com/ofcrav2/omtk/tree/master/omtk/score_board
 OMTK_SB_LIST_OBJECTIFS = [
 
 ];

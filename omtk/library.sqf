@@ -253,7 +253,6 @@ omtk_sim_enablePlayerSim = {
 	
 };
 
-
 // Has to be remotely called on clients from server
 // Parameters:
 //  _viewDistMode: "reset" will set the view dist back to the parameter value. Otherwise
@@ -278,5 +277,13 @@ omtk_teleport_unit = {
 	if (_name == name player) then {
 		_playerObject = allPlayers select ( allPlayers findIf {(name _x) isEqualTo _name2;} );
 		player setPos (_playerObject modelToWorld [0,0,1]);
+	};
+};
+
+omtk_disable_ti = {
+	if (isServer) then {
+		{
+			_x disableTIEquipment true;
+		} foreach vehicles;
 	};
 };

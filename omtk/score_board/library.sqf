@@ -93,7 +93,7 @@ omtk_sb_compute_scoreboard = {
 	publicVariable "omtk_sb_ready4result";
 };
 
-	
+
 omtk_sb_getObjectiveResult = {
 	private["_obj","_index","_side", "_type","_res"];
 	
@@ -137,6 +137,17 @@ omtk_sb_getObjectiveResult = {
 				if (!(_omtk_sb_flags select _x)) then { _res = false; };
 			} forEach (_obj select 4);		
 			//["objectif BLUEFOR","INFO",false] call omtk_log;
+		};
+		
+		case "T_DESTRUCTION";
+		case "T_SURVIVAL";
+		case "T_OUTSIDE";
+		case "T_INSIDE": {
+			_res = true;
+			_omtk_sb_flags = missionNamespace getVariable "omtk_sb_flags";
+			
+			_flagNum = (_obj select 4) select 0;
+			if (!(_omtk_sb_flags select _flagNum)) then { _res = false; };	
 		};
 		
 		default	{
@@ -187,6 +198,12 @@ omtk_side_in_area = {
 };
 
 
+/* PARAMS:
+ * 0 -> subject and value related to the objective
+ * 1 -> side of the obj
+ * 2 -> subtype of obj (IN or OUT)
+ * 3 -> zone of the obj 
+ */
 omtk_isInArea = {
 	private["_subArr","_subject","_value","_Sside","_mode","_count","_res","_type"];
 		
@@ -232,13 +249,33 @@ omtk_isInArea = {
 		};
 		
 		case "LIST": {
+			_resArr = [];
+			_res = true; 
+			{
+				_target = missionNamespace getVariable [_x , objNull];
+				_areaObj = missionNamespace getVariable [_area , objNull];	
+				_r = [_areaObj, (position _target)] call BIS_fnc_inTrigger;
+				if (_mode < 1) then { _r = !_r; };
+				_resArr pushBack _r;
+			} foreach _value;
+			
+			// They ALL have to be true for the obj to be completed
+			{
+				// If one is FALSE, _res becomes permanently false
+				if (!_x) then {
+					_res = false;
+				};
+			} foreach _resArr;
+			
+			/*
 			{
 				_target = missionNamespace getVariable [_x , objNull];
 				_areaObj = missionNamespace getVariable [_area , objNull];	
 				_r = [_areaObj, (position _target)] call BIS_fnc_inTrigger;
 				if (_mode < 1) then { _r = !_r; };
 				_res = _r;
-			} foreach _value;
+			} foreach _value;    
+			OLD, RESULT IS LAST VALUE*/ 
 		};
 		case "MT_ID": {
 			_items_found = [];
@@ -268,7 +305,36 @@ omtk_isInArea = {
 	_res;
 };
 
+/* Function called by a KK_setTimeout created in score_board\main.sqf on the server for every T_INSIDE or T_OUTSIDE
+ * PARAMS:
+ * 0 -> subject and value related to the objective
+ * 1 -> side of the obj
+ * 2 -> subtype of obj (IN or OUT)
+ * 3 -> zone of the obj 
+ * 4 -> flag number
+ * 5 -> obj label 
+ * 6 -> side (string) of obj
+ */
+omtk_timedArea = {
+	_sideStr = _this select 6;
+	_label = _this select 5;
+	
+	_res = [_this select 0, _this select 1, _this select 2, _this select 3] call omtk_isInArea;
+	
+	if (_res) then {
+		("[OMTK] OBJ " + _label + " COMPLETED BY " + _sideStr + ".") remoteExecCall ["systemChat"];
+		[_this select 4, true] call omtk_setFlagResult;
+	} else {
+		("[OMTK] OBJ " + _label + " FAILED BY " + _sideStr + ".") remoteExecCall ["systemChat"];
+	};
+};
 
+
+/* PARAMS:
+ * 0 -> subject and value related to the objective
+ * 1 -> side of the obj
+ * 2 -> subtype of obj (SURV or DESTR)
+ */
 omtk_isAlive = {
 	private["_subArr","_subject","_value","_side","_mode","_count","_res","_type"];
 	
@@ -306,23 +372,31 @@ omtk_isAlive = {
 			else {_res = (_rEff - _bEff) >= _value; };
 		};
 		case "LIST": {
-			_res = true;
+			_resArr = [];
+			_res = true; 
 			{
 				_target = nil;
 			
 				_type = typeName _x;
-				if (_type == "STRING") then   { _target = missionNamespace getVariable [_x , objNull]; };
-				if (_type == "SCALAR") then {	_target = [0,0,0] nearestObject _x;	};
+				if (_type == "STRING") then { _target = missionNamespace getVariable [_x , objNull]; };
+				if (_type == "SCALAR") then { _target = [0,0,0] nearestObject _x; };
 				
 				_r = alive _target;
 				if (_mode < 1) then { _r = !_r; };
-				if (!_r) then {_res = false;};
-				//["target =" +  (name _target) + " alive=" + (str _res),"OBJECTIVE",false] call omtk_log;
+				_resArr pushBack _r;
 			} foreach _value;
+			
+			// They ALL have to be true for the obj to be completed
+			{
+				// If one is FALSE, _res becomes permanently false
+				if (!_x) then {
+					_res = false;
+				};
+			} foreach _resArr;
 		};
 		case "OMTK_ID": {
-			_res = true;
 			_items_found = [];
+			_res = true;
 			{
 				_id = _x getVariable ["mt_id", ""];
 				if (_id in _value) then {
@@ -349,6 +423,28 @@ omtk_isAlive = {
 	_res;
 };
 
+/* Function called by a KK_setTimeout created in score_board\main.sqf on the server for every T_SURVIVAL or T_DESTRUCTION
+ * PARAMS:
+ * 0 -> subject and value related to the objective
+ * 1 -> side of the obj
+ * 2 -> subtype of obj (SURV or DESTR)
+ * 3 -> flag number
+ * 4 -> obj label 
+ * 5 -> side (string) of obj
+ */
+omtk_timedAlive = {
+	_side = _this select 5;
+	_label = _this select 4;
+	
+	_res = [_this select 0, _this select 1, _this  select 2] call omtk_isAlive;
+	
+	if (_res) then {
+		("[OMTK] OBJ '" + _label + "' COMPLETED BY " + _side + ".") remoteExecCall ["systemChat"];
+		[_this select 3, true] call omtk_setFlagResult;
+	} else {
+		("[OMTK] OBJ '" + _label + "' FAILED BY " + _side + ".") remoteExecCall ["systemChat"];
+	};
+};
 
 omtk_setObjectiveResult = {
 	omtk_sb_scores = missionNamespace getVariable "omtk_sb_scores";
@@ -401,3 +497,4 @@ omtk_closeAction = {
 	_bool = isNil _proc;
 	if (!_bool) then { [_obj,_caller] call _proc; };
 };
+

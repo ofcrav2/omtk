@@ -7,8 +7,25 @@
 @ bug fix  
 !! security patch
 
+### V2.10.0 - 2022-01-12
+~ [ia_skills] Tweaked the freezing of AIs and units from disconnected players.
+@ [thermal_imaging] Fixed bug where drones placed from backpack would retain their TI equipment.
+@ [score_board] Fixed ultra rare problem related to multiple subjects in LIST objs 
+\+ [score_board] Added Timed Objectives 
+\+ [warm_up] Added a W-Up Safety module that disables shooting during warmup
+~ [warm_up] Tweaked simulation timers, restriction teleport timer, short warmup
+
 ### V2.9.4 - 2022-01-10
 ~ [ui] Admin Menu Screen reworked and features added
+\- [ui] Old ace admin menu removed
+
+### V2.9.1 to V2.9.3 - 2021-xx-xx
+@ [ui] Fixed admin menu functions server/client execution
+\+ [ui] Added admin menu to pausescreen
+\+ [briefing] Added missions start and end times in the briefing tabs
+\+ [score_board] Added a "20 Minutes Left" warning.
+~ [score_board] elongated the scoreboard for Mexican Standoff games 
+~ [score_board] fixed Unlock Helis function
 
 ### V2.9.0 - 2021-05-30
 \+ [admin_ui] Added an admin menu that includes simulation and view distance control, plus other useful things

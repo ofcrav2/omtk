@@ -56,8 +56,8 @@ if (isServer) then {
 	_unlock_heli_time = missionNamespace getVariable ["OMTK_SB_UNLOCK_HELI_TIME", nil];
 	if (!isNil "_unlock_heli_var" && !isNil "_unlock_heli_time") then {
 		omtk_unlock_helis = {
+			("Locked Vehicles have been Unlocked (if any)") remoteExecCall ["systemChat"];
 			{
-				("Locked Vehicles have been Unlocked") remoteExecCall ["systemChat"];
 				_heli = missionNamespace getVariable [_x, objNull];
 				if (!isnil("_heli")) then { _heli lock 0; };
 			} forEach OMTK_SB_UNLOCK_HELI_VARS;
@@ -73,6 +73,7 @@ if (isServer) then {
 		_side = _x select 1;
 		_type = _x select 2;
 		_values = _x select 4;
+		_newFlag = 0;
 		
 		switch(_side) do {
 			case "BLUEFOR":	{
@@ -90,12 +91,18 @@ if (isServer) then {
 				[_omtk_sb_objectives, _x] call BIS_fnc_arrayPush;
 				[_omtk_sb_scores, false]  call BIS_fnc_arrayPush;
 			};
+			// Duplicates the objective for both factions
 			case "BLUEFOR+REDFOR":	{
 				_x set [1, West];
 				[_omtk_sb_objectives, _x] call BIS_fnc_arrayPush;
 				[_omtk_sb_scores, false]  call BIS_fnc_arrayPush;
 				_x2 = + _x;
 				_x2 set [1, East];
+				// To accomodate timed capzones, the flag used by the duplicated objective is the original + 10
+				if (_type == "T_INSIDE") then {
+					_newFlag = (_values select 0) + 10;
+					_x2 set [4, [_newFlag,0]];
+				};
 				[_omtk_sb_objectives, _x2] call BIS_fnc_arrayPush;
 				[_omtk_sb_scores, false]  call BIS_fnc_arrayPush;
 			};
@@ -139,6 +146,42 @@ if (isServer) then {
 			{
 				_omtk_sb_flags	set [_x select 0, _x select 1];
 			} forEach _values;
+		};
+		
+		// Timed objectives are created here. They consist of a mix of the regular objectives and a flag objective.
+		// The execution of the check is handled by a function on a KK timeout. The execution then saves the result on the flag.
+		// The flag is then used when computing the scoreboard to assess the completion of the objective.
+		if (_type == "T_INSIDE") then {
+			// Initialization of the flag
+			_omtk_sb_flags set [_values select 0, false];
+			
+			// IF statement used to accomodate capzones (duplication of the check, one for each faction)
+			if (_side == "BLUEFOR+REDFOR") then {
+				// Initialization of the duplicated flag
+				_omtk_sb_flags set [_newFlag, false];
+				[omtk_timedArea, [_x select 6, West, 1, _x select 5, _values select 0, _x select 3, "BLUEFOR"], (_values select 1)*60] call KK_fnc_setTimeout;
+				[omtk_timedArea, [_x select 6, East, 1, _x select 5, _newFlag, _x select 3, "REDFOR"], (_values select 1)*60] call KK_fnc_setTimeout;
+			} else {
+			
+				// [function, [fnc args], time in s] call KK_fnc_setTimeout
+				// to understand the args, go check in score_board\library.sqf where the fnc is defined
+				[omtk_timedArea, [_x select 6, _x select 1, 1, _x select 5, _values select 0, _x select 3, _side], (_values select 1)*60] call KK_fnc_setTimeout;
+			};
+		};
+		if (_type == "T_OUTSIDE") then {
+			_omtk_sb_flags	set [_values select 0, false];
+			
+			[omtk_timedArea, [_x select 6, _x select 1, 0, _x select 5, _values select 0, _x select 3, _side], (_values select 1)*60] call KK_fnc_setTimeout;
+		};
+		if (_type == "T_SURVIVAL") then {
+			_omtk_sb_flags	set [_values select 0, false];
+			// _x select 5 = mode+values
+			[omtk_timedAlive, [_x select 5, _x select 1, 1, _values select 0, _x select 3, _side], (_values select 1)*60] call KK_fnc_setTimeout;
+		};
+		if (_type == "T_DESTRUCTION") then {
+			_omtk_sb_flags	set [_values select 0, false];
+			
+			[omtk_timedAlive, [_x select 5, _x select 1, 0, _values select 0, _x select 3, _side], (_values select 1)*60] call KK_fnc_setTimeout;
 		};
 		
 	} foreach OMTK_SB_LIST_OBJECTIFS;

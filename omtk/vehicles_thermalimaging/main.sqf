@@ -1,9 +1,13 @@
+["vehicles_thermalimaging start", "DEBUG", false] call omtk_log;
+
 if (isServer) then {
-	["vehicles_thermalimaging start", "DEBUG", false] call omtk_log;
-
-	{
-		_x disableTIEquipment true;
-	} foreach vehicles;
-
-	["vehicles_thermalimaging end", "DEBUG", false] call omtk_log;
+	[] call omtk_disable_ti;
 };
+
+if (hasInterface) then {
+	player addEventHandler ["WeaponAssembled", {
+		[] remoteExec ["omtk_disable_ti", 2, true];
+	}];
+};
+
+["vehicles_thermalimaging end", "DEBUG", false] call omtk_log;
