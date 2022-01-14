@@ -5,7 +5,7 @@
 | FIELD                   | VALUE
 |-------------------------|-------------
 | folder name             | kill_logger
-| last modification date  | 2015-01-01
+| last modification date  | 2022-01-14
 | Ojective                | log all HIT and KILL events in .RPT file
 | Default                 | enabled
 | Extra Parameters        | no

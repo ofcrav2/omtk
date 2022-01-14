@@ -7,6 +7,10 @@
 @ bug fix  
 !! security patch
 
+### V2.10.1 - 2022-01-14
+@ [kill_logger] Fixed the kill logger so that it actually shows the killer.
+~ [map_exploration] Time multiplier set to 0.1 and added ace action to reset to starting time. 
+
 ### V2.10.0 - 2022-01-12
 ~ [ia_skills] Tweaked the freezing of AIs and units from disconnected players.
 @ [thermal_imaging] Fixed bug where drones placed from backpack would retain their TI equipment.
