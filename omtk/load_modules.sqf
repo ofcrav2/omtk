@@ -46,6 +46,8 @@ if (("OMTK_MODULE_LIGHT_VERSION" call BIS_fnc_getParamValue) < 1 ) then {
 	if (("OMTK_MODULE_RADIO_LOCK" call BIS_fnc_getParamValue) > 0) then { execVM "omtk\radio_lock\main.sqf"; };
 	if (("OMTK_MODULE_KILL_LOGGER" call BIS_fnc_getParamValue) > 0) then { execVM "omtk\kill_logger\main.sqf"; };
 };
+execVM "omtk\uniform_lock\main.sqf";
+
 if (("OMTK_MODULE_DYNAMIC_STARTUP" 			call BIS_fnc_getParamValue) > 0) then {
 	execVM "omtk\dynamic_startup\main.sqf";
 } else {

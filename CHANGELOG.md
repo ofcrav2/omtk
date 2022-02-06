@@ -7,6 +7,9 @@
 @ bug fix  
 !! security patch
 
+### V2.10.2 - 2022-02-04
+\+ [uniform_lock] Added uniform lock module to prevent dropping or switching uniform.
+
 ### V2.10.1 - 2022-01-14
 @ [kill_logger] Fixed the kill logger so that it actually shows the killer.
 ~ [map_exploration] Time multiplier set to 0.1 and added ace action to reset to starting time. 
