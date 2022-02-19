@@ -224,6 +224,14 @@ omtk_sim_disablePlayerSim = {
 		player enableSimulation false;
 	};
 	systemChat "[OMTK] Player simulation DISABLED";
+	_omtk_sim_txt = format ["<t shadow='1' shadowColor='#A6051A'>- PLAYER SIM DISABLED and WEAPON SAFETY ENABLED -</t><br/>Please hold until weapon safety is removed<br/>while the server takes a breather"];
+	[_omtk_sim_txt,0,0,15,2] spawn BIS_fnc_dynamicText;
+	setViewDistance 200;
+	[] call omtk_enable_safety;
+	sleep 90;
+	[] call omtk_disable_safety;
+	
+	
 };
 
 // Enables simulation to players depending on the parameters
@@ -237,14 +245,14 @@ omtk_sim_enablePlayerSim = {
     
 	// parameter being "all" will reenable simulation to all the players at once
 	if (_sideMode == "all") then {
-		systemChat format ["[OMTK] Your simulation will return in %1 seconds",_randRelease];
+		systemChat format ["[OMTK] YOUR SIMULATION WILL RETURN IN %1 seconds",_randRelease];
 		sleep _randRelease;
 		player enableSimulation true;
 		systemChat "[OMTK] Player simulation REENABLED";
 	} else {
 		// otherwise it will reenable simulation only to the players belonging to the passed side ( "blufor", "opfor", "independent" )
 		if ( side player == _actualSide ) then {
-			systemChat format ["[OMTK] Your simulation will return in %1 seconds",_randRelease];
+			systemChat format ["[OMTK] YOUR SIMULATION WILL RETURN IN %1 seconds",_randRelease];
 			sleep _randRelease;
 			player enableSimulation true;
 			systemChat "[OMTK] Player simulation REENABLED (for your side)";
@@ -287,3 +295,29 @@ omtk_disable_ti = {
 		} foreach vehicles;
 	};
 };
+
+omtk_enable_safety = {
+	_omtk_wpnSafety = 0;
+	_omtk_wpnSafety = missionNamespace getVariable ["omtk_weaponsafety", 0];
+	if ( _omtk_wpnSafety == 0 ) then {
+		_omtk_wpnSafety = player addAction ["Weapon safety on", {hintSilent "Safety On";}, [], 0, false, false, "DefaultAction", ""];	
+		systemChat "[OMTK] Weapon Safety Enabled";
+		
+		missionNamespace setVariable ["omtk_weaponsafety", _omtk_wpnSafety];
+	};
+};
+
+omtk_disable_safety = {
+	_omtk_wpnSafety = 0;
+	_omtk_wpnSafety = missionNamespace getVariable ["omtk_weaponsafety", 0];
+	if ( _omtk_wpnSafety != 0 ) then {
+		player removeAction _omtk_wpnSafety;	
+		systemChat "[OMTK] Weapon Safety Disabled";
+		missionNamespace setVariable ["omtk_weaponsafety", 0];
+		_omtk_sim_txt = format ["<t shadow='1' shadowColor='#A6051A'>- WEAPON SAFETY DISABLED -</t><br/>Continue the fight!"];
+		[_omtk_sim_txt,0,0.2,10,3] spawn BIS_fnc_dynamicText;
+		
+	};
+};
+	
+	

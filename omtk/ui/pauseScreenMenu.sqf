@@ -451,3 +451,33 @@ button_freezeAI ctrlSetText "Enable Dmg Players";
 button_freezeAI ctrlAddEventHandler ["ButtonDown", {
 	[] remoteExec ['omtk_enable_playerDamage', 0];
 }];
+
+////// New Line //////
+
+// Enable Safety
+button_enabSafety = _display ctrlCreate ["omtk_RscButton", 1201];
+button_enabSafety ctrlSetPosition [
+	0.495 * safezoneW + safezoneX,
+	0.49 * safezoneH + safezoneY,
+	0.06 * safezoneW,
+	0.03 * safezoneH
+];
+button_enabSafety ctrlCommit 0;
+button_enabSafety ctrlSetText "Enable Safety";
+button_enabSafety ctrlAddEventHandler ["ButtonDown", {
+	[] remoteExec ['omtk_enable_safety', 0];
+}];
+
+// Disable Safety
+button_disSafety = _display ctrlCreate ["omtk_RscButton", 1201];
+button_disSafety ctrlSetPosition [
+	0.565 * safezoneW + safezoneX,
+	0.49 * safezoneH + safezoneY,
+	0.06 * safezoneW,
+	0.03 * safezoneH
+];
+button_disSafety ctrlCommit 0;
+button_disSafety ctrlSetText "Disable Safety";
+button_disSafety ctrlAddEventHandler ["ButtonDown", {
+	[] remoteExec ['omtk_disable_safety', 0];
+}];

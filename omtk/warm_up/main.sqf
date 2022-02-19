@@ -11,7 +11,6 @@ omtk_wu_safety = ("OMTK_MODULE_WARM_UP_SAFETY" call BIS_fnc_getParamValue);
 
 omtk_wu_restrict_area_trigger = nil;
 omtk_wu_com_menu_item_id = 0;
-omtk_weaponSafety = nil;
 
 // Function ran on clients only
 omtk_wu_start_warmup = {
@@ -25,7 +24,7 @@ omtk_wu_start_warmup = {
 		setViewDistance	omtk_view_distance;
 	};
 	if ( omtk_wu_safety == 1 ) then { 		// SAFETY ON
-		omtk_weaponSafety = player addAction ["Weapon safety on", {hintSilent "Safety On";}, [], 0, false, false, "DefaultAction", ""];	
+		[] call omtk_enable_safety;
 	};
 	
 	// Creation of the "restrict_area_trigger" that'll call "move_player_at_spawn_if_required" fnc.
@@ -84,7 +83,7 @@ omtk_wu_end_warmup = {
 		player allowDamage true;				// DAMAGE
 		[] call omtk_sim_enableVehicleSim;		// VEHICLE LOCK & SIM
 		if ( omtk_wu_safety == 1 ) then { 		// SAFETY OFF
-			player removeAction omtk_weaponSafety;
+			[] call omtk_disable_safety;
 		};
 		
 		deleteVehicle omtk_wu_restrict_area_trigger;
@@ -133,7 +132,7 @@ omtk_wu_scheduled_calls = {
 		
 		// SET TO HALF VIEW DISTANCE 1 MIN BEFORE WARMUP END
 		if (_by == 60) then { 
-			if (omtk_wu_time < 121) then {		// IF WARMUP IS 2 MINS OR LESS, VIEW DISTANCE WILL START AT MAX
+			if (omtk_wu_time > 120) then {		// IF WARMUP IS 2 MINS OR LESS, VIEW DISTANCE WILL START AT MAX
 				[omtk_view_distance/2] remoteExecCall ["setViewDistance"];
 				("[OMTK] View distance raised to a quarter of full view distance") remoteExecCall ["systemChat"];
 			};

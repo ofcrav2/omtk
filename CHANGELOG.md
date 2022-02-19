@@ -7,6 +7,12 @@
 @ bug fix  
 !! security patch
 
+### V2.10.3 - 2022-02-18
+@ [warm_up] Fixed view distance bug introduced in v2.10.0.
+~ [omtk] Moved weapon safety functions from warmup main to library
+\+ [ui] Added buttons to enable and disable weapon safety at the admin's will 
+~ [sim_control] Changes to the "disable sim" button: big red text now shown, weapon safety enabled for 90s, viewdistance set to 200m.
+
 ### V2.10.2 - 2022-02-04
 \+ [uniform_lock] Added uniform lock module to prevent dropping or switching uniform.
 
