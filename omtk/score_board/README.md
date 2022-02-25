@@ -38,11 +38,11 @@ OMTK_SB_LIST_OBJECTIFS = [
 ];  
 // Timed Objectives (2 factions only). Read the related section below for more information
 OMTK_SB_LIST_OBJECTIFS = [  
-	[1, "BLUEFOR+REDFOR", "T_INSIDE", "Cap Zone after 40mins", **[1, 40]**, "zone", ["DIFF", 1] ], 
-	[1, "BLUEFOR", "T_INSIDE", "VIP inside zone after 30mins", **[2, 30]**, "zone", ["LIST", ["vip"]]	], 
-	[1, "REDFOR", "T_OUTSIDE", "VIP outside zone after 20mins", **[3, 20]**, "zone", ["LIST", ["vip"]]	],
-	[1, "BLUEFOR", "T_DESTRUCTION", "Kill vip within 1h", **[4, 60]**, ["LIST", ["vip"]] ], 
-	[1, "REDFOR", "T_SURVIVAL", "Save vip for 1h", **[5, 60]**, ["LIST", ["vip"]] ]
+	[1, "BLUEFOR+REDFOR", "T_INSIDE", "Cap Zone after 40mins", [1, 40], "zone", ["DIFF", 1] ], 
+	[1, "BLUEFOR", "T_INSIDE", "VIP inside zone after 30mins", [2, 30], "zone", ["LIST", ["vip"]]	], 
+	[1, "REDFOR", "T_OUTSIDE", "VIP outside zone after 20mins", [3, 20], "zone", ["LIST", ["vip"]]	],
+	[1, "BLUEFOR", "T_DESTRUCTION", "Kill vip within 1h", [4, 60], ["LIST", ["vip"]] ], 
+	[1, "REDFOR", "T_SURVIVAL", "Save vip for 1h", [5, 60], ["LIST", ["vip"]] ]
 ];
 // 3 Factions
 OMTK_SB_LIST_OBJECTIFS = [
