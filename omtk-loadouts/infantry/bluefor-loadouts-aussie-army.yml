@@ -1,8 +1,8 @@
 default:
   weapons:
     primary:
-      name: hhlc_rifle_auga3_b_grip3
-      optics: rhsusf_acc_eotech_xps3
+      name: hlc_rifle_auga3_b_grip3
+      optics: rhsusf_acc_compm4
       muzzle:
       underBarrel: rhsusf_acc_rvg_blk
       magazine: 30#hlc_30Rnd_556x45_B_AUG
@@ -13,7 +13,7 @@ default:
       name:
       magazine:
   uniform:
-    name: U_BRM_U_DPCU
+    name: UK3CB_ADA_B_U_CombatUniform_01_DPP
     magazines:
       - rhs_mag_m67
       - rhs_mag_an_m8hc
@@ -26,16 +26,17 @@ default:
       - 2x ACE_epinephrine
       - 2x ACE_tourniquet
       - rhsusf_acc_anpeq15side_bk
+      - rhs_ess_black
   vest:
-    name: BRM_RHS_SPCS_DPCU_rifle
+    name: rhsusf_mbav_rifleman
   backpack:
-    name: BRM_eagleiii_DPCU
+    name: UK3CB_B_Backpack_Pocket
   binocular:
   map: ItemMap
   compass: ItemCompass
   radio: ItemRadio
   watch: TFAR_microdagr
-  headgear: BRM_ACH_ESS_DPCU
+  headgear: rhsusf_ach_bare_tan_headset
 
 
 cdc:
@@ -52,7 +53,7 @@ cdc:
       - ACE_MapTools
       - ACE_microDAGR
   vest:
-    name: BRM_RHS_SPCS_DPCU_squadleader
+    name: rhsusf_mbav_rifleman
     magazines:
       - 3x 17#rhsusf_mag_17Rnd_9x19_JHP
       - 8x 30#hlc_30Rnd_556x45_B_AUG
@@ -82,7 +83,7 @@ cdg:
       - ACE_MapTools
       - ACE_microDAGR
   vest:
-    name: BRM_RHS_SPCS_DPCU_squadleader
+    name: rhsusf_mbav_rifleman
     magazines:
       - 3x 17#rhsusf_mag_17Rnd_9x19_JHP
       - 8x 30#hlc_30Rnd_556x45_B_AUG
@@ -94,6 +95,7 @@ cdg:
       - 1x rhs_mag_m18_red
       - 1x rhs_mag_mk84
       - 1x rhs_mag_m18_yellow
+  headgear: rhsusf_ach_bare_wood_headset_ess
   binocular: lerca_1200_black
 
 
@@ -104,7 +106,7 @@ cde:
       optics: rhsusf_acc_g33_xps3_flip
       underBarrel:
   vest:
-    name: BRM_RHS_SPCS_DPCU_GL
+    name: rhsusf_mbav_grenadier
     magazines:
       - 8x 30#hlc_30Rnd_556x45_B_AUG
   backpack:
@@ -115,26 +117,27 @@ cde:
       - 2x 1Rnd_SmokeYellow_Grenade_shell
       - 2x 1Rnd_SmokePurple_Grenade_shell
       - 4x 1Rnd_Smoke_Grenade_shell
-  headgear: BRM_ACH_HESS_DPCU
+  headgear: rhsusf_ach_bare_wood_headset
   binocular: Binocular
 
 
 
 medic:
   vest:
-    name: BRM_RHS_SPCS_DPCU_Med
+    name: rhsusf_mbav_medic
     magazines:
       - 8x 30#hlc_30Rnd_556x45_B_AUG
       - 1x rhs_mag_an_m8hc
       - 2x SmokeShellGreen
   backpack:
+    name: UK3CB_B_Backpack_Med
     items:
       - 8x ACE_bloodIV
       - 25x ACE_morphine
       - 25x ACE_epinephrine
       - 40x ACE_fieldDressing
       - 10x ACE_splint
-  headgear: BRM_ACH_HESS_DPCU
+  headgear: rhsusf_ach_bare_wood_headset
 
 
 grenadier:
@@ -146,7 +149,7 @@ grenadier:
       name: rhs_weap_M136_hedp
       magazine: rhs_m136_hedp_mag
   vest:
-    name: BRM_RHS_SPCS_DPCU_GL
+    name: rhsusf_mbav_grenadier
     magazines:
       - 8x 30#hlc_30Rnd_556x45_B_AUG
   backpack:
@@ -182,11 +185,11 @@ autorifleman:
   weapons:
     primary:
       name: rhs_weap_m249_pip_vfg2
-      optics: rhsusf_acc_eotech_xps3
+      optics: rhsusf_acc_compm4
       underBarrel: rhsusf_acc_grip4_bipod
       magazine: 200#rhsusf_200rnd_556x45_mixed_box
   vest:
-    name: BRM_RHS_SPCS_DPCU_SAW
+    name: rhsusf_mbav_mg
     items:
       - ACE_EntrenchingTool
     magazines:
@@ -216,10 +219,10 @@ gunner:
       optics: rhsusf_acc_ELCAN
       underBarrel:
   vest:
-    name: BRM_RHS_SPCS_DPCU_MG
+    name: rhsusf_mbav_mg
     items:
       - ACE_EntrenchingTool
-      - rhsusf_acc_eotech_xps3
+      - rhsusf_acc_compm4
     magazines:
       - 3x 100#rhsusf_100Rnd_762x51_m80a1epr
 
@@ -293,7 +296,7 @@ marksman:
       name: rhs_weap_sr25
       magazine: 20#rhsusf_20Rnd_762x51_SR25_m118_special_Mag
       underBarrel: rhsusf_acc_harris_bipod
-      optics: rhsusf_acc_M8541_low
+      optics: rhsusf_acc_M8541_mrds
     handgun:
       name: rhsusf_weap_glock17g4
       magazine: 17#rhsusf_mag_17Rnd_9x19_JHP
@@ -303,7 +306,7 @@ marksman:
       - ACE_MapTools
       - ACE_microDAGR
   vest:
-    name: BRM_RHS_SPCS_DPCU_Sniper
+    name: rhsusf_mbav_rifleman
     magazines:
       - 3x 17#rhsusf_mag_17Rnd_9x19_JHP
       - 4x 20#rhsusf_20Rnd_762x51_SR25_m118_special_Mag
@@ -311,7 +314,7 @@ marksman:
   backpack:
     magazines:
       - 6x 20#rhsusf_20Rnd_762x51_SR25_m118_special_Mag
-  headgear: BRM_Booniehat_DPCU
+  headgear: H_Booniehat_tan
 
 sniper:
   weapons:
@@ -319,7 +322,7 @@ sniper:
       name: rhs_weap_M107_d
       magazine: 10#rhsusf_mag_10Rnd_STD_50BMG_M33
       underBarrel: rhsusf_acc_harris_bipod
-      optics: rhsusf_acc_M8541_low
+      optics: rhsusf_acc_M8541_mrds
     handgun:
       name: rhsusf_weap_glock17g4
       magazine: 17#rhsusf_mag_17Rnd_9x19_JHP
@@ -331,18 +334,18 @@ sniper:
       - ACE_microDAGR
       - ACE_MapTools
   vest:
-    name: BRM_RHS_SPCS_DPCU_Sniper
+    name: rhsusf_mbav_rifleman
     magazines:
       - 2x 17#rhsusf_mag_17Rnd_9x19_JHP
       - 10x 10#rhsusf_mag_10Rnd_STD_50BMG_M33
   backpack:
   binocular: lerca_1200_black
-  headgear: BRM_Booniehat_DPCU
+  headgear: H_Booniehat_tan
 
 spotter:
   weapons:
     primary:
-      optics: rhsusf_acc_eotech_xps3
+      optics: rhsusf_acc_compm4
       muzzle: rhsusf_acc_nt4_black
       underBarrel: rhsusf_acc_rvg_blk
       magazine: 30#hlc_30Rnd_556x45_B_AUG
@@ -358,7 +361,7 @@ spotter:
   backpack:
     name: TFAR_anarc164
   binocular: lerca_1200_black
-  headgear: BRM_Booniehat_DPCU
+  headgear: H_Booniehat_tan
 
 
 explosive_specialist:
@@ -397,7 +400,7 @@ driver:
       - ACE_MapTools
       - ACE_microDAGR
   vest:
-    name: BRM_RHS_SPCS_DPCU_Crew
+    name: rhsusf_mbav_light
     magazines:
       - 5x 30#hlc_25Rnd_9x19mm_M882_AUG
   binocular: Binocular
@@ -413,7 +416,7 @@ ground_crew:
       optics:
       underBarrel:
   vest:
-    name: BRM_RHS_SPCS_DPCU_Crew
+    name: rhsusf_mbav_light
     magazines:
       - 5x hlc_25Rnd_9x19mm_M882_AUG
   binocular: Binocular
@@ -429,7 +432,7 @@ pilot:
       optics:
       underBarrel:
   uniform:
-    name: U_BRM_U_DPCU
+    name: UK3CB_ADA_B_U_CombatUniform_01_DPP
     items:
       - ACE_MapTools
       - ACE_microDAGR
@@ -437,7 +440,7 @@ pilot:
     magazines:
       - 5x hlc_25Rnd_9x19mm_M882_AUG
   vest:
-    name: BRM_RHS_SPCS_DPCU_Crew
+    name: rhsusf_mbav_light
   headgear: rhsusf_hgu56p_visor_tan
   backpack:
 
@@ -450,11 +453,11 @@ air_crew:
       optics:
       underBarrel:
   uniform:
-    name: U_BRM_U_DPCU
+    name: UK3CB_ADA_B_U_CombatUniform_01_DPP
     magazines:
       - 5x hlc_25Rnd_9x19mm_M882_AUG
   vest:
-    name: BRM_RHS_SPCS_DPCU_Crew
+    name: rhsusf_mbav_light
   headgear: rhsusf_hgu56p_visor_tan
   backpack:
 
@@ -483,7 +486,7 @@ op_radio:
 recon:
   weapons:
     primary:
-      optics: rhsusf_acc_eotech_xps3
+      optics: rhsusf_acc_compm4
       muzzle: rhsusf_acc_nt4_black
       underBarrel: rhsusf_acc_rvg_blk
       magazine: 30#hlc_30Rnd_556x45_B_AUG
@@ -496,7 +499,7 @@ recon:
       - 8x 30#hlc_30Rnd_556x45_B_AUG
   backpack:
   binocular: Binocular
-  headgear: BRM_Booniehat_DPCU
+  headgear: H_Booniehat_tan
 
 turret_tripod_carrier:
   vest:
