@@ -2,7 +2,8 @@
 	Author: Manchot
 	Description:
 	Export to clipboard the teams composition for Forum topic
-	
+	Command on debug console: _handle = execVM "omtk\table_forum.sqf"; -> SERVER EXEC
+
 */
 
 params [["_includeAI",false],["_rank",true],["_role",true]];
