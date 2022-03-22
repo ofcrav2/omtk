@@ -7,6 +7,9 @@
 @ bug fix  
 !! security patch
 
+### V2.10.4 - 2022-03-22
+\+ [omtk] Add export slot list to forum format
+
 ### V2.10.3 - 2022-02-18
 @ [warm_up] Fixed view distance bug introduced in v2.10.0.
 ~ [omtk] Moved weapon safety functions from warmup main to library
