@@ -288,6 +288,14 @@ omtk_teleport_unit = {
 	};
 };
 
+omtk_warn_unit = {
+	_name = _this select 0;
+
+	if (_name == name player) then {
+		titleText ["<t color='#ff0000' size='5'>YOU ARE LONEWOLFING! RETURN TO YOUR SQUAD LEADER!</t><br/>", "PLAIN", 1, true, true];
+	};
+};
+
 omtk_disable_ti = {
 	if (isServer) then {
 		{
