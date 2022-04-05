@@ -7,6 +7,12 @@
 @ bug fix  
 !! security patch
 
+### V2.10.5 - 2022-04-05
+\+ [ui] Added warning for lonewolfd
+~ [ui] All Bureau members have access to Admin menu at all times
+\+ [ui] Export of forum slot list now as a button
+~ [score_board] INSIDE objective now only counts ALIVE members
+
 ### V2.10.4 - 2022-03-22
 \+ [omtk] Add export slot list to forum format
 

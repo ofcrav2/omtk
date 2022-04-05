@@ -256,6 +256,7 @@ omtk_isInArea = {
 				_areaObj = missionNamespace getVariable [_area , objNull];	
 				_r = [_areaObj, (position _target)] call BIS_fnc_inTrigger;
 				if (_mode < 1) then { _r = !_r; };
+				if (!alive _target) then { _r = false; };
 				_resArr pushBack _r;
 			} foreach _value;
 			

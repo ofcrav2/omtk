@@ -56,8 +56,18 @@ buttonUniform_Bug ctrlAddEventHandler ["ButtonDown", {
 	};
 }];
 
+private _uid = getPlayerUID player;
+
+/*
+76561198004582151 - Manchot
+76561197968544972 - Flip4flap
+76561198089279362 - PHK4900
+76561198106536334 - Nasa
+76561197969410208 - Daedalus
+76561198059014268 - MrWhite350
+*/
 // If not admin, exit
-if !(serverCommandAvailable "#kick") exitWith {};
+if !(serverCommandAvailable "#kick" or _uid == "76561198004582151" or	_uid == "76561197968544972" or _uid == "76561198089279362" or _uid == "76561198106536334" or _uid == "76561197969410208" or	_uid == "76561198059014268") exitWith {};
 
 _playerList = _display ctrlCreate[ "ctrlListbox", 10000 ];
 _playerList ctrlSetPosition [
@@ -135,6 +145,26 @@ _kickButton ctrlAddEventHandler ["ButtonDown", {
 	_selected2 = _playerList2 lbText _selectedIndex;
 
 	[_selected, _selected2] remoteExec ['omtk_teleport_unit', 0];
+}];
+
+_warnButton = _display ctrlCreate ["omtk_RscButton", 1201];
+_warnButton ctrlSetPosition [
+	0.558 * safezoneW + safezoneX,
+	0.20 * safezoneH + safezoneY,
+	0.06 * safezoneW,
+	0.03 * safezoneH
+];
+_warnButton ctrlCommit 0;
+_warnButton ctrlSetText "Warn lonewolf";
+_warnButton ctrlSetBackgroundColor [0.2, 0.2, 0.8, 1];
+_warnButton ctrlAddEventHandler ["ButtonDown", {
+	params[ "_warnButton" ];
+
+	_playerList = ctrlParent _warnButton displayCtrl 10000;
+	_selectedIndex = lbCurSel _playerList;
+	_selected = _playerList lbText _selectedIndex;
+
+	[_selected] remoteExec ['omtk_warn_unit', 0];
 }];
 
 /////////////////////////////////////////////////////////////////////
@@ -480,4 +510,19 @@ button_disSafety ctrlCommit 0;
 button_disSafety ctrlSetText "Disable Safety";
 button_disSafety ctrlAddEventHandler ["ButtonDown", {
 	[] remoteExec ['omtk_disable_safety', 0];
+}];
+
+// Export forum list
+button_export = _display ctrlCreate ["omtk_RscButton", 1201];
+button_export ctrlSetPosition [
+	0.8 * safezoneW + safezoneX,
+	0.8 * safezoneH + safezoneY,
+	0.07 * safezoneW,
+	0.03 * safezoneH
+];
+button_export ctrlSetBackgroundColor [0.2, 1.0, 0.2, 1];
+button_export ctrlCommit 0;
+button_export ctrlSetText "Export list";
+button_export ctrlAddEventHandler ["ButtonDown", {
+	_handle = execVM "omtk\table_forum.sqf";
 }];
