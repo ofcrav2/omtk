@@ -7,6 +7,11 @@
 @ bug fix  
 !! security patch
 
+### V2.10.5 - 2022-04-08
+\+ [ui] Added button for respawn of individual players
+\+ [omtk] Added respawn function, will load default loudout too
+~ [lovewolf] Lonewolf warning will turn on safety for a player for 11 seconds
+
 ### V2.10.5 - 2022-04-05
 \+ [ui] Added warning for lonewolfd
 ~ [ui] All Bureau members have access to Admin menu at all times

@@ -167,6 +167,26 @@ _warnButton ctrlAddEventHandler ["ButtonDown", {
 	[_selected] remoteExec ['omtk_warn_unit', 0];
 }];
 
+_respawnButton = _display ctrlCreate ["omtk_RscButton", 1201];
+_respawnButton ctrlSetPosition [
+	0.621 * safezoneW + safezoneX,
+	0.20 * safezoneH + safezoneY,
+	0.06 * safezoneW,
+	0.03 * safezoneH
+];
+_respawnButton ctrlCommit 0;
+_respawnButton ctrlSetText "Respawn";
+_respawnButton ctrlSetBackgroundColor [0.2, 0.2, 0.8, 1];
+_respawnButton ctrlAddEventHandler ["ButtonDown", {
+	params[ "_respawnButton" ];
+
+	_playerList = ctrlParent _respawnButton displayCtrl 10000;
+	_selectedIndex = lbCurSel _playerList;
+	_selected = _playerList lbText _selectedIndex;
+
+	[_selected] remoteExec ['omtk_respawn_unit', 0];
+}];
+
 /////////////////////////////////////////////////////////////////////
 /* SIMULATION CONTROL */
 

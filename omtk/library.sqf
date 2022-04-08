@@ -293,6 +293,25 @@ omtk_warn_unit = {
 
 	if (_name == name player) then {
 		titleText ["<t color='#ff0000' size='5'>YOU ARE LONEWOLFING! RETURN TO YOUR SQUAD LEADER!</t><br/>", "PLAIN", 1, true, true];
+		_omtk_wpnSafety = player getVariable ["omtk_weaponsafety", 0];
+		_omtk_wpnSafety = player addAction ["Weapon safety on", {hintSilent "Safety On";}, [], 0, false, false, "DefaultAction", ""];
+		player setVariable ["omtk_weaponsafety", _omtk_wpnSafety];
+		sleep 11;
+		player removeAction _omtk_wpnSafety;
+		player setVariable ["omtk_weaponsafety", 0];
+	};
+};
+
+omtk_respawn_unit = {
+	_name = _this select 0;
+
+	if (_name == name player) then {
+		setPlayerRespawnTime 2;
+		sleep 3;
+		setPlayerRespawnTime 9999;
+
+		loadout = player getVariable ["playerLoadout", 0];
+		player setUnitLoadout [loadout, true];
 	};
 };
 
@@ -327,5 +346,3 @@ omtk_disable_safety = {
 		
 	};
 };
-	
-	
