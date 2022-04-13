@@ -71,6 +71,10 @@ if (hasInterface) then {
 	execVM "omtk\briefing.sqf";
 	execVM "omtk\fn_inventoryBriefing.sqf";
 	execVM "omtk\fn_rosterBriefing.sqf";
+
+	// Save starting loadout
+	loadout = getUnitLoadout player;
+	player setVariable ["playerLoadout", loadout];
 };
 
 // Logging des joueurs sur le serveur
