@@ -1,0 +1,153 @@
+/* IMPORTANT: READ THIS
+Scripts to add a switch objective to your mission.
+
+Place an object (a laptop, or anything, really) named Obj, which will have the actions attached. Each faction will only see its own action.
+Place two objects named BLight_1 and RLight_1 (i use the airport lights of appropriate colour) which will be used to tell the players which faction currently owns the objective. Place the BLUE one next to the objective (HAS TO BE WITHIN 50 METERS) and place the RED one far away outside the playable area.
+In this configuration, bluefor starts by owning the objective. If you want to change who owns the objective at the starts, you need to change the code together with switching the lights (i don't suggest it).
+
+If you want a marker to also change colour depending on who owns the objective, place down a marker over the obj named "Obj_Mrkr" and make it coloured blue at the beginning, and remove the "//" at the beginning of the lines 31 and 46 in this file.
+
+For the omtk, use this two lines (remember, the numbers 1 and 2 have to be unique to any other flag or timed objectives):
+
+[2, "BLUEFOR", "FLAG", "Objective for BLUE", [[1,true]] ], 
+[2, "REDFOR", "FLAG", "Objective for RED", [[2,false]] ],  
+
+Copy the following code between the lines in the customScripts.sqf file of your mission (don't copy this text): */
+
+/* ---------------- STARTCODE ---------------- */
+
+//Redfor gains control
+redControl = {
+	_distLight = BLight_1 distance2d Obj;
+	
+	if( _distLight < 50 ) then {
+		
+		RLight_1 setPosATL (getPosATL BLight_1);
+		BLight_1 setPosATL [10,10,10];
+	};
+	[1, false] call omtk_setFlagResult; 
+	[2, true] call omtk_setFlagResult;
+	
+	// "Obj_Mrkr" setMarkerColor "ColorRed";
+};
+
+//Bluefor gains control
+blueControl = {
+	_distLight = RLight_1 distance2d Obj;
+	
+	if( _distLight < 50 ) then {
+		
+		BLight_1 setPosATL (getPosATL RLight_1);
+		RLight_1 setPosATL [10,10,10];
+	};
+	[1, true] call omtk_setFlagResult; // set flag 1 to true
+	[2, false] call omtk_setFlagResult; // set flag 2 to false
+	
+	// "Obj_Mrkr" setMarkerColorGlobal "ColorBlue";
+};
+
+[
+	Obj, // Object the action is attached to
+	"Gain Control for <t color='#1111EE'>BLUEFOR</t>", // Title of the action
+	"\a3\ui_f\data\IGUI\Cfg\holdactions\holdAction_connect_ca.paa", // Idle icon shown on screen
+	"\a3\ui_f\data\IGUI\Cfg\holdactions\holdAction_connect_ca.paa", // Progress icon shown on screen
+	"_this distance _target < 4 && side _this == west", // Condition for the action to be shown
+	"_caller distance _target < 4", // Condition for the action to progress
+	{}, // Code executed when action starts
+	{}, // Code executed on every progress tick
+	{ [] remoteExecCall ["blueControl",0,true]; }, // Code executed on completion
+	{}, // Code executed on interrupted
+	[], // Arguments passed to the scripts as _this select 3
+	10, // Action duration [s]
+	0, // Priority
+	false, // Remove on completion
+	false // Show in unconscious state
+] call BIS_fnc_holdActionAdd; // MP compatible implementation
+
+
+[
+	Obj, // Object the action is attached to
+	"Gain Control for <t color='#EE1111'>REDFOR</t>", // Title of the action
+	"\a3\ui_f\data\IGUI\Cfg\holdactions\holdAction_connect_ca.paa", // Idle icon shown on screen
+	"\a3\ui_f\data\IGUI\Cfg\holdactions\holdAction_connect_ca.paa", // Progress icon shown on screen
+	"_this distance _target < 4 && side _this == east", // Condition for the action to be shown
+	"_caller distance _target < 4", // Condition for the action to progress
+	{}, // Code executed when action starts
+	{}, // Code executed on every progress tick
+	{ [] remoteExecCall ["redControl",0,true]; }, // Code executed on completion
+	{}, // Code executed on interrupted
+	[], // Arguments passed to the scripts as _this select 3
+	10, // Action duration [s]
+	0, // Priority
+	false, // Remove on completion
+	false // Show in unconscious state
+] call BIS_fnc_holdActionAdd; // MP compatible implementation
+
+/* ---------------- ENDCODE ---------------- */
+
+
+
+
+
+
+
+
+
+
+
+
+/* A slightly different version down here, which includes the use of two vehicles:
+
+One (or both) of the two vehicles named "jamTruck" and "jamBackup" need to be within 50 meters of the objective for the faction to be able to gain control of the objective.
+
+It is suggested to use it for only one faction, or if you want to use it for both factions, change the names of "jamTruck" and "jamBackup" in the code and in the mission.
+
+To use this slightly modified version, copy it in place of the version above, but make sure you keep the holdActionAdd the same.
+*/
+
+
+/* ---------------- STARTCODE ---------------- */
+
+//Redfor gains control
+redControl = {
+	_dist1 = jamTruck distance2d Obj;
+	_dist2 = jamBackup distance2d Obj;
+
+	if( _dist1 < 50 || _dist2 < 50 ) then {
+
+		_distLight = BLight_1 distance2d Obj;
+		
+		if( _distLight < 50 ) then {
+			
+			RLight_1 setPosATL (getPosATL BLight_1);
+			BLight_1 setPosATL [10,10,10];
+		};
+		[1, false] call omtk_setFlagResult; 
+		[2, true] call omtk_setFlagResult;
+		
+		// "Obj_Mrkr" setMarkerColor "ColorRed";
+	};
+};
+
+//Bluefor gains control
+blueControl = {
+	_dist1 = jamTruck distance2d Obj;
+	_dist2 = jamBackup distance2d Obj;
+
+	if( _dist1 < 50 || _dist2 < 50 ) then {
+
+		_distLight = RLight_1 distance2d Obj;
+		
+		if( _distLight < 50 ) then {
+			
+			BLight_1 setPosATL (getPosATL RLight_1);
+			RLight_1 setPosATL [10,10,10];
+		};
+		[1, true] call omtk_setFlagResult; // set flag 1 to true
+		[2, false] call omtk_setFlagResult; // set flag 2 to false
+		
+		// "Obj_Mrkr" setMarkerColorGlobal "ColorBlue";
+	};
+};
+
+/* ---------------- ENDCODE ---------------- */

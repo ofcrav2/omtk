@@ -1,5 +1,5 @@
 /* IMPORTANT: READ THIS
-Script that updates the markers of (multiple) moving vehicles for the faction. To increase (or decrease) the number of vehicles, remove (or add) the double slash from in front of the respective lines (_objX = _this select X    AND    "objX_mrkr" setMarkerPosLocal .... ) and add (or remove) "VehX" from the remoteExecCall parameters.
+Script that updates the markers of (multiple) moving vehicles for the faction. To increase (or decrease) the number of vehicles, remove (or add) the double slash from in front of the respective lines (_objX = _this select X    AND    "VehX_Mrkr" setMarkerPosLocal .... ) and add (or remove) VehX from the remoteExecCall parameters.
 
 In order for the script to work, you'll need to have the markers named "obj1_mrkr" etc. already placed in map (either on the vehicle's starting position or in the corner of the map)
 
@@ -17,10 +17,10 @@ updateMarkers = {
 	// _obj4 = _this select 4;
 
 	if ( side player == _side ) then {
-		"obj1_mrkr" setMarkerPosLocal getPos _obj1;
-		"obj2_mrkr" setMarkerPosLocal getPos _obj2;
-		// "obj3_mrkr" setMarkerPosLocal getPos _obj3;
-		// "obj4_mrkr" setMarkerPosLocal getPos _obj4;
+		"Veh1_Mrkr" setMarkerPosLocal getPos _obj1;
+		"Veh2_Mrkr" setMarkerPosLocal getPos _obj2;
+		// "Veh3_Mrkr" setMarkerPosLocal getPos _obj3;
+		// "Veh4_Mrkr" setMarkerPosLocal getPos _obj4;
 	};
 };
 

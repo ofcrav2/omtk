@@ -1,0 +1,54 @@
+/* Here's all you need to play a sound from an item. You'll need to play around with the values to get it correct.
+500 is supposedly the distance, but i don't know which one is the correct one so just change both.
+You'll need an object called "loudspeaker" from where the sound originates and an object called "Controller" from which players will be able to play the sound (once, for this code)
+The following goes at the bottom of description.ext:
+
+/* ---------------- STARTCODE ---------------- */
+
+class CfgSounds
+{
+	sounds[] = {S1};
+
+	class S1
+	{
+		sound[] = {"sounds\song.ogg",db+40,1,500};
+		name = "TestSound1";
+		titles[] = {};
+	};
+
+};
+
+/* ---------------- ENDCODE ---------------- */
+
+
+And this goes in customScripts.sqf instead:
+
+
+/* ---------------- STARTCODE ---------------- */
+
+soundFlag = true;
+playSound = {
+	loudspeaker say3D ["S1",500];
+	soundFlag=false;
+};
+	
+	
+[
+    Controller, // Object the action is attached to
+    "Start the Broadcast", // Title of the action
+    "\a3\ui_f\data\IGUI\Cfg\holdactions\holdAction_connect_ca.paa", // Idle icon shown on screen
+    "\a3\ui_f\data\IGUI\Cfg\holdactions\holdAction_connect_ca.paa", // Progress icon shown on screen
+    "_this distance _target < 3 && soundFlag", // Condition for the action to be shown
+    "_caller distance _target < 3", // Condition for the action to progress
+    {}, // Code executed when action starts
+    {}, // Code executed on every progress tick
+    { [] remoteExec ["playSound", 0, false]; }, // Code executed on completion
+    {}, // Code executed on interrupted
+    [], // Arguments passed to the scripts as _this select 3
+    10, // Action duration [s]
+    0, // Priority
+    true, // Remove on completion
+    false // Show in unconscious state
+] call BIS_fnc_holdActionAdd; // MP compatible implementation
+
+/* ---------------- ENDCODE ---------------- */
