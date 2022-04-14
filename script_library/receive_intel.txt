@@ -1,0 +1,36 @@
+/* IMPORTANT: READ THIS
+Script that adds some intel into the briefing tab of a faction.
+
+Place an object (a laptop, some documents) named Intel. To change which faction gets the intel added, change "west" to "east" in the "holdActionAdd" on lines 23 and 27 (of this file)
+
+Copy the following code between the lines in the customScripts.sqf file of your mission (don't copy this text): */
+
+/* ---------------- STARTCODE ---------------- */
+
+getIntel = {
+	_side = _this select 0;
+	if (side player == _side) then {
+		player createDiaryRecord ["Diary", ["LOCATION", "The thing is at coordinates 015 085"]];
+		titleText ["Intel added in 'Briefing'", "PLAIN DOWN"];
+	};
+};
+
+[
+    Intel, // Object the action is attached to
+    "Get Intel", // Title of the action
+    "\a3\ui_f\data\IGUI\Cfg\holdactions\holdAction_connect_ca.paa", // Idle icon shown on screen
+    "\a3\ui_f\data\IGUI\Cfg\holdactions\holdAction_connect_ca.paa", // Progress icon shown on screen
+    "_this distance _target < 3 && side _this == west", // Condition for the action to be shown
+    "_caller distance _target < 3", // Condition for the action to progress
+    {}, // Code executed when action starts
+    {}, // Code executed on every progress tick
+    { [west] remoteExecCall ["getIntel",0,true]; }, // Code executed on completion
+    {}, // Code executed on interrupted
+    [], // Arguments passed to the scripts as _this select 3
+    10, // Action duration [s]
+    0, // Priority
+    true, // Remove on completion
+    false // Show in unconscious state
+] call BIS_fnc_holdActionAdd; // MP compatible implementation
+
+/* ---------------- ENDCODE ---------------- */

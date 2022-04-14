@@ -1,0 +1,33 @@
+/* IMPORTANT: READ THIS
+Script that limits how far a vehicle can get from a person or another vehicle.
+
+"DroneOperator" will be the unit that receives the warning (so he has to be the driver/operator of the vehicle which is limited)
+
+"Veh1" will be the vehicle that, upon getting too far from the other vehicle ("Orig"), will be destroyed (along with its occupants, if any)
+
+To change the distance and altitude that will trigger the destruction of Veh1, change the numbers in the two if statements (the first one is the limit while the second one should be smaller to give a warning to the operator)
+
+Copy the following code in the customScripts.sqf file of your mission (don't copy this text): */
+
+/* ---------------- STARTCODE ---------------- */
+
+limit_dist = {
+	while {alive Veh1} do{
+		_dist = Veh1 distance2d (getPos Orig);
+		_alt = (getPosATL Veh1) select 2;
+		if (_dist > 500 || _alt > 200 ) then {
+			Veh1 setDamage 1;
+		};
+		if ( _dist > 350 || _alt > 120 ) then {
+			hintSilent format["The vehicle is close to max distance - current distance %1 meters and height %2", _dist, _alt];
+		};
+		sleep 0.5;
+	};
+};
+
+if ( player == DroneOperator ) then {
+	[] spawn limit_dist;
+};
+
+
+/* ---------------- ENDCODE ---------------- */

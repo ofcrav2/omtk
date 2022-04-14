@@ -1,0 +1,90 @@
+/* IMPORTANT: READ THIS
+Script that updates the markers of (multiple) moving vehicles for the faction. To increase (or decrease) the number of vehicles, remove (or add) the double slash from in front of the respective lines (_objX = _this select X    AND    "objX_mrkr" setMarkerPosLocal .... ) and add (or remove) "VehX" from the remoteExecCall parameters.
+
+In order for the script to work, you'll need to have the markers named "obj1_mrkr" etc. already placed in map (either on the vehicle's starting position or in the corner of the map)
+
+At the bottom there's two different ways of triggering the scripts: from an unit's ace self actions OR from an object
+
+Copy the following code between the lines in the customScripts.sqf file of your mission (don't copy this text): */
+
+/* ---------------- STARTCODE ---------------- */
+
+updateMarkers = {
+	_side = _this select 0;
+	_obj1 = _this select 1;
+	_obj2 = _this select 2;
+	// _obj3 = _this select 3;
+	// _obj4 = _this select 4;
+
+	if ( side player == _side ) then {
+		"obj1_mrkr" setMarkerPosLocal getPos _obj1;
+		"obj2_mrkr" setMarkerPosLocal getPos _obj2;
+		// "obj3_mrkr" setMarkerPosLocal getPos _obj3;
+		// "obj4_mrkr" setMarkerPosLocal getPos _obj4;
+	};
+};
+
+/* ---------------- ENDCODE ---------------- */
+
+/* IF YOU WANT TO UPDATE THE MARKERS FROM THE SELF ACE ACTIONS OF A UNIT, COPY THIS CODE IN ALL THE UNITS YOU WANT TO BE ABLE TO UPDATE THE MARKERS (IMPORTANT: CHANGE ALL 3 "asa1" INTO asa2, asa3 etc. SO THAT ITS UNIQUE FOR EVERY UNIT): */
+
+
+/* ---------------- STARTCODE ---------------- */
+
+// Bluefor Unit:
+
+asa1 = ["asa1","Update the markers","",{[west, Veh1, Veh2] remoteExecCall ["updateMarkers",0,true];},{true}] call ace_interact_menu_fnc_createAction; [this, 1, ["ACE_SelfActions"], asa1] call ace_interact_menu_fnc_addActionToObject;
+
+// Redfor Unit:
+asa2 = ["asa2","Update the markers","",{[east, Veh1, Veh2] remoteExecCall ["updateMarkers",0,true];},{true}] call ace_interact_menu_fnc_createAction; [this, 1, ["ACE_SelfActions"], asa2] call ace_interact_menu_fnc_addActionToObject;
+
+/* ---------------- ENDCODE ---------------- */
+
+
+
+/* IF YOU WANT TO UPDATE THE MARKERS FROM A LAPTOP, COPY THIS CODE IN customScripts.sqf AND ADD AN OBJECT NAMED "Updater" THAT WILL HAVE THE ACTION TO UPDATE THE MARKERS. (If you want the factions to be able to update from different objects/vehicles, change "Updater" into "Updater2" and create a new object/vehicle called "Updater2". PS: "Updater" could even be a command vehicle): */
+
+/* ---------------- STARTCODE ---------------- */
+
+// Bluefor updater
+
+[
+    Updater, // Object the action is attached to
+    "Update the markers For BLUEFOR", // Title of the action
+    "\a3\ui_f\data\IGUI\Cfg\holdactions\holdAction_connect_ca.paa", // Idle icon shown on screen
+    "\a3\ui_f\data\IGUI\Cfg\holdactions\holdAction_connect_ca.paa", // Progress icon shown on screen
+    "_this distance _target < 3 && side _this == west", // Condition for the action to be shown
+    "_caller distance _target < 3", // Condition for the action to progress
+    {}, // Code executed when action starts
+    {}, // Code executed on every progress tick
+    { [west, Veh1, Veh2] remoteExecCall ["updateMarkers",0,true]; }, // Code executed on completion
+    {}, // Code executed on interrupted
+    [], // Arguments passed to the scripts as _this select 3
+    20, // Action duration [s]
+    0, // Priority
+    true, // Remove on completion
+    false // Show in unconscious state
+] call BIS_fnc_holdActionAdd; // MP compatible implementation
+
+
+// Redfor updater
+
+[
+    Updater, // Object the action is attached to
+    "Update the markers For REDFOR", // Title of the action
+    "\a3\ui_f\data\IGUI\Cfg\holdactions\holdAction_connect_ca.paa", // Idle icon shown on screen
+    "\a3\ui_f\data\IGUI\Cfg\holdactions\holdAction_connect_ca.paa", // Progress icon shown on screen
+    "_this distance _target < 3 && side _this == east", // Condition for the action to be shown
+    "_caller distance _target < 3", // Condition for the action to progress
+    {}, // Code executed when action starts
+    {}, // Code executed on every progress tick
+    { [east, Veh1, Veh2] remoteExecCall ["updateMarkers",0,true]; }, // Code executed on completion
+    {}, // Code executed on interrupted
+    [], // Arguments passed to the scripts as _this select 3
+    20, // Action duration [s]
+    0, // Priority
+    true, // Remove on completion
+    false // Show in unconscious state
+] call BIS_fnc_holdActionAdd; // MP compatible implementation
+
+/* ---------------- ENDCODE ---------------- */
