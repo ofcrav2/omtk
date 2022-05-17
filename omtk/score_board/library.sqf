@@ -91,6 +91,49 @@ omtk_sb_compute_scoreboard = {
 	_omtk_sb_ready4result = 1;
 	missionNamespace setVariable ["omtk_sb_ready4result", _omtk_sb_ready4result];
 	publicVariable "omtk_sb_ready4result";
+
+	// Stats plugin, using publicVariable to make sure this still works without the Stats Plugin working - will probably change later to a nicer implementation
+	_winner = "NA";
+	if (("OMTK_MODULE_MEXICAN_STANDOFF" call BIS_fnc_getParamValue) < 1) then {
+			_west = omtk_sb_scores select 0;
+			_opf = omtk_sb_scores select 1;
+
+			if (_west == _opf) then {
+				_winner = "DRAW";
+			} else {
+				if (_west > _opf) then {
+					_winner = "WEST";
+				} else {
+					_winner = "EAST";
+				};
+			};
+		} else {
+			_west = omtk_sb_scores select 0;
+			_opf = omtk_sb_scores select 1;
+			_green = omtk_sb_scores select 2;
+
+			if (_west == _opf && _west == _green) then {
+				_winner = "DRAW";
+			} else {
+				if (_west > _opf && _west > _green) then {
+				_winner = "WEST";
+				} else {
+					if (_opf > _west && _opf > _green) then {
+						_winner = "EAST";
+					} else {
+						if (_green > _opf && _green > _west) then {
+							_winner = "GREEN";
+						} else {
+							// Too lazy to implement the else, let's hope it won't happen
+						}
+					};
+				};
+			};
+		};
+
+	if (isClass(configFile >> "CfgPatches" >> "STATSLOGGER")) then {
+		[_winner] remoteExec ["statslogger_fnc_mission_end", 2];
+	};
 };
 
 
