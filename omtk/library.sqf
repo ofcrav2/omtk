@@ -346,3 +346,22 @@ omtk_disable_safety = {
 		
 	};
 };
+
+omtk_set_viewdistance = {
+	params ["_settings"];
+	_max = ("OMTK_MODULE_VIEW_DISTANCE" call BIS_fnc_getParamValue);
+	_newViewDist = _max;
+	if (_settings == 1) then {
+		_newViewDist = _max;
+	};
+
+	if (_settings == 2) then {
+		_newViewDist = (_max / 2)
+	};
+
+	if (_settings == 3) then {
+		_newViewDist = (_max / 4) min 500;
+	};
+
+	setViewDistance _newViewDist;
+};
