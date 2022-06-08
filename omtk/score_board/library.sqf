@@ -132,7 +132,7 @@ omtk_sb_compute_scoreboard = {
 		};
 
 	if (isClass(configFile >> "CfgPatches" >> "STATSLOGGER")) then {
-		[_winner] remoteExec ["statslogger_fnc_mission_end", 2];
+		[_winner, omtk_sb_scores select 0, omtk_sb_scores select 1] remoteExec ["statslogger_fnc_mission_end", 2];
 	};
 };
 
