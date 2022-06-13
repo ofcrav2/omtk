@@ -56,6 +56,48 @@ buttonUniform_Bug ctrlAddEventHandler ["ButtonDown", {
 	};
 }];
 
+buttonViewDist1 = _display ctrlCreate ["omtk_RscButton", 1201];
+buttonViewDist1 ctrlSetPosition [
+	0.9 * safezoneW + safezoneX,
+	0.7 * safezoneH + safezoneY,
+	0.07 * safezoneW,
+	0.03 * safezoneH
+];
+buttonViewDist1 ctrlCommit 0;
+buttonViewDist1 ctrlSetText "Short View Distance";
+buttonViewDist1 ctrlSetBackgroundColor [0.7, 0.7, 0.7, 1];
+buttonViewDist1 ctrlAddEventHandler ["ButtonDown", {
+	[3] call omtk_set_viewdistance;
+}];
+
+buttonViewDist2 = _display ctrlCreate ["omtk_RscButton", 1201];
+buttonViewDist2 ctrlSetPosition [
+	0.8 * safezoneW + safezoneX,
+	0.7 * safezoneH + safezoneY,
+	0.07 * safezoneW,
+	0.03 * safezoneH
+];
+buttonViewDist2 ctrlCommit 0;
+buttonViewDist2 ctrlSetText "Medium View Distance";
+buttonViewDist2 ctrlSetBackgroundColor [0.7, 0.7, 0.7, 1];
+buttonViewDist2 ctrlAddEventHandler ["ButtonDown", {
+	[2] call omtk_set_viewdistance;
+}];
+
+buttonViewDist3 = _display ctrlCreate ["omtk_RscButton", 1201];
+buttonViewDist3 ctrlSetPosition [
+	0.7 * safezoneW + safezoneX,
+	0.7 * safezoneH + safezoneY,
+	0.07 * safezoneW,
+	0.03 * safezoneH
+];
+buttonViewDist3 ctrlCommit 0;
+buttonViewDist3 ctrlSetText "Long View Distance";
+buttonViewDist3 ctrlSetBackgroundColor [0.7, 0.7, 0.7, 1];
+buttonViewDist3 ctrlAddEventHandler ["ButtonDown", {
+	[1] call omtk_set_viewdistance;
+}];
+
 private _uid = getPlayerUID player;
 
 /*
