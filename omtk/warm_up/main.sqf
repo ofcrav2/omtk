@@ -52,8 +52,8 @@ omtk_wu_start_warmup = {
 	[_omtk_notification_txt,0,0,25,2] spawn BIS_fnc_dynamicText;
 	
 	// PLAYER SIM RE-ENABLE TIMER
-	private _randRelease = (random 19) + 1;
-	if (omtk_wu_time < 121) then {
+	private _randRelease = (random 14) + 1;
+	if (omtk_wu_time < 301) then {
 		_randRelease = (random 4) + 1;
 	};
 		

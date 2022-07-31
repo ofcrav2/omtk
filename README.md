@@ -54,7 +54,7 @@ __HH:MM:SS [OMTK] {ERROR|WARNING|INFO|CHEAT}: message_content__
 
 
 1. Create an empty mission with Eden editor (_load all the required @mods_) and save it in not-binarized format
-2. Download the [lastest OMTK version on github](https://github.com/OFCRA/OMTK/archive/master.zip).
+2. Download the [lastest OMTK version on github](https://github.com/ofcrav2/omtk/archive/master.zip).
 3. Unzip the archive content inside your empty mission folder (_should be something like My Documents\Arma 3\missions\your_mission_name_) aside the file mission.sqm
 4. Edit the 5-first lines in description.ext file
 5. Change the loadscreen.jpg as needed
