@@ -292,7 +292,7 @@ omtk_warn_unit = {
 	_name = _this select 0;
 
 	if (_name == name player) then {
-		titleText ["<t color='#ff0000' size='5'>YOU ARE LONEWOLFING! RETURN TO YOUR SQUAD LEADER!</t><br/>", "PLAIN", 1, true, true];
+		titleText ["<t color='#ff0000' size='5'>YOU ARE LONEWOLFING! RETURN TO THE REST OF YOUR SQUAD</t><br/>", "PLAIN", 1, true, true];
 		_omtk_wpnSafety = player getVariable ["omtk_weaponsafety", 0];
 		_omtk_wpnSafety = player addAction ["Weapon safety on", {hintSilent "Safety On";}, [], 0, false, false, "DefaultAction", ""];
 		player setVariable ["omtk_weaponsafety", _omtk_wpnSafety];
