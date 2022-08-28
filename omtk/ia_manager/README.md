@@ -1,13 +1,13 @@
-# IA_SKILLS MODULE
+# IA_MANAGER MODULE
 
 ## Data card
 
 | FIELD                   | VALUE
 |-------------------------|-------------
-| folder name             | ia_skills
-| last modification date  | 2022-01-12
+| folder name             | ia_manager
+| last modification date  | 2022-08-27
 | Ojective                | make IA look like humans
-| Default                 | enabled
+| Default                 | always on
 | Extra Parameters        | yes
 
 ## Description
@@ -22,19 +22,19 @@ When Disable Playable AI is enabled, AIs are frozen and made immortal during war
 
 ## Mission Parameters
 
-#### IA_skills module:
+#### IA_manager module:
 
-* enabled (default)
-* disabled
+* always on
+
 
 #### Disable Playable AI module:
 
-* enabled 
-* disabled (default)
+* enabled (default)
+* disabled 
 
 ### Extra Parameters
 
-#### File *omtk\\ia_skills\\main.sqf*
+#### File *omtk\\ia_manager\\main.sqf*
 
 IA Skill values to be set directly into the file   
 Check [Arma 3 wiki](https://community.bistudio.com/wiki/AI_Sub-skills) for explanations.

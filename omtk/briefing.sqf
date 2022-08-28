@@ -60,4 +60,20 @@ _eTimeString = [_endTime, "HH:MM"] call BIS_fnc_timeToString;
 
 player createDiaryRecord ["Diary", ["MISSION TIMINGS", "<font color='#7FFF00' size='30'>Mission Start Time: " + _sTimeString + "<br/>Mission End Time: " + _eTimeString + "</font>" ]];
 
+if (("OMTK_MODULE_MEXICAN_STANDOFF" call BIS_fnc_getParamValue) < 1) then {
+	// Mexican Standoff DISABLED
+	player createDiaryRecord ["Diary", ["Uniforms","Bluefor Uniforms<br/>
+	<img image='images\blue.jpg' width='200' height='333'/><br/>
+	Redfor Uniforms<br/>
+	<img image='images\red.jpg' width='200' height='333'/>"]];
+} else {
+	// Mexican Standoff ENABLED
+	player createDiaryRecord ["Diary", ["Uniforms","Bluefor Uniforms<br/>
+	<img image='images\blue.jpg' width='200' height='333'/><br/>
+	Redfor Uniforms<br/>
+	<img image='images\red.jpg' width='200' height='333'/><br/>
+	Greenfor Uniforms<br/>
+	<img image='images\green.jpg' width='200' height='333'/>"]];
+};
+
 player createDiaryRecord ["Diary", ["Crédits", "Mission réalisée avec l'OMTK"]];

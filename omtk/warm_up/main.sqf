@@ -16,10 +16,10 @@ omtk_wu_com_menu_item_id = 0;
 omtk_wu_start_warmup = {
 	["wu_start_warmup fnc called", "DEBUG", false] call omtk_log;
 	
-	[] call omtk_sim_disableVehicleSim;		// VEHICLE LOCK & SIM
+	// [] call omtk_sim_disableVehicleSim;	// VEHICLE LOCK & SIM
 	player enableSimulation false;			// PLAYER SIM
 	player allowDamage false;				// DAMAGE
-	setViewDistance 200;					// VIEW DISTANCE
+	setViewDistance 1000;					// VIEW DISTANCE
 	if (omtk_wu_time < 121) then {			// IF WARMUP IS 2 MINS OR LESS, VIEW DISTANCE WILL START AT MAX
 		setViewDistance	omtk_view_distance;
 	};
@@ -31,9 +31,10 @@ omtk_wu_start_warmup = {
 	omtk_wu_restrict_area_trigger = createTrigger ["EmptyDetector", omtk_wu_spawn_location, false];
 	omtk_wu_restrict_area_trigger setTriggerArea [omtk_wu_radius, omtk_wu_radius, 0, false];
 	omtk_wu_restrict_area_trigger setTriggerActivation [format["%1", side player], "NOT PRESENT", true];
-	_trg_out_action = "['Leaving spawn location', 'INFO'] call omtk_log;hint 'GO BACK TO YOUR POSITION !';
+	_trg_out_action = "['Leaving spawn location', 'INFO'] call omtk_log;
+	hint 'GO BACK TO YOUR POSITION!';
 	[omtk_wu_move_player_at_spawn_if_required, [], 5] call KK_fnc_setTimeout;";
-	omtk_wu_restrict_area_trigger setTriggerStatements ["player in thisList", "", _trg_out_action];
+	omtk_wu_restrict_area_trigger setTriggerStatements ["player in thisList || vehicle player in thisList", "hintSilent '';", _trg_out_action];
 
 	// Creating and displaying notification text with warmup length
 	_omtk_mission_warmup_minute = floor(omtk_wu_time/60);
@@ -52,10 +53,7 @@ omtk_wu_start_warmup = {
 	[_omtk_notification_txt,0,0,25,2] spawn BIS_fnc_dynamicText;
 	
 	// PLAYER SIM RE-ENABLE TIMER
-	private _randRelease = (random 14) + 1;
-	if (omtk_wu_time < 301) then {
-		_randRelease = (random 4) + 1;
-	};
+	private _randRelease = (random 6) + 1;
 		
 	systemChat format ["[OMTK] Your simulation will be disabled for %1 seconds after launch",_randRelease];
 	sleep 1;
@@ -80,8 +78,8 @@ omtk_wu_end_warmup = {
 	// On clients, reverts the changes applied by "wu_start_warmup" and by the "main.sqf" itself
 	if (hasInterface) then {
 	
+		// [] call omtk_sim_enableVehicleSim;	// VEHICLE LOCK & SIM
 		player allowDamage true;				// DAMAGE
-		[] call omtk_sim_enableVehicleSim;		// VEHICLE LOCK & SIM
 		if ( omtk_wu_safety == 1 ) then { 		// SAFETY OFF
 			[] call omtk_disable_safety;
 		};
@@ -100,7 +98,8 @@ omtk_wu_end_warmup = {
 		missionNamespace setVariable ["omtk_wu_is_completed", true];
 		publicVariable "omtk_wu_is_completed";
 		
-		call omtk_unlock_vehicles;
+		[] call omtk_vehicleFuel_on;
+		//call omtk_unlock_vehicles;
 		
 		if (omtk_disable_playable_ai == 1) then {
 			call omtk_delete_playableAiUnits;
@@ -130,11 +129,11 @@ omtk_wu_scheduled_calls = {
 		if (_by == 0) then { _res = "GO GO GO !!!"; };
 		("START: " + _res) remoteExecCall ["hint"];
 		
-		// SET TO HALF VIEW DISTANCE 1 MIN BEFORE WARMUP END
+		// SET TO FULL VIEW DISTANCE 1 MIN BEFORE WARMUP END
 		if (_by == 60) then { 
 			if (omtk_wu_time > 120) then {		// IF WARMUP IS 2 MINS OR LESS, VIEW DISTANCE WILL START AT MAX
-				[omtk_view_distance/2] remoteExecCall ["setViewDistance"];
-				("[OMTK] View distance raised to a quarter of full view distance") remoteExecCall ["systemChat"];
+				[omtk_view_distance] remoteExecCall ["setViewDistance"];
+				("[OMTK] View distance raised to full view distance") remoteExecCall ["systemChat"];
 			};
 			
 			[] remoteExecCall ["omtk_sim_enableVehicleSim"];
@@ -146,10 +145,6 @@ omtk_wu_scheduled_calls = {
 				[] remoteExecCall ["omtk_sim_enableVehicleSim"];
 			};	
 		};
-	};
-	// LIGHT OMTK MESSAGE
-	if (_by == -1) then {
-		("WARMUP is running OK - ") remoteExecCall ["hint"];
 	};
 	// SET TO FULL VIEW DISTANCE (as triggered by its own trigger call) 4 MIN AFTER WARMUP END
 	if (_by == -2) then {
@@ -207,37 +202,20 @@ omtk_wu_set_ready = {
 if (isServer) then {
 	["warmup scheduled triggers creation", "DEBUG", false] call omtk_log;
 
-	call omtk_lock_vehicles;
+	//call omtk_lock_vehicles;
+	[] call omtk_vehicleFuel_off;
 	
 	_omtk_wu_notification_triggers = [];
 	
-	// If Light version is disabled, add the notifications as usual
-	if (("OMTK_MODULE_LIGHT_VERSION" call BIS_fnc_getParamValue) < 1) then {
-		{
-			if (_x < omtk_wu_time) then {
-				_trg = [omtk_wu_scheduled_calls, [_x], (omtk_wu_time - _x)] call KK_fnc_setTimeout;
-				[_omtk_wu_notification_triggers, _trg] call BIS_fnc_arrayPush;
-			};
-		} forEach [0, 10, 30, 60, 120, 180, 300, 600, 900, 1200, 1800, 2700];
-	} else {
-		// NOTIFICATION 30 SECONDS AFTER WARMUP START
-		_trg = [omtk_wu_scheduled_calls, [-1], (omtk_wu_time - (omtk_wu_time-30))] call KK_fnc_setTimeout;
-		[_omtk_wu_notification_triggers, _trg] call BIS_fnc_arrayPush;
-		// NOTIFICATION 1 MIN BEFORE WARMUP END
-		_trg = [omtk_wu_scheduled_calls, [60], (omtk_wu_time - 60)] call KK_fnc_setTimeout;
-		[_omtk_wu_notification_triggers, _trg] call BIS_fnc_arrayPush;
-		// NOTIFICATION 10 SECONDS BEFORE WARMUP END
-		_trg = [omtk_wu_scheduled_calls, [10], (omtk_wu_time - 10)] call KK_fnc_setTimeout;
-		[_omtk_wu_notification_triggers, _trg] call BIS_fnc_arrayPush;
-	};
+	{
+		if (_x < omtk_wu_time) then {
+			_trg = [omtk_wu_scheduled_calls, [_x], (omtk_wu_time - _x)] call KK_fnc_setTimeout;
+			[_omtk_wu_notification_triggers, _trg] call BIS_fnc_arrayPush;
+		};
+	} forEach [0, 10, 30, 60, 120, 180, 300, 600, 900, 1200, 1800, 2700];
 	// END WARMUP TRIGGER
 	_trg = [omtk_wu_end_warmup_remote, [], omtk_wu_time] call KK_fnc_setTimeout;
 	[_omtk_wu_notification_triggers, _trg] call BIS_fnc_arrayPush;
-	// VIEW DISTANCE SET AT FULL 4 MIN AFTER WARMUP END
-	if (omtk_wu_time > 120) then {		// IF WARMUP IS 2 MINS OR LESS, VIEW DISTANCE WILL START AT MAX
-		_trg = [omtk_wu_scheduled_calls, [-2], omtk_wu_time + 240] call KK_fnc_setTimeout;
-		[_omtk_wu_notification_triggers, _trg] call BIS_fnc_arrayPush;
-	};
 	
 	missionNamespace setVariable ["omtk_wu_triggers", _omtk_wu_notification_triggers];
 	publicVariableServer "omtk_wu_triggers";

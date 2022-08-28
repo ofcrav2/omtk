@@ -5,7 +5,7 @@
 | FIELD                   | VALUE
 |-------------------------|-------------
 | folder name             | score_board
-| last modification date  | 2022-01-12
+| last modification date  | 2022-08-27
 | Ojective                | compute scores & display scoreboard at the end of the time-boxed game
 | Default                 | enabled
 | Extra Parameters        | yes
@@ -191,7 +191,7 @@ Here is a screenshot corresponding to the objectives described by the full examp
 
 ![GitHub Logo](../wiki/img/scoreboard.png)
 
-The coalitions flags in the upper corners can be customized: files *omtk\\score_board\\img\\bluefor.jpg*, *omtk\\score_board\\img\\redfor.jpg* and *omtk\\score_board\\img\\greenfor.jpg*can be replaced by any .jpg images with identical size (145px x 103px)
+The coalitions flags in the upper corners can be customized: files *images\\bluefor.jpg*, *images\\redfor.jpg* and *images\\greenfor.jpg*can be replaced by any .jpg images with identical size (145px x 103px)
 
 ## Parameters
 

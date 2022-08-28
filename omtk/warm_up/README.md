@@ -5,7 +5,7 @@
 | FIELD                   | VALUE
 |-------------------------|-------------
 | folder name             | warm_up
-| last modification date  | 2022-01-12
+| last modification date  | 2022-08-27
 | Ojective                | make a warmup before mission start  
 | Default                 | enabled: 5 min
 | Extra Parameters        | yes
@@ -16,9 +16,9 @@ This create a warm-up before starting the mission. Sides can make a briefing all
 
 * A big message is displayed on the center of the screen:
        - - - WARMUP: XX min. - - -
-* All vehicles are locked and their simulation disable. Inventory accessible only when sim is reenabled.
+* Vehicles have their fuel removed at the beginning of warmup
 * All human players are immortal (avoid incidents)
-* The view distance is set very low to improve performance, and raised in steps. Full view distance after 4 minutes from warmup end.
+* The view distance is set to 1000 to improve performance, and raised near warmup end.
 * Many *hint* reminders about the time to mission start (= end of warmup) appears to all clients
       START: XX min.
 * players cannot run away from their initial position (means their location when the warm-up began), they are contained inside a restriction area (size can be configured)
@@ -30,7 +30,7 @@ This create a warm-up before starting the mission. Sides can make a briefing all
 * Sides Officiers can declare their side as ready. Once both are, the warmup is canceled, and another small one (30s) is started. This is useful for long warmups used for briefings, the mission can start as soon as both sides are ready, no need to wait until the end of the warmup
 * At the end, there is a *hint* message:
       GO GO GO !!!
-* All vehicles are unlocked.
+* All vehicles have their fuel given back.
 * All human players are now vulnerable
 
       

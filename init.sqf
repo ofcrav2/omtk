@@ -27,8 +27,6 @@ OMTK_SB_UNLOCK_HELI_TIME = 600;
 
 execVM "customScripts.sqf";
 
-["Init before list objectifs" , "DEBUG", false] call omtk_log;
-
 // Complete example list can be found here: https://github.com/ofcrav2/omtk/tree/master/omtk/score_board
 OMTK_SB_LIST_OBJECTIFS = [
 
@@ -39,8 +37,6 @@ OMTK_LM_BLUEFOR_OB = [
 
 OMTK_LM_REDFOR_OB = [
 ];
-
-["Init before special configuration" , "DEBUG", false] call omtk_log;
 
 ////// SPECIAL CONFIGURATION
 setTerrainGrid 3.125;
@@ -58,10 +54,7 @@ OMTK_MARKERS_MENU = [
 // EXTERNAL ADDONS
 RscSpectator_allowFreeCam = true;
 //cutrsc ['RscSpectator','plain'];
-if (("OMTK_MODULE_LIGHT_VERSION" call BIS_fnc_getParamValue) < 1) then {
-	[player, [missionNamespace, "OMTK_LOADOUT"]] call BIS_fnc_saveInventory;
-};
-["Init before omtk execution" , "DEBUG", false] call omtk_log;
+//[player, [missionNamespace, "OMTK_LOADOUT"]] call BIS_fnc_saveInventory;
 
 //// OMTK EXECUTION
 execVM "omtk\load_modules.sqf";

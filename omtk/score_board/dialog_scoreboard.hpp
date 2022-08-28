@@ -24,7 +24,7 @@ class ScoreBoard {
 		class BlueforLogo: omtk_RscPicture
 		{
 			idc = 1200;
-			text = "omtk\score_board\img\bluefor.jpg";
+			text = "images\bluefor.jpg";
 			x = 0.276563 * safezoneW + safezoneX;
 			y = 0.236103 * safezoneH + safezoneY;
 			w = 0.0802083 * safezoneW;
@@ -33,7 +33,7 @@ class ScoreBoard {
 		class RedforLogo: omtk_RscPicture
 		{
 			idc = 1201;
-			text = "omtk\score_board\img\redfor.jpg";
+			text = "images\redfor.jpg";
 			x = 0.643229 * safezoneW + safezoneX;
 			y = 0.236103 * safezoneH + safezoneY;
 			w = 0.0802083 * safezoneW;
@@ -141,7 +141,7 @@ class ScoreBoard_MS {
 		class BlueforLogo: omtk_RscPicture
 		{
 			idc = 1200;
-			text = "omtk\score_board\img\bluefor.jpg";
+			text = "images\bluefor.jpg";
 			x = 0.196563 * safezoneW + safezoneX;
 			y = 0.236103 * safezoneH + safezoneY;
 			w = 0.0802083 * safezoneW;
@@ -150,7 +150,7 @@ class ScoreBoard_MS {
 		class RedforLogo: omtk_RscPicture
 		{
 			idc = 1201;
-			text = "omtk\score_board\img\redfor.jpg";
+			text = "images\redfor.jpg";
 			x = 0.723229 * safezoneW + safezoneX;
 			y = 0.236103 * safezoneH + safezoneY;
 			w = 0.0802083 * safezoneW;
@@ -168,7 +168,7 @@ class ScoreBoard_MS {
 		class GreenforLogo: omtk_RscPicture
 		{
 			idc = 1203;
-			text = "omtk\score_board\img\greenfor.jpg";
+			text = "images\greenfor.jpg";
 			x = 0.458 * safezoneW + safezoneX;
 			y = 0.236103 * safezoneH + safezoneY;
 			w = 0.0802083 * safezoneW;
