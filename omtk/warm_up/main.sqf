@@ -1,6 +1,37 @@
-OMTK_WU_CHIEF_CLASSES = ["B_officer_F", "B_Soldier_SL_F", "O_officer_F", "O_Soldier_SL_F"]; // CAN BE CUSTOMIZED
+/* 	[omtk] warm_up Module:
+ *	- Initialises the chief classes for the "Side is ready" action, all the parameters and some variables used in multiple functions
+ *	- Defines 7 functions, 3 are server-only, 3 are client-only and 1 is used by both
+ *	- Begins warmup procedure on clients and server.
+ *	******
+ *	Warmup Procedure (Server):
+ *	- Removes fuel from vehicles
+ *	- Sets up several triggers, each using function "omtk_wu_scheduled_calls" to give hints to the players of remaining warmup time and change view distance.
+ *	- Sets up one final trigger that runs "omtk_wu_end_warmup_remote" function, used to launch the actual "omtk_wu_end_warmup" function on all clients and itself
+ *	******
+ *	Warmup Procedure (Client):
+ *	- Checks that the warmup is still ongoing using "omtk_wu_is_completed" variable 
+ *	- Saves starting position and adds "Side is ready" action to chief classes
+ *	- Runs "omtk_wu_start_warmup" function, which makes players immortal, sets the view distance to 1000, creates the trigger that restricts movement area
+ *	  creates a notification displaying warmup information to all players, and removes simulation to players for a short while at warmup start.
+ *	- The restrict area trigger uses function "omtk_wu_move_player_at_spawn_if_required" that simply moves players to their original position after 5 seconds
+ *	  of leaving the trigger, if they haven't returned back into it.
+ *	******
+ *	Warmup Procedure (Both):
+ *	- "omtk_wu_end_warmup" function will then prepare both the server and the client for the actual game:
+ *	- Client side, it makes players mortal, removes the "Side is ready" action and eventually disables safety
+ * 	- Server side it sets the variable "omtk_wu_is_completed", restores fuel to vehicles, eventually removes unused AIs and proceeds to load modules such as score_board and ti
+ *	******
+ *	- Fnc "omtk_wu_fn_launch_game" ran on the server will delete all current notification and warmup end triggers replacing them with a couple that will  
+ *	  achieve the same result but in 30 seconds' time (30 and 10 seconds warnings and end warmup remote)
+ *	- Fnc "omtk_wu_set_ready", if launched by officers of both sides, will execute the above function, cutting warmup short. 
+ *	  
+ *
+ */
+
 
 ["warm_up start", "DEBUG", false] call omtk_log;
+
+OMTK_WU_CHIEF_CLASSES = ["B_officer_F", "B_Soldier_SL_F", "O_officer_F", "O_Soldier_SL_F"]; // CAN BE CUSTOMIZED
 
 // Retrieve parameters
 omtk_wu_time = ("OMTK_MODULE_WARM_UP" call BIS_fnc_getParamValue);
@@ -30,10 +61,12 @@ omtk_wu_start_warmup = {
 	// Creation of the "restrict_area_trigger" that'll call "move_player_at_spawn_if_required" fnc.
 	omtk_wu_restrict_area_trigger = createTrigger ["EmptyDetector", omtk_wu_spawn_location, false];
 	omtk_wu_restrict_area_trigger setTriggerArea [omtk_wu_radius, omtk_wu_radius, 0, false];
-	omtk_wu_restrict_area_trigger setTriggerActivation [format["%1", side player], "NOT PRESENT", true];
+	omtk_wu_restrict_area_trigger setTriggerActivation [format["%1", side player], "NOT PRESENT", true];	// probably useless
 	_trg_out_action = "['Leaving spawn location', 'INFO'] call omtk_log;
 	hint 'GO BACK TO YOUR POSITION!';
 	[omtk_wu_move_player_at_spawn_if_required, [], 5] call KK_fnc_setTimeout;";
+	// The trigger deactivates upon players (or the vehicle they're in) not being in the zone. Deactivation triggers the hint and the function to teleport the player back.
+	// Upon reactivation, the hintSilent removes the warning.
 	omtk_wu_restrict_area_trigger setTriggerStatements ["player in thisList || vehicle player in thisList", "hintSilent '';", _trg_out_action];
 
 	// Creating and displaying notification text with warmup length
@@ -135,15 +168,6 @@ omtk_wu_scheduled_calls = {
 				[omtk_view_distance] remoteExecCall ["setViewDistance"];
 				("[OMTK] View distance raised to full view distance") remoteExecCall ["systemChat"];
 			};
-			
-			[] remoteExecCall ["omtk_sim_enableVehicleSim"];
-		};
-		// ENABLE VEHICLE SIM
-		if (_by == 30) then { 
-			// When wu_time is 60 or less, this fnc is not called with _by==60 
-			if (omtk_wu_time < 61) then {
-				[] remoteExecCall ["omtk_sim_enableVehicleSim"];
-			};	
 		};
 	};
 	// SET TO FULL VIEW DISTANCE (as triggered by its own trigger call) 4 MIN AFTER WARMUP END
@@ -201,8 +225,10 @@ omtk_wu_set_ready = {
 // makes them public for deletion by wu_launch_game. Vehicle lock moved to client side fnc
 if (isServer) then {
 	["warmup scheduled triggers creation", "DEBUG", false] call omtk_log;
-
+	
 	//call omtk_lock_vehicles;
+	
+	// Removes fuel to vehicles, found in library.sqf
 	[] call omtk_vehicleFuel_off;
 	
 	_omtk_wu_notification_triggers = [];
