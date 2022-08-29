@@ -11,7 +11,7 @@
  *	Warmup Procedure (Client):
  *	- Checks that the warmup is still ongoing using "omtk_wu_is_completed" variable 
  *	- Saves starting position and adds "Side is ready" action to chief classes
- *	- Runs "omtk_wu_start_warmup" function, which makes players immortal, sets the view distance to 1000, creates the trigger that restricts movement area
+ *	- Runs "omtk_wu_start_warmup" function, which makes players immortal, sets the view distance to 500, creates the trigger that restricts movement area
  *	  creates a notification displaying warmup information to all players, and removes simulation to players for a short while at warmup start.
  *	- The restrict area trigger uses function "omtk_wu_move_player_at_spawn_if_required" that simply moves players to their original position after 5 seconds
  *	  of leaving the trigger, if they haven't returned back into it.
@@ -50,10 +50,7 @@ omtk_wu_start_warmup = {
 	// [] call omtk_sim_disableVehicleSim;	// VEHICLE LOCK & SIM
 	player enableSimulation false;			// PLAYER SIM
 	player allowDamage false;				// DAMAGE
-	setViewDistance 1000;					// VIEW DISTANCE
-	if (omtk_wu_time < 121) then {			// IF WARMUP IS 2 MINS OR LESS, VIEW DISTANCE WILL START AT MAX
-		setViewDistance	omtk_view_distance;
-	};
+	setViewDistance 500;					// VIEW DISTANCE
 	if ( omtk_wu_safety == 1 ) then { 		// SAFETY ON
 		[] call omtk_enable_safety;
 	};
@@ -132,7 +129,7 @@ omtk_wu_end_warmup = {
 		publicVariable "omtk_wu_is_completed";
 		
 		[] call omtk_vehicleFuel_on;
-		//call omtk_unlock_vehicles;
+		[] call omtk_unlock_vehicles;
 		
 		if (omtk_disable_playable_ai == 1) then {
 			call omtk_delete_playableAiUnits;
@@ -162,18 +159,11 @@ omtk_wu_scheduled_calls = {
 		if (_by == 0) then { _res = "GO GO GO !!!"; };
 		("START: " + _res) remoteExecCall ["hint"];
 		
-		// SET TO FULL VIEW DISTANCE 1 MIN BEFORE WARMUP END
-		if (_by == 60) then { 
-			if (omtk_wu_time > 120) then {		// IF WARMUP IS 2 MINS OR LESS, VIEW DISTANCE WILL START AT MAX
-				[omtk_view_distance] remoteExecCall ["setViewDistance"];
-				("[OMTK] View distance raised to full view distance") remoteExecCall ["systemChat"];
-			};
+		// SET TO FULL VIEW DISTANCE 10 SECONDS BEFORE WARMUP END
+		if (_by == 10) then { 
+			[omtk_view_distance] remoteExecCall ["setViewDistance"];
+			("[OMTK] View distance raised to full view distance") remoteExecCall ["systemChat"];
 		};
-	};
-	// SET TO FULL VIEW DISTANCE (as triggered by its own trigger call) 4 MIN AFTER WARMUP END
-	if (_by == -2) then {
-		[omtk_view_distance] remoteExecCall ["setViewDistance"];
-		("[OMTK] View distance raised to full view distance") remoteExecCall ["systemChat"];	
 	};
 };
 
@@ -226,10 +216,11 @@ omtk_wu_set_ready = {
 if (isServer) then {
 	["warmup scheduled triggers creation", "DEBUG", false] call omtk_log;
 	
-	//call omtk_lock_vehicles;
 	
-	// Removes fuel to vehicles, found in library.sqf
+	
+	// Removes fuel to vehicles and locks driver, found in library.sqf
 	[] call omtk_vehicleFuel_off;
+	[] call omtk_lock_vehicles;
 	
 	_omtk_wu_notification_triggers = [];
 	
