@@ -7,7 +7,17 @@
 @ bug fix  
 !! security patch
 
-### V2.10.5 - 2022-04-08
+### V2.10.7 - 2022-08-29
+\+ [briefing] Added uniforms images to briefing tab, accessible to mission makers in "images" folder
+\- [omtk] Light version removed
+~ [omtk] Old loadout saving method removed in favour of new one used for respawn
+~ [images] Moved scoreboard flags to new top level folder "images"
+~ [ia_manager] Renamed old "ia_skills" module and removed it as a parameter option
+~ [warm_up] Reduced simulation disabled time for player, changed view distance settings (now 1000 at start, and full just before warmup end)
+~ [warm_up] Vehicles are no longer locked and sim disabled, rather their fuel is drained only for it to be reset at mission start
+@ [warm_up] Warning message no longer shows up upon entering a vehicle
+
+### V2.10.6 - 2022-04-08
 \+ [ui] Added button for respawn of individual players
 \+ [omtk] Added respawn function, will load default loudout too
 ~ [lovewolf] Lonewolf warning will turn on safety for a player for 11 seconds
