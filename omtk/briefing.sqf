@@ -60,6 +60,8 @@ _eTimeString = [_endTime, "HH:MM"] call BIS_fnc_timeToString;
 
 player createDiaryRecord ["Diary", ["Crédits", "Mission réalisée avec l'OMTK"]];
 
+player createDiaryRecord ["Diary", ["Donations", "If you enjoy our missions and wish to support us, we welcome donations to help fund the server for the years to come!<br/>You can find more information on how to donate over in our website, at the page https://www.ofcrav2.org/en/the-association/donate"]];
+
 player createDiaryRecord ["Diary", ["Mission Timings", "<font color='#7FFF00' size='30'>Mission Start Time: " + _sTimeString + "<br/>Mission End Time: " + _eTimeString + "</font>" ]];
 
 if (("OMTK_MODULE_MEXICAN_STANDOFF" call BIS_fnc_getParamValue) < 1) then {
