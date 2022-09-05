@@ -132,9 +132,12 @@ omtk_is_using_ACEmod = {
 omtk_unlock_vehicles = {
 	{
 		_locked_by_omtk = _x getVariable ["omtk_lock", 0];
+		_fuelLvl = _x getVariable ["omtk_fuel_level", 0];
 		if (_locked_by_omtk > 0) then {
 			_x lockDriver false;
 			_x allowDamage true;
+			
+			_x setFuel _fuelLvl;
 		};
 	} foreach vehicles;
 };
@@ -147,6 +150,11 @@ omtk_lock_vehicles = {
 			_x lockDriver true;
 			_x allowDamage false;
 			_x setVariable ['omtk_lock', 1];
+			
+			_fuelLvl = fuel _x;
+			_x setVariable ['omtk_fuel_level', _fuelLvl];
+			
+			_x setFuel 0;
 		};
 	} foreach vehicles;
 };
@@ -182,7 +190,36 @@ omtk_enable_playerDamage = {
 	};
 };
 
-// OMTK simulation control functions
+/* MERGED INTO "omtk_lock_vehicles" and "omtk_unlock_vehicles
+ *	
+ *	// Saves fuel level of each vehicle in the variable (server side).
+ *	// Variable is used to later give the vehicles the same fuel level.
+ *	omtk_vehicleFuel_off = {
+ *		{
+ *			_crewNum = count fullCrew[_x,"",true];	// Number of crew of vehicle (including empty seats)
+ *			_fuelLvl = fuel _x;
+ *			if (simulationEnabled _x && _crewNum > 0 && _fuelLvl > 0) then {
+ *				_x setVariable ['omtk_fuel_level', _fuelLvl];
+ *				_x setFuel 0;
+ *			};
+ *
+ *		} forEach vehicles;
+ *	};
+ *
+ *	// Resets the vehicle's fuel level to the saved level
+ *	omtk_vehicleFuel_on = {
+ *		{
+ *			_fuelLvl = _x getVariable ["omtk_fuel_level", 0];
+ *			
+ *			if (_fuelLvl > 0) then {
+ *				_x setFuel _fuelLvl;
+ *			};
+ *			
+ *		} forEach vehicles;
+ *	};
+*/
+
+// OMTK Admin Panel Functions
 
 // Disables simulation and inventory access to all vehicles with simulation enabled (client side).
 // Variable is used to later reenable only the vehicles disabled by this function.
@@ -345,33 +382,6 @@ omtk_disable_safety = {
 	};
 };
 
-
-// Saves fuel level of each vehicle in the variable (server side).
-// Variable is used to later give the vehicles the same fuel level.
-omtk_vehicleFuel_off = {
-	{
-		_crewNum = count fullCrew[_x,"",true];	// Number of crew of vehicle (including empty seats)
-		_fuelLvl = fuel _x;
-		if (simulationEnabled _x && _crewNum > 0 && _fuelLvl > 0) then {
-			_x setVariable ['omtk_fuel_level', _fuelLvl];
-			_x setFuel 0;
-		};
-
-	} forEach vehicles;
-};
-
-// Resets the vehicle's fuel level to the saved level
-omtk_vehicleFuel_on = {
-	{
-		_fuelLvl = _x getVariable ["omtk_fuel_level", 0];
-		
-		if (_fuelLvl > 0) then {
-			_x setFuel _fuelLvl;
-		};
-		
-	} forEach vehicles;
-};
-
 omtk_set_viewdistance = {
 	params ["_settings"];
 	_max = ("OMTK_MODULE_VIEW_DISTANCE" call BIS_fnc_getParamValue);
@@ -390,3 +400,5 @@ omtk_set_viewdistance = {
 
 	setViewDistance _newViewDist;
 };
+
+

@@ -7,6 +7,9 @@
 @ bug fix  
 !! security patch
 
+### V2.10.8 - 2022-09-05
+@ [omtk] Merged fuel on/off functions into vehicle lock/unlock to prevent possible bug
+
 ### V2.10.7 - 2022-08-29
 \+ [briefing] Added uniforms images to briefing tab, accessible to mission makers in "images" folder
 \- [omtk] Light version removed

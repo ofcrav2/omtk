@@ -128,7 +128,6 @@ omtk_wu_end_warmup = {
 		missionNamespace setVariable ["omtk_wu_is_completed", true];
 		publicVariable "omtk_wu_is_completed";
 		
-		[] call omtk_vehicleFuel_on;
 		[] call omtk_unlock_vehicles;
 		
 		if (omtk_disable_playable_ai == 1) then {
@@ -219,7 +218,6 @@ if (isServer) then {
 	
 	
 	// Removes fuel to vehicles and locks driver, found in library.sqf
-	[] call omtk_vehicleFuel_off;
 	[] call omtk_lock_vehicles;
 	
 	_omtk_wu_notification_triggers = [];
