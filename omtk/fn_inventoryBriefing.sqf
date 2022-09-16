@@ -5,7 +5,6 @@
 ["inventoryBriefing start" , "DEBUG", false] call omtk_log;
 
 _addExtPAA = {
-	["addExtPAA fnc called in inventoryBriefing" , "DEBUG", false] call omtk_log;
 	private["_path", "_array", "_len", "_last4"];
 	_path = toLower _this;
 	_array = toArray(_path);
@@ -15,7 +14,6 @@ _addExtPAA = {
 };
 
 _addToArray = {
-	["addToArray fnc called in inventoryBriefing" , "DEBUG", false] call omtk_log;
 	private["_value", "_array", "_count", "_found", "_x", "_forEachIndex"];
 	_value = _this select 0;
 	_array = _this select 1;
@@ -37,8 +35,6 @@ _addToArray = {
 
 _text = "";
 _addGroupUnitToDiary = {
-	["addGroupUnitToDiary fnc called in inventoryBriefing" , "DEBUG", false] call omtk_log;
-	
 	_unit = _this select 0;
 	_number = _this select 1;
 	_text = _text + "<font color='#FFFFBB'>" + (str _number) + ". " + (name _unit) + "</font>" + ( if(leader _unit == _unit) then {" (Squad Leader)"} else {""} );

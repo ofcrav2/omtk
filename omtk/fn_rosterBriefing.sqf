@@ -36,7 +36,6 @@ if (_includeAI) then {
 };
 
 {//forEach
-	["New entry in rosterBriefing" , "DEBUG", false] call omtk_log;
 	_newGrp = group _x;
 	_strGrp = "";
 	

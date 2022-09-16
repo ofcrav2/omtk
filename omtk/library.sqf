@@ -132,12 +132,15 @@ omtk_is_using_ACEmod = {
 omtk_unlock_vehicles = {
 	{
 		_locked_by_omtk = _x getVariable ["omtk_lock", 0];
-		_fuelLvl = _x getVariable ["omtk_fuel_level", 0];
+		//_fuelLvl = _x getVariable ["omtk_fuel_level", 0];
 		if (_locked_by_omtk > 0) then {
 			_x lockDriver false;
-			_x allowDamage true;
+			//_x allowDamage true;
 			
-			_x setFuel _fuelLvl;
+			if (!isCopilotEnabled _x) then {
+				_x enableCopilot true;
+			};
+			//_x setFuel _fuelLvl;
 		};
 	} foreach vehicles;
 };
@@ -148,13 +151,15 @@ omtk_lock_vehicles = {
 	{
 		if ( (locked _x) < 2) then {
 			_x lockDriver true;
-			_x allowDamage false;
+			//_x allowDamage false;
+			
+			if (isCopilotEnabled _x) then {
+				_x enableCopilot false;
+			};
+			/*_fuelLvl = fuel _x;
+			_x setVariable ['omtk_fuel_level', _fueflLvl];
+			_x setFuel 0;*/
 			_x setVariable ['omtk_lock', 1];
-			
-			_fuelLvl = fuel _x;
-			_x setVariable ['omtk_fuel_level', _fuelLvl];
-			
-			_x setFuel 0;
 		};
 	} foreach vehicles;
 };
