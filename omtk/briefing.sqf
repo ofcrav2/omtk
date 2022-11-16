@@ -67,17 +67,17 @@ player createDiaryRecord ["Diary", ["Mission Timings", "<font color='#7FFF00' si
 if (("OMTK_MODULE_MEXICAN_STANDOFF" call BIS_fnc_getParamValue) < 1) then {
 	// Mexican Standoff DISABLED
 	player createDiaryRecord ["Diary", ["Uniforms","Bluefor Uniforms<br/>
-	<img image='images\blue.jpg' width='200' height='333'/><br/>
+	<img image='images\blue.jpg' width='200'/><br/>
 	Redfor Uniforms<br/>
-	<img image='images\red.jpg' width='200' height='333'/>"]];
+	<img image='images\red.jpg' width='200'/>"]];
 } else {
 	// Mexican Standoff ENABLED
 	player createDiaryRecord ["Diary", ["UNIFORMS","Bluefor Uniforms<br/>
-	<img image='images\blue.jpg' width='200' height='333'/><br/>
+	<img image='images\blue.jpg' width='200'/><br/>
 	Redfor Uniforms<br/>
-	<img image='images\red.jpg' width='200' height='333'/><br/>
+	<img image='images\red.jpg' width='200'/><br/>
 	Greenfor Uniforms<br/>
-	<img image='images\green.jpg' width='200' height='333'/>"]];
+	<img image='images\green.jpg' width='200'/>"]];
 };
 
 
