@@ -105,6 +105,27 @@ class Params
 		values[] = {0,1};
 		default = "0";
 	};
+	class OMTK_MODULE_RAMBO_DIST
+	{
+		title = "Rambo Script Triggering Distance";
+		texts[] = {"disabled","strict (210|615)","normal (230|645)","loose (250|675)"};
+		values[] = {0,5,15,25};
+		default = "0";
+	};
+	class OMTK_MODULE_RAMBO_WARN
+	{
+		title = "Rambo Script Give Warning";
+		texts[] = {"off","on"};
+		values[] = {0,1};
+		default = "1";
+	};
+	class OMTK_MODULE_RAMBO_INTERVAL
+	{
+		title = "Rambo Script Frequency (lower = more perf usage for clients)";
+		texts[] = {"5s","10s","20s","30s","60s",};
+		values[] = {5,10,20,30,60};
+		default = "10";
+	};
 	class OMTK_MODULE_SEPARATOR_1
 	{
 		title = "----------------------------------------------------------------------------------";
