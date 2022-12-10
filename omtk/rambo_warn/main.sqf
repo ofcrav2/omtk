@@ -13,10 +13,10 @@ if (hasInterface) then {
 	//  Multi Language...
 	////////////
 	
-	// Make the script start only when the mission starts
-	waitUntil {sleep 1; time > 0};
 	// Assign the code to the scheduler
 	[] spawn {
+		// Make the script start only when the mission starts
+		waitUntil {sleep 1; time > 0};
 		////////////
 		//Variables to Set
 		////////////	
