@@ -51,9 +51,27 @@ omtk_wu_start_warmup = {
 	player enableSimulation false;			// PLAYER SIM
 	player allowDamage false;				// DAMAGE
 	setViewDistance 500;					// VIEW DISTANCE
+	warmupOver = false;
 	if ( omtk_wu_safety == 1 ) then { 		// SAFETY ON
 		[] call omtk_enable_safety;
 	};
+	
+	// Vehicle freeze, taken from ilbinek's IMF because i give up on life
+	// Takes care of disabling the engine during the warmup
+	
+	{		
+		// if vehicle changes engine state to on, turn it off
+		_handler = _x addEventHandler ["Engine", {
+			_car = _this select 0;
+			_engineOn = _this select 1;
+			if ((!warmupOver) and local _car and _engineOn) then {
+				player action ["engineoff", _car];
+				_car engineOn false;
+			};
+		}];
+		_x setVariable ["engineFrz", _handler];
+	} forEach vehicles;
+	
 	
 	// Creation of the "restrict_area_trigger" that'll call "move_player_at_spawn_if_required" fnc.
 	omtk_wu_restrict_area_trigger = createTrigger ["EmptyDetector", omtk_wu_spawn_location, false];
@@ -114,6 +132,12 @@ omtk_wu_end_warmup = {
 			[] call omtk_disable_safety;
 		};
 		
+		// Vehicle unfreeze, taken from ilbinek's IMF because i give up on life
+		{			
+			// Remove engine freeze
+			_x removeEventHandler ["Engine", (_x getVariable ["engineFrz", 0])];
+		} forEach vehicles;
+		
 		deleteVehicle omtk_wu_restrict_area_trigger;
 		if ((typeOf player) in OMTK_WU_CHIEF_CLASSES) then {
 			[player, omtk_wu_com_menu_item_id] call BIS_fnc_removeCommMenuItem;
@@ -128,7 +152,7 @@ omtk_wu_end_warmup = {
 		missionNamespace setVariable ["omtk_wu_is_completed", true];
 		publicVariable "omtk_wu_is_completed";
 		
-		[] call omtk_unlock_vehicles;
+		// [] call omtk_unlock_vehicles;
 		
 		if (omtk_disable_playable_ai == 1) then {
 			call omtk_delete_playableAiUnits;
@@ -218,7 +242,7 @@ if (isServer) then {
 	
 	
 	// Removes fuel to vehicles and locks driver, found in library.sqf
-	[] call omtk_lock_vehicles;
+	// [] call omtk_lock_vehicles;
 	
 	_omtk_wu_notification_triggers = [];
 	
