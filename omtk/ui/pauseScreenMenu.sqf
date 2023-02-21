@@ -468,7 +468,7 @@ button_endWarmup ctrlSetPosition [
 	0.03 * safezoneH
 ];
 button_endWarmup ctrlCommit 0;
-button_endWarmup ctrlSetText "End wamrup";
+button_endWarmup ctrlSetText "End warmup";
 button_endWarmup ctrlAddEventHandler ["ButtonDown", {
 	[] remoteExec ['omtk_wu_fn_launch_game', 2];
 }];
@@ -499,7 +499,7 @@ button_exportOcap ctrlSetPosition [
 button_exportOcap ctrlCommit 0;
 button_exportOcap ctrlSetText "Export Ocap";
 button_exportOcap ctrlAddEventHandler ["ButtonDown", {
-	[] remoteExec ['ocap_fnc_exportData', 2];
+	["ocap_exportData", ["Mission is OVER"]] remoteExec ['CBA_fnc_serverEvent', 2];
 }];
 
 // Remove AIs
