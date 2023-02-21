@@ -121,7 +121,7 @@ if (hasInterface) then {
 				
 				{					
 					//Report to Server Part#2
-					if(_ReportToServer) then {[_x, 'CHEAT', false] remoteExecCall ["omtk_log",2,false];}
+					if(_ReportToServer) then {[_x, 'CHEAT', false] remoteExecCall ["omtk_log",2,false]};
 					//Report to local RPT
 					if(_WriteLocalRPT)  then {diag_log _x};										
 				}forEach _ArrayBuddiesTooFar;
