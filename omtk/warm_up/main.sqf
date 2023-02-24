@@ -31,7 +31,7 @@
 
 ["warm_up start", "DEBUG", false] call omtk_log;
 
-OMTK_WU_CHIEF_CLASSES = ["B_officer_F", "B_Soldier_SL_F", "O_officer_F", "O_Soldier_SL_F"]; // CAN BE CUSTOMIZED
+OMTK_WU_CHIEF_CLASSES = ["B_officer_F", "O_officer_F"]; // CAN BE CUSTOMIZED
 
 // Retrieve parameters
 omtk_wu_time = ("OMTK_MODULE_WARM_UP" call BIS_fnc_getParamValue);

@@ -106,28 +106,39 @@ if (hasInterface) then {
 			// Lets check if Rules are broken.
 			////////////
 			// 1: All Buddies Dead or Incap | 2: 2 Lads are too far away | 3: last buddy is too far away
-			if ( _BuddiesAlive == 0 || (_BuddiesToFar >= 2 ) ||	(_BuddiesToFar == 1 && _BuddiesAlive == 1 )	) then {
-				//Inform Player
-				if(_GiveWarning || _LoneWolfDebug) then { systemChat format ["[LoneWolf] You lost your lads!"]; };						
-				private _message2ToServer = format ["[LoneWolf] Player %1 got flagged for rambo infringment;								//String operation
-													_BuddiesToFar: %2  _BuddiesAlive: %3 ",  name player, _BuddiesToFar, _BuddiesAlive
-													];	
-				//Report to Server Part#1			
-				if(_ReportToServer) then {
-					[_message2ToServer, 'CHEAT', false] remoteExecCall ["omtk_log",2,false];
-				};
-				//Report to local RPT
-				if(_WriteLocalRPT) then {diag_log _message2ToServer};
+			if (!alive player || side player == sideLogic) then {
 				
-				{					
-					//Report to Server Part#2
-					if(_ReportToServer) then {[_x, 'CHEAT', false] remoteExecCall ["omtk_log",2,false]};
+				if ( _BuddiesAlive == 0 || (_BuddiesToFar >= 2 ) ||	(_BuddiesToFar == 1 && _BuddiesAlive == 1 )	) then {
+					//Inform Player
+					if((_GiveWarning || _LoneWolfDebug) && _BuddiesAlive > 0) then { 
+						systemChat format ["[LoneWolf] You lost your lads!"]; 
+					};
+					
+					if((_GiveWarning || _LoneWolfDebug) && _BuddiesAlive == 0) then { 
+						systemChat format ["[LoneWolf] You're alone, join another squad!"]; 
+					};
+					
+					
+					
+					private _message2ToServer = format ["[LoneWolf] Player %1 got flagged for rambo infringment;				_BuddiesTooFar: %2  _BuddiesAlive: %3 ",  name player, _BuddiesToFar, _BuddiesAlive
+														];	
+					//Report to Server Part#1			
+					if(_ReportToServer) then {
+						[_message2ToServer, 'CHEAT', false] remoteExecCall ["omtk_log",2,false];
+					};
 					//Report to local RPT
-					if(_WriteLocalRPT)  then {diag_log _x};										
-				}forEach _ArrayBuddiesTooFar;
-				
-			} else { 
-				if (_LoneWolfDebug) then { systemChat format ["[LoneWolf] All fine"];	};		//Debug Thingy; remove later
+					if(_WriteLocalRPT) then {diag_log _message2ToServer};
+					
+					{					
+						//Report to Server Part#2
+						//if(_ReportToServer) then {[_x, 'CHEAT', false] remoteExecCall ["omtk_log",2,false]};
+						//Report to local RPT
+						if(_WriteLocalRPT)  then {diag_log _x};										
+					}forEach _ArrayBuddiesTooFar;
+					
+				} else { 
+					if (_LoneWolfDebug) then { systemChat format ["[LoneWolf] All fine"];	};		//Debug Thingy; remove later
+				};
 			};
 			sleep(_CheckingInterval); 																//Wait for next Check
 		};

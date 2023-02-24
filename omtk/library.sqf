@@ -260,17 +260,26 @@ omtk_sim_enableVehicleSim = {
 
 // Disables simulation to all players except for the server admin (logged in)
 omtk_sim_disablePlayerSim = {
-	if (call BIS_fnc_admin != 2) then {
-		player enableSimulation false;
-	};
-	systemChat "[OMTK] Player simulation DISABLED";
-	_omtk_sim_txt = format ["<t shadow='1' shadowColor='#A6051A'>- PLAYER SIM DISABLED and WEAPON SAFETY ENABLED -</t><br/>Please hold until weapon safety is removed<br/>while the server takes a breather"];
-	[_omtk_sim_txt,0,0,15,2] spawn BIS_fnc_dynamicText;
-	setViewDistance 200;
-	[] call omtk_enable_safety;
-	sleep 90;
-	[] call omtk_disable_safety;
 	
+	if (isServer) then {
+		missionNamespace setVariable ["omtk_simDisabled", true];
+		publicVariable "omtk_simDisabled";
+	};
+	
+	sleep 1;
+	
+	_omtk_simDisabled = missionNamespace getVariable ["omtk_simDisabled", true];
+	if (_omtk_simDisabled) then {
+		
+		if (call BIS_fnc_admin != 2) then {
+			player enableSimulation false;
+		};
+		systemChat "[OMTK] Player simulation DISABLED";
+		_omtk_sim_txt = format ["<t shadow='1' shadowColor='#A6051A'>- PLAYER SIM DISABLED and WEAPON SAFETY ENABLED -</t><br/>Please hold until weapon safety is removed<br/>while the server takes a breather"];
+		[_omtk_sim_txt,0,0,15,2] spawn BIS_fnc_dynamicText;
+		setViewDistance 200;
+		[] call omtk_enable_safety;	
+	};
 	
 };
 
@@ -281,6 +290,13 @@ omtk_sim_disablePlayerSim = {
 omtk_sim_enablePlayerSim = {
 	_sideMode = _this select 0;
 	_actualSide = _this select 1;
+	if (isServer) then {
+		missionNamespace setVariable ["omtk_simDisabled", false];
+		publicVariable "omtk_simDisabled";
+	};
+	
+	_omtk_view_distance = ("OMTK_MODULE_VIEW_DISTANCE" call BIS_fnc_getParamValue);
+	setViewDistance _omtk_view_distance;
 	private _randRelease = (random 15) + 1;
     
 	// parameter being "all" will reenable simulation to all the players at once

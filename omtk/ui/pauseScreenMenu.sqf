@@ -255,7 +255,7 @@ buttonSimulation_Disable ctrlCommit 0;
 buttonSimulation_Disable ctrlSetText "DISABLE ALL Sim";
 buttonSimulation_Disable ctrlSetBackgroundColor [0.8, 0.2, 0.8, 1];
 buttonSimulation_Disable ctrlAddEventHandler ["ButtonDown", {
-	[] remoteExec['omtk_sim_disablePlayerSim', 0];
+	[] remoteExec['omtk_sim_disablePlayerSim', 0, true];
 	[] remoteExec['omtk_sim_disableVehicleSim', 0];
 }];
 
@@ -273,6 +273,8 @@ buttonSimulation_EnableAll ctrlAddEventHandler ["ButtonDown", {
 	['all'] remoteExec['omtk_sim_enablePlayerSim', 0];
 	[] remoteExec['omtk_sim_enableVehicleSim', 0];
 }];
+
+/*
 
 // Enable Blue sim
 buttonSimulation_EnableBlue = _display ctrlCreate ["omtk_RscButton", 1201];
@@ -333,6 +335,7 @@ buttonSimulation_EnableVic ctrlAddEventHandler ["ButtonDown", {
 	[] remoteExec ['omtk_sim_enableVehicleSim', 0];
 }];
 
+*/
 ////////////////////////////////////////////////////////////////////
 
 /* VIEW DISTANCE CONTROL*/
