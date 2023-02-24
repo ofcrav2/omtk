@@ -262,8 +262,7 @@ omtk_sim_enableVehicleSim = {
 omtk_sim_disablePlayerSim = {
 	
 	if (isServer) then {
-		missionNamespace setVariable ["omtk_simDisabled", true];
-		publicVariable "omtk_simDisabled";
+		missionNamespace setVariable ["omtk_simDisabled", true, true];
 	};
 	
 	sleep 1;
@@ -291,8 +290,7 @@ omtk_sim_enablePlayerSim = {
 	_sideMode = _this select 0;
 	_actualSide = _this select 1;
 	if (isServer) then {
-		missionNamespace setVariable ["omtk_simDisabled", false];
-		publicVariable "omtk_simDisabled";
+		missionNamespace setVariable ["omtk_simDisabled", false, true];
 	};
 	
 	_omtk_view_distance = ("OMTK_MODULE_VIEW_DISTANCE" call BIS_fnc_getParamValue);
