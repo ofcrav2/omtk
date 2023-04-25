@@ -45,7 +45,7 @@ if (hasInterface) then {
 
 	omtk_tp_jump = {
 		_now = date;
-		_start = missionNamespace getVariable ["omtk_wu_start_time", missionStart select [0,5]];
+		_start = o_wse select 0;
 		_now_time = (_now select 3) * 60 + (_now select 4);
 		_start_time = (_start select 3) * 60 + (_start select 4);
 		

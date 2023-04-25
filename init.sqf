@@ -41,10 +41,11 @@ OMTK_LM_REDFOR_OB = [
 ////// SPECIAL CONFIGURATION
 setTerrainGrid 3.125;
 
+/*
 OMTK_WARMUP_MENU = [
 	["OMTK MENU", true],
 	["Warmup: side is ready", [2], "", -5, [["expression", "[] call omtk_wu_set_ready;"]], "1", "1"]
-];
+];*/
 
 OMTK_MARKERS_MENU = [
 	["OMTK MENU", true],

@@ -253,3 +253,4 @@ class omtk_RscProgress
 	w = 1;
 	h = 0.03;
 };
+

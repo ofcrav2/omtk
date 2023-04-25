@@ -28,10 +28,8 @@
  *
  */
 
-
 ["warm_up start", "DEBUG", false] call omtk_log;
 
-OMTK_WU_CHIEF_CLASSES = ["B_officer_F", "O_officer_F"]; // CAN BE CUSTOMIZED
 
 // Retrieve parameters
 omtk_wu_time = ("OMTK_MODULE_WARM_UP" call BIS_fnc_getParamValue);
@@ -43,37 +41,17 @@ omtk_wu_safety = ("OMTK_MODULE_WARM_UP_SAFETY" call BIS_fnc_getParamValue);
 omtk_wu_restrict_area_trigger = nil;
 omtk_wu_com_menu_item_id = 0;
 
-// Function ran on clients only
-omtk_wu_start_warmup = {
-	["wu_start_warmup fnc called", "DEBUG", false] call omtk_log;
-	
-	// [] call omtk_sim_disableVehicleSim;	// VEHICLE LOCK & SIM
-	player enableSimulation false;			// PLAYER SIM
-	player allowDamage false;				// DAMAGE
-	setViewDistance 500;					// VIEW DISTANCE
-	warmupOver = false;
-	if ( omtk_wu_safety == 1 ) then { 		// SAFETY ON
-		[] call omtk_enable_safety;
+// Function called by restrict_area_trigger on clients only
+omtk_wu_move_player_at_spawn_if_required = {
+	_distance = (position player) distance omtk_wu_spawn_location;
+	if (_distance > omtk_wu_radius) then {
+		["teleport player '" + name player + "' back to his initial position", 'CHEAT', true] call omtk_log;
+		player setPos omtk_wu_spawn_location;
 	};
-	
-	// Vehicle freeze, taken from ilbinek's IMF because i give up on life
-	// Takes care of disabling the engine during the warmup
-	
-	{		
-		// if vehicle changes engine state to on, turn it off
-		_handler = _x addEventHandler ["Engine", {
-			_car = _this select 0;
-			_engineOn = _this select 1;
-			if ((!warmupOver) and local _car and _engineOn) then {
-				player action ["engineoff", _car];
-				_car engineOn false;
-			};
-		}];
-		_x setVariable ["engineFrz", _handler];
-	} forEach vehicles;
-	
-	
-	// Creation of the "restrict_area_trigger" that'll call "move_player_at_spawn_if_required" fnc.
+};
+
+// Creation of the "restrict_area_trigger" that'll call "move_player_at_spawn_if_required" fnc.
+omtk_wu_restrict_area = {
 	omtk_wu_restrict_area_trigger = createTrigger ["EmptyDetector", omtk_wu_spawn_location, false];
 	omtk_wu_restrict_area_trigger setTriggerArea [omtk_wu_radius, omtk_wu_radius, 0, false];
 	omtk_wu_restrict_area_trigger setTriggerActivation [format["%1", side player], "NOT PRESENT", true];	// probably useless
@@ -83,8 +61,10 @@ omtk_wu_start_warmup = {
 	// The trigger deactivates upon players (or the vehicle they're in) not being in the zone. Deactivation triggers the hint and the function to teleport the player back.
 	// Upon reactivation, the hintSilent removes the warning.
 	omtk_wu_restrict_area_trigger setTriggerStatements ["player in thisList || vehicle player in thisList", "hintSilent '';", _trg_out_action];
+};
 
-	// Creating and displaying notification text with warmup length
+// Creating and displaying notification text with warmup length
+omtk_wu_display_warmup_txt = {
 	_omtk_mission_warmup_minute = floor(omtk_wu_time/60);
 	_omtk_mission_warmup_second = (omtk_wu_time - (60*_omtk_mission_warmup_minute));
 	_omtk_mission_warmup_txt = "";
@@ -99,28 +79,9 @@ omtk_wu_start_warmup = {
 	_omtk_notification_txt = parseText _omtk_notification_txt;
 	_omtk_notification_txt = composeText [_omtk_notification_txt];
 	[_omtk_notification_txt,0,0,25,2] spawn BIS_fnc_dynamicText;
-	
-	// PLAYER SIM RE-ENABLE TIMER
-	private _randRelease = (random 6) + 1;
-		
-	systemChat format ["[OMTK] Your simulation will be disabled for %1 seconds after launch",_randRelease];
-	sleep 1;
-	systemChat format ["[OMTK] Your simulation will be disabled for %1 seconds after launch",_randRelease];
-    sleep (_randRelease - 1);
-
-    player enableSimulation true;
 };
 
-// Function called by restrict_area_trigger on clients only
-omtk_wu_move_player_at_spawn_if_required = {
-	_distance = (position player) distance omtk_wu_spawn_location;
-	if (_distance > omtk_wu_radius) then {
-		["teleport player '" + name player + "' back to his initial position", 'CHEAT', true] call omtk_log;
-		player setPos omtk_wu_spawn_location;
-	};
-};
-
-// Fnc called by end_warmup_remote from the server 
+// Fnc remotely executed by the server on every client and server at the end of warmup
 omtk_wu_end_warmup = {
 	["wu_end_warmup fnc called", "DEBUG", false] call omtk_log;
 	// On clients, reverts the changes applied by "wu_start_warmup" and by the "main.sqf" itself
@@ -139,20 +100,13 @@ omtk_wu_end_warmup = {
 		} forEach vehicles;
 		
 		deleteVehicle omtk_wu_restrict_area_trigger;
-		if ((typeOf player) in OMTK_WU_CHIEF_CLASSES) then {
-			[player, omtk_wu_com_menu_item_id] call BIS_fnc_removeCommMenuItem;
-			if (call omtk_is_using_ACEmod) then {
-				[player, 1, ["ACE_SelfActions", "OMTK_END_WARMUP"]] call ace_interact_menu_fnc_removeActionFromObject;
-			};
-		};
+
 	};
 	// On server, sets variable to prevent warmup for JIP players, 
 	// unlocks vehicles and deletes AIs according to the parameter
 	if (isServer) then {
 		missionNamespace setVariable ["omtk_wu_is_completed", true];
 		publicVariable "omtk_wu_is_completed";
-		
-		// [] call omtk_unlock_vehicles;
 		
 		if (omtk_disable_playable_ai == 1) then {
 			call omtk_delete_playableAiUnits;
@@ -164,116 +118,151 @@ omtk_wu_end_warmup = {
 	call omtk_load_post_warmup;
 };
 
-// Executed on the server by a scheduled fnc call, execs "wu_end_warmup" on both server and clients.
-omtk_wu_end_warmup_remote = {
-	[] remoteExec ["omtk_wu_end_warmup", 0, true];
-};
-
-// Executed on the server by several scheduled fnc calls, is responsible for the hints displaying remaining warmup time
-// Now also performs view distance changes and enables sim for vehicles
-omtk_wu_scheduled_calls = {
-	_by = _this select 0;
-	if (_by > -1) then {
-		_minute = floor(_by/60);
-		_second = _by - (_minute*60);
-		_res = "";
-		if (_minute > 0) then {_res = _res + (str _minute) + " min. "; };
-		if (_second > 0) then {_res = _res + (str _second) + " sec."; };
-		if (_by == 0) then { _res = "GO GO GO !!!"; };
-		("START: " + _res) remoteExecCall ["hint"];
-		
-		// SET TO FULL VIEW DISTANCE 10 SECONDS BEFORE WARMUP END
-		if (_by == 10) then { 
-			[omtk_view_distance] remoteExecCall ["setViewDistance"];
-			("[OMTK] View distance raised to full view distance") remoteExecCall ["systemChat"];
+omtk_wu_fn_launch_game = {
+	_omtk_wu_is_completed = missionNamespace getVariable ["omtk_wu_is_completed", false];
+	if (isServer && !_omtk_wu_is_completed) then {
+		_remainingTime = (o_wse select 1) - dayTime;
+		if (_remainingTime > 0.008333) then {
+			("[OMTK] warmup interrupted !") remoteExecCall ["systemChat"];
+			o_wse set [1, (dayTime + 0.008333)];
+			publicVariable "o_wse";
 		};
 	};
 };
 
-// Can be executed via debug console or from menu by the admin. Deletes the scheduled fncs and
-// schedules "wu_end_warmup_remote" and a couple of display notifications for a 30 seconds warmup.
-omtk_wu_fn_launch_game = {
-	_omtk_wu_is_completed = missionNamespace getVariable ["omtk_wu_is_completed", false];
-	if (isServer && !_omtk_wu_is_completed) then {
-		("[OMTK] warmup interrupted !") remoteExecCall ["systemChat"];
-		_omtk_wu_notification_triggers = missionNamespace getVariable "omtk_wu_triggers";
-		{
-			deleteVehicle _x;
-		} forEach _omtk_wu_notification_triggers;
-		[omtk_wu_end_warmup_remote, [], 30] call KK_fnc_setTimeout;
-		[30] call omtk_wu_scheduled_calls;							
-		[omtk_wu_scheduled_calls, [10], 20] call KK_fnc_setTimeout;
-		[omtk_wu_scheduled_calls, [0], 30] call KK_fnc_setTimeout;
-		[omtk_wu_scheduled_calls, [-2], 210] call KK_fnc_setTimeout;
-		["Start in 30 sec.", "WARMUP", true] call omtk_log;
-	};
-};
-
-omtk_wu_set_ready = {
-	_side = side player;
-
-	("[OMTK] Side " + str(_side) + " is READY !") remoteExecCall ["systemChat"];
-	_omtk_wu_ready_west = missionNamespace getVariable ["omtk_wu_ready_west", false];
-	_omtk_wu_ready_east = missionNamespace getVariable ["omtk_wu_ready_east", false];
-	
-	switch (_side) do {
-			case east: { _omtk_wu_ready_east = true; };
-			case west: { _omtk_wu_ready_west = true; };
-			default {
-				["unknown side for omtk_wu_ready", "ERROR", true] call omtk_log;
-			};
-	};
-
-	if (_omtk_wu_ready_west && _omtk_wu_ready_east) then { 
-			[] remoteExec ["omtk_wu_fn_launch_game", 2];
-	} else {
-		missionNamespace setVariable ["omtk_wu_ready_west", _omtk_wu_ready_west];
-		missionNamespace setVariable ["omtk_wu_ready_east", _omtk_wu_ready_east];
-		publicVariable "omtk_wu_ready_west";
-		publicVariable "omtk_wu_ready_east";
-	};
-};
 
 // Creates scheduled fnc calls for notifications and for wu_end_warmup_remote and
 // makes them public for deletion by wu_launch_game. Vehicle lock moved to client side fnc
 if (isServer) then {
-	["warmup scheduled triggers creation", "DEBUG", false] call omtk_log;
-	
-	
-	
-	// Removes fuel to vehicles and locks driver, found in library.sqf
-	// [] call omtk_lock_vehicles;
-	
-	_omtk_wu_notification_triggers = [];
-	
-	{
-		if (_x < omtk_wu_time) then {
-			_trg = [omtk_wu_scheduled_calls, [_x], (omtk_wu_time - _x)] call KK_fnc_setTimeout;
-			[_omtk_wu_notification_triggers, _trg] call BIS_fnc_arrayPush;
+		
+	[] spawn {
+		
+		waitUntil { time > 0 };
+		_startDate = o_wse select 0;
+		// This way, _startTime is in the same format as "dayTime" (hours)
+		_startTime = _startDate select 3 + (_startDate select 4)/60;
+		// realDayTime used to manage when warmup crosses midnight
+		_realDayTime = dayTime;
+		
+		_stopWarmup = false;
+		
+		while { sleep 2 ; !_stopWarmup} do {				
+			// Means we went from 23.999 to 0
+			if (dayTime < _realDayTime) then {
+				//realDayTime continues the same way
+				_realDayTime = dayTime + 24;
+			} else {
+				_realDayTime = dayTime;
+			};
+			_warmupEnd = o_wse select 1;
+			
+			if (_realDayTime > _warmupEnd) then {
+				_stopWarmup = true;
+			};
+			
+			hint format ["Start time: %1 , Warmup end: %2, DayTime: %3, Realdaytime: %4, _stopWarmup: %5", _startTime, _warmupEnd, dayTime, _realDayTime, _stopWarmup];
 		};
-	} forEach [0, 10, 30, 60, 120, 180, 300, 600, 900, 1200, 1800, 2700];
-	// END WARMUP TRIGGER
-	_trg = [omtk_wu_end_warmup_remote, [], omtk_wu_time] call KK_fnc_setTimeout;
-	[_omtk_wu_notification_triggers, _trg] call BIS_fnc_arrayPush;
-	
-	missionNamespace setVariable ["omtk_wu_triggers", _omtk_wu_notification_triggers];
-	publicVariableServer "omtk_wu_triggers";
+		
+		[] remoteExec ["omtk_wu_end_warmup", 0, true];
+	};
 };
 
 if (hasInterface) then {
 	_omtk_wu_is_completed = missionNamespace getVariable ["omtk_wu_is_completed", false];
 	if (!_omtk_wu_is_completed) then {
 		omtk_wu_spawn_location = getPos player;
-		[] call omtk_wu_start_warmup;
-
-		_class = typeOf player;
-		if (_class in OMTK_WU_CHIEF_CLASSES) then {
-			omtk_wu_com_menu_item_id = [player, "OMTK_END_WARMUP_COM_MENU", nil, nil, ""] call BIS_fnc_addCommMenuItem;
-			if (call omtk_is_using_ACEmod) then {
-				_action = ["OMTK_END_WARMUP","End Warm-up","omtk\warm_up\img\warm_up-end.paa",{[] call omtk_wu_set_ready;},{true;}] call ace_interact_menu_fnc_createAction;
-				[player, 1, ["ACE_SelfActions"], _action] call ace_interact_menu_fnc_addActionToObject;
-			};
+		
+		player enableSimulation false;			// PLAYER SIM
+		player allowDamage false;				// DAMAGE
+		setViewDistance 500;					// VIEW DISTANCE
+		warmupOver = false;
+		if ( omtk_wu_safety == 1 ) then { 		// SAFETY ON
+			[] call omtk_enable_safety;
 		};
+		
+		// Vehicle freeze, taken from ilbinek's IMF because i give up on life
+		// Takes care of disabling the engine during the warmup
+		{		
+			// if vehicle changes engine state to on, turn it off
+			_handler = _x addEventHandler ["Engine", {
+				_car = _this select 0;
+				_engineOn = _this select 1;
+				if ((!warmupOver) and local _car and _engineOn) then {
+					player action ["engineoff", _car];
+					_car engineOn false;
+				};
+			}];
+			_x setVariable ["engineFrz", _handler];
+		} forEach vehicles;
+		
+		[] call omtk_wu_restrict_area;
+		
+		[] call omtk_wu_display_warmup_txt;
+		
+		
+		[] spawn {
+		
+			waitUntil { time > 0 };
+			_startDate = o_wse select 0;
+			// This way, _startTime is in the same format as "dayTime" (hours)
+			_startTime = _startDate select 3 + (_startDate select 4)/60;
+			// realDayTime used to manage when warmup crosses midnight
+			_realDayTime = dayTime;
+			_vdCheck = false;
+			_stopWarmup = false;
+			
+			disableSerialization; 
+			19998 cutRsc ["timerClass","PLAIN"];  
+			_timerGui = uiNamespace getVariable "timerDiag"; 
+			_timerTxt = _timerGui displayCtrl 1322;
+			
+			while { sleep 0.5 ; !_stopWarmup} do {				
+				// Means we went from 23.999 to 0 (day change happens during warmup)
+				if (dayTime < _realDayTime) then {
+					// realDayTime continues as 24.xxxx, just as _warmupEnd presumably will
+					_realDayTime = dayTime + 24;
+				} else {
+					_realDayTime = dayTime;
+				};
+				_warmupEnd = o_wse select 1;
+				
+				if (_realDayTime > _warmupEnd) then {
+					_stopWarmup = true;
+				} else {
+					// 15 seconds remaining in warmup - fixes view distance
+					if (_warmupEnd - _realDayTime < 0.00416 && !_vdCheck) then { 
+						setViewDistance(omtk_view_distance);
+						systemChat("[OMTK] View distance raised to full view distance");
+						_vdCheck = true;
+					};
+					
+					// Displaying time remaining on screen
+					_mins = floor( (_warmupEnd - dayTime) * 60);
+					_secs = floor((((_warmupEnd - dayTime) * 60) - _mins) * 60);	
+					if(_secs < 10) then {
+					   _secs = format ["0%1", _secs];
+					};
+					if(_mins < 10) then {
+					   _mins = format ["0%1", _mins];
+					};
+					_formatted_time = format ["%1:%2", _mins, _secs];
+					_timerTxt ctrlSetText _formatted_time;
+					
+				};
+			};
+			
+			19998 cutText["","PLAIN"];
+		};
+		
+		// PLAYER SIM RE-ENABLE TIMER
+		private _randRelease = (random 6) + 1;
+			
+		systemChat format ["[OMTK] Your simulation will be disabled for %1 seconds after launch",_randRelease];
+		sleep 1;
+		systemChat format ["[OMTK] Your simulation will be disabled for %1 seconds after launch",_randRelease];
+		sleep (_randRelease - 1);
+		
+		player enableSimulation true;
 	};
 };
 
