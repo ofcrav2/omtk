@@ -1,9 +1,9 @@
 // SET SCORES
-omtk_sb_scores = missionNamespace getVariable "omtk_sb_scores";
-omtk_sb_objectives = missionNamespace getVariable "omtk_sb_objectives";
+sb_s = missionNamespace getVariable "sb_s";
+sb_o = missionNamespace getVariable "sb_o";
 
 
-_text = format["%1 pts          OBJECTIVES           %2 pts", omtk_sb_scores select 0, omtk_sb_scores select 1];
+_text = format["%1 pts          OBJECTIVES           %2 pts", sb_s select 0, sb_s select 1];
 ctrlSetText [1510, _text];
 
 _index = 2;
@@ -11,7 +11,7 @@ _index = 2;
 	if ((_x select 0) != 0) then {
 		_index = _index + 1;
 		_res = 0;
-		if (omtk_sb_scores select _index) then {
+		if (sb_s select _index) then {
 			_res = _x select 0;
 		};
 		_line = format ["%1  (%3/%2 pts)", _x select 3, _x select 0, _res];
@@ -19,7 +19,7 @@ _index = 2;
 		if (_x select 1 == east) then { _sideIdx = 1512; };
 		lbAdd [_sideIdx, _line];
 	};
-} foreach omtk_sb_objectives;
+} foreach sb_o;
 
 
 // SET SURVIVORS

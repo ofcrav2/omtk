@@ -1,6 +1,6 @@
 omtk_sb_mission_end = {
 	if (hasInterface) then {
-		waitUntil { (missionNamespace getVariable "omtk_sb_ready4result") == 1};
+		waitUntil { (missionNamespace getVariable "sb_r4r") == 1};
 		if (("OMTK_MODULE_MEXICAN_STANDOFF" call BIS_fnc_getParamValue) < 1) then {
 			// Mexican Standoff DISABLED
 			createDialog "ScoreBoard";
@@ -64,39 +64,39 @@ omtk_sb_compute_scoreboard = {
 	// _x select 0 -> how many points to assign 
 	// _x select 1 -> what faction to assign the points to. 
 	//_idx is the index position of "sb_scores" of each faction (0=west, 1=east, 2=resistance)
-	omtk_sb_scores = missionNamespace getVariable "omtk_sb_scores";
-	omtk_sb_objectives = missionNamespace getVariable "omtk_sb_objectives";
-	omtk_sb_flags = missionNamespace getVariable "omtk_sb_flags";
+	sb_s = missionNamespace getVariable "sb_s";
+	sb_o = missionNamespace getVariable "sb_o";
+	sb_f = missionNamespace getVariable "sb_f";
 
 	_index = 2;
 	{
 		_index = _index + 1;
 		_res = [_x, _index] call omtk_sb_getObjectiveResult;
-		omtk_sb_scores set [_index, _res];
+		sb_s set [_index, _res];
 		if (_res) then {
 			_idx = 0;
 			if ((_x select 1) == east) then { _idx = 1;};
 			if ((_x select 1) == resistance) then { _idx = 2;};
-			_val = (_x select 0) + (omtk_sb_scores select _idx);
-			omtk_sb_scores set [_idx, _val];
+			_val = (_x select 0) + (sb_s select _idx);
+			sb_s set [_idx, _val];
 		};
-	} foreach omtk_sb_objectives;
+	} foreach sb_o;
 			
-	missionNamespace setVariable ["omtk_sb_objectives", omtk_sb_objectives];
-	missionNamespace setVariable ["omtk_sb_scores", omtk_sb_scores];
+	missionNamespace setVariable ["sb_o", sb_o];
+	missionNamespace setVariable ["sb_s", sb_s];
 	
-	publicVariable "omtk_sb_objectives";
-	publicVariable "omtk_sb_scores";
+	publicVariable "sb_o";
+	publicVariable "sb_s";
 	["scores computed","[INFO]",true] call omtk_log;
 	_omtk_sb_ready4result = 1;
-	missionNamespace setVariable ["omtk_sb_ready4result", _omtk_sb_ready4result];
-	publicVariable "omtk_sb_ready4result";
+	missionNamespace setVariable ["sb_r4r", _omtk_sb_ready4result];
+	publicVariable "sb_r4r";
 
 	// Stats plugin, using publicVariable to make sure this still works without the Stats Plugin working - will probably change later to a nicer implementation
 	_winner = "NA";
 	if (("OMTK_MODULE_MEXICAN_STANDOFF" call BIS_fnc_getParamValue) < 1) then {
-			_west = omtk_sb_scores select 0;
-			_opf = omtk_sb_scores select 1;
+			_west = sb_s select 0;
+			_opf = sb_s select 1;
 
 			if (_west == _opf) then {
 				_winner = "DRAW";
@@ -108,9 +108,9 @@ omtk_sb_compute_scoreboard = {
 				};
 			};
 		} else {
-			_west = omtk_sb_scores select 0;
-			_opf = omtk_sb_scores select 1;
-			_green = omtk_sb_scores select 2;
+			_west = sb_s select 0;
+			_opf = sb_s select 1;
+			_green = sb_s select 2;
 
 			if (_west == _opf && _west == _green) then {
 				_winner = "DRAW";
@@ -132,7 +132,7 @@ omtk_sb_compute_scoreboard = {
 		};
 
 	if (isClass(configFile >> "CfgPatches" >> "STATSLOGGER")) then {
-		[_winner, omtk_sb_scores select 0, omtk_sb_scores select 1] remoteExec ["statslogger_fnc_mission_end", 2];
+		[_winner, sb_s select 0, sb_s select 1] remoteExec ["statslogger_fnc_mission_end", 2];
 		[] call statslogger_fnc_export;
 	};
 };
@@ -164,8 +164,8 @@ omtk_sb_getObjectiveResult = {
 			//["objectif BLUEFOR","INFO",false] call omtk_log;
 		};
 		case "ACTION":	{
-			_omtk_sb_scores = missionNamespace getVariable "omtk_sb_scores";			
-			_res = (_omtk_sb_scores select _index);
+			_sb_s = missionNamespace getVariable "sb_s";			
+			_res = (_sb_s select _index);
 			//["objectif BLUEFOR","INFO",false] call omtk_log;
 		};
 		case "TRIGGER":	{
@@ -173,7 +173,7 @@ omtk_sb_getObjectiveResult = {
 		};
 		case "FLAG":	{
 			_res = true;
-			_omtk_sb_flags = missionNamespace getVariable "omtk_sb_flags";
+			_omtk_sb_flags = missionNamespace getVariable "sb_f";
 			{
 				_x = _x select 0;
 				_log = "Get " + str _x + " / " + str (count _omtk_sb_flags) + " : " + str (_omtk_sb_flags select _x);
@@ -188,7 +188,7 @@ omtk_sb_getObjectiveResult = {
 		case "T_OUTSIDE";
 		case "T_INSIDE": {
 			_res = true;
-			_omtk_sb_flags = missionNamespace getVariable "omtk_sb_flags";
+			_omtk_sb_flags = missionNamespace getVariable "sb_f";
 			
 			_flagNum = (_obj select 4) select 0;
 			if (!(_omtk_sb_flags select _flagNum)) then { _res = false; };	
@@ -209,6 +209,7 @@ omtk_side_in_area = {
 	_red = 0;
 	_green = 0;
 	_areaName = _this select 0;
+	/*
 	_areaType = typeName _areaName;	
 	_areaI = nil;
 	
@@ -222,21 +223,20 @@ omtk_side_in_area = {
 	if (isNil("_areaI")) then {
 		["Zone '" + _areaName + "' not found !" ,"ERROR",true] call omtk_log;
 	}
-	else {
-		{
-			_r = [_areaI, (position _x)] call BIS_fnc_inTrigger;
-			if (_r and alive _x) then {
-				//["Unit: " +  (name _x) + " est vivant et dans la zone: " + _areaName,"OBJECTIVE",false] call omtk_log;
-				_side = side _x;
-				switch(_side) do {
-					case West:	{ _blue = _blue + 1; };
-					case East:	{ _red = _red + 1; };
-					case Resistance: { _green = _green + 1; };
-					default { ["Unit: non comptabilisee pour camp inconnu: " + (str _side),"ERROR",false] call omtk_log; };
-				};
+	*/
+	{
+		_r = (position _x) inArea _areaName;
+		if (_r and alive _x) then {
+			//["Unit: " +  (name _x) + " est vivant et dans la zone: " + _areaName,"OBJECTIVE",false] call omtk_log;
+			_side = side _x;
+			switch(_side) do {
+				case West:	{ _blue = _blue + 1; };
+				case East:	{ _red = _red + 1; };
+				case Resistance: { _green = _green + 1; };
+				default { ["Unit: non comptabilisee pour camp inconnu: " + (str _side),"ERROR",false] call omtk_log; };
 			};
-		} foreach allUnits;
-	};
+		};
+	} foreach allUnits;
 	["Zone: " +  _areaName + " BLUE=" + (str _blue) + " - RED=" + (str _red) + " - GREEN=" + (str _green), "OBJECTIVE", false] call omtk_log;
 	[_blue, _red, _green];
 };
@@ -298,7 +298,8 @@ omtk_isInArea = {
 			{
 				_target = missionNamespace getVariable [_x , objNull];
 				_areaObj = missionNamespace getVariable [_area , objNull];	
-				_r = [_areaObj, (position _target)] call BIS_fnc_inTrigger;
+				// _r = [_areaObj, (position _target)] call BIS_fnc_inTrigger;
+				_r = (position _x) inArea _area;
 				if (_mode < 1) then { _r = !_r; };
 				if (!alive _target) then { _r = false; };
 				_resArr pushBack _r;
@@ -331,7 +332,7 @@ omtk_isInArea = {
 					_items_found pushBack _id;
 					_target = _x;
 					_areaObj = missionNamespace getVariable [_area , objNull];	
-					_r = [_areaObj, (position _target)] call BIS_fnc_inTrigger;
+					_r = (position _x) inArea _areaObj;
 					if (_mode < 1) then { _r = !_r; };
 					_res = _r;
 				};
@@ -492,25 +493,25 @@ omtk_timedAlive = {
 };
 
 omtk_setObjectiveResult = {
-	omtk_sb_scores = missionNamespace getVariable "omtk_sb_scores";
-	omtk_sb_scores set [_this select 0, _this select 1];
+	sb_s = missionNamespace getVariable "sb_s";
+	sb_s set [_this select 0, _this select 1];
 	//["action " + str(_this select 0) + " = " + str(_this select 1), "OBJECTIVE", false] call omtk_log;
-	missionNamespace setVariable ["omtk_sb_scores", omtk_sb_scores];
-	publicVariableServer "omtk_sb_scores";
+	missionNamespace setVariable ["sb_s", sb_s];
+	publicVariableServer "sb_s";
 };
 
 
 omtk_setFlagResult = {
-	_omtk_sb_flags = missionNamespace getVariable "omtk_sb_flags";
+	_omtk_sb_flags = missionNamespace getVariable "sb_f";
 	_omtk_sb_flags set [_this select 0, _this select 1];
 	//["flag " + str(_this select 0) + " = " + str(_this select 1), "OBJECTIVE", false] call omtk_log;
-	missionNamespace setVariable ["omtk_sb_flags", _omtk_sb_flags];
-	publicVariableServer "omtk_sb_flags";
+	missionNamespace setVariable ["sb_f", _omtk_sb_flags];
+	publicVariableServer "sb_f";
 };
 
 
 omtk_closeAction = {
-	private["_obj", "_id", "_caller", "_proc", "_index", "_dur", "_omtk_sb_scores","_num"];
+	private["_obj", "_id", "_caller", "_proc", "_index", "_dur", "_sb_s","_num"];
 	
 	_obj = _this select 0;
 	_caller = _this select 1;

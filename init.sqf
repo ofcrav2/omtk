@@ -29,7 +29,10 @@ execVM "customScripts.sqf";
 
 // Complete example list can be found here: https://github.com/ofcrav2/omtk/tree/master/omtk/score_board
 OMTK_SB_LIST_OBJECTIFS = [
-
+	[1, "BLUEFOR+REDFOR", "T_INSIDE", "Cap Zone after 40mins", [1, 0.5], "zone", ["DIFF", 1] ], 
+	[1, "BLUEFOR", "T_DESTRUCTION", "Kill vip within 1h", [2, 0.5], ["LIST", ["vip"]] ],
+	[1, "BLUEFOR", "T_SURVIVAL", "Kill vip within 1h", [3, 1], ["LIST", ["vip2"]] ],
+	[1, "BLUEFOR", "T_DESTRUCTION", "Kill vip within 1h", [4, 1], ["LIST", ["vip2"]] ]
 ];
 
 OMTK_LM_BLUEFOR_OB = [
