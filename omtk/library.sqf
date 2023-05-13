@@ -109,8 +109,7 @@ omtk_mass_teleport = {
 };
 
 omtk_rollback_to_start_time = {
-	_omtk_wu_start_time = missionNamespace getVariable ["omtk_wu_start_time", missionStart select [0,5]];
-	setDate (_omtk_wu_start_time);
+	setDate (o_wse select 0);
 };
 
 omtk_get_side = {
@@ -419,5 +418,4 @@ omtk_set_viewdistance = {
 
 	setViewDistance _newViewDist;
 };
-
 

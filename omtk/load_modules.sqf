@@ -1,8 +1,13 @@
 ["load_modules start" , "DEBUG", false] call omtk_log;
 
 if (isServer) then {
-	missionNamespace setVariable ["omtk_wu_start_time", date];
-	publicVariable "omtk_wu_start_time";
+	_startDate = date;
+	_omtk_wu_t = ("OMTK_MODULE_WARM_UP" call BIS_fnc_getParamValue)/3600;
+	_warmupEnd = dayTime + _omtk_wu_t;
+	systemChat format ["Warmup end: %1, DayTime: %2", _warmupEnd, dayTime];
+	// Changed variable to be as optimized as possible (at the cost of readability),
+	// and to include a date for warmup end
+	missionNamespace setVariable ["o_wse", [_startDate,_warmupEnd], true];
 };
 
 
