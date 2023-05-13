@@ -1,36 +1,57 @@
-if (hasInterface) then {
-	["radio_lock start", "DEBUG", false] call omtk_log;
-
-	omtk_rl_disable_radio_pickup_EH = {
-		_unitName = name (_this select 0);
-		_side = side (_this select 0);
-		_item =  _this select 1;
-				
-		_forbiddenSRRadios = [];
-		_forbiddenLRRadios = [];
-		
-		if (_side == east) then {
-			_forbiddenSRRadios = ["TFAR_anprc152", "TFAR_rf7800str"];
-			_forbiddenLRRadios = ["TFAR_rt1523g", "TFAR_rt1523g_big", "TFAR_rt1523g_black", "TFAR_rt1523g_fabric", "TFAR_rt1523g_green", "TFAR_rt1523g_rhs", "TFAR_rt1523g_sage","TFAR_rt1523g_big_bwmod","TFAR_mr3000_bwmod"];
-		};
-		
-		if (_side == west) then {
-			_forbiddenSRRadios = ["TFAR_fadak", "TFAR_pnr1000a"];
-			_forbiddenLRRadios = ["TFAR_mr3000", "TFAR_mr3000_multicam", "TFAR_mr3000_rhs"];
-		};
-		
-		if (_item in _forbiddenSRRadios) then {
-			[("'" + _unitName + "' has stolen SR ennemy radio '" + _item + "'"), "CHEAT",true] call omtk_log;
-			player removeItem _item;
-		};
-			
-		if (_item in _forbiddenLRRadios) then {
-			[("'" + _unitName + "' has stolen LR ennemy radio '" + _item + "'"), "CHEAT",true] call omtk_log;
-			player action ["PutBag"];
-		};		
-	};		
-	
-	player addEventHandler ["Take",{[_this select 0,_this select 2] call omtk_rl_disable_radio_pickup_EH;}];
-
-	["radio_lock end", "DEBUG", false] call omtk_log;
+if (hasinterface) then {
+    ["radio_lock start", "DEBUG", false] call omtk_log;
+    
+    player addEventHandler ["Take", {
+        params ["_unit", "_container", "_item"];
+        
+        private _cfgPath = "";
+        switch (true) do {
+            case (isClass (configFile / "Cfgweapons" / _item)) : {
+                _cfgPath = "Cfgweapons";
+            };
+            case (isClass (configFile / "Cfgmagazines" / _item)) : {
+                _cfgPath = "Cfgmagazines";
+            };
+            case (isClass (configFile / "Cfgvehicles" / _item)) : {
+                _cfgPath = "Cfgvehicles";
+            };
+            case (isClass (configFile / "CfgGlasses" / _item)) : {
+                _cfgPath = "CfgGlasses";
+            };
+        };
+        
+        private _encoding = gettext (configFile / _cfgPath / _item / "tf_encryptionCode");
+        if (_encoding != "") then {
+            private _stolen = false;
+            // took radio - check code to side
+            switch (side _unit) do {
+                case west: {
+                    if (_encoding != "tf_west_radio_code") then {
+                        // Stolen
+                        _stolen = true;
+                    };
+                };
+                
+                case east: {
+                    if (_encoding != "tf_east_radio_code") then {
+                        // Stolen
+                        _stolen = true;
+                    };
+                };
+                
+                case independent: {
+                    if (_encoding != "tf_independent_radio_code") then {
+                        // Stolen
+                        _stolen = true;
+                    };
+                };
+            };
+            if (_stolen) then {
+                [("'" + name _unit + "' has stolen SR enemy radio '" + _item + "'"), "CHEAT", true] call omtk_log;
+                _unit removeItem _item;
+            };
+        };
+    }];
+    
+    ["radio_lock end", "DEBUG", false] call omtk_log;
 };
