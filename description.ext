@@ -123,7 +123,7 @@ class Params
 	class OMTK_MODULE_RAMBO_INTERVAL
 	{
 		title = "Rambo Script Frequency (lower = more perf usage for clients)";
-		texts[] = {"5s","10s","20s","30s","60s",};
+		texts[] = {"5s","10s","20s","30s","60s"};
 		values[] = {5,10,20,30,60};
 		default = "10";
 	};
