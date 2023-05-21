@@ -40,10 +40,23 @@ if (isServer) then {
 		_omtk_mission_duration = _this select 0;
 		_gameEnd = dayTime + _omtk_mission_duration/3600;
 		
-		waitUntil { sleep 20; dayTime > (_gameEnd - 0.33333) };
-		("20 Minutes Left") remoteExecCall ["hint"];
-		
-		waitUntil { sleep 2; dayTime > _gameEnd };
+		if (_gameEnd < 24) then {
+			waitUntil { sleep 20; dayTime > (_gameEnd - 0.33333) };
+			("20 Minutes Left") remoteExecCall ["hint"];
+			
+			waitUntil { sleep 2; dayTime > _gameEnd };
+		} else {
+			
+				
+			waitUntil { sleep 20; 
+				dayTime > (_gameEnd - 0.33333) || 
+				( dayTime > (_gameEnd - 0.33333)-24 && dayTime < (_gameEnd - 0.33333)-23 )
+			};
+			("20 Minutes Left") remoteExecCall ["hint"];
+				
+			waitUntil { sleep 2; dayTime > _gameEnd-24 && dayTime < _gameEnd-23 };
+				
+		};
 		[] call omtk_sb_compute_scoreboard;
 		sleep 2;
 		[] call omtk_sb_start_mission_end;
