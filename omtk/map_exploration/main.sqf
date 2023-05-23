@@ -25,7 +25,31 @@ if (hasInterface) then {
 
 	onMapsingleClick "player setpos _pos";
 	
-	setTimeMultiplier 0.1;
+	[] spawn {
+		waitUntil { time > 0 };
+		_startDate = o_wse select 0;
+		// This way, _startTime is in the same format as "dayTime" (hours)
+		_startTime = _startDate select 3 + (_startDate select 4)/60;
+		// realDayTime used to manage when warmup crosses midnight
+		_realDayTime = dayTime;
+		
+		_omtk_mission_duration = ("OMTK_MODULE_SCORE_BOARD" call BIS_fnc_getParamValue);
+		_endTime = _startTime + _omtk_mission_duration/3600 + 0.25;
+		
+		while { sleep 60 ; true} do {				
+			// Means we went from 23.999 to 0
+			if (dayTime < _realDayTime) then {
+				//realDayTime continues the same way
+				_realDayTime = dayTime + 24;
+			} else {
+				_realDayTime = dayTime;
+			};
+			
+			if (_realDayTime > _endTime) then {
+				call omtk_rollback_to_start_time;
+			};
+		};
+	};
 	
 	_action = ["OMTK_TIME","Reset Daytime","",{ [] remoteExec ['omtk_rollback_to_start_time', 0]; },{true;}] call ace_interact_menu_fnc_createAction;
 	[player, 1, ["ACE_SelfActions"], _action] call ace_interact_menu_fnc_addActionToObject;
