@@ -299,7 +299,7 @@ omtk_isInArea = {
 				_target = missionNamespace getVariable [_x , objNull];
 				_areaObj = missionNamespace getVariable [_area , objNull];	
 				// _r = [_areaObj, (position _target)] call BIS_fnc_inTrigger;
-				_r = (position _x) inArea _area;
+				_r = (position _target) inArea _area;
 				if (_mode < 1) then { _r = !_r; };
 				if (!alive _target) then { _r = false; };
 				_resArr pushBack _r;
@@ -332,7 +332,7 @@ omtk_isInArea = {
 					_items_found pushBack _id;
 					_target = _x;
 					_areaObj = missionNamespace getVariable [_area , objNull];	
-					_r = (position _x) inArea _areaObj;
+					_r = (position _target) inArea _areaObj;
 					if (_mode < 1) then { _r = !_r; };
 					_res = _r;
 				};
