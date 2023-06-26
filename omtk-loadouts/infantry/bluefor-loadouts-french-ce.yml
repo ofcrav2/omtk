@@ -1,11 +1,11 @@
 default:
   weapons:
     primary:
-      name: R3F_Famas_G2_HG
-      optics: R3F_AIMPOINT
+      name: OFrP_FAMAS_F1
+      optics: OFrP_OpticItem_AIMPoint_CompM2M68
       muzzle:
       underBarrel:
-      magazine: 30#R3F_30Rnd_556x45_FAMAS
+      magazine: 25#OFrP_25Rnd_556x45
     launcher:
       name:
       optics:
@@ -13,7 +13,7 @@ default:
       name:
       magazine:
   uniform:
-    name: U_FR2035_CombatUniform_ce
+    name: OFrP_Uniform_T4S2_Full_CE_FRBV_SLTBV
     magazines:
       - HandGrenade
       - SmokeShell
@@ -25,307 +25,317 @@ default:
       - 4x ACE_splint
       - 2x ACE_epinephrine
       - 2x ACE_tourniquet
-      - R3F_PIRAT
+      - OFrP_muzzle_bayonets_FAMAS
   vest:
-   name: V_FR2035_PlateCarrier1_ce
+    name: OFrP_Vest_CIRAS_Rifleman_OD
   backpack:
-    name: B_FR2035_Kitbag_ce
-    magazines:
-    items:
+    name: OFrP_Bag_CamelbakBFM500_OD
   binocular:
   map: ItemMap
   compass: ItemCompass
   radio: ItemRadio
   watch: TFAR_microdagr
-  headgear: H_FR2035_Helmet_ce
+  headgear: OFrP_Helmet_TC3000_cover_CE
 
 
 cdc:
   weapons:
     primary:
-      optics: R3F_J4
-      magazine: 30#R3F_30Rnd_556x45_FAMAS
+      name: OFrP_FAMAS_VAL_HG
+      optics: OFrP_OpticItem_Scrome_J4
+      underBarrel: ofrp_acc_grip1
+      magazine: 25#OFrP_25Rnd_556x45
     handgun:
-      name: R3F_HKUSP
-      magazine: 15#R3F_15Rnd_9x19_HKUSP
+      name: OFrP_Glock17_Gen4
+      magazine: 17#OFrP_17Rnd_9x19_Glock17
   uniform:
+    name: OFrP_Uniform_T4S2_Full_CE_FRBV_COLBV
     items:
+      - OFrP_OpticItem_AIMPoint_CompM2M68
       - ACE_MapTools
       - ACE_microDAGR
   vest:
+    name: OFrP_Vest_CIRAS_TeamLeader_OD
     magazines:
-      - 8x 30#R3F_30Rnd_556x45_FAMAS
-      - 2x 15#R3F_15Rnd_9x19_HKUSP
+      - 3x 17#OFrP_17Rnd_9x19_Glock17
+      - 8x 25#OFrP_25Rnd_556x45
   backpack:
-    name: TFAR_rt1523g_black
+    name: UK3CB_B_B_Backpack_Radio_Chem_OLI
+    items:
+      - 2x OFrP_1Rnd_Grenade_APAV40
+      - 2x OFrP_1Rnd_Grenade_AC58
     magazines:
-      - 4x SmokeShell
-      - 2x SmokeShellGreen
-      - 2x SmokeShellRed
+      - 1x SmokeShell
+      - 1x SmokeShellGreen
+      - 1x SmokeShellRed
       - 1x ACE_M84
-      - 2x SmokeShellYellow
-  binocular: ACE_VectorDay
-  headgear: H_Beret_blk
+      - 1x SmokeShellYellow
+  binocular: Rangefinder
+  headgear: H_Beret_02
 
 
 cdg:
   weapons:
     primary:
-      optics: R3F_J4
-      magazine: 30#R3F_30Rnd_556x45_FAMAS
+      name: OFrP_FAMAS_VAL_HG
+      optics: OFrP_OpticItem_Scrome_J4
+      underBarrel: ofrp_acc_grip1
+      magazine: 25#OFrP_25Rnd_556x45
     handgun:
-      name: R3F_HKUSP
-      magazine: 15#R3F_15Rnd_9x19_HKUSP
+      name: OFrP_Glock17_Gen4
+      magazine: 17#OFrP_17Rnd_9x19_Glock17
   uniform:
+    name: OFrP_Uniform_T4S2_Full_CE_FRBV_SGTBV
     items:
       - ACE_MapTools
       - ACE_microDAGR
+      - OFrP_OpticItem_AIMPoint_CompM2M68
   vest:
+    name: OFrP_Vest_CIRAS_TeamLeader_OD
     magazines:
-      - 8x 30#R3F_30Rnd_556x45_FAMAS
-      - 2x 15#R3F_15Rnd_9x19_HKUSP
+      - 3x 17#OFrP_17Rnd_9x19_Glock17
+      - 8x 25#OFrP_25Rnd_556x45
   backpack:
-    name: TFAR_rt1523g_black
+    name: UK3CB_B_B_Backpack_Radio_Chem_OLI
+    items:
+      - 1x OFrP_1Rnd_Grenade_APAV40
+      - 1x OFrP_1Rnd_Grenade_AC58
     magazines:
-      - 4x SmokeShell
-      - 2x SmokeShellGreen
-      - 2x SmokeShellRed
+      - 1x SmokeShell
+      - 1x SmokeShellGreen
+      - 1x SmokeShellRed
       - 1x ACE_M84
-      - 2x SmokeShellYellow
-  binocular: ACE_VectorDay
-  headgear: H_FR2035_Helmet_ce_camo
-
+      - 1x SmokeShellYellow
+  binocular: Rangefinder
+  headgear: OFrP_Helmet_TC3000_OD
 
 
 cde:
+  uniform:
+    name: OFrP_Uniform_T4S2_Full_CE_FRBV_1CLBV
   weapons:
     primary:
-      optics: R3F_J4
+      name: OFrP_FAMAS_F1_GLM203
   vest:
+    name: OFrP_Vest_CIRAS_Grenadier_OD
     magazines:
-      - 8x R3F_25Rnd_556x45_FAMAS
-      - 4x R3F_APAV40
-      - 2x R3F_AC58
-      - 2x R3F_FUM40
-      - 2x R3F_ECL40
-  binocular: Binocular
+      - 8x 25#OFrP_25Rnd_556x45
   backpack:
-  headgear: H_FR2035_Helmet_ce
+    magazines:
+      - 3x 1Rnd_Smoke_Grenade_shell
+      - 2x 1Rnd_SmokeRed_Grenade_shell
+      - 2x 1Rnd_SmokeGreen_Grenade_shell
+      - 2x 1Rnd_SmokeYellow_Grenade_shell
+      - 2x 1Rnd_SmokePurple_Grenade_shell
+      - 6x 1Rnd_HE_Grenade_shell
+  headgear: OFrP_Helmet_TC3000_cover_CE
+  binocular: Binocular
 
 
 
 medic:
   vest:
+    name: OFrP_Vest_CIRAS_Medic_OD
     magazines:
-      - 8x 30#R3F_30Rnd_556x45_FAMAS
+      - 8x 25#OFrP_25Rnd_556x45
+      - 1x SmokeShell
+      - 1x SmokeShellGreen
   backpack:
-    magazines:
-      - 4x SmokeShell
-      - 2x SmokeShellGreen
-      - 2x SmokeShellYellow
     items:
-      - 10x ACE_bloodIV
+      - 6x ACE_bloodIV
       - 25x ACE_morphine
       - 25x ACE_epinephrine
-      - 50x ACE_fieldDressing
+      - 40x ACE_fieldDressing
       - 10x ACE_splint
-  headgear: H_FR2035_Helmet_ce
+  headgear: OFrP_Helmet_TC3000_OD
+
 
 grenadier:
   weapons:
     primary:
-      name: R3F_Famas_G2_HG
-      underBarrel:
-      magazine: 30#R3F_30Rnd_556x45_FAMAS
-      optics: R3F_AIMPOINT
-    launcher:
-      name: R3F_AT4CS
-      magazine: R3F_AT4CS_mag
+      name: OFrP_FAMAS_F1_GLM203
   vest:
-    name: V_FR2035_PlateCarrier1_ce
+    name: OFrP_Vest_CIRAS_Grenadier_OD
     magazines:
-      - 8x 30#R3F_30Rnd_556x45_FAMAS
-      - 4x R3F_APAV40
-      - 4x R3F_AC58
-      - 4x R3F_FUM40
-      - 2x R3F_ECL40
+      - 8x 25#OFrP_25Rnd_556x45
   backpack:
-  headgear: H_FR2035_Helmet_ce
+    magazines:
+      - 3x 1Rnd_Smoke_Grenade_shell
+      - 2x 1Rnd_SmokeRed_Grenade_shell
+      - 2x 1Rnd_SmokeGreen_Grenade_shell
+      - 2x 1Rnd_SmokeYellow_Grenade_shell
+      - 2x 1Rnd_SmokePurple_Grenade_shell
+      - 6x 1Rnd_HE_Grenade_shell
 
 
 grenadier_assistant:
-  weapons:
-    launcher:
-      name: R3F_AT4CS
-      magazine: R3F_AT4CS_mag
   backpack:
     magazines:
-      - 8x OFrP_1Rnd_Grenade_M203_HE
-      - 10x R3F_APAV40
-      - 10x R3F_AC58
-      - 10x R3F_FUM40
-      - 10x R3F_ECL40
+      - 6x 1Rnd_HE_Grenade_shell
+      - 4x 1Rnd_Smoke_Grenade_shell
+      - 2x 1Rnd_SmokeRed_Grenade_shell
+      - 2x 1Rnd_SmokeGreen_Grenade_shell
+      - 2x 1Rnd_SmokeYellow_Grenade_shell
+      - 2x 1Rnd_SmokePurple_Grenade_shell
+      - 6x 1Rnd_HE_Grenade_shell
   vest:
     magazines:
-      - 8x 30#R3F_30Rnd_556x45_FAMAS
+      - 8x 25#OFrP_25Rnd_556x45
 
 
 autorifleman:
   weapons:
     primary:
-      name: R3F_Minimi
-      optics: R3F_AIMPOINT
-      magazine: 200#R3F_200Rnd_556x45_MINIMI
+      name: OFrP_Minimi_Para_556
+      magazine: 200#OFrP_Minimi_200Rnd_556x45
   vest:
+    name: OFrP_Vest_CIRAS_MachineGunner_OD
     items:
       - ACE_EntrenchingTool
     magazines:
-      - 4x R3F_200Rnd_556x45_MINIMI
+      - 2x OFrP_Minimi_100Rnd_556x45
   backpack:
-  headgear: H_FR2035_Helmet_ce
+    magazines:
+      - 2x OFrP_Minimi_200Rnd_556x45
+
 
 autorifleman_assistant:
   backpack:
     magazines:
-      - 4x R3F_200Rnd_556x45_MINIMI
+      - 3x OFrP_Minimi_200Rnd_556x45
+      - 3x OFrP_Minimi_100Rnd_556x45
   vest:
     items:
       - ACE_EntrenchingTool
     magazines:
-      - 8x 30#R3F_30Rnd_556x45_FAMAS
+      - 8x 25#OFrP_25Rnd_556x45
 
 
 gunner:
   weapons:
     primary:
-      name: R3F_Minimi_762
-      optics: R3F_AIMPOINT
-      magazine: 100#R3F_100Rnd_762x51_MINIMI
+      name: rhs_weap_fnmag
+      magazine: 100#rhsusf_100Rnd_762x51
   vest:
-    magazines:
-      - 4x R3F_100Rnd_762x51_MINIMI
+    name: OFrP_Vest_CIRAS_MachineGunner_OD
     items:
       - ACE_EntrenchingTool
-  backpack:
+    magazines:
+      - 3x rhsusf_100Rnd_762x51
+
 
 gunner_assistant:
   backpack:
     magazines:
-      - 5x R3F_100Rnd_762x51_MINIMI
-    items:
-      - ACE_EntrenchingTool
+      - 5x rhsusf_100Rnd_762x51
   vest:
     magazines:
-      - 8x 30#R3F_30Rnd_556x45_FAMAS
+      - 8x 25#OFrP_25Rnd_556x45
 
 
 antitank:
   weapons:
     launcher:
-      name: R3F_ERYX
-      magazine: R3F_ERYX_mag
-  backpack:
-    magazines:
-      - 3x R3F_ERYX_mag
+      name: OFrP_ERYX
+      magazine: OFrP_1Rnd_136_ERYX
   vest:
     magazines:
-      - 8x 30#R3F_30Rnd_556x45_FAMAS
-  headgear: H_FR2035_Helmet_ce
+      - 8x 25#OFrP_25Rnd_556x45
+
 
 antitank_assistant:
-  weapons:
-    launcher:
-      name: R3F_AT4CS
-      magazine: R3F_AT4CS_mag
   backpack:
     magazines:
-      - 4x R3F_ERYX_mag
+      - 2x OFrP_1Rnd_136_ERYX
+      - 2x OFrP_1Rnd_Grenade_AC58
   vest:
     magazines:
-      - 8x 30#R3F_30Rnd_556x45_FAMAS
+      - 8x 25#OFrP_25Rnd_556x45
 
 
 antitank_light:
   weapons:
     launcher:
-      name: R3F_AT4CS
-      magazine: R3F_AT4CS_mag
+      name: OFrP_AT4CS
+      magazine: OFrP_1Rnd_84_AT4CS
   vest:
     magazines:
-      - 8x 30#R3F_30Rnd_556x45_FAMAS
-      - 4x R3F_AC58
+      - 8x 25#OFrP_25Rnd_556x45
   backpack:
+
 
 antipersonnel_light:
   weapons:
     launcher:
-      name: R3F_LGI_DEM
-      magazine: R3F_1Rnd_EXP_LGI
+      name: OFrP_AT4CS
+      magazine: OFrP_1Rnd_84_AT4CS
   vest:
     magazines:
-      - 8x 30#R3F_30Rnd_556x45_FAMAS
+      - 8x 25#OFrP_25Rnd_556x45
   backpack:
-    magazines:
-      - 10x R3F_1Rnd_EXP_LGI
+
 
 marksman:
   weapons:
     primary:
-      name: R3F_FRF2
-      magazine: 10#R3F_10Rnd_762x51_FRF2
-      optics: R3F_J8
+      name: OFrP_FRF2
+      magazine: 10#OFrP_10Rnd_762x51
+      optics: OFrP_OpticItem_Scrome_J8
     handgun:
-      name: R3F_HKUSP
-      magazine: 15#R3F_15Rnd_9x19_HKUSP
-  vest:
+      name: OFrP_Glock17_Gen4
+      magazine: 17#OFrP_17Rnd_9x19_Glock17
+  uniform:
     items:
       - ACE_RangeCard
-      - ACE_MapTools
       - ACE_microDAGR
+      - ACE_MapTools
+  vest:
+    name: OFrP_Vest_CIRAS_Marksman2_OD
     magazines:
-      - 3x R3F_15Rnd_9x19_HKUSP
-      - 10x R3F_10Rnd_762x51_FRF2
-  binocular: ACE_VectorDay
-  headgear: H_FR2035_Booniehat_ce
+      - 3x OFrP_17Rnd_9x19_Glock17
+      - 8x OFrP_10Rnd_762x51
+  binocular: Rangefinder
   backpack:
+  headgear: OFrP_Helmet_TC3000_cover_CE
+
 
 sniper:
   weapons:
     primary:
-      name: R3F_PGM_Hecate_II
-      magazine: 7#R3F_7Rnd_127x99_PGM
-      optics: R3F_NF42
+      name: OFrP_PGM_Hecate2
+      magazine: 7#OFrP_7Rnd_127x99
+      optics: OFrP_OpticItem_Scrome_J8
     handgun:
-      name: R3F_HKUSP
-      magazine: 15#R3F_15Rnd_9x19_HKUSP
-  vest:
-    magazines:
-      - 3x R3F_15Rnd_9x19_HKUSP
-      - 10x R3F_7Rnd_127x99_PGM
+      name: OFrP_Glock17_Gen4
+      magazine: 17#OFrP_17Rnd_9x19_Glock17
+  uniform:
     items:
       - ACE_RangeCard
       - ACE_Kestrel4500
       - ACE_ATragMX
       - ACE_microDAGR
       - ACE_MapTools
-  binocular: ACE_VectorDay
-  headgear: H_FR2035_Booniehat_ce
+      - OFrP_OpticItem_Scrome_J10
+  vest:
+    name: OFrP_Vest_CIRAS_Marksman2_OD
+    magazines:
+      - 2x OFrP_17Rnd_9x19_Glock17
+      - 10x OFrP_7Rnd_127x99
   backpack:
+  headgear: OFrP_Helmet_TC3000_cover_CE
+  binocular: Rangefinder
 
 spotter:
   weapons:
     primary:
-      name: R3F_HK417M_HG
-      magazine: 20#R3F_20Rnd_762x51_HK417
-      optics: optic_ld3k_shordot_cqb
-      muzzle: R3F_SILENCIEUX_HK417
-      underBarrel: R3F_BIPIED_HK417
-    handgun:
-      name: R3F_HKUSP
-      magazine: 15#R3F_15Rnd_9x19_HKUSP
+      name: rhs_weap_hk416d10
+      optics: rhsusf_acc_g33_xps3
+      muzzle: muzzle_snds_H
+      magazine: 30#rhs_mag_30Rnd_556x45_M855A1_Stanag
+      underBarrel: rhsusf_acc_grip2
   vest:
     magazines:
-      - 8x R3F_20Rnd_762x51_HK417
+      - 8x rhs_mag_30Rnd_556x45_M855A1_Stanag
     items:
       - ACE_RangeCard
       - ACE_Kestrel4500
@@ -333,142 +343,130 @@ spotter:
       - ACE_microDAGR
       - ACE_MapTools
   backpack:
-    name: TFAR_rt1523g_black
-  binocular: ACE_VectorDay
-  headgear: H_FR2035_Booniehat_ce
+    name: UK3CB_B_B_Backpack_Radio_Chem_OLI
+  binocular: Rangefinder
+  headgear: OFrP_Helmet_TC3000_cover_CE
+
 
 explosive_specialist:
-  weapons:
-    launcher:
-      name: R3F_AT4CS
-      magazine: R3F_AT4CS_mag
   backpack:
     magazines:
-      - SatchelCharge_Remote_Mag
-      - 2x DemoCharge_Remote_Mag
+      - 2x SatchelCharge_Remote_Mag
   uniform:
     items:
       - ACE_DefusalKit
       - ACE_Clacker
   vest:
     magazines:
-      - 8x 30#R3F_30Rnd_556x45_FAMAS
-  headgear: H_FR2035_Helmet_ce
+      - 8x 25#OFrP_25Rnd_556x45
 
 
 rifleman:
   vest:
     magazines:
-      - 12x 30#R3F_30Rnd_556x45_FAMAS
-      - 1x R3F_APAV40
-      - 1x R3F_AC58
+      - 12x 25#OFrP_25Rnd_556x45
   backpack:
+
 
 driver:
   weapons:
     primary:
-      name: R3F_Famas_F1_HG
-      magazine: 25#R3F_25Rnd_556x45_FAMAS
+      name: OFrP_FAMAS_F1
+      magazine: 25#OFrP_25Rnd_556x45
       optics:
-      underBarrel:
-  vest:
-    name: V_FR2035_TacVest_ce
-    magazines:
-      - 2x R3F_25Rnd_556x45_FAMAS
+  uniform:
     items:
       - ACE_MapTools
       - ACE_microDAGR
+  vest:
+    name: OFrP_Vest_CIRAS_Rifleman_OD
+    magazines:
+      - 5x 25#OFrP_25Rnd_556x45
   binocular: Binocular
-  headgear: H_FR2035_HelmetCrew
+  headgear: H_HelmetCrew_I
   backpack:
 
 
 ground_crew:
   weapons:
     primary:
-      name: R3F_Famas_F1_HG
-      magazine: 25#R3F_25Rnd_556x45_FAMAS
+      name: OFrP_FAMAS_F1
+      magazine: 25#OFrP_25Rnd_556x45
       optics:
-      underBarrel:
   vest:
-    name: V_FR2035_TacVest_ce
+    name: OFrP_Vest_CIRAS_Rifleman_OD
     magazines:
-      - 2x R3F_25Rnd_556x45_FAMAS
-  headgear: H_FR2035_HelmetCrew
+      - 5x 25#OFrP_25Rnd_556x45
+  headgear: H_HelmetCrew_I
   backpack:
 
 
 pilot:
-  uniform:
-    name: U_FR2035_HeliPilotCoveralls
   weapons:
     primary:
-      name: R3F_MP5A5
-      magazine: 30#R3F_30Rnd_9x19_MP5
+      name: UK3CB_MP5N
+      magazine: 30#UK3CB_MP5_30Rnd_9x19_Magazine
       optics:
-      underBarrel:
-  vest:
-    name: V_FR2035_TacVest_ce
-    magazines:
-      - 2x R3F_30Rnd_9x19_MP5
+  uniform:
     items:
       - ACE_MapTools
       - ACE_microDAGR
-  binocular: Binocular
-  headgear: H_FR2035_PilotHelmetHeli
+      - ItemGPS
+    magazines:
+      - 5x UK3CB_MP5_30Rnd_9x19_Magazine
+  vest:
+    name: OFrP_Vest_CIRAS_Rifleman_OD
+  headgear: UK3CB_H_Pilot_Helmet
   backpack:
 
 
 air_crew:
-  uniform:
-    name: U_FR2035_HeliPilotCoveralls
   weapons:
     primary:
-      name: R3F_MP5A5
-      magazine: 30#R3F_30Rnd_9x19_MP5
+      name: UK3CB_MP5N
+      magazine: 30#UK3CB_MP5_30Rnd_9x19_Magazine
       optics:
-      underBarrel:
-  vest:
-    name: V_FR2035_TacVest_ce
+  uniform:
     magazines:
-      - 2x R3F_30Rnd_9x19_MP5
-  binocular: Binocular
-  headgear: H_FR2035_PilotHelmetHeli
+      - 5x UK3CB_MP5_30Rnd_9x19_Magazine
+  vest:
+    name: OFrP_Vest_CIRAS_Rifleman_OD
+  headgear: UK3CB_H_Pilot_Helmet
   backpack:
 
 
 op_drone:
-  vest:
-    magazines:
-      - 8x 30#R3F_30Rnd_556x45_FAMAS
+  uniform:
     items:
       - ACE_MapTools
       - ACE_microDAGR
+  vest:
+    magazines:
+      - 8x 25#OFrP_25Rnd_556x45
   backpack:
+    name:
   binocular: Binocular
+
 
 op_radio:
   vest:
     magazines:
-      - 8x 30#R3F_30Rnd_556x45_FAMAS
+      - 8x 25#OFrP_25Rnd_556x45
   backpack:
-    name: TFAR_rt1523g_black
+    name: UK3CB_B_B_Backpack_Radio_Chem_OLI
 
 
 recon:
   weapons:
     primary:
-      name: R3F_HK417M_HG
-      magazine: 20#R3F_20Rnd_762x51_HK417
-      optics: optic_ld3k_shordot_cqb
-      muzzle: R3F_SILENCIEUX_HK417
-      underBarrel: R3F_BIPIED_HK417
-    handgun:
-      name: R3F_HKUSP
-      magazine: 15#R3F_15Rnd_9x19_HKUSP
+      name: rhs_weap_hk416d10
+      optics: rhsusf_acc_g33_xps3
+      muzzle: muzzle_snds_H
+      magazine: 30#rhs_mag_30Rnd_556x45_M855A1_Stanag
+      underBarrel: rhsusf_acc_grip2
   vest:
     magazines:
-      - 8x R3F_20Rnd_762x51_HK417
+      - 8x rhs_mag_30Rnd_556x45_M855A1_Stanag
     items:
       - ACE_RangeCard
       - ACE_Kestrel4500
@@ -476,22 +474,21 @@ recon:
       - ACE_microDAGR
       - ACE_MapTools
   backpack:
-    name: TFAR_rt1523g_black
-  binocular: Binocular
-  headgear: H_FR2035_Booniehat_ce
-
+    name: UK3CB_B_B_Backpack_Radio_Chem_OLI
+  binocular: Rangefinder
+  headgear: OFrP_Helmet_TC3000_cover_CE
 
 turret_tripod_carrier:
   vest:
     magazines:
-      - 8x 30#R3F_30Rnd_556x45_FAMAS
+      - 8x 25#OFrP_25Rnd_556x45
   backpack:
-    name: O_HMG_01_support_F
+    name: B_HMG_01_support_F
 
 
 turret_gun_carrier:
   vest:
     magazines:
-      - 8x 30#R3F_30Rnd_556x45_FAMAS
+      - 8x 25#OFrP_25Rnd_556x45
   backpack:
-    name: O_HMG_01_weapon_F
+    name: B_HMG_01_weapon_F
