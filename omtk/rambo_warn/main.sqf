@@ -106,7 +106,7 @@ if (hasInterface) then {
 			// Lets check if Rules are broken.
 			////////////
 			// 1: All Buddies Dead or Incap | 2: 2 Lads are too far away | 3: last buddy is too far away
-			if (!alive player || side player == sideLogic) then {
+			if (alive player && side player != sideLogic) then {
 				
 				if ( _BuddiesAlive == 0 || (_BuddiesToFar >= 2 ) ||	(_BuddiesToFar == 1 && _BuddiesAlive == 1 )	) then {
 					//Inform Player
