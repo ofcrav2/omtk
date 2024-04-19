@@ -40,18 +40,21 @@ omtk_wu_display_warmup_txt = {
 
 // Fnc remotely executed by the server on every client and server at the end of warmup
 omtk_wu_end_warmup = {
+	//Set flag used on engine handlers
+	warmupOver = true;
 	["wu_end_warmup fnc called", "DEBUG", false] call omtk_log;
+
 	// On clients, reverts the changes applied by "wu_start_warmup" and by the "main.sqf" itself
 	if (hasInterface) then {
 	
 		// [] call omtk_sim_enableVehicleSim;	// VEHICLE LOCK & SIM
 		player allowDamage true;				// DAMAGE
-		if ( omtk_wu_safety == 1 ) then { 		// SAFETY OFF
+		if ( omtk_wu_safety == 1 ) then {		// SAFETY OFF
 			[] call omtk_disable_safety;
 		};
 		
 		// Vehicle unfreeze, taken from ilbinek's IMF because i give up on life
-		{			
+		{
 			// Remove engine freeze
 			_x removeEventHandler ["Engine", (_x getVariable ["engineFrz", 0])];
 		} forEach vehicles;
@@ -68,12 +71,12 @@ omtk_wu_end_warmup = {
 		if (omtk_disable_playable_ai == 1) then {
 			call omtk_delete_playableAiUnits;
 		}
-		
 	};
 	
 	// Continue to load modules...
 	call omtk_load_post_warmup;
 };
+
 
 omtk_wu_fn_launch_game = {
 	_omtk_wu_is_completed = missionNamespace getVariable ["omtk_wu_is_completed", false];
@@ -85,4 +88,20 @@ omtk_wu_fn_launch_game = {
 			publicVariable "o_wse";
 		};
 	};
+};
+
+//Just incase we have drones etc that have slipped through somehow make sure engine freeze handler is removed
+if(hasInterface) then {
+	[] spawn {
+		waitUntil { sleep 1; alive player };
+		player addEventHandler ["WeaponAssembled", {  
+			params ["_unit", "_staticWeapon"]; 
+			systemChat "test";
+			private _handlerNumber = _staticWeapon getVariable ["engineFrz", -1];
+			if (_handlerNumber != -1 ) then {
+				_staticWeapon removeEventHandler ["Engine", _handlerNumber];
+				_staticWeapon setVariable [ "engineFrz", nil];
+			};
+		}];
+	};  
 };
