@@ -6,7 +6,7 @@
 @ bug fix  
 !! security patch
 
-### V2.10.9 - 2024-19-04
+### V2.10.9 - 2024-04-19
 
 @ [warm_up] Fixed issues where drones could get left with engine lock
 @ [score_board] Fixed issues where flag objectives would not be synced across client causing issues if multiple flag objectives
@@ -198,8 +198,8 @@
 ~ Switch to English  
 ~ Missions parameters: full refactoring  
 ~ Refactoring and cleaning of omtk-loadouts configuration folders and files  
-~ [launch_mode] renamed to dynamic_startup, enlightened to support markers and interactive modes only.  
-~ [score_board] default duration is provided by mission parameter, and can be overrided by _OMTK_SB_MISSION_DURATION_OVERRIDE_ parameter in init.sqf  
+~ [launch_mode] renamed to dynamic*startup, enlightened to support markers and interactive modes only.  
+~ [score_board] default duration is provided by mission parameter, and can be overrided by \_OMTK_SB_MISSION_DURATION_OVERRIDE* parameter in init.sqf  
 ~ custom_scripts.sqf cleaned  
 @ [dynamic_startup] interactive mode loosing flag during teleport is fixed
 
