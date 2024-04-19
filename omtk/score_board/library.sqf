@@ -505,7 +505,9 @@ omtk_setFlagResult = {
 	_omtk_sb_flags = missionNamespace getVariable "sb_f";
 	_omtk_sb_flags set [_this select 0, _this select 1];
 	//["flag " + str(_this select 0) + " = " + str(_this select 1), "OBJECTIVE", false] call omtk_log;
-	missionNamespace setVariable ["sb_f", _omtk_sb_flags];
+
+	//push out flag variable to all clients so that the "sb_f" variable stays in sync if another flag is called
+	missionNamespace setVariable ["sb_f", _omtk_sb_flags, true];
 	publicVariableServer "sb_f";
 };
 
