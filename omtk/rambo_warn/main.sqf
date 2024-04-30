@@ -43,7 +43,7 @@ if (hasInterface) then {
 		////////////
 		if(_LoneWolfDebug) then { systemChat format ["[LoneWolf] LoneWolfSleeping"]; };
 		//sleep(30);																			
-		if(_LoneWolfDebug) then { systemChat format ["[LoneWolf] LoneWolfActive"]; };
+		systemChat format ["[LoneWolf] I am active. Rules: Inf %1m  Mech %2m; check: %3s ", _AllowedInfantryDistance,_AllowedVehicleDistance,_omtk_rw_interval	];
 		
 		////////////
 		//Main Task
@@ -84,14 +84,14 @@ if (hasInterface) then {
 				{   
 					_BuddiesToFar= _BuddiesToFar + 1;	//Count up if Unit is too far away
 					//Setup String put into a Array. Will be output later:
-					private _message1ToServer = format ["[LoneWolf] Player:%1 Buddy:%2 isPlayer:%3 Alive:%4 Captive:%5 OnFoot:%6 InAir:%7 -> Dist:%8m " ,name player, name _x, _BuddyisPlayer,  _BuddyAlive, _BuddyCaptured, _BuddyOnFoot , _BuddyInAircraft , _BuddyDistance];
+					private _message1ToServer = format ["[LoneWolf] Player:%1 Buddy:%2 isPlayer:%3 Alive:%4 Captive:%5 Foot:%6 Air:%7 -> Dist:%8m BtoFar:%9 Balive:%10  <==" ,name player, name _x, _BuddyisPlayer,  _BuddyAlive, _BuddyCaptured, _BuddyOnFoot , _BuddyInAircraft , _BuddyDistance,_BuddiesToFar,_BuddiesAlive];
 					_ArrayBuddiesTooFar append [_message1ToServer];
-					if(_LoneWolfDebug) then {diag_log _message1ToServer + " <==";}; 		//Report to local RPT, 
+					if(_LoneWolfDebug) then {diag_log _message1ToServer}; 		//Report to local RPT, 
 				}
 				else{
 					if(_LoneWolfDebug) then										//Report to local RPT
 					{
-						diag_log format ["[LoneWolf] Player:%1 Buddy:%2 isPlayer:%3 Alive:%4 Captive:%5 OnFoot:%6 InAir:%7 -> Dist:%8m" ,name player, name _x, _BuddyisPlayer,  _BuddyAlive, _BuddyCaptured, _BuddyOnFoot , _BuddyInAircraft , _BuddyDistance];  		//Debug stuff
+						diag_log format ["[LoneWolf] Player:%1 Buddy:%2 isPlayer:%3 Alive:%4 Captive:%5 Foot:%6 Air:%7 -> Dist:%8m BtoFar:%9 Balive:%10" ,name player, name _x, _BuddyisPlayer,  _BuddyAlive, _BuddyCaptured, _BuddyOnFoot , _BuddyInAircraft , _BuddyDistance,_BuddiesToFar,_BuddiesAlive];  		//Debug stuff
 					};
 				};
 				if(_BuddyAlive) then
@@ -111,12 +111,25 @@ if (hasInterface) then {
 				if ( _BuddiesAlive == 0 || (_BuddiesToFar >= 2 ) ||	(_BuddiesToFar == 1 && _BuddiesAlive == 1 )	) then {
 					//Inform Player
 					if((_GiveWarning || _LoneWolfDebug) && _BuddiesAlive > 0) then { 
-						systemChat format ["[LoneWolf] You lost your lads!"]; 
+						systemChat format ["[LoneWolf] You lost your lads!"];
+						disableSerialization;
+						19999 cutRsc ["ramboClass","PLAIN"];
+//						_ramboGui = uiNamespace getVariable "ramboDiag"; 	//not working so far 
+//						_ramboTxt = __ramboGui displayCtrl 1325;			//not working so far 						
+//						_ramboTxt ctrlSetText "You lost your lads!";		//not working so far 
+						
 					};
 					
 					if((_GiveWarning || _LoneWolfDebug) && _BuddiesAlive == 0) then { 
-						systemChat format ["[LoneWolf] You're alone, join another squad!"]; 
+						systemChat format ["[LoneWolf] You're alone, join another squad!"];
+						disableSerialization;
+						19999 cutRsc ["ramboClass","PLAIN"];
+//						_ramboGui = uiNamespace getVariable "ramboDiag"; 			//not working so far 
+//						_ramboTxt = __ramboGui displayCtrl 1325;					//not working so far 						
+//						_ramboTxt ctrlSetText "None there?! Find new buddies";		//not working so far 
 					};
+
+
 					
 					
 					
