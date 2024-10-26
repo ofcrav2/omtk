@@ -6,6 +6,26 @@
 @ bug fix  
 !! security patch
 
+### V2.13.0 - 2024-10-26
+
+\+ [zeus_admins] Zeus for all admins (new module w/ parameter)
+\+ [ui] Admin-only button to show how many people are in each faction (via systemChat)
+\+ [ui] Same information as above also shown every 60 seconds during warmup to all admins
+\+ [ui] Admin-only button to toggle safety on a player if he's being naughty (instead of having to spam the warn button)
+\+ [ui] Admin-only button showing time left in the mission (via systemChat)
+\+ [ui] Admin-only button to heal the player selected on list 
+\+ [ui] Admin-only button to reset the inventory of the player selected on list to what he had at mission start
+~ [ui] Re-coloured a bunch of buttons to make them stick out more to admins
+~ [ui] Re-structured buttons a bit for ease of use
+@ [ui] Fix warmup counter not showing up occasionally
+\+ [warm_up] Added circle on map to show players the warmup zone (new parameter)
+~ [warm_up] Reduced timer on End Warm-up button press (10 seconds instead of 30)
+~ [warm_up] Removed damage to vehicles during warmup
+\+ [uniform_lock] Allow players to pick up uniform even if not allowed (new parameter)
+~ [view_distance] Changed view distance module to have it be checked client-side every half a second and re-set in case the view distance doesn't match with the one set by the framework (including client and admin buttons)
+~ [omtk] Re-structured parameters a bit for ease of use
+~ [omtk] Moved admins UIDs in the init from PauseScreenMenu.sqf to allow maintenance and usage in new module
+
 ### V2.10.9 - 2024-04-19
 
 @ [warm_up] Fixed issues where drones could get left with engine lock

@@ -57,6 +57,22 @@ RscSpectator_allowFreeCam = true;
 //cutrsc ['RscSpectator','plain'];
 //[player, [missionNamespace, "OMTK_LOADOUT"]] call BIS_fnc_saveInventory;
 
+
+/* Max 10 admins (or change missionCurators array in zeus_admins\main.sqf)
+76561198004582151 - Manchot
+76561197968544972 - Flip4flap
+76561198089279362 - PHK4900
+76561198106536334 - Nasa
+76561197969410208 - Daedalus
+76561198059014268 - MrWhite350
+76561198045877943 - Rigel
+*/
+if (isServer) then {
+	admin_uids = ["76561198004582151","76561197968544972","76561198089279362","76561198106536334","76561197969410208","76561198059014268","76561198045877943"];
+	missionNamespace setVariable ["admin_uids", admin_uids];
+	publicVariable "admin_uids";
+};
+
 //// OMTK EXECUTION
 execVM "omtk\load_modules.sqf";
 // Création briefing

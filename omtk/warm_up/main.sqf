@@ -37,6 +37,7 @@ omtk_wu_radius = ("OMTK_MODULE_WARM_UP_DISTANCE" call BIS_fnc_getParamValue);
 omtk_disable_playable_ai = ("OMTK_MODULE_DISABLE_PLAYABLE_AI" call BIS_fnc_getParamValue);
 omtk_view_distance = ("OMTK_MODULE_VIEW_DISTANCE" call BIS_fnc_getParamValue);
 omtk_wu_safety = ("OMTK_MODULE_WARM_UP_SAFETY" call BIS_fnc_getParamValue);
+omtk_wu_marker = ("OMTK_MODULE_WARM_UP_MARKER" call BIS_fnc_getParamValue);
 
 omtk_wu_restrict_area_trigger = nil;
 omtk_wu_com_menu_item_id = 0;
@@ -46,6 +47,9 @@ omtk_wu_com_menu_item_id = 0;
 if (isServer) then {
 		
 	[] spawn {
+		{
+			_x allowDamage false;
+		} forEach vehicles;
 		
 		waitUntil { time > 0 };
 		_startDate = o_wse select 0;
@@ -80,11 +84,11 @@ if (hasInterface) then {
 	if (!_omtk_wu_is_completed) then {
 		omtk_wu_spawn_location = getPos player;
 		
-		player enableSimulation false;			// PLAYER SIM
-		player allowDamage false;				// DAMAGE
-		setViewDistance 500;					// VIEW DISTANCE
+		player enableSimulation false;				// PLAYER SIM
+		player allowDamage false;					// DAMAGE
+		player setVariable ["omtk_vd_master", 500];	// VIEW DISTANCE
 		warmupOver = false;
-		if ( omtk_wu_safety == 1 ) then { 		// SAFETY ON
+		if ( omtk_wu_safety == 1 ) then { 			// SAFETY ON
 			[] call omtk_enable_safety;
 		};
 		
@@ -103,10 +107,23 @@ if (hasInterface) then {
 			_x setVariable ["engineFrz", _handler];
 		} forEach vehicles;
 		
+		// Just incase we have drones etc that have slipped through somehow make sure engine freeze handler is removed
+		[] spawn {
+			waitUntil { sleep 1; alive player };
+			player addEventHandler ["WeaponAssembled", {  
+				params ["_unit", "_staticWeapon"]; 
+				systemChat "test";
+				private _handlerNumber = _staticWeapon getVariable ["engineFrz", -1];
+				if (_handlerNumber != -1 ) then {
+					_staticWeapon removeEventHandler ["Engine", _handlerNumber];
+					_staticWeapon setVariable [ "engineFrz", nil];
+				};
+			}];
+		};  
+		
 		[] call omtk_wu_restrict_area;
 		
 		[] call omtk_wu_display_warmup_txt;
-		
 		
 		[] spawn {
 		
@@ -119,6 +136,7 @@ if (hasInterface) then {
 			_vdCheck = false;
 			_stopWarmup = false;
 			
+			waitUntil { time > 5 };
 			disableSerialization; 
 			19998 cutRsc ["timerClass","PLAIN"];  
 			_timerGui = uiNamespace getVariable "timerDiag"; 
@@ -139,7 +157,7 @@ if (hasInterface) then {
 				} else {
 					// 15 seconds remaining in warmup - fixes view distance
 					if (_warmupEnd - _realDayTime < 0.00416 && !_vdCheck) then { 
-						setViewDistance(omtk_view_distance);
+						player setVariable ["omtk_vd_master", omtk_view_distance];
 						systemChat("[OMTK] View distance raised to full view distance");
 						_vdCheck = true;
 					};
@@ -162,11 +180,25 @@ if (hasInterface) then {
 			19998 cutText["","PLAIN"];
 		};
 		
+		// Shows player counts to admins every 60 seconds
+		[] spawn {
+			private _uid = getplayerUID player;
+			admin_uids = missionNamespace getVariable ["admin_uids", 0];
+			if !(_uid in admin_uids) exitwith {};
+			
+			
+			while { time < 1} do {
+				[] call omtk_show_player_count;
+				uiSleep 60;
+			};
+		};
+		
 		// PLAYER SIM RE-ENABLE TIMER
 		private _randRelease = (random 6) + 1;
 			
 		systemChat format ["[OMTK] Your simulation will be disabled for %1 seconds after launch",_randRelease];
 		sleep 1;
+		player setVariable ["omtk_vd_master", 500];	// YET AGAIN JUST TO MAKE SURE IT GETS EXECUTED AFTER
 		systemChat format ["[OMTK] Your simulation will be disabled for %1 seconds after launch",_randRelease];
 		sleep (_randRelease - 1);
 		

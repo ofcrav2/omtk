@@ -40,6 +40,9 @@ if (isServer) then {
 		_omtk_mission_duration = _this select 0;
 		_gameEnd = dayTime + _omtk_mission_duration/3600;
 		
+		missionNamespace setVariable ["game_end", _gameEnd];
+		publicVariable "game_end";
+		
 		if (_gameEnd < 24) then {
 			waitUntil { sleep 20; dayTime > (_gameEnd - 0.33333) };
 			("20 Minutes Left") remoteExecCall ["hint"];

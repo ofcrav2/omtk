@@ -44,12 +44,25 @@ class Params
 		values[] = {0};
 		default = 0;
 	};
-	class OMTK_MODULE_DYNAMIC_STARTUP
+	class OMTK_MODULE_WARM_UP
 	{
-		title = "Dynamic startup";
-		texts[] = {"off", "markers", "interactive"};
-		values[] = {0,1,2};
-		default = 0;
+		title = "Warm-up";
+		texts[] = {"off","10 s","30 s","1 min","1 min 30 s","2 min","3 min","5 min","8 min","10 min","15 min","20 min"};
+		values[] = {0,10,30,60,90,120,180,300,480,600,900,1200};
+		default = 60;
+	};
+	class OMTK_MODULE_SCORE_BOARD
+	{
+		title = "Scoreboard";
+		texts[] = {"off","15 min", "30 min","45 min","1 h","1 h 15 min","1 h 30 min","1 h 45 min"," 2 h","2 h 30 min"};
+		values[] = {0,900,1800,2700,3600,4500,5400,6300,7200,9000};
+		default = 900;
+	};
+	class OMTK_MODULE_VIEW_DISTANCE
+	{
+		title = "View distance";
+		values[] = {500,1000,1500,2000,2500,3000,4000,5000,6000,8000};
+		default = 4000;
 	};
 	class OMTK_MODULE_MAP_EXPLORATION
 	{
@@ -58,46 +71,68 @@ class Params
 		values[] = {0,1};
 		default = 0;
 	};
-	class OMTK_MODULE_RESPAWN_MODE
-	{
-		title = "Respawn";
-		texts[] = {"no-respawn", "3 s", "30s ","1 min","1 min 30 s","2 min","3 min","immortal"};
-		values[] = {999999,3,30,60,90,120,180,-1};
-		default = 999999;
-	};
-	class OMTK_MODULE_SCORE_BOARD
-	{
-		title = "Scoreboard";
-		texts[] = {"off","15 min", "30 min","45 min","1 h","1 h 15 min","1 h 30 min","1 h 45 min"," 2 h","2 h 30 min"};
-		values[] = {0,900,1800,2700,3600,4500,5400,6300,7200,9000};
-		default = 5400;
-	};
-	class OMTK_MODULE_TACTICAL_PARADROP
-	{
-		title = "Tactical paradrop";
-		texts[] = {"off","BLUEFOR only", "REDFOR only", "BLUEFOR + REDFOR"};
-		values[] = {0,1,2,3};
-		default = 0;
-	};
-	class OMTK_MODULE_WARM_UP
-	{
-		title = "Warm-up";
-		texts[] = {"off","30 s","1 min","1 min 30 s","2 min","3 min","5 min","8 min","10 min","15 min","20 min"};
-		values[] = {0,30,60,90,120,180,300,480,600,900,1200};
-		default = 10;
-	};
-	class OMTK_MODULE_VIEW_DISTANCE
-	{
-		title = "View distance";
-		values[] = {500,1000,1500,2000,2500,3000,4000,5000,6000,8000};
-		default = 4000;
-	};
 	class OMTK_MODULE_DISABLE_PLAYABLE_AI
 	{
 		title = "Disable playable AI";
 		texts[] = {"no","yes"};
 		values[] = {0,1};
 		default = "1";
+	};
+	class OMTK_MODULE_RAMBO_DIST
+	{
+		title = "Rambo Script";
+		texts[] = {"disabled","strict (210|615)","normal (230|645)","loose (250|675)"};
+		values[] = {0,5,15,25};
+		default = "0";
+	};
+	class OMTK_MODULE_SEPARATOR_1
+	{
+		title = "----- MODULE SETTINGS -------------------------------------------------";
+		texts[] = {"---------"};
+		values[] = {0};
+		default = 0;
+	};
+	class OMTK_MODULE_WARM_UP_DISTANCE
+	{
+		title = "Warm-up: Zone restriction size";
+		texts[] = {"10 m","30 m","50 m","100 m","150 m","200 m","300 m","400 m","500 m"};
+		values[] = {10,30,50,100,150,200,300,400,500};
+		default = 150;
+	};
+	class OMTK_MODULE_WARM_UP_MARKER
+	{
+		title = "Warm-up: Zone restriction marker";
+		texts[] = {"off","on"};
+		values[] = {0,1};
+		default = 1;
+	};
+	class OMTK_MODULE_WARM_UP_SAFETY
+	{
+		title = "Warm-up: Gun safety";
+		texts[] = {"off","on"};
+		values[] = {0,1};
+		default = 0;
+	};
+	class OMTK_MODULE_RAMBO_WARN
+	{
+		title = "Rambo Script: Give Warning";
+		texts[] = {"off","on"};
+		values[] = {0,1};
+		default = "1";
+	};
+	class OMTK_MODULE_RAMBO_INTERVAL
+	{
+		title = "Rambo Script: Frequency (lower = more perf usage for clients)";
+		texts[] = {"5s","10s","20s","30s","60s"};
+		values[] = {5,10,20,30,60};
+		default = "10";
+	};
+	class OMTK_MODULE_SEPARATOR_2
+	{
+		title = "----- EXTRA PARAMETERS -----------------------------------------------";
+		texts[] = {"---------"};
+		values[] = {0};
+		default = 0;
 	};
 	class OMTK_MODULE_MEXICAN_STANDOFF
 	{
@@ -106,40 +141,19 @@ class Params
 		values[] = {0,1};
 		default = "0";
 	};
-	class OMTK_MODULE_RAMBO_DIST
+	class OMTK_MODULE_RADIO_LOCK
 	{
-		title = "Rambo Script Triggering Distance";
-		texts[] = {"disabled","strict (210|615)","normal (230|645)","loose (250|675)"};
-		values[] = {0,5,15,25};
-		default = "0";
-	};
-	class OMTK_MODULE_RAMBO_WARN
-	{
-		title = "Rambo Script Give Warning";
+		title = "Radio lock";
 		texts[] = {"off","on"};
 		values[] = {0,1};
-		default = "1";
+		default = 1;
 	};
-	class OMTK_MODULE_RAMBO_INTERVAL
+	class OMTK_MODULE_VEHICLES_THERMALIMAGING
 	{
-		title = "Rambo Script Frequency (lower = more perf usage for clients)";
-		texts[] = {"5s","10s","20s","30s","60s"};
-		values[] = {5,10,20,30,60};
-		default = "10";
-	};
-	class OMTK_MODULE_SEPARATOR_1
-	{
-		title = "----------------------------------------------------------------------------------";
-		texts[] = {"---------"};
-		values[] = {0};
-		default = 0;
-	};
-	class OMTK_MODULE_SPECTATOR
-	{
-		title = "Spectator";
-		texts[] = {"all","team"};
+		title = "Vehicles thermal imaging";
+		texts[] = {"off","on"};
 		values[] = {0,1};
-		default = "0";
+		default = 0;
 	};
 	class OMTK_MODULE_DIFFICULTY_CHECK
 	{
@@ -155,12 +169,54 @@ class Params
 		values[] = {0,1};
 		default = 1;
 	};
-	class OMTK_MODULE_RADIO_LOCK
+	class OMTK_MODULE_ZEUS_ADMINS
 	{
-		title = "Radio lock";
-		texts[] = {"off","on"};
+		title = "Zeus for admins";
+		texts[] = {"no", "yes"};
 		values[] = {0,1};
 		default = 1;
+	};
+	class OMTK_MODULE_UNIFORM
+	{
+		title = "Uniform Management";
+		texts[] = {"Locked (old method)", "Free (new method)"};
+		values[] = {0,1};
+		default = 1;
+	};
+	class OMTK_MODULE_SEPARATOR_3
+	{
+		title = "----- OLD PARAMETERS --------------------------------------------------";
+		texts[] = {"---------"};
+		values[] = {0};
+		default = 0;
+	};
+	class OMTK_MODULE_DYNAMIC_STARTUP
+	{
+		title = "Dynamic startup";
+		texts[] = {"off", "markers", "interactive"};
+		values[] = {0,1,2};
+		default = 0;
+	};
+	class OMTK_MODULE_RESPAWN_MODE
+	{
+		title = "Respawn";
+		texts[] = {"no-respawn", "3 s", "30s ","1 min","1 min 30 s","2 min","3 min","immortal"};
+		values[] = {999999,3,30,60,90,120,180,-1};
+		default = 999999;
+	};
+	class OMTK_MODULE_SPECTATOR
+	{
+		title = "Spectator";
+		texts[] = {"all","team"};
+		values[] = {0,1};
+		default = "0";
+	};
+	class OMTK_MODULE_TACTICAL_PARADROP
+	{
+		title = "Tactical paradrop";
+		texts[] = {"off","BLUEFOR only", "REDFOR only", "BLUEFOR + REDFOR"};
+		values[] = {0,1,2,3};
+		default = 0;
 	};
 	class OMTK_MODULE_TACTICAL_PARADROP_ALTITUDE
 	{
@@ -175,27 +231,6 @@ class Params
 		texts[] = {"1 min", "2 min", "3 min", "5 min", "10 min", "15 min", "20 min", "30 min", "unlimited"};
 		values[] = {1,2,3,5,10,15,20,30,9999};
 		default = 3;
-	};
-	class OMTK_MODULE_VEHICLES_THERMALIMAGING
-	{
-		title = "Vehicles thermal imaging";
-		texts[] = {"off","on"};
-		values[] = {0,1};
-		default = 0;
-	};
-	class OMTK_MODULE_WARM_UP_DISTANCE
-	{
-		title = "Warm-up: zone restriction";
-		texts[] = {"10 m","30 m","50 m","100 m","150 m","200 m","300 m","400 m","500 m"};
-		values[] = {10,30,50,100,150,200,300,400,500};
-		default = 150;
-	};
-	class OMTK_MODULE_WARM_UP_SAFETY
-	{
-		title = "Warm-up: Gun safety";
-		texts[] = {"off","on"};
-		values[] = {0,1};
-		default = 0;
 	};
 };
 

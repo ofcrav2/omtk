@@ -7,6 +7,16 @@ omtk_wu_move_player_at_spawn_if_required = {
 	};
 };
 
+// Creation of the spawn marker. Marker gets deleted inside omtk_wu_end_warmup
+omtk_wu_fn_show_zone = {
+	_marker = createMarkerLocal ["SpawnZone", position player];
+	"SpawnZone" setMarkerShapeLocal "ELLIPSE";
+	"SpawnZone" setMarkerSizeLocal [omtk_wu_radius, omtk_wu_radius];
+	"SpawnZone" setMarkerColorLocal "ColorOrange";
+	"SpawnZone" setMarkerBrushLocal "Border";
+};
+
+
 // Creation of the "restrict_area_trigger" that'll call "move_player_at_spawn_if_required" fnc.
 omtk_wu_restrict_area = {
 	omtk_wu_restrict_area_trigger = createTrigger ["EmptyDetector", omtk_wu_spawn_location, false];
@@ -18,6 +28,10 @@ omtk_wu_restrict_area = {
 	// The trigger deactivates upon players (or the vehicle they're in) not being in the zone. Deactivation triggers the hint and the function to teleport the player back.
 	// Upon reactivation, the hintSilent removes the warning.
 	omtk_wu_restrict_area_trigger setTriggerStatements ["player in thisList || vehicle player in thisList", "hintSilent '';", _trg_out_action];
+
+	if (omtk_wu_marker == 1) then {
+		[] call omtk_wu_fn_show_zone;
+	};
 };
 
 // Creating and displaying notification text with warmup length
@@ -40,7 +54,7 @@ omtk_wu_display_warmup_txt = {
 
 // Fnc remotely executed by the server on every client and server at the end of warmup
 omtk_wu_end_warmup = {
-	//Set flag used on engine handlers
+	// Set flag used on engine handlers
 	warmupOver = true;
 	["wu_end_warmup fnc called", "DEBUG", false] call omtk_log;
 
@@ -60,6 +74,11 @@ omtk_wu_end_warmup = {
 		} forEach vehicles;
 		
 		deleteVehicle omtk_wu_restrict_area_trigger;
+		
+		// Deletion of marker created by omtk_wu_fn_show_zone
+		if (omtk_wu_marker == 1) then {
+			deleteMarkerLocal "SpawnZone";
+		};
 
 	};
 	// On server, sets variable to prevent warmup for JIP players, 
@@ -67,6 +86,10 @@ omtk_wu_end_warmup = {
 	if (isServer) then {
 		missionNamespace setVariable ["omtk_wu_is_completed", true];
 		publicVariable "omtk_wu_is_completed";
+		
+		{
+			_x allowDamage true;
+		} forEach vehicles;
 		
 		if (omtk_disable_playable_ai == 1) then {
 			call omtk_delete_playableAiUnits;
@@ -82,26 +105,10 @@ omtk_wu_fn_launch_game = {
 	_omtk_wu_is_completed = missionNamespace getVariable ["omtk_wu_is_completed", false];
 	if (isServer && !_omtk_wu_is_completed) then {
 		_remainingTime = (o_wse select 1) - dayTime;
-		if (_remainingTime > 0.008333) then {
+		if (_remainingTime > 0.002777) then {
 			("[OMTK] warmup interrupted !") remoteExecCall ["systemChat"];
-			o_wse set [1, (dayTime + 0.008333)];
+			o_wse set [1, (dayTime + 0.002777)];
 			publicVariable "o_wse";
 		};
 	};
-};
-
-//Just incase we have drones etc that have slipped through somehow make sure engine freeze handler is removed
-if(hasInterface) then {
-	[] spawn {
-		waitUntil { sleep 1; alive player };
-		player addEventHandler ["WeaponAssembled", {  
-			params ["_unit", "_staticWeapon"]; 
-			systemChat "test";
-			private _handlerNumber = _staticWeapon getVariable ["engineFrz", -1];
-			if (_handlerNumber != -1 ) then {
-				_staticWeapon removeEventHandler ["Engine", _handlerNumber];
-				_staticWeapon setVariable [ "engineFrz", nil];
-			};
-		}];
-	};  
 };

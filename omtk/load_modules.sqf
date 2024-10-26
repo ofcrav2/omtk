@@ -45,6 +45,8 @@ if (("OMTK_MODULE_RESPAWN_MODE"		call BIS_fnc_getParamValue) < 999999) then { ex
 if (("OMTK_MODULE_RADIO_LOCK" 		call BIS_fnc_getParamValue) > 0) then { execVM "omtk\radio_lock\main.sqf"; };
 if (("OMTK_MODULE_KILL_LOGGER" 		call BIS_fnc_getParamValue) > 0) then { execVM "omtk\kill_logger\main.sqf"; };
 if (("OMTK_MODULE_RAMBO_DIST" 		call BIS_fnc_getParamValue) > 0) then { execVM "omtk\rambo_warn\main.sqf"; };
+if (("OMTK_MODULE_ZEUS_ADMINS" 		call BIS_fnc_getParamValue) > 0) then { execVM "omtk\zeus_admins\main.sqf"; };
+
 
 execVM "omtk\uniform_lock\main.sqf";
 execVM "omtk\ia_manager\main.sqf"; 
