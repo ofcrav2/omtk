@@ -536,9 +536,10 @@ button_exportocap ctrlsetPosition [
     0.03 * safeZoneH
 ];
 button_exportocap ctrlCommit 0;
-button_exportocap ctrlsettext "Export Ocap";
+button_exportocap ctrlsettext "Export Ocap/Stats";
 button_exportocap ctrlsetBackgroundColor [0.7, 0.2, 0.2, 1];
 button_exportocap ctrlAddEventHandler ["Buttondown", {
+    [] remoteExec ['statslogger_fnc_export', 2];
     ["ocap_exportData", ["Mission is OVER"]] remoteExec ['CBA_fnc_serverEvent', 2];
 }];
 
