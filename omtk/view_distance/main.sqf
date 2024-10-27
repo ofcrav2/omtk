@@ -16,7 +16,6 @@ if (hasInterface) then {
 			_omtk_viewDist = player getVariable ["omtk_vd_master", 2000];
 			
 			if (viewDistance != _omtk_viewDist) then {
-				systemChat "[OMTK] VIEW DISTANCE CHANGED RIETAR";
 				setViewDistance _omtk_viewDist;
 			};
 			
