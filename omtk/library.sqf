@@ -465,9 +465,9 @@ omtk_set_viewdistance = {
 };
 
 omtk_show_player_count = {
-	_west = playersNumber west;
-	_east = playersNumber east;
-	_res = playersNumber resistance;
+	_west = west countSide allPlayers;
+	_east = east countSide allPlayers;
+	_res = resistance countSide allPlayers;
 	
 	if (_res > 0) then {
 		systemChat format["[OMTK] Bluefor: %1 - Redfor: %2 - Greenfor: %3", _west, _east, _res];
