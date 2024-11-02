@@ -379,12 +379,14 @@ omtk_respawn_unit = {
 	_name = _this select 0;
 
 	if (_name == name player) then {
+		_loadout = player getVariable ["playerLoadout", 0];
+		
 		setPlayerRespawnTime 2;
 		sleep 3;
 		setPlayerRespawnTime 9999;
 
-		loadout = player getVariable ["playerLoadout", 0];
-		player setUnitLoadout [loadout, true];
+		//_loadout = player getVariable ["playerLoadout", 0];
+		player setUnitLoadout [_loadout, true];
 	};
 	
 	execVM "omtk\view_distance\main.sqf";
@@ -394,8 +396,8 @@ omtk_reset_unit = {
     _name = _this select 0;
 
     if (_name == name player) then {
-        loadout = player getVariable ["playerLoadout", 0];
-        player setUnitLoadout [loadout, true];
+        _loadout = player getVariable ["playerLoadout", 0];
+        player setUnitLoadout [_loadout, true];
     };
 };
 
@@ -465,9 +467,10 @@ omtk_set_viewdistance = {
 };
 
 omtk_show_player_count = {
-	_west = west countSide allPlayers;
-	_east = east countSide allPlayers;
-	_res = resistance countSide allPlayers;
+	_allPlayers = call BIS_fnc_listPlayers;
+	_west = west countSide _allPlayers;
+	_east = east countSide _allPlayers;
+	_res = resistance countSide _allPlayers;
 	
 	if (_res > 0) then {
 		systemChat format["[OMTK] Bluefor: %1 - Redfor: %2 - Greenfor: %3", _west, _east, _res];

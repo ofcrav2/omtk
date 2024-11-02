@@ -584,7 +584,7 @@ button_freezeAI ctrlsetPosition [
     0.03 * safeZoneH
 ];
 button_freezeAI ctrlCommit 0;
-button_freezeAI ctrlsettext "Enable Dmg all";
+button_freezeAI ctrlsettext "Enable Dmg ALL";
 button_freezeAI ctrlsetBackgroundColor [0.2, 0.7, 0.7, 1];
 button_freezeAI ctrlAddEventHandler ["Buttondown", {
     [] remoteExec ['omtk_enable_playerdamage', 0];
@@ -599,7 +599,7 @@ button_enabsafety ctrlsetPosition [
     0.03 * safeZoneH
 ];
 button_enabsafety ctrlCommit 0;
-button_enabsafety ctrlsettext "Enable Safety";
+button_enabsafety ctrlsettext "Enable Safety ALL";
 button_enabsafety ctrlsetBackgroundColor [0.7, 0.5, 0.2, 1];
 button_enabsafety ctrlAddEventHandler ["Buttondown", {
     [] remoteExec ['omtk_enable_safety', 0];
@@ -614,7 +614,7 @@ button_disSafety ctrlsetPosition [
     0.03 * safeZoneH
 ];
 button_disSafety ctrlCommit 0;
-button_disSafety ctrlsettext "Disable Safety";
+button_disSafety ctrlsettext "Disable Safety ALL";
 button_disSafety ctrlsetBackgroundColor [0.7, 0.5, 0.2, 1];
 button_disSafety ctrlAddEventHandler ["Buttondown", {
     [] remoteExec ['omtk_disable_safety', 0];
@@ -630,7 +630,7 @@ buttonSimulation_Disable ctrlsetPosition [
     0.03 * safeZoneH
 ];
 buttonSimulation_Disable ctrlCommit 0;
-buttonSimulation_Disable ctrlsettext "DISABLE ALL Sim";
+buttonSimulation_Disable ctrlsettext "DISABLE Sim ALL";
 buttonSimulation_Disable ctrlsetBackgroundColor [0.8, 0.2, 0.8, 1];
 buttonSimulation_Disable ctrlAddEventHandler ["Buttondown", {
     [] remoteExec['omtk_sim_disableplayerSim', 0, true];
@@ -646,7 +646,7 @@ buttonSimulation_EnableAll ctrlsetPosition [
     0.03 * safeZoneH
 ];
 buttonSimulation_EnableAll ctrlCommit 0;
-buttonSimulation_EnableAll ctrlsettext "Enable ALL Sim";
+buttonSimulation_EnableAll ctrlsettext "Enable Sim ALL";
 buttonSimulation_EnableAll ctrlsetBackgroundColor [0.8, 0.2, 0.8, 1];
 buttonSimulation_EnableAll ctrlAddEventHandler ["Buttondown", {
     ['all'] remoteExec['omtk_sim_enableplayerSim', 0];

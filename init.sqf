@@ -73,6 +73,10 @@ if (isServer) then {
 	publicVariable "admin_uids";
 };
 
+// Logging des joueurs sur le serveur
+onPlayerConnected {[ _name + " - " + _uid, "CONNECT", false] call omtk_log};
+onPlayerDisconnected {[ _name + " - " + _uid, "DISCONNECT", false] call omtk_log};
+
 //// OMTK EXECUTION
 execVM "omtk\load_modules.sqf";
 // Création briefing
@@ -82,13 +86,10 @@ if (hasInterface) then {
 	execVM "omtk\fn_inventoryBriefing.sqf";
 	execVM "omtk\fn_rosterBriefing.sqf";
 
+	sleep 1;
 	// Save starting loadout
 	loadout = getUnitLoadout player;
 	player setVariable ["playerLoadout", loadout];
 };
-
-// Logging des joueurs sur le serveur
-onPlayerConnected {[ _name + " - " + _uid, "CONNECT", false] call omtk_log};
-onPlayerDisconnected {[ _name + " - " + _uid, "DISCONNECT", false] call omtk_log};
 
 ["Init end" , "DEBUG", false] call omtk_log;

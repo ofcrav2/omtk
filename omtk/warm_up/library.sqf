@@ -87,9 +87,9 @@ omtk_wu_end_warmup = {
 		missionNamespace setVariable ["omtk_wu_is_completed", true];
 		publicVariable "omtk_wu_is_completed";
 		
-		{
+		/*{
 			_x allowDamage true;
-		} forEach vehicles;
+		} forEach vehicles;*/
 		
 		if (omtk_disable_playable_ai == 1) then {
 			call omtk_delete_playableAiUnits;

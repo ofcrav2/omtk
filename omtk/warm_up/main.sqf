@@ -47,9 +47,9 @@ omtk_wu_com_menu_item_id = 0;
 if (isServer) then {
 		
 	[] spawn {
-		{
+		/*{
 			_x allowDamage false;
-		} forEach vehicles;
+		} forEach vehicles;*/
 		
 		waitUntil { time > 0 };
 		_startDate = o_wse select 0;
