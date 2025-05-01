@@ -378,7 +378,7 @@ omtk_toggle_safety_unit = {
 omtk_respawn_unit = {
 	_name = _this select 0;
 
-	if (_name == name player) then {
+	if (_name == name player && !alive player) then {
 		_loadout = player getVariable ["playerLoadout", 0];
 		
 		setPlayerRespawnTime 2;
@@ -387,9 +387,10 @@ omtk_respawn_unit = {
 
 		//_loadout = player getVariable ["playerLoadout", 0];
 		player setUnitLoadout [_loadout, true];
+		
+		execVM "omtk\view_distance\main.sqf";
 	};
 	
-	execVM "omtk\view_distance\main.sqf";
 };
 
 omtk_reset_unit = {
