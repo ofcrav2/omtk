@@ -5,7 +5,7 @@
 | FIELD                   | VALUE
 |-------------------------|-------------
 | folder name             | score_board
-| last modification date  | 2022-08-27
+| last modification date  | 2026-01-09
 | Ojective                | compute scores & display scoreboard at the end of the time-boxed game
 | Default                 | enabled
 | Extra Parameters        | yes

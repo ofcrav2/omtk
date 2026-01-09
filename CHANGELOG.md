@@ -6,6 +6,20 @@
 @ bug fix  
 !! security patch
 
+### V2.13.3 - 2026-01-09
+\+ [score_board] Added code ran on loop on clients checking for damage immune players and snitching on them to admins and server
+~ [ui] Changed "Enable Dmg ALL" button to function with weird locality fuckery
+
+### V2.13.2 - 2025-05-01
+@ [view_distance] Hotfix of viewdistance loop being potentially launched multiple times on clients upon respawn
+
+### V2.13.1 - 2024-11-02
+~ [ui] Merged ocap and stats exports button
+~ [ui] Renamed some buttons in the UI
+~ [omtk] Small optimisation of players per side calculations in omtk_show_player_count 
+~ [omtk] Changes to loadout handling at game start and upon respawning
+~ [warm_up] Removed damage immunity to vehicles during warmup
+
 ### V2.13.0 - 2024-10-26
 
 \+ [zeus_admins] Zeus for all admins (new module w/ parameter)

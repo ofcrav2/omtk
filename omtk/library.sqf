@@ -189,9 +189,9 @@ omtk_disable_aiBehaviour = {
 };
 
 omtk_enable_playerDamage = {
-	if (hasInterface) then {
-		player allowDamage true;
-	};
+	{
+		_x allowDamage true;
+	} forEach allPlayers;
 };
 
 /* MERGED INTO "omtk_lock_vehicles" and "omtk_unlock_vehicles
@@ -489,3 +489,42 @@ omtk_show_time_left = {
 	systemChat format["[OMTK] Time Left: %1m%2s", _minutesLeft, _secondsLeft];
 };
 
+omtk_check_dmg_immune_players = {
+	_dmg_immune_players = 0;
+	
+	{
+		if( !isDamageAllowed _x ) then {
+			_dmg_immune_players = _dmg_immune_players + 1;
+		};
+	} forEach allPlayers;
+	
+	if ( _dmg_immune_players > 0 ) then {
+		[_dmg_immune_players, name player] remoteExec ['omtk_log_dmg_immune_players', 0];
+		// systemChat format["[OMTK] THERE ARE %1 DAMAGE IMMUNE PLAYERS (total playercount: %2) - press the 'Enable Dmg ALL' button if not warmup", _dmg_immune_players, _player_count];
+	};
+};
+
+omtk_log_dmg_immune_players = {	
+	params ["_dmg_immune_players","_playername"];
+	
+	if (isServer) then {
+		_log_txt = format["%1 is reporting %2 damage immune players",_playername,_dmg_immune_players];
+		[_log_txt, "WARNING", false] call omtk_log;
+	};
+	
+	private _uid = getplayerUID player;
+	admin_uids = missionNamespace getVariable ["admin_uids", 0];
+	
+	_omtk_spam_prevention = player getVariable ["omtk_spam_prevention", 0];
+	
+	
+	if (_uid in admin_uids and _omtk_spam_prevention == 0) then {
+		player setVariable ['omtk_spam_prevention', 1];
+		
+		systemChat format["[OMTK] %1's client thinks there are %2 damage immune players. Please check and fix", _playername, _dmg_immune_players];
+		
+		sleep 10;
+		player setVariable ['omtk_spam_prevention', 0];
+	};
+		
+};

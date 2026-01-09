@@ -229,7 +229,7 @@ if (isServer) then {
 			};	
 		};
 	};
-	
+		
 	
 	missionNamespace setVariable ["sb_r4r", 0];
 	publicVariable "sb_r4r";
@@ -237,9 +237,8 @@ if (isServer) then {
 
 
 
-if (hasInterface) then {
+if (hasInterface) then {	
 	// Display end mission time to client	
-	
 	_endHour = 0;
 	_endMinute = 0;
 	_endSecond = 0;
@@ -311,7 +310,14 @@ if (hasInterface) then {
 			};
 		};
 	} foreach _omtk_sb_objectives;
-
+	
+	
+	// Runs damage immunity checks for all players on all clients which then cause the logs to fire on admins and server
+	[] spawn {
+		while { sleep 30 ; true } do {
+			[] call omtk_check_dmg_immune_players;
+		};
+	};
 };
 
 ["score_boards end", "DEBUG", false] call omtk_log;
