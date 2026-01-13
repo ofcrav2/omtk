@@ -6,6 +6,9 @@
 @ bug fix  
 !! security patch
 
+### V2.13.4 - 2026-01-13
+~ [ui] Changed "export list" button to produce the json file for the new mission manager instead of the old forum html code
+
 ### V2.13.3 - 2026-01-09
 \+ [score_board] Added code ran on loop on clients checking for damage immune players and snitching on them to admins and server
 ~ [ui] Changed "Enable Dmg ALL" button to function with weird locality fuckery
