@@ -311,13 +311,14 @@ if (hasInterface) then {
 		};
 	} foreach _omtk_sb_objectives;
 	
-	
+	/*
 	// Runs damage immunity checks for all players on all clients which then cause the logs to fire on admins and server
 	[] spawn {
 		while { sleep 30 ; true } do {
 			[] call omtk_check_dmg_immune_players;
 		};
 	};
+	*/
 };
 
 ["score_boards end", "DEBUG", false] call omtk_log;

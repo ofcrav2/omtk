@@ -6,6 +6,9 @@
 @ bug fix  
 !! security patch
 
+### V2.13.5 - 2026-03-02
+\+ [score_board] Removed code that ran on loop on clients checking for damage immune players and snitching on them to admins and server
+
 ### V2.13.4 - 2026-01-13
 ~ [ui] Changed "export list" button to produce the json file for the new mission manager instead of the old forum html code
 
