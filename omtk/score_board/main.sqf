@@ -223,6 +223,17 @@ if (isServer) then {
 							[_obj select 5, _obj select 1, 0, _values select 0, _obj select 3, _side] call omtk_timedAlive;							
 						};
 					};
+					
+					// Execute callback if one exists for this timed objective
+					_objectiveNumber = _values select 0;
+					_callbacks = missionNamespace getVariable ["OMTK_TIMED_OBJECTIFS_CALLBACKS", []];
+					if (_objectiveNumber < (count _callbacks)) then {
+						_callback = _callbacks select _objectiveNumber;
+						if (!isNil "_callback" && {_callback isEqualType {}}) then {
+							[_obj, _objectiveNumber] spawn _callback;
+						};
+					};
+					
 					_omtk_sb_timed_objectives deleteAt _i;
 					_i = _i - 1;
 				};
