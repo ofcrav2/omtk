@@ -208,7 +208,7 @@ if (isServer) then {
 				
 				if (_currentTime >= _objTime ) then {
 					
-					hint format ["gameStart: %1, currentTime: %2, objTime: %3", _gameStartTime, _currentTime, _objTime];
+					// hint format ["gameStart: %1, currentTime: %2, objTime: %3", _gameStartTime, _currentTime, _objTime];
 					switch(_type) do {
 						case "T_INSIDE": {
 							[_obj select 6, _obj select 1, 1, _obj select 5, _values select 0, _obj select 3, _side] call omtk_timedArea;
