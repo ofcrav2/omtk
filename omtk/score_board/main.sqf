@@ -208,7 +208,7 @@ if (isServer) then {
 				
 				if (_currentTime >= _objTime ) then {
 					
-					hint format ["gameStart: %1, currentTime: %2, objTime: %3", _gameStartTime, _currentTime, _objTime];
+					// hint format ["gameStart: %1, currentTime: %2, objTime: %3", _gameStartTime, _currentTime, _objTime];
 					switch(_type) do {
 						case "T_INSIDE": {
 							[_obj select 6, _obj select 1, 1, _obj select 5, _values select 0, _obj select 3, _side] call omtk_timedArea;
@@ -223,6 +223,17 @@ if (isServer) then {
 							[_obj select 5, _obj select 1, 0, _values select 0, _obj select 3, _side] call omtk_timedAlive;							
 						};
 					};
+					
+					// Execute callback if one exists for this timed objective
+					_flagNumber = _values select 0;
+					// Check if a callback exists at this index (flag numbers are used as array indices)
+					if (!isNil "OMTK_TIMED_OBJECTIFS_CALLBACKS" && _flagNumber >= 0 && _flagNumber < (count OMTK_TIMED_OBJECTIFS_CALLBACKS)) then {
+						_callback = OMTK_TIMED_OBJECTIFS_CALLBACKS select _flagNumber;
+						if (!isNil "_callback" && {_callback isEqualType {}}) then {
+							[_obj, _flagNumber] spawn _callback;
+						};
+					};
+					
 					_omtk_sb_timed_objectives deleteAt _i;
 					_i = _i - 1;
 				};

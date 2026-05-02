@@ -134,6 +134,37 @@ The first number indicates the number of the flag, and has to be UNIQUE from all
 The second number indicates after how many minutes the objective will be checked. In this example, the VIP has to stay alive until 1 hour of game time. 
 If he dies after this time has elapsed, the objective will still be considered completed (VIP saved).
 
+##### TIMED OBJECTIVES CALLBACKS
+
+Mission makers can define callback functions that will be executed when timed objectives fire. These callbacks are defined in the `OMTK_TIMED_OBJECTIFS_CALLBACKS` array in init.sqf.
+
+The callback function will receive two parameters that can be accessed using the `params` command:
+- First parameter: The objective data array
+- Second parameter: The flag number of the timed objective
+
+Example usage in init.sqf:
+```sqf
+// Initialize the callbacks array
+OMTK_TIMED_OBJECTIFS_CALLBACKS = [];
+
+// Define a callback for timed objective with flag number 1
+OMTK_TIMED_OBJECTIFS_CALLBACKS set [1, {
+    params ["_obj", "_flagNumber"];
+    hint format ["Timed objective %1 has fired!", _flagNumber];
+    // You can add custom logic here, such as spawning reinforcements, 
+    // changing weather, enabling/disabling certain features, etc.
+}];
+
+// Define a callback for timed objective with flag number 2
+OMTK_TIMED_OBJECTIFS_CALLBACKS set [2, {
+    params ["_obj", "_flagNumber"];
+    "Extraction zone is now active!" remoteExecCall ["systemChat"];
+    // Custom logic for extraction zone activation
+}];
+```
+
+If no callback is defined for a specific timed objective, the objective will fire normally without executing any additional code.
+
 NOTE REGARDING "FLAG" OBJECTIVE: 
 To set a FLAG objective to completed (or to failed, as per the second line shown below), you just have to run this single line of code in a script or a trigger:
 ```

@@ -32,6 +32,14 @@ OMTK_SB_LIST_OBJECTIFS = [
 
 ];
 
+// Timed objectives callbacks: Mission makers can fill this array with callback functions that will be
+// spawned when timed objectives fire. The index in the array should match the "number" (flag number)
+// of the timed objective. For example, if you have a T_SURVIVAL objective with flag number 1:
+// [1, "REDFOR", "T_SURVIVAL", "Save vip for 1h", [1, 60], ["LIST", ["vip"]] ]
+// You can define a callback at index 1: OMTK_TIMED_OBJECTIFS_CALLBACKS set [1, { vip setPos [0,0,0]; } ];
+// The code defined in here is executed on server only, make sure to account for locality!
+OMTK_TIMED_OBJECTIFS_CALLBACKS = [];
+
 OMTK_LM_BLUEFOR_OB = [
 ];
 
