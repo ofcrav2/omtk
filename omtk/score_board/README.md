@@ -138,9 +138,9 @@ If he dies after this time has elapsed, the objective will still be considered c
 
 Mission makers can define callback functions that will be executed when timed objectives fire. These callbacks are defined in the `OMTK_TIMED_OBJECTIFS_CALLBACKS` array in init.sqf.
 
-The callback function will receive two parameters:
-- `_this select 0`: The objective data array
-- `_this select 1`: The flag number of the timed objective
+The callback function will receive two parameters that can be accessed using the `params` command:
+- First parameter: The objective data array
+- Second parameter: The flag number of the timed objective
 
 Example usage in init.sqf:
 ```sqf

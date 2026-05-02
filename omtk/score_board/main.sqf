@@ -226,10 +226,9 @@ if (isServer) then {
 					
 					// Execute callback if one exists for this timed objective
 					_flagNumber = _values select 0;
-					_callbacks = missionNamespace getVariable ["OMTK_TIMED_OBJECTIFS_CALLBACKS", []];
 					// Check if a callback exists at this index (flag numbers are used as array indices)
-					if (_flagNumber < (count _callbacks)) then {
-						_callback = _callbacks select _flagNumber;
+					if (!isNil "OMTK_TIMED_OBJECTIFS_CALLBACKS" && _flagNumber >= 0 && _flagNumber < (count OMTK_TIMED_OBJECTIFS_CALLBACKS)) then {
+						_callback = OMTK_TIMED_OBJECTIFS_CALLBACKS select _flagNumber;
 						if (!isNil "_callback" && {_callback isEqualType {}}) then {
 							[_obj, _flagNumber] spawn _callback;
 						};
