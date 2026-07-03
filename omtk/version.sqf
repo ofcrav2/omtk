@@ -1,3 +1,3 @@
-OMTK_VERSION = "2.13.6";
+OMTK_VERSION = "2.13.7";
 
 // view ..\CHANGELOG.md for more info

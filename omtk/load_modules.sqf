@@ -46,6 +46,7 @@ if (("OMTK_MODULE_RADIO_LOCK" 		call BIS_fnc_getParamValue) > 0) then { execVM "
 if (("OMTK_MODULE_KILL_LOGGER" 		call BIS_fnc_getParamValue) > 0) then { execVM "omtk\kill_logger\main.sqf"; };
 if (("OMTK_MODULE_RAMBO_DIST" 		call BIS_fnc_getParamValue) > 0) then { execVM "omtk\rambo_warn\main.sqf"; };
 if (("OMTK_MODULE_ZEUS_ADMINS" 		call BIS_fnc_getParamValue) > 0) then { execVM "omtk\zeus_admins\main.sqf"; };
+if (("OMTK_MODULE_ARTY_COMPUTER"	call BIS_fnc_getParamValue) > 0) then { enableEngineArtillery false; };
 
 
 execVM "omtk\uniform_lock\main.sqf";

@@ -6,6 +6,12 @@
 @ bug fix  
 !! security patch
 
+### V2.13.7 - 2026-07-03
+\+ [omtk] Added parameter to enable/disable artillery computer
+
+### V2.13.6 - 2026-05-02
+\+ [score_board] Added timed objective callbacks
+
 ### V2.13.5 - 2026-03-02
 \+ [score_board] Removed code that ran on loop on clients checking for damage immune players and snitching on them to admins and server
 

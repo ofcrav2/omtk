@@ -133,6 +133,13 @@ class Params
 		values[] = {0};
 		default = 0;
 	};
+	class OMTK_MODULE_ARTY_COMPUTER
+	{
+		title = "Artillery Computer";
+		texts[] = {"off","on"};
+		values[] = {0,1};
+		default = "0";
+	};
 	class OMTK_MODULE_MEXICAN_STANDOFF
 	{
 		title = "Three factions game";
