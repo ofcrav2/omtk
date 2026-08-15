@@ -338,8 +338,22 @@ omtk_teleport_unit = {
 	_name2 = _this select 1;
 
 	if (_name == name player) then {
-		_playerObject = allPlayers select ( allPlayers findIf {(name _x) isEqualTo _name2;} );
-		player setPos (_playerObject modelToWorld [0,0,1]);
+		_targetIndex = allPlayers findIf {(name _x) isEqualTo _name2;};
+		if (_targetIndex >= 0) then {
+			_playerObject = allPlayers select _targetIndex;
+			_warmupTeleportPosition = getPos _playerObject;
+			player setPos (_playerObject modelToWorld [0,0,1]);
+
+			if (!isNil "warmupOver" && {!warmupOver} && {!isNil "omtk_wu_spawn_location"}) then {
+				omtk_wu_spawn_location = _warmupTeleportPosition;
+				if (!isNil "omtk_wu_restrict_area_trigger" && {!isNull omtk_wu_restrict_area_trigger}) then {
+					omtk_wu_restrict_area_trigger setPos _warmupTeleportPosition;
+				};
+				if (!isNil "omtk_wu_marker" && {omtk_wu_marker == 1}) then {
+					"SpawnZone" setMarkerPosLocal _warmupTeleportPosition;
+				};
+			};
+		};
 	};
 };
 
